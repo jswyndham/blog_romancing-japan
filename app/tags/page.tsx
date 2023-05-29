@@ -11,12 +11,12 @@ export default async function TagList() {
 		<>
 			<div className='z-0 flex flex-col min-h-screen items-center justify-center overflow-hidden m-4 p-2 md:mx-4 md:px-2'>
 				<div className='w-screen bg-slate-700 p-4 mt-8 mb-12 md:mb-24 flex justify-center text-white text-3xl font-bold md:absolute md:top-28'>
-					List of tags
+					List of Articles Tags
 				</div>
 				<div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:mt-28 xl:-mt-24'>
 					<>
 						{tags.map(async (tag: any) => (
-							<Link href={`/categories/${tag.slug}`}>
+							<Link href={`/tags/${tag.slug}`}>
 								<div
 									key={tag._id}
 									className='w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 md:mb-8'

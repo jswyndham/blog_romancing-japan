@@ -33,6 +33,7 @@ export default function Navbar() {
 								height={250}
 								alt='romancing japan logo'
 								className='m-4'
+								priority
 							/>
 						</Link>
 					</div>

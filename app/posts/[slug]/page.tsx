@@ -120,9 +120,9 @@ export default async function postArticle({ params: { slug } }: Props) {
 
 	return (
 		<main key={post._id} className='flex justify-center'>
-			<section className='flex flex-col justify-center'>
-				<article className='flex flex-col justify-center'>
-					<div className='container lg:w-6/12 '>
+			<section className='xl:w-6/12 flex flex-col justify-center'>
+				<article className='flex flex-col items-center justify-center'>
+					<div className='container '>
 						<div className='relative h-8 mt-6 p-3 divide-y divide-red-700'>
 							<div className='h-1'></div>
 							<div className='h-1'></div>
@@ -131,11 +131,11 @@ export default async function postArticle({ params: { slug } }: Props) {
 						</div>
 
 						<div className='flex flex-col'>
-							<h1 className='mt-2 text-4xl ml-5 p-1 font-heading font-bold md:text-6xl'>
+							<h1 className='mt-2 text-5xl ml-5 p-1 font-heading font-bold sm:text-6xl'>
 								{post.name}
 							</h1>
 							{post.author.map((author) => (
-								<div key={post._id}>
+								<div key={post._id} className=''>
 									<h4 className='ml-8 mt-3 pb-1 text-primary text-md font-bold'>
 										Written by {author.name}
 									</h4>
@@ -145,8 +145,8 @@ export default async function postArticle({ params: { slug } }: Props) {
 					</div>
 				</article>
 
-				<article className='ml-4 flex flex-col justify-center'>
-					<div className='flex flex-col justify-start pt-2 my-3'>
+				<article className='w-6/12 ml-4 flex flex-col items-start justify-center'>
+					<div className='flex flex-col pt-2 my-3'>
 						<div>
 							<div className='flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white'>
 								{post.category.map((category) => (
@@ -193,8 +193,8 @@ export default async function postArticle({ params: { slug } }: Props) {
 				<article>
 					<div className='container'>
 						<article className='flex flex-col justify-center whitespace-pre-line md:flex-row'>
-							<div className='lg:w-6/12 px-8 py-4'>
-								<div className='font-heading text-justify text-lg whitespace-pre-line'>
+							<div className='lg:w-11/12 px-8 py-4'>
+								<div className='font-heading text-justify text-xl whitespace-pre-line'>
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}
@@ -207,14 +207,14 @@ export default async function postArticle({ params: { slug } }: Props) {
 					</div>
 				</article>
 				<article className=''>
-					<div className=''>
+					
 						<div className='h-8 mb-12 p-3 divide-y divide-red-700'>
 							<div className='h-1'></div>
 							<div className='h-1'></div>
 							<div className='h-1'></div>
 							<div className='h-1'></div>
 						</div>
-					</div>
+					
 				</article>
 			</section>
 		</main>
