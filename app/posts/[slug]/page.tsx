@@ -119,8 +119,8 @@ export default async function postArticle({ params: { slug } }: Props) {
 	const post: Post = await createClient(clientConfig).fetch(query, { slug });
 
 	return (
-		<main key={post._id} className='flex justify-center'>
-			<section className='xl:w-6/12 flex flex-col justify-center'>
+		<main key={post._id} className='flex items-center justify-center'>
+			<section className='md:w-8/12 lg:w-6/12 xl:w-5/12 flex flex-col justify-center'>
 				<article className='flex flex-col items-center justify-center'>
 					<div className='container '>
 						<div className='relative h-8 mt-6 p-3 divide-y divide-red-700'>

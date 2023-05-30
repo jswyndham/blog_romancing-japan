@@ -13,7 +13,7 @@ export default async function BlogSmallCard() {
 	return posts.map(async (post) => {
 		return (
 			<Link key={post._id} href={`/posts/${post.slug}`}>
-				<div className='card w-full my-3 bg-base-200 shadow-xl'>
+				<div className='card w-full my-3 bg-base-200 shadow-lg shadow-slate-400 hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300'>
 					<figure className='h-44 border-b-2 border-red-500 '>
 						<Image
 							src={(await urlFor(post.image)).url()}
@@ -24,12 +24,12 @@ export default async function BlogSmallCard() {
 						/>
 					</figure>
 					<div className='card-body p-4 rounded-2xl'>
-						<div className='h-9/12 ml-1 px-5 py-3my-4 border-l-2 border-red-600'>
+						<div className='flex items-center h-32 ml-1 pl-5 pr-2 py-2 border-l-2 border-red-600 xl:h-28'>
 							<h2 className='font-roboto_condensed text-red-900 text-2xl font-bold'>
 								{post.name}
 							</h2>
 						</div>
-						<div className='px-3 text-md text-justify'>
+						<div className='h-24 md:h-44 lg:h-48 xl:h-40 pl-3 py-2 pr-1 text-md text-left xl:pt-4'>
 							<PortableText
 								value={post.summaryShort}
 								onMissingComponent={false}

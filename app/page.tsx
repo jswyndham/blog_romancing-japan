@@ -10,7 +10,7 @@ export default async function Home() {
 
 	return (
 		<main>
-			<section className='flex flex-col justify-center'>
+			<section className='flex flex-col items-center justify-center overflow-hidden'>
 				{/* Homepage pic */}
 				<div>
 					<Image
@@ -46,7 +46,7 @@ export default async function Home() {
 
 							<div className='divider'></div>
 
-							<div className='flex flex-col'>
+							<div className='flex flex-col md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4'>
 								<BlogSmallCard />
 							</div>
 						</div>
