@@ -5,12 +5,16 @@ import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import TextComponent from './TextComponent';
 
-export default async function BlogMediumCard() {
-	const posts = await getLatestPost();
+type Props = {
+	params: { _id:string, slug: string };
+};
+
+export default async function BlogMediumCard({}) {
+	const post = await getLatestPost();
 
 	const components = TextComponent();
 
-	return posts.map(async (post: any) => {
+	
 		return (
 			<Link key={post._id} href={`/posts/${post.slug}`}>
 				<div className='flex flex-col my-5 bg-base-300 shadow-lg shadow-slate-400 rounded-lg md:bg-base-100 lg:card-side md:card md:w-96 hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300'>
@@ -47,5 +51,4 @@ export default async function BlogMediumCard() {
 				</div>
 			</Link>
 		);
-	});
-}
+	};

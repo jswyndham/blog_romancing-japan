@@ -10,17 +10,18 @@ export default async function BlogSmallCard() {
 
 	const components = TextComponent();
 
-	return posts.map(async (post) => {
+	return posts.map(async (post:any) => {
 		return (
 			<Link key={post._id} href={`/posts/${post.slug}`}>
 				<div className='card w-full my-3 bg-base-200 shadow-lg shadow-slate-400 hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300'>
-					<figure className='h-44 border-b-2 border-red-500 '>
+					<figure className='h-44 border-b-2 border-red-500'>
 						<Image
 							src={(await urlFor(post.image)).url()}
 							width={700}
 							height={650}
 							alt={post.image}
 							priority
+							className='hover:scale-105 transition-transform duration-700'
 						/>
 					</figure>
 					<div className='card-body p-4 rounded-2xl'>

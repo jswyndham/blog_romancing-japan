@@ -20,7 +20,7 @@ export async function getLatestPost(): Promise<Post[]> {
   author[]->,
   category[]->,
   tag[]->,  
-  }[0..2]`);
+  }[0]`);
 }
 
 // Small post cards on home page
