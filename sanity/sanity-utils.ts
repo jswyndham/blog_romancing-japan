@@ -3,7 +3,7 @@ import { createClient, groq } from 'next-sanity';
 import clientConfig from './config/client-config';
 
 // Medium post cards on home page
-export async function getLatestPost(): Promise<Post[]> {
+export async function getLatestPostOne(): Promise<Post> {
 	return createClient(clientConfig)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
@@ -21,6 +21,66 @@ export async function getLatestPost(): Promise<Post[]> {
   category[]->,
   tag[]->,  
   }[0]`);
+}
+
+export async function getLatestPostTwo(): Promise<Post> {
+	return createClient(clientConfig)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  url,
+  content,
+  summary[]{
+    ...,
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->,
+  tag[]->,  
+  }[1]`);
+}
+
+export async function getLatestPostThree(): Promise<Post> {
+	return createClient(clientConfig)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  url,
+  content,
+  summary[]{
+    ...,
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->,
+  tag[]->,  
+  }[2]`);
+}
+
+export async function getLatestPostFour(): Promise<Post> {
+	return createClient(clientConfig)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  url,
+  content,
+  summary[]{
+    ...,
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->,
+  tag[]->,  
+  }[3]`);
 }
 
 // Small post cards on home page

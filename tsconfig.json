@@ -39,7 +39,7 @@
     "app/components/SignupCard.tsx",
     "app/components/Navbar.tsx",
     "app/components/BlogSmallCard.tsx",
-    "app/components/BlogMediumCard.tsx",
+    "app/components/ArticleCardOne.tsx",
     "app/components/BlogLargeCard.tsx",
     "app/components/RichTextComponent.tsx",
     "app/api/hello/route.js"
