@@ -23,7 +23,7 @@ export default function Navbar() {
 		<>
 			<header className='relative h-24 bg-black flex flex-row justify-between align-middle overflow-hidden'>
 				{/* Nav for medium size up */}
-				<nav className='z-0 mt-2'>
+				<nav className='z-50 mt-2'>
 					{/* Logo */}
 					<div>
 						<Link href='/'>

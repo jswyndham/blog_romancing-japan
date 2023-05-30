@@ -9,17 +9,26 @@ export default async function CategoryList() {
 
 	return (
 		<>
-			<div className='z-0 flex flex-col min-h-screen items-center justify-center overflow-hidden m-4 p-2 md:mx-4 md:px-2'>
-				<div className='w-screen bg-slate-700 p-4 mt-8 mb-12 md:mb-24 flex justify-center text-white text-3xl font-bold md:absolute md:top-28'>
-					List of categories
-				</div>
-				<div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:mt-28 xl:-mt-24'>
+			<div className="z-0 flex flex-col items-center justify-center overflow-hidden">
+        <div className="mt-16 lg:mt-8 xl:mt-0">
+          <Image
+            src="/images/CategoryCover.jpg"
+            width={3840}
+            height={1368}
+            alt="Mt.Fuji Black and White"
+            priority
+          />
+        </div>
+        <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
+          List of Article Categories
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 -mt-3 xl:-mt-6">
 					<>
 						{categories.map(async (category: any) => (
 							<Link href={`/categories/${category.slug}`}>
 								<div
 									key={category._id}
-									className='w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 md:mb-8'
+									className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0 hover:transition-all duration-300"
 								>
 									<figure className='h-56 w-80'>
 										<Image
