@@ -12,9 +12,8 @@ export default async function ArticleCardOne() {
 
   return (
     <Link key={post._id} href={`/posts/${post.slug}`}>
-
       {/* Card with responsive sizes */}
-      <div className="flex flex-col m-5 bg-base-300 shadow-lg shadow-slate-500 rounded-lg md:rounded-md md:bg-base-200 md:flex-row md:w-fit md:my-5 md:mx-0 md:h-96 md:card lg:card-side hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300">
+      <div className="flex flex-col m-5 bg-base-300 shadow-lg shadow-slate-500 rounded-lg md:rounded-md md:bg-base-300 md:flex-row md:my-4 md:mx-0 md:h-96 md:w-full md:card lg:card-side hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300">
         {/* Title only visible in mobile/small window */}
         <div className="h-9/12 ml-4 my-4 border-l-4 border-red-700 md:hidden">
           <h1 className="font-playfair_display text-3xl p-3 text-red-900 font-bold md:hidden">
@@ -29,16 +28,15 @@ export default async function ArticleCardOne() {
             width={900}
             height={700}
             alt={post.image}
-            className="className='w-full h-full -left-2 md:rounded-md"
+            className="w-full h-full md:rounded-md"
             priority
           />
         </figure>
         {/* Layer between image and text */}
-        <div className='md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-15% md:to-base-200 md:to-80% md:rounded-md'></div>
+        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-70% md:rounded-md"></div>
 
         {/* Title and article summary */}
         <div className="card-body md:w-80 md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
-
           {/* Title only visible from medium size up */}
           <div>
             <h1 className="hidden md:flex pb-2 text-4xl font-playfair_display top-0 text-right text-red-800 font-semibold">

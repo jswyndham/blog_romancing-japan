@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { getLatestPostThree } from "@/sanity/sanity-utils";
+import { getLatestPostFour } from "@/sanity/sanity-utils";
 import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import TextComponent from "./TextComponent";
 
 export default async function ArticleCardTwo() {
-  const post = await getLatestPostThree();
+  const post = await getLatestPostFour();
 
   const components = TextComponent();
 

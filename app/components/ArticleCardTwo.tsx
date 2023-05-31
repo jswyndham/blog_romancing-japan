@@ -30,13 +30,13 @@ export default async function ArticleCardTwo() {
         </figure>
 
         {/* Title and article summary */}
-        <div className="card-body md:bg-base-200">
+        <div className="card-body md:bg-base-200 md:rounded-b-lg">
           <div>
             <h1 className="hidden text-3xl font-playfair_display text-red-900 font-bold md:flex">
               {post.name}
             </h1>
           </div>
-          <div className="text-justify">
+          <div className="text-justify text-xl">
             <PortableText
               value={post.summary}
               onMissingComponent={false}
