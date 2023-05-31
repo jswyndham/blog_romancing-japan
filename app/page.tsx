@@ -40,11 +40,13 @@ export default async function Home() {
                     <div className="">
                       <ArticleCardOne />
                     </div>
-                    <div className="">
-                      <ArticleCardTwo />
-                    </div>
-                    <div className="flex items-center justify-center w-screen my-7 text-center">
-                      <SignupCard />
+                    <div className="md:flex md:flex-row md:h-8/12">
+                      <div className="">
+                        <ArticleCardTwo />
+                      </div>
+                      <div className="flex items-center justify-center w-screen my-7 md:my-5 text-center">
+                        <SignupCard />
+                      </div>
                     </div>
                     <div className="">
                       <ArticleCardThree />

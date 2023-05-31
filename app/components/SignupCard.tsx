@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function SignupCard() {
 	return (
-		<div className='h-42 pl-2 pr-4 bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md'>
+		<div className='h-42 pl-2 pr-4 bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-fit md:p-2'>
 			<div className='flex flex-col md:justify-around'>
 				<div className=' flex justify-center px-5 pt-2'>
 					<h2 className='card-title py-4 text-white font-roboto_condensed font-extrabold text-3xl'>
 						SIGN UP
 					</h2>
 				</div>
-				<div className='flex justify-center mt-1 mb-1 px-5 py-1 text-white md:hidden'>
+				<div className='flex justify-center mt-1 mb-1 px-5 py-1 text-white'>
 					<p className='text-lg'>
 						To receive updates on the latest articles discussing all things
 						Japan, register your email now! Your support can help us to help us
