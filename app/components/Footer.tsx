@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Footer() {
 	return (
 		<>
-			<footer className='bottom-0 footer footer-center rounded bg-slate-900 p-10 mt-4 text-base-content'>
+			<footer className='bottom-0 footer footer-center rounded bg-slate-900 p-10 text-base-content'>
 				<div className='grid grid-flow-col gap-4 text-white'>
 					<Link href='/about'>About us</Link>
 					<Link href='/contact'>Contact</Link>

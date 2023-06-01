@@ -23,7 +23,7 @@ export default async function Home() {
               />
             </div>
 
-            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-11/12 lg:w-10/12 xl:w-9/12 2xl:7/12">
+            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-11/12 lg:10/12 xl:w-10/12 2xl:9/12">
               <div className="divider"></div>
 
               {/* Latest banner */}
@@ -41,11 +41,11 @@ export default async function Home() {
                     <div className="">
                       <ArticleCardOne />
                     </div>
-                    <div className="md:flex md:flex-row md:h-8/12">
-                      <div className="">
+                    <div className="md:flex md:flex-row md:h-10/12">
+                      <div className="md:rounded-lg md:mb-4 md:mr-4">
                         <ArticleCardTwo />
                       </div>
-                      <div className="flex items-center justify-center w-screen my-7 md:my-5 text-center">
+                      <div className="flex items-center justify-center w-screen my-7 text-center md:w-60 md:my-2 md:justify-end">
                         <SignupCard />
                       </div>
                     </div>
@@ -61,7 +61,7 @@ export default async function Home() {
                 </div>
                 <div className="divider"></div>
 
-                <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="flex flex-col m-1 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
                   <BlogSmallCard />
                 </div>
               </div>

@@ -57,7 +57,7 @@ export default function Navbar() {
 					className={`${
 						!isOpen
 							? 'translate-x-full z-50 transition ease-in-out duration-300'
-							: 'translate-x-0 z-50 w-[55%] fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300'
+							: 'translate-x-0 z-50 w-60 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300'
 					}`}
 				>
 					<div className='h-screen pt-14 px-3 bg-gray-800'>

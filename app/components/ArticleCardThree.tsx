@@ -12,7 +12,7 @@ export default async function ArticleCardTwo() {
 
   return (
     <Link key={post._id} href={`/posts/${post.slug}`}>
-      <div className="card flex flex-col m-5 bg-base-300 shadow-lg shadow-slate-400 rounded-lg md:bg-base-200 md:h-96 md:w-full  md:my-2 md:mx-0 md:card-side hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300">
+      <div className="card flex flex-col m-5 bg-base-300 shadow-lg shadow-slate-400 rounded-lg md:bg-base-200 md:h-96 md:w-full md:my-2 md:mx-0 md:card-side hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300">
         <div className="h-9/12 ml-4 my-4 border-l-4 border-red-700 md:hidden">
           <h1 className="font-playfair_display text-3xl p-3 text-red-900 font-bold">
             {post.name}
@@ -30,7 +30,7 @@ export default async function ArticleCardTwo() {
         </figure>
 
         {/* Layer between image and text */}
-        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-70% md:rounded-md"></div>
+        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-75% lg:to-65% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
         <div className="card-body text-center md:w-96 md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-lg transition-all">

@@ -33,7 +33,7 @@ export default async function ArticleCardOne() {
           />
         </figure>
         {/* Layer between image and text */}
-        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-70% md:rounded-md"></div>
+        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-75% lg:to-65% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
         <div className="card-body md:w-80 md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
