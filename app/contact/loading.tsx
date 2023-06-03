@@ -1,6 +1,5 @@
 "use client";
 
-import { sendContactForm } from "@/lib/api";
 import React, { useState } from "react";
 
 // Form Values
@@ -34,7 +33,6 @@ export default function contact() {
 
   const onSubmit = async () => {
     setState((prev) => ({ ...prev, isLoading: true }));
-    await sendContactForm(values);
   };
 
   return (
@@ -187,7 +185,7 @@ export default function contact() {
                 }
                 onClick={onSubmit}
               >
-                Send Message
+                SENDING...
               </button>
             </div>
           </div>

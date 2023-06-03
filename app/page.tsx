@@ -1,3 +1,4 @@
+import Head from "next/head";
 import ArticleCardFour from "./components/ArticleCardFour";
 import ArticleCardOne from "./components/ArticleCardOne";
 import ArticleCardThree from "./components/ArticleCardThree";
@@ -9,6 +10,11 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <>
+      <>
+        <Head>
+          <title>Romancing Japan</title>
+        </Head>
+      </>
       <main>
         <>
           <section className="flex flex-col items-center justify-center overflow-hidden">
@@ -23,7 +29,7 @@ export default async function Home() {
               />
             </div>
 
-            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-11/12 lg:10/12 xl:w-10/12 2xl:9/12">
+            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-[85%] lg:w-[80%] 2xl:w-[60%]">
               <div className="divider"></div>
 
               {/* Latest banner */}
