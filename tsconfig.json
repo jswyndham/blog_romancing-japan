@@ -42,7 +42,7 @@
     "app/components/ArticleCardOne.tsx",
     "app/components/BlogLargeCard.tsx",
     "app/components/RichTextComponent.tsx",
-    "app/api/hello/route.js"
+    "app/api/contact/route.js"
   ],
   "exclude": [
     "node_modules"
