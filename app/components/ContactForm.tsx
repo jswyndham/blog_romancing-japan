@@ -11,7 +11,7 @@ const initState = {
   message: "",
 };
 
-export default async function ContactForm() {
+export default function ContactForm() {
   async function handleSubmit(e: any) {
     e.preventDefault();
     const data = {
@@ -32,7 +32,9 @@ export default async function ContactForm() {
 
     if (response.ok) {
       console.log("Message sent successfully.");
-    } else {
+    }
+
+    if (!response.ok) {
       console.log("Error. Message not sent.");
     }
   }
