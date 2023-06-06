@@ -10,7 +10,7 @@ export default function ContactForm() {
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    
 
     let data = {
       firstName: firstNameRef.current?.value,
@@ -30,6 +30,8 @@ export default function ContactForm() {
     }).then((res) => {
       if (res.status === 200) console.log("Success!!!");
     });
+
+    
   };
 
   return (
@@ -146,17 +148,19 @@ export default function ContactForm() {
           <button
             className="shadow mx-3 mt-2 bg-indigo-500 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded hover:shadow-md hover:shadow-slate-500 focus:shadow-slate-200 active:bg-indigo-600"
             type="submit"
-            // disabled={
-            //   !data.firstName ||
-            //   !data.lastName ||
-            //   !data.email ||
-            //   !data.subject ||
-            //   !data.message
-            // }
+            disabled={
+              !firstNameRef ||
+              !lastNameRef ||
+              !emailRef ||
+              !subjectRef ||
+              !messageRef
+            }
           >
             Send Message
           </button>
         </div>
+
+        
       </form>
     </>
   );
