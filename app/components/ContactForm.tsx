@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { AiOutlineCheckCircle } from "react-icons/ai";
+import { BiErrorCircle } from "react-icons/bi";
 
 export default function ContactForm() {
   const firstNameRef = useRef<HTMLInputElement>(null);
@@ -9,10 +11,22 @@ export default function ContactForm() {
   const subjectRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    
+  // State boolean to trigger send alerts - success or error
+  const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
+  const [messageError, setMessageError] = useState<boolean>(false);
 
-    let data = {
+  const [inputValue, setInputValue] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const data = {
       firstName: firstNameRef.current?.value,
       lastName: lastNameRef.current?.value,
       email: emailRef.current?.value,
@@ -28,10 +42,26 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      if (res.status === 200) console.log("Success!!!");
+      // Set message alarm and timeout
+      if (res.status === 200) {
+        setMessageSuccess(!messageSuccess);
+        setTimeout(() => {
+          setMessageSuccess((messageSuccess) => !messageSuccess);
+        }, 5000);
+      } else {
+        setMessageError(!messageError);
+        setTimeout(() => {
+          setMessageError((messageError) => !messageError);
+        }, 5000);
+      }
     });
-
-    
+    setInputValue({
+      firstName: "",
+      lastName: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
@@ -57,6 +87,10 @@ export default function ContactForm() {
               minLength={2}
               maxLength={20}
               ref={firstNameRef}
+              value={inputValue.firstName}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, firstName: e.target.value })
+              }
             />
           </div>
 
@@ -78,6 +112,10 @@ export default function ContactForm() {
               minLength={2}
               maxLength={20}
               ref={lastNameRef}
+              value={inputValue.lastName}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, lastName: e.target.value })
+              }
             />
           </div>
         </div>
@@ -99,6 +137,10 @@ export default function ContactForm() {
               placeholder="********@*****.**"
               required
               ref={emailRef}
+              value={inputValue.email}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, email: e.target.value })
+              }
             />
           </div>
         </div>
@@ -121,6 +163,10 @@ export default function ContactForm() {
             minLength={2}
             maxLength={50}
             ref={subjectRef}
+            value={inputValue.subject}
+            onChange={(e: any) =>
+              setInputValue({ ...inputValue, subject: e.target.value })
+            }
           />
         </div>
 
@@ -141,26 +187,60 @@ export default function ContactForm() {
               required
               name="message"
               ref={messageRef}
+              value={inputValue.message}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, message: e.target.value })
+              }
             ></textarea>
           </div>
 
-          {/* Send Button */}
-          <button
-            className="shadow mx-3 mt-2 bg-indigo-500 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded hover:shadow-md hover:shadow-slate-500 focus:shadow-slate-200 active:bg-indigo-600"
-            type="submit"
-            disabled={
-              !firstNameRef ||
-              !lastNameRef ||
-              !emailRef ||
-              !subjectRef ||
-              !messageRef
-            }
-          >
-            Send Message
-          </button>
-        </div>
+          <div className="flex flex-row items-center justify-between w-full mx-2">
+            {/* Send Button */}
+            <button
+              className="shadow mx-3 mt-2 bg-indigo-500 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white py-2 px-6 rounded-md hover:shadow-lg hover:shadow-slate-500 focus:shadow-slate-200 active:bg-indigo-600"
+              type="submit"
+              disabled={
+                !firstNameRef ||
+                !lastNameRef ||
+                !emailRef ||
+                !subjectRef ||
+                !messageRef
+              }
+            >
+              Send Message
+            </button>
 
-        
+            {/* Alert - Success */}
+            {messageSuccess && (
+              <div
+                className="bg-success flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-white shadow-lg shadow-slate-400 rounded-full"
+                role="alert"
+              >
+                <div className="text-2xl px-2">
+                  <AiOutlineCheckCircle />
+                </div>
+                <div className="px-4">
+                  <p>Success! Message sent.</p>
+                </div>
+              </div>
+            )}
+
+            {/* Alert - Error */}
+            {messageError && (
+              <div
+                className="bg-error flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-white shadow-lg shadow-slate-400 rounded-full"
+                role="alert"
+              >
+                <div className="text-2xl px-2">
+                  <BiErrorCircle />
+                </div>
+                <div>
+                  <p>Error! Message not sent.</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </form>
     </>
   );
