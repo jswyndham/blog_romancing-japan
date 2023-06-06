@@ -2,15 +2,6 @@
 
 import React, { useRef } from "react";
 
-// Form Values
-const initState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  subject: "",
-  message: "",
-};
-
 export default function ContactForm() {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);

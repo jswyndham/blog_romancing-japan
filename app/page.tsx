@@ -29,7 +29,7 @@ export default async function Home() {
               />
             </div>
 
-            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-[85%] lg:w-[80%] 2xl:w-[60%]">
+            <div className="flex flex-col items-center justify-center w-full mx-4 align-middle md:w-[80%] lg:w-[75%] 2xl:w-[65%]">
               <div className="divider"></div>
 
               {/* Latest banner */}

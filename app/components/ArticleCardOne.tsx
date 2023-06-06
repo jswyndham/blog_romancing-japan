@@ -28,7 +28,7 @@ export default async function ArticleCardOne() {
             width={900}
             height={700}
             alt={post.image}
-            className="w-full h-full md:rounded-md"
+            className="w-full h-full md:rounded-l-md"
             priority
           />
         </figure>
@@ -39,7 +39,7 @@ export default async function ArticleCardOne() {
         <div className="card-body md:w-80 md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
           {/* Title only visible from medium size up */}
           <div>
-            <h1 className="hidden md:flex pb-2 text-4xl font-playfair_display top-0 text-right text-red-800 font-semibold">
+            <h1 className="hidden md:flex pb-2 text-4xl font-playfair_display top-0 text-right text-red-800 font-extrabold">
               {post.name}
             </h1>
           </div>
