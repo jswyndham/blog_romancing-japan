@@ -47,7 +47,11 @@ export default async function CategoryList() {
                       className="w-full h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-700"
                     />
                   </figure>
+
+                  {/* Gradient Layer */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+
+                  {/* Title & Description */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-700">
                     <h1 className="font-krona_one text-2xl text-white mb-5">
                       {category.title}

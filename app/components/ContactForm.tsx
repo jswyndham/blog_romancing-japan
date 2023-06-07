@@ -42,12 +42,22 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      // Set message alarm and timeout
+
+      // If success, trigger alert, clear input fields, and clear alert after 5 secs.
       if (res.status === 200) {
         setMessageSuccess(!messageSuccess);
+        setInputValue({
+          firstName: "",
+          lastName: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
         setTimeout(() => {
           setMessageSuccess((messageSuccess) => !messageSuccess);
         }, 5000);
+
+        // If error, trigger alert, clear after 5 secs, and retain text in input fields
       } else {
         setMessageError(!messageError);
         setTimeout(() => {
@@ -55,13 +65,7 @@ export default function ContactForm() {
         }, 5000);
       }
     });
-    setInputValue({
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    
   };
 
   return (
