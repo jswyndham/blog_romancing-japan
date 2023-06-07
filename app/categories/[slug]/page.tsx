@@ -23,26 +23,29 @@ export default async function categoryPage({ params: { slug } }: Props) {
   const components = TextComponent();
 
   return (
-    <main className="flex items-center justify-center px-8 py-4">
+    <main className="flex justify-center h-full px-8 py-4">
       {/* Banner */}
-      <div className="absolute top-32 w-screen -ml-8 p-2 font-roboto-condensed text-white bg-slate-700 text-xl text-center">
-        <h1>Category: {category.title}</h1>
+      <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
+        <h1>
+          Category:{" "}
+          <span className="italic text-red-500">{category.title}</span>
+        </h1>
       </div>
 
       {/* CARD */}
-      <div className="flex items-center content-center justify-center ">
+      <section className="flex justify-center">
         <article
           key={category._id}
-          className="mt-24 md:w-[85%] xl:w-[75%] md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-4 xl:gap-6 md:py-8"
+          className="mt-32 md:w-[85%] xl:w-[65%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8 xl:gap-12"
         >
           {category.post.map(async (post: any) => (
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={category._id}
-                className="card w-full my-3 bg-base-200 shadow-xl hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300"
+                className="card w-full my-5 bg-base-200 shadow-xl hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300"
               >
                 {/* Card Image */}
-                <figure className="h-44 border-b-2 border-red-500">
+                <figure className="border-b-2 border-red-500">
                   <Image
                     src={(await urlFor(post.image)).url()}
                     width={700}
@@ -71,7 +74,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
             </Link>
           ))}
         </article>
-      </div>
+      </section>
     </main>
   );
 }
