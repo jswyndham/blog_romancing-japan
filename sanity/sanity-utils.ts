@@ -114,6 +114,7 @@ export async function getPostsArchive(): Promise<Post[]> {
   url,
   content,
   summary,
+  summaryShort,
   "excerpt": array::join(string::split((pt::text(content)), "")[0..150], "") + "...",
   author[]->,
   category[]->,

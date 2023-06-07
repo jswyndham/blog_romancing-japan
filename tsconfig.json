@@ -40,7 +40,7 @@
     "app/components/Navbar.tsx",
     "app/components/BlogSmallCard.tsx",
     "app/components/ArticleCardOne.tsx",
-    "app/components/BlogLargeCard.tsx",
+    "app/components/ArticleCollectionCard.tsx",
     "app/components/RichTextComponent.tsx",
     "app/api/contact/route.js"
   ],
