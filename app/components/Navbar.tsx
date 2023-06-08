@@ -39,35 +39,174 @@ export default function Navbar() {
           </div>
 
           {/* NAVBAR MENU */}
-          <div className="hidden lg:visible">
-            <ul className="flex flex-col lg:flex-row py-3 font-krona_one text-white text-md text-left">
-              <Link onClick={handleClick} href={"/"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+          <div className="hidden lg:flex">
+            <ul className="flex flex-row py-6 lg:space-x-9 xl:space-x-16 mr-3 lg:mr-6 xl:mr-9 font-krona_one text-white text-md">
+              <Link href={"/"}>
+                <li
+                  className="
+									relative 
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>Home</h4>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/collection"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+              <Link href={"/collection"}>
+                <li
+                  className="relative 
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>Collection</h4>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/categories"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+              <Link href={"/categories"}>
+                <li
+                  className="relative 
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>Categories</h4>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/tags"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+              <Link href={"/tags"}>
+                <li
+                  className="relative  
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>Tags</h4>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/contact"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+              <Link href={"/contact"}>
+                <li
+                  className="relative 
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>Contact</h4>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/about"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+              <Link href={"/about"}>
+                <li
+                  className="relative 
+									inline-block 
+									before:content-[''] 
+									before:absolute 
+									before:-bottom-1 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-full 
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <h4>About us</h4>
                 </li>
               </Link>

@@ -1,88 +1,87 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}',
-		'./app/**/*.{js,ts,jsx,tsx}',
-	],
-	theme: {
-		extend: {
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'sign-up': "url('/images/Toufukuji.jpg')",
-			},
-			fontFamily: {
-				sans: ['ui-sans-serif', 'system-ui'],
-				serif: ['ui-serif', 'Georgia'],
-				heading: ['Shippori Mincho', 'serif'],
-				cardHeading: ['Bebas Neue', 'sans-serif'],
-				catTags: ['Bebas Neue', 'sans-serif'],
-				roboto_condensed: ['var(--font-roboto-condensed)'],
-				playfair_display: ['var(--font-playfair_display)'],
-				krona_one: ['var(--font-krona_one)'],
-			},
-			transitionDuration: {
-				'2000': '2000ms',
-				'3000': '3000ms',
-				'4000': '4000ms',
-				'5000': '5000ms',
-			  },
-				screens: {
-					'sm': '640px',
-					// => @media (min-width: 640px) { ... }
-		
-					'md': '768px',
-					// => @media (min-width: 768px) { ... }
-		
-					'lg': '1024px',
-					// => @media (min-width: 1024px) { ... }
-		
-					'xl': '1280px',
-					// => @media (min-width: 1280px) { ... }
-		
-					'2xl': '1536px',
-					// => @media (min-width: 1536px) { ... }
-				}
-		},
-		
-	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
-	daisyui: {
-		styled: true,
-		themes: [
-			{
-				mytheme: {
-					primary: '#8C0327',
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "sign-up": "url('/images/Toufukuji.jpg')",
+      },
+      fontFamily: {
+        sans: ["ui-sans-serif", "system-ui"],
+        serif: ["ui-serif", "Georgia"],
+        heading: ["Shippori Mincho", "serif"],
+        cardHeading: ["Bebas Neue", "sans-serif"],
+        catTags: ["Bebas Neue", "sans-serif"],
+        roboto_condensed: ["var(--font-roboto-condensed)"],
+        playfair_display: ["var(--font-playfair_display)"],
+        krona_one: ["var(--font-krona_one)"],
+      },
+      transitionDuration: {
+        2000: "2000ms",
+        3000: "3000ms",
+        4000: "4000ms",
+        5000: "5000ms",
+      },
+      screens: {
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
 
-					secondary: '#D85251',
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
 
-					accent: '#D59B6A',
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
 
-					neutral: '#826A5C',
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
 
-					'base-100': '#F1F1F1',
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
+      },
+    },
+  },
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: [
+      {
+        mytheme: {
+          primary: "#8C0327",
 
-					info: '#003C3B',
+          secondary: "#D85251",
 
-					success: '#499380',
+          accent: "#D59B6A",
 
-					warning: '#E97F14',
+          neutral: "#826A5C",
 
-					error: '#DF1A2F',
-				},
-				// colors: {
-				//   accentGreen: "#003C3B",
-				//   // base: "#F1F1F1",
-				// }
-			},
-		],
-		base: true,
-		utils: true,
-		logs: true,
-		rtl: false,
-		prefix: '',
-		darkTheme: 'dark',
-	},
+          "base-100": "#F1F1F1",
+
+          info: "#003C3B",
+
+          success: "#499380",
+
+          warning: "#E97F14",
+
+          error: "#DF1A2F",
+        },
+        // colors: {
+        //   accentGreen: "#003C3B",
+        //   // base: "#F1F1F1",
+        // }
+      },
+    ],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 };
