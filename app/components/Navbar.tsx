@@ -10,10 +10,24 @@ import { BsCollection, BsInfoCircle } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const ref = useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    const checkOutsideNavbar = (e: any) => {
+      if (isOpen && ref.current && !ref.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("click", checkOutsideNavbar);
+    return () => {
+      document.removeEventListener("click", checkOutsideNavbar);
+    };
+  }, [isOpen]);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -40,7 +54,7 @@ export default function Navbar() {
 
           {/* NAVBAR MENU */}
           <div className="hidden lg:flex">
-            <ul className="flex flex-row py-6 lg:space-x-9 xl:space-x-16 mr-3 lg:mr-6 xl:mr-9 font-krona_one text-white text-md">
+            <ul className="flex flex-row py-6 lg:space-x-9 xl:space-x-16 2xl:space-x-20 mr-3 lg:mr-6 xl:mr-9 2xl:mr-16 font-krona_one text-white text-md">
               <Link href={"/"}>
                 <li
                   className="
@@ -230,9 +244,10 @@ export default function Navbar() {
 
         {/* Drop menu */}
         <nav
+          ref={ref}
           className={`${
             !isOpen
-              ? "translate-x-full z-50 transition ease-in-out duration-300"
+              ? "translate-x-full z-50 fixed right-0 top-0 transition ease-in-out duration-300"
               : "translate-x-0 z-50 w-60 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300"
           }`}
         >
@@ -245,7 +260,34 @@ export default function Navbar() {
             </button>
             <ul className="flex flex-col py-3 font-krona_one text-white text-md text-left">
               <Link onClick={handleClick} href={"/"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="
+									flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <AiOutlineHome />
                   </div>
@@ -253,7 +295,34 @@ export default function Navbar() {
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/collection"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="
+									flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <BsCollection />
                   </div>
@@ -261,7 +330,33 @@ export default function Navbar() {
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/categories"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <BiCategory />
                   </div>
@@ -269,7 +364,33 @@ export default function Navbar() {
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/tags"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <AiOutlineTags />
                   </div>
@@ -277,7 +398,33 @@ export default function Navbar() {
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/contact"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <AiOutlineMail />
                   </div>
@@ -285,7 +432,33 @@ export default function Navbar() {
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/about"}>
-                <li className="flex flex-row px-6 py-4 hover:text-red-300 hover:text-lg focus:text-red-200 focus:font-bold active:text-red-400">
+                <li
+                  className="flex 
+									flex-row 
+									px-6 
+									py-4 
+									relative 
+									before:content-[''] 
+									before:absolute 
+									before:bottom-2 
+									before:left-1/2
+									before:-translate-x-1/2
+									before:w-0 
+									before:h-1 
+									before:rounded-xl 
+									before:opacity-0 
+									before:transition-all 
+									before:duration-500
+									before:bg-gradient-to-r
+									before:from-red-400
+									before:via-red-600
+									before:to-red-900
+									hover:before:w-3/4
+									hover:before:opacity-100 
+									focus:text-red-200 
+									focus:font-bold 
+									active:text-red-400"
+                >
                   <div className="mt-1 pl-2 pr-8">
                     <BsInfoCircle />
                   </div>
