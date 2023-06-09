@@ -72,8 +72,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -100,8 +100,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -128,8 +128,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -156,8 +156,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -184,8 +184,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -212,8 +212,8 @@ export default function Navbar() {
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-full 
 									hover:before:opacity-100 
@@ -274,15 +274,16 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
+                  before:-ml-3
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-3/5
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -309,13 +310,14 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
+                  before:ml-1
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
 									hover:before:w-3/4
 									hover:before:opacity-100 
@@ -342,16 +344,17 @@ export default function Navbar() {
 									before:left-1/2
 									before:-translate-x-1/2
 									before:w-0 
-									before:h-1 
+									before:h-1
+                  before:ml-3
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-4/5
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -377,15 +380,16 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
+                  before:-ml-5
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-2/4
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -411,15 +415,16 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
+                  before:-ml-1
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-4/6
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -445,15 +450,16 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
+                  before:ml-1
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
 									before:duration-500
 									before:bg-gradient-to-r
-									before:from-red-400
-									before:via-red-600
+									before:from-red-200
+									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-9/12
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
