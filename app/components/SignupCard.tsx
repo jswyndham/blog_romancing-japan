@@ -2,14 +2,17 @@ import React from "react";
 
 export default function SignupCard() {
   return (
-    <div className="h-42 pl-2 pr-4 bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-60 md:p-2 lg:w-72">
+    <div className="flex flex-col items-center justify-center h-full pl-2 pr-4 bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-60 md:p-2 lg:w-72">
       <div className="flex flex-col md:justify-around">
+        {/* TITLE */}
         <div className=" flex justify-center px-5 pt-2">
           <h2 className="card-title py-4 text-white font-roboto_condensed font-extrabold text-3xl">
             SIGN UP
           </h2>
         </div>
-        <div className="flex justify-center mt-1 mb-1 px-5 py-1 text-white">
+
+        {/* DESCRIPTION */}
+        <div className="flex justify-center mt-1 mb-1 px-5 pb-4 text-white text-xl font-bold">
           <p className="text-lg">
             To receive updates on the latest articles discussing all things
             Japan, register your email now! Your support can help us to help us
@@ -17,8 +20,30 @@ export default function SignupCard() {
           </p>
         </div>
 
-        <div className="flex flex-row justify-between py-5 md:flex-col">
-          <div className="card-actions justify-center">
+        <div className="flex flex-col w-full justify-center space-y-4">
+
+          {/* EMAIL INPUT */}
+          <div className="card-actions">
+            <input
+              type="text"
+              name="signup"
+              placeholder="first name"
+              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+            />
+          </div>
+
+          {/* FIRST NAME INPUT */}
+          <div className="card-actions">
+            <input
+              type="text"
+              name="signup"
+              placeholder="last name"
+              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+            />
+          </div>
+
+          {/* LAST NAME INPUT */}
+          <div className="card-actions">
             <input
               type="text"
               name="signup"
@@ -26,8 +51,10 @@ export default function SignupCard() {
               className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
             />
           </div>
-          <div className="pr-2 -mt-1 md:justify-start">
-            <button className="w-20 h-12 bg-base-100 outline outline-offset-2 outline-slate-300 rounded-xl text-red-700 font-bold active:bg-red-700 active:text-base-100">
+
+          {/* SEND BUTTON */}
+          <div className="pr-2 -mt-1">
+            <button className="w-full h-full mt-2 mb-4 mx-4 py-2 bg-base-100 outline outline-offset-2 outline-slate-300 rounded-xl text-red-700 font-bold active:bg-red-700 active:text-base-100">
               Sign Up
             </button>
           </div>
