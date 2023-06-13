@@ -10,7 +10,6 @@ export default async function CategoryList() {
   return (
     <>
       <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
-
         {/* Top Image */}
         <div className="mt-16 lg:mt-8 xl:mt-0">
           <Image
@@ -24,7 +23,7 @@ export default async function CategoryList() {
 
         {/* Page Banner */}
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
-          List of Article Categories
+          <h1>List of Article Categories</h1>
         </div>
 
         {/* Grid */}

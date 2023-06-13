@@ -1,8 +1,61 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
 
 export default function SignupCard() {
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+
+  // const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
+  // const [messageError, setMessageError] = useState<boolean>(false);
+
+  const [inputValue, setInputValue] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const data = {
+      firstName: firstNameRef.current?.value,
+      lastName: lastNameRef.current?.value,
+      email: emailRef.current?.value,
+    };
+
+    await fetch("api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      // If success, trigger alert, clear input fields, and clear alert after 5 secs.
+      // if (res.status === 200) {
+      //   setMessageSuccess(!messageSuccess);
+      //   setInputValue({
+      //     firstName: "",
+      //     lastName: "",
+      //     email: "",
+      //   });
+      //   setTimeout(() => {
+      //     setMessageSuccess((messageSuccess) => !messageSuccess);
+      //   }, 5000);
+      //   // If error, trigger alert, clear after 5 secs, and retain text in input fields
+      // } else {
+      //   setMessageError(!messageError);
+      //   setTimeout(() => {
+      //     setMessageError((messageError) => !messageError);
+      //   }, 5000);
+      // }
+    });
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-full pl-2 pr-4 bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-60 md:p-2 lg:w-72">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-60 md:p-2 lg:w-72">
       <div className="flex flex-col md:justify-around">
         {/* TITLE */}
         <div className=" flex justify-center px-5 pt-2">
@@ -20,8 +73,11 @@ export default function SignupCard() {
           </p>
         </div>
 
-        <div className="flex flex-col w-full justify-center space-y-4">
-
+        {/* FORM SECTION */}
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col m-4 justify-center space-y-4"
+        >
           {/* EMAIL INPUT */}
           <div className="card-actions">
             <input
@@ -29,6 +85,12 @@ export default function SignupCard() {
               name="signup"
               placeholder="first name"
               className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              required
+              ref={emailRef}
+              value={inputValue.email}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, email: e.target.value })
+              }
             />
           </div>
 
@@ -39,6 +101,14 @@ export default function SignupCard() {
               name="signup"
               placeholder="last name"
               className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              required
+              minLength={2}
+              maxLength={20}
+              ref={firstNameRef}
+              value={inputValue.firstName}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, firstName: e.target.value })
+              }
             />
           </div>
 
@@ -49,16 +119,26 @@ export default function SignupCard() {
               name="signup"
               placeholder="email"
               className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              minLength={2}
+              maxLength={20}
+              ref={lastNameRef}
+              value={inputValue.lastName}
+              onChange={(e: any) =>
+                setInputValue({ ...inputValue, lastName: e.target.value })
+              }
             />
           </div>
 
           {/* SEND BUTTON */}
           <div className="pr-2 -mt-1">
-            <button className="w-full h-full mt-2 mb-4 mx-4 py-2 bg-base-100 outline outline-offset-2 outline-slate-300 rounded-xl text-red-700 font-bold active:bg-red-700 active:text-base-100">
+            <button
+              className="w-full h-full mt-2 mb-4 py-1 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300"
+              type="submit"
+            >
               Sign Up
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
