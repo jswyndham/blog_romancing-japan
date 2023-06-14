@@ -14,14 +14,14 @@ export default async function BlogSmallCard() {
     return (
       <Link key={post._id} href={`/posts/${post.slug}`}>
         <div className="card w-fit h-fit mx-2 my-4 bg-base-100 rounded-md shadow-lg shadow-slate-400 md:my-2 hover:bg-base-200 hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300 group">
-          <figure className="h-44 border-b-2 border-red-500">
+          <figure className="border-b-2 border-red-500">
             <Image
               src={(await urlFor(post.image)).url()}
               width={700}
               height={650}
               alt={post.image}
               priority
-              className="top-0 group-hover:scale-105 transition-transform duration-700"
+              className="top-0 group-hover:scale-110 transition-transform duration-700"
             />
           </figure>
           <div className="card-body p-4 my-2 rounded-2xl h-fit">

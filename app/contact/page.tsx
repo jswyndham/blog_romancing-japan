@@ -1,8 +1,11 @@
+
 import ContactForm from "../components/ContactForm";
+import Head from "./head";
 
 export default async function Contact() {
   return (
     <>
+    <Head />
       <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
         Contact
       </div>

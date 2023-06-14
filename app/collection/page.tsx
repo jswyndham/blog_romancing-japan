@@ -1,8 +1,11 @@
 import React from "react";
 import ArticleCollectionCard from "../components/ArticleCollectionCard";
+import Head from "./head";
 
 export default function page() {
   return (
+    <>
+    <Head />
     <main className="flex justify-center h-full px-8 py-4">
       {/* Banner */}
       <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
@@ -13,5 +16,6 @@ export default function page() {
         <ArticleCollectionCard />
       </div>
     </main>
+    </>
   );
 }

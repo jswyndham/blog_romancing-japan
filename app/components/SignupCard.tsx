@@ -55,7 +55,7 @@ export default function SignupCard() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-[100%] md:w-60 md:p-2 lg:w-72">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-full md:w-full md:p-2">
       <div className="flex flex-col md:justify-around">
         {/* TITLE */}
         <div className=" flex justify-center px-5 pt-2">

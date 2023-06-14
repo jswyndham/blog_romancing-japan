@@ -18,7 +18,7 @@ export default async function ArticleCollectionCard() {
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={post._id}
-                className="card w-full my-5 bg-base-200 shadow-xl hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300"
+                className="card w-full my-5 bg-base-200 shadow-xl hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300 group"
               >
                 {/* Card Image */}
                 <figure className="border-b-2 border-red-500">
@@ -28,6 +28,7 @@ export default async function ArticleCollectionCard() {
                     height={650}
                     alt={post.image}
                     priority
+                    className="top-0 group-hover:scale-110 transition-transform duration-700"
                   />
                 </figure>
 

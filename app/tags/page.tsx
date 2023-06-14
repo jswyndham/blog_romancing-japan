@@ -3,12 +3,14 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
+import Head from "./head";
 
 export default async function TagList() {
   const tags = await getTags();
 
   return (
     <>
+    <Head />
       <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
         <div className="mt-16 lg:mt-8 xl:mt-0">
           <Image
