@@ -19,6 +19,7 @@ interface Post extends Base {
 	summary: PortableTextBlock[];
 	summaryShort: PortableTextBlock[];
 	excerpt: string;
+	description: string;
 }
 
 interface Author {

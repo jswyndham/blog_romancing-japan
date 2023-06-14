@@ -188,6 +188,12 @@ const post = defineType({
 		}),
 
 		defineField({
+			name: 'description',
+			title: 'Description (copy short summary for SEO)',
+			type: 'string',
+		}),
+
+		defineField({
 			name: 'author',
 			title: 'Author',
 			type: 'array',

@@ -7,30 +7,21 @@ import Link from "next/link";
 import TextComponent from "@/app/components/TextComponent";
 import { PortableText } from "@portabletext/react";
 import Head from "./head";
-import { Metadata } from "next";
-import { Tag } from "@/typings";
 
 type Props = {
-  params: { slug: string; _id: string };
+  params: { slug: string };
 };
 
-// type Tag = {
-//   title: string;
-// 	image: string;
-// 	description: string;
-// 	slug: string;
+// export async function metadata({ params: { slug } }: Props): Promise<Metadata> {
+//   const data = groq`*[_type == "tag" && slug.current == $slug][0]
+//   {title,
+//   description,
+//   "slug":slug.current,
+//   }`;
+
+//   const tag = await createClient(clientConfig).fetch(data, { slug });
+//   return { title: tag.title };
 // }
-
-export async function metadata({ params: {slug} }: Props): Promise<Metadata> {
-  
-  const query = groq`*[_type == "tag" && slug.current == $slug][0]
-  {..., 
-  "slug":slug.current, 
-  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}`;
-
-  const tag = await createClient(clientConfig).fetch(query, { slug });
-  return { title: tag.title };
-}
 
 export default async function tagPage({ params: { slug } }: Props) {
   const query = groq`*[_type == "tag" && slug.current == $slug][0]
@@ -41,11 +32,10 @@ export default async function tagPage({ params: { slug } }: Props) {
   const tag = await createClient(clientConfig).fetch(query, { slug });
 
   const components = TextComponent();
-  
 
   return (
     <>
-      <Head />
+      {/* <Head /> */}
       <main className="flex justify-center h-full px-8 py-4">
         {/* Banner */}
         <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
