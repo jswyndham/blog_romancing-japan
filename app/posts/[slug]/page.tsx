@@ -7,7 +7,7 @@ import clientConfig from "@/sanity/config/client-config";
 import Link from "next/link";
 import { Metadata } from "next";
 import TextComponent from "@/app/components/TextComponent";
-import { getLatestPostMini } from "@/sanity/sanity-utils";
+import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 
 type Props = {
   params: { slug: string };
@@ -86,7 +86,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   const post: Post = await createClient(clientConfig).fetch(query, { slug });
 
-  const latestPostList = getLatestPostMini();
+  
 
   return (
     <>
@@ -190,9 +190,12 @@ export default async function postArticle({ params: { slug } }: Props) {
             </div>
           </article>
         </section>
-        <section className="w-[15%] mt-96 border-l-2 border-r-2 border-slate-800">
-          <article className="px-4">
+
+        {/* SIDE MENU LATEST ARTICLES */}
+        <section className="w-[18%] mt-96 bg-base-100 border-l-2 border-r-2 border-slate-800">
+          <article className="flex flex-col px-4">
             <div><h3 className="text-3xl font-bold">Latest Posts</h3></div>
+<div className="my-4"><LatestArticlesMini /></div>
           </article>
         </section>
       </main>

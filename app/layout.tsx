@@ -47,7 +47,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable}`}
     >
-      <body>
+      <body className="bg-base-100">
         <div>
           {/* <Header /> */}
           <Navbar />
