@@ -86,11 +86,9 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   const post: Post = await createClient(clientConfig).fetch(query, { slug });
 
-  
-
   return (
     <>
-      <main key={post._id} className="flex justify-center">
+      <main key={post._id} className="flex flex-col items-center justify-center xl:items-start xl:flex-row">
         <section className="md:w-[85%] lg:w-[65%] xl:w-[40%] 2xl:w-[35%]flex flex-col justify-center">
           {/* TOP BOARDER, TITLE, AUTHOR */}
           <article className="flex flex-col items-center justify-center">
@@ -192,10 +190,14 @@ export default async function postArticle({ params: { slug } }: Props) {
         </section>
 
         {/* SIDE MENU LATEST ARTICLES */}
-        <section className="w-[18%] mt-80 bg-base-100 border-l-2 border-r-2 border-slate-800">
+        <section className="md:w-[85%] xl:w-[20%] mt-4 xl:mt-80  xl:border-l-4 xl:border-r-4 border-white">
           <article className="flex flex-col px-4">
-            <div><h3 className="text-3xl font-bold">Latest Posts</h3></div>
-<div className="my-4"><LatestArticlesMini /></div>
+            <div className="ml-6">
+              <h3 className="text-4xl font-bold">Latest Posts</h3>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xl:flex xl:flex-col my-4">
+              <LatestArticlesMini />
+            </div>
           </article>
         </section>
       </main>
