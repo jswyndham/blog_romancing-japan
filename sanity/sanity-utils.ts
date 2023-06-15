@@ -136,6 +136,7 @@ export async function getLatestPostMini(): Promise<Post> {
   summary[]{
     ...,
   },
+  summaryShort,
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->,

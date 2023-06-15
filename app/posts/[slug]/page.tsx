@@ -192,7 +192,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         </section>
 
         {/* SIDE MENU LATEST ARTICLES */}
-        <section className="w-[18%] mt-96 bg-base-100 border-l-2 border-r-2 border-slate-800">
+        <section className="w-[18%] mt-80 bg-base-100 border-l-2 border-r-2 border-slate-800">
           <article className="flex flex-col px-4">
             <div><h3 className="text-3xl font-bold">Latest Posts</h3></div>
 <div className="my-4"><LatestArticlesMini /></div>
