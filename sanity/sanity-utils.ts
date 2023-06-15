@@ -122,6 +122,27 @@ export async function getPostsArchive(): Promise<Post[]> {
   }`);
 }
 
+// Medium post cards on home page
+export async function getLatestPostMini(): Promise<Post> {
+	return createClient(clientConfig)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  "image": image.asset->url,
+  url,
+  content,
+  summary[]{
+    ...,
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->,
+  tag[]->,  
+  }[0..4]`);
+}
+
 export async function getPostByCategory() {
 	const query = groq`*[_type == "category" && slug.current == $slug][0]
   {..., 

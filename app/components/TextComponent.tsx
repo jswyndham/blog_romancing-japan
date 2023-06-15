@@ -8,8 +8,8 @@ const RichTextComponents = async ({ value, isInline }: any) => {
       <Image
         src={(await urlFor(value)).url()}
         alt={value.name}
-        width={750}
-        height={600}
+        width={700}
+        height={700}
         priority
       />
     </div>

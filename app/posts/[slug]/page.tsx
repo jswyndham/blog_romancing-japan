@@ -7,6 +7,7 @@ import clientConfig from "@/sanity/config/client-config";
 import Link from "next/link";
 import { Metadata } from "next";
 import TextComponent from "@/app/components/TextComponent";
+import { getLatestPostMini } from "@/sanity/sanity-utils";
 
 type Props = {
   params: { slug: string };
@@ -49,7 +50,7 @@ export async function generateMetadata({
 
   // RETURN METADATA
   return {
-    title: `${post.name} | Romancing Japan`,
+    title: post.name,
     description: post.description,
     openGraph: {
       title: post.name,
@@ -85,10 +86,12 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   const post: Post = await createClient(clientConfig).fetch(query, { slug });
 
+  const latestPostList = getLatestPostMini();
+
   return (
     <>
-      <main key={post._id} className="flex items-center justify-center">
-        <section className="md:w-8/12 lg:w-6/12 xl:w-5/12 flex flex-col justify-center">
+      <main key={post._id} className="flex justify-center">
+        <section className="md:w-[85%] lg:w-[65%] xl:w-[40%] 2xl:w-[35%]flex flex-col justify-center">
           {/* TOP BOARDER, TITLE, AUTHOR */}
           <article className="flex flex-col items-center justify-center">
             <div className="container ">
@@ -153,8 +156,8 @@ export default async function postArticle({ params: { slug } }: Props) {
               <Image
                 src={(await urlFor(post.image)).url()}
                 alt={post.name}
-                width={775}
-                height={625}
+                width={900}
+                height={900}
                 className="w-full mx-14 shadow-xl shadow-slate-500"
                 priority
               />
@@ -185,6 +188,11 @@ export default async function postArticle({ params: { slug } }: Props) {
               <div className="h-1"></div>
               <div className="h-1"></div>
             </div>
+          </article>
+        </section>
+        <section className="w-[15%] mt-96 border-l-2 border-r-2 border-slate-800">
+          <article className="px-4">
+            <div><h3 className="text-3xl font-bold">Latest Posts</h3></div>
           </article>
         </section>
       </main>

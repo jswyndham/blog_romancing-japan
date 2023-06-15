@@ -3,7 +3,7 @@ import React from "react";
 export default function head() {
   return (
     <>
-      <title>Homepage | Romancing Japan</title>
+      <title>Romancing Japan - Travel, Lifestyle, Culture, Cooking</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta
         name="description"
