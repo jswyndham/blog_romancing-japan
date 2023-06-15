@@ -52,11 +52,20 @@ export async function generateMetadata({
   return {
     title: post.name,
     description: post.description,
+    alternates: {
+      canonical: `/posts/${post.slug}`,
+    },
     openGraph: {
       title: post.name,
       description: post.description,
       type: "article",
       siteName: "Romancing Japan",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.name,
+      description: post.description,
+      creator: "@RomancingJapan",
     },
   };
 }
@@ -88,7 +97,10 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   return (
     <>
-      <main key={post._id} className="flex flex-col items-center justify-center xl:items-start xl:flex-row">
+      <main
+        key={post._id}
+        className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
+      >
         <section className="md:w-[85%] lg:w-[65%] xl:w-[40%] 2xl:w-[35%]flex flex-col justify-center">
           {/* TOP BOARDER, TITLE, AUTHOR */}
           <article className="flex flex-col items-center justify-center">
@@ -190,7 +202,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         </section>
 
         {/* SIDE MENU LATEST ARTICLES */}
-        <section className="md:w-[85%] xl:w-[20%] mt-4 xl:mt-80  xl:border-l-4 xl:border-r-4 border-white">
+        <section className="md:w-[85%] xl:w-[20%] 2xl:w-[15%] mt-4 xl:mt-80  xl:border-l-4 xl:border-r-4 border-white">
           <article className="flex flex-col px-4">
             <div className="ml-6">
               <h3 className="text-4xl font-bold">Latest Posts</h3>

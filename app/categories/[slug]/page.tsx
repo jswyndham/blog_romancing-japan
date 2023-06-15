@@ -6,17 +6,52 @@ import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import TextComponent from "@/app/components/TextComponent";
+import { Metadata } from "next/types";
+import { Category } from "@/typings";
 
 type Props = {
   params: { slug: string };
 };
+
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const query = groq`*[_type == "category" && slug.current == $slug][0]
+  {..., 
+  "slug":slug.current,
+  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
+
+  const category: Category = await createClient(clientConfig).fetch(query, {
+    slug,
+  });
+
+  return {
+    title: category.title,
+    description: category.description,
+    alternates: {
+      canonical: `/categories/${category.slug}`,
+    },
+    openGraph: {
+      title: category.title,
+      description: category.description,
+      type: "article",
+      siteName: "Romancing Japan",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: category.title,
+      description: category.description,
+      creator: "@RomancingJapan",
+    },
+  };
+}
 
 // GROQ query parameters
 export default async function categoryPage({ params: { slug } }: Props) {
   const query = groq`*[_type == "category" && slug.current == $slug][0]
   {..., 
   "slug":slug.current,
-  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}`;
+  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
   const category = await createClient(clientConfig).fetch(query, { slug });
 

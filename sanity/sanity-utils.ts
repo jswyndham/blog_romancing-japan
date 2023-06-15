@@ -144,13 +144,17 @@ export async function getLatestPostMini(): Promise<Post> {
   }[0..4]`);
 }
 
-export async function getPostByCategory() {
+type Props = {
+  params: { slug: string };
+};
+
+export async function getPostByCategory({ params: { slug } }: Props){
 	const query = groq`*[_type == "category" && slug.current == $slug][0]
   {..., 
   "slug":slug.current,
-  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",}}`;
+  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
-	const category = await createClient(clientConfig).fetch(query, { slug });
+	return await createClient(clientConfig).fetch(query, { slug });
 }
 
 export async function getCategories(): Promise<Category[]> {

@@ -1,13 +1,23 @@
-
 import ContactForm from "../components/ContactForm";
-import Head from "./head";
+
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Contact us if you have any questions or want to know more about the website.",
+  openGraph: {
+    title: "Contact Us",
+    description:
+      "Contact us if you have any questions or want to know more about the website.",
+    type: "website",
+    siteName: "Romancing Japan",
+  },
+};
 
 export default async function Contact() {
   return (
     <>
-    <Head />
       <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
-        Contact
+        Contact Us
       </div>
       <div className="max-w-screen-md h-screen mx-auto p-5">
         {/* Heading Text */}

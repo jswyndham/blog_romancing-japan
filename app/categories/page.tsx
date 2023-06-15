@@ -3,14 +3,25 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
-import Head from "./head";
+
+export const metadata = {
+  title: "List of Categories",
+  description:
+    "A list of categories related to articles from Romancing in Japan.",
+  openGraph: {
+    title: "List of Categories",
+    description:
+      "A list of categories related to articles from Romancing in Japan.",
+    type: "website",
+    siteName: "Romancing Japan",
+  },
+};
 
 export default async function CategoryList() {
   const categories = await getCategories();
 
   return (
     <>
-    <Head />
       <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
         {/* Top Image */}
         <div className="mt-16 lg:mt-8 xl:mt-0">

@@ -1,4 +1,3 @@
-
 import ArticleCardFour from "./components/ArticleCardFour";
 import ArticleCardOne from "./components/ArticleCardOne";
 import ArticleCardThree from "./components/ArticleCardThree";
@@ -6,15 +5,23 @@ import ArticleCardTwo from "./components/ArticleCardTwo";
 import BlogSmallCard from "./components/BlogSmallCard";
 import SignupCard from "./components/SignupCard";
 import Image from "next/image";
-import Head from "./head";
+
+export const metadata = {
+  title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+  description:
+    "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
+  openGraph: {
+    title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+    description:
+      "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
+    type: "website",
+    siteName: "Romancing Japan",
+  },
+};
 
 export default async function Home() {
   return (
     <>
-      <>
-        <Head />
-          
-      </>
       <main>
         <>
           <section className="flex flex-col items-center justify-center overflow-hidden">

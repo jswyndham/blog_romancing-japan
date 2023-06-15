@@ -6,22 +6,44 @@ import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import TextComponent from "@/app/components/TextComponent";
 import { PortableText } from "@portabletext/react";
-import Head from "./head";
+import { Metadata } from "next/types";
+import { Tag } from "@/typings";
 
 type Props = {
   params: { slug: string };
 };
 
-// export async function metadata({ params: { slug } }: Props): Promise<Metadata> {
-//   const data = groq`*[_type == "tag" && slug.current == $slug][0]
-//   {title,
-//   description,
-//   "slug":slug.current,
-//   }`;
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const data = groq`*[_type == "tag" && slug.current == $slug][0]
+  {title,
+  description,
+  "slug":slug.current,
+  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}
+  `;
 
-//   const tag = await createClient(clientConfig).fetch(data, { slug });
-//   return { title: tag.title };
-// }
+  const tag: Tag = await createClient(clientConfig).fetch(data, { slug });
+  return {
+    title: tag.title,
+    description: tag.description,
+    alternates: {
+      canonical: `/tags/${tag.slug}`,
+    },
+    openGraph: {
+      title: tag.title,
+      description: tag.description,
+      type: "article",
+      siteName: "Romancing Japan",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: tag.title,
+      description: tag.description,
+      creator: "@RomancingJapan",
+    },
+  };
+}
 
 export default async function tagPage({ params: { slug } }: Props) {
   const query = groq`*[_type == "tag" && slug.current == $slug][0]
