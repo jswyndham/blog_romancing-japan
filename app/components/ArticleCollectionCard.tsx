@@ -18,7 +18,7 @@ export default async function ArticleCollectionCard() {
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={post._id}
-                className="card w-full my-5 bg-base-200 shadow-xl hover:shadow-xl hover:shadow-slate-600 hover:drop-shadow hover:transition-all duration-300 group"
+                className="card rounded-none w-fit h-fit mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
               >
                 {/* Card Image */}
                 <figure className="border-b-2 border-red-500">
@@ -28,18 +28,18 @@ export default async function ArticleCollectionCard() {
                     height={650}
                     alt={post.image}
                     priority
-                    className="top-0 group-hover:scale-110 transition-transform duration-700"
+                    className="top-0 group-hover:scale-105 transition-transform duration-700"
                   />
                 </figure>
 
                 {/* Card Title & Summary */}
                 <div className="card-body p-4 rounded-2xl">
-                  <div className="flex items-center md:h-20 ml-1 px-5 py-3my-4 border-l-2 border-red-600">
+                  <div className="flex items-center h-24 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
                     <h2 className="font-roboto_condensed text-red-900 text-2xl font-bold justify-left">
                       {post.name}
                     </h2>
                   </div>
-                  <div className="h-28 md:h-36 px-3 pt-4 text-md text-justify">
+                  <div className="h-32 md:h-36 px-3 pt-4 text-md text-justify">
                     <PortableText
                       value={post.summaryShort}
                       onMissingComponent={false}

@@ -101,7 +101,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         key={post._id}
         className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
       >
-        <section className="md:w-[85%] lg:w-[65%] xl:w-[40%] 2xl:w-[35%]flex flex-col justify-center">
+        <section className="md:w-[80%] lg:w-[70%] xl:w-[50%] 2xl:w-[35%] flex flex-col justify-center">
           {/* TOP BOARDER, TITLE, AUTHOR */}
           <article className="flex flex-col items-center justify-center">
             <div className="container ">

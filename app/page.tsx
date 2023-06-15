@@ -46,7 +46,7 @@ export default async function Home() {
 
               <div className="mt-20 flex flex-col">
                 <div className="md:grid md:grid-rows-3 md:grid-flow-col md:gap-8 md:mb-8 md:mt-4 xl:grid-rows-4">
-                  <div className="md:row-span-1 md:col-span-6 xl:row-span-2">
+                  <div className="mx-2 my-3 md:row-span-1 md:col-span-6 xl:row-span-2">
                     <ArticleCardOne />
                   </div>
 
@@ -57,7 +57,7 @@ export default async function Home() {
                     <SignupCard />
                   </div>
                 </div>
-                <div className="md:flex md:flex-col md:h-6/12 xl:gap-4 2xl:grid 2xl:grid-cols-4 2xl:gap-4">
+                <div className="mx-4 my-2 md:flex md:flex-col md:h-6/12 xl:gap-4 2xl:grid 2xl:grid-cols-4 2xl:gap-4">
                   <div className="2xl:col-span-2">
                     <ArticleCardThree />
                   </div>
@@ -69,7 +69,7 @@ export default async function Home() {
 
               <div className="divider"></div>
 
-              <div className="flex flex-col m-1 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
+              <div className="flex flex-col space-y-6 mx-4 mb-6 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
                 <BlogSmallCard />
               </div>
             </div>

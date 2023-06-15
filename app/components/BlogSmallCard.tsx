@@ -13,7 +13,7 @@ export default async function BlogSmallCard() {
   return posts.map(async (post: any) => {
     return (
       <Link key={post._id} href={`/posts/${post.slug}`}>
-        <div className="card w-fit h-fit mx-2 my-4 bg-base-100 rounded-md shadow-lg shadow-slate-400 md:my-2 hover:bg-base-200 hover:shadow-xl hover:shadow-slate-500 hover:transition-all duration-300 group">
+        <div className="card rounded-none w-fit h-fit mx-2 my-1 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group">
           <figure className="border-b-2 border-red-500">
             <Image
               src={(await urlFor(post.image)).url()}
@@ -21,11 +21,11 @@ export default async function BlogSmallCard() {
               height={650}
               alt={post.image}
               priority
-              className="top-0 group-hover:scale-110 transition-transform duration-700"
+              className="top-0 group-hover:scale-105 transition-transform duration-700"
             />
           </figure>
           <div className="card-body p-4 my-2 rounded-2xl h-fit">
-            <div className="flex items-center h-24 ml-1 pl-5 pr-2 py-2 border-l-2 border-red-600 xl:h-28">
+            <div className="flex items-center h-24 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
               <h2 className="font-roboto_condensed text-red-900 text-2xl font-bold">
                 {post.name}
               </h2>
