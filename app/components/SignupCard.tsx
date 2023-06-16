@@ -55,18 +55,18 @@ export default function SignupCard() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full bg-sign-up bg-cover border-t-2 border-b-2 border-white drop-shadow-md md:h-full md:w-full md:p-2">
-      <div className="flex flex-col md:justify-around">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-sign-up bg-cover drop-shadow-md md:p-2 2xl:p-0 2xl:text-center">
+      <div className="flex flex-col md:justify-between">
         {/* TITLE */}
-        <div className=" flex justify-center px-5 pt-2">
-          <h2 className="card-title py-4 text-white font-roboto_condensed font-extrabold text-3xl">
+        <div className=" flex justify-center px-5 pt-2 md:my-2 2xl:my-12">
+          <h2 className="card-title py-4 text-white font-roboto_condensed font-extrabold text-3xl md:text-5xl">
             SIGN UP
           </h2>
         </div>
 
         {/* DESCRIPTION */}
-        <div className="flex justify-center mt-1 mb-1 px-5 pb-4 text-white text-xl font-bold">
-          <p className="text-lg">
+        <div className="flex justify-center mt-1 mb-1 px-5 md:my-4 2xl:my-12 pb-4 text-white text-xl 2xl:text-2xl font-bold">
+          <p>
             To receive updates on the latest articles discussing all things
             Japan, register your email now! Your support can help us to help us
             to make this blog even better.
@@ -76,7 +76,7 @@ export default function SignupCard() {
         {/* FORM SECTION */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col m-4 justify-center space-y-4"
+          className="flex flex-col m-4 justify-center space-y-4 md:space-y-6 2xl:space-y-8 2xl:bottom-2 2xl:my-16 2xl:mx-1"
         >
           {/* EMAIL INPUT */}
           <div className="card-actions">
@@ -84,7 +84,7 @@ export default function SignupCard() {
               type="text"
               name="signup"
               placeholder="first name"
-              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               required
               ref={emailRef}
               value={inputValue.email}
@@ -100,7 +100,7 @@ export default function SignupCard() {
               type="text"
               name="signup"
               placeholder="last name"
-              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               required
               minLength={2}
               maxLength={20}
@@ -118,7 +118,7 @@ export default function SignupCard() {
               type="text"
               name="signup"
               placeholder="email"
-              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400"
+              className="w-full flex justify-start p-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               minLength={2}
               maxLength={20}
               ref={lastNameRef}
@@ -128,17 +128,17 @@ export default function SignupCard() {
               }
             />
           </div>
-
-          {/* SEND BUTTON */}
-          <div className="pr-2 -mt-1">
-            <button
-              className="w-full h-full mt-2 mb-4 py-1 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300"
-              type="submit"
-            >
-              Sign Up
-            </button>
-          </div>
         </form>
+
+        {/* SEND BUTTON */}
+        <div className="pr-2 -mt-1 2xl:mx-2 2xl:my-14">
+          <button
+            className="w-full h-full mt-2 mb-4 py-1 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300 md:mb-2 xl:py-0"
+            type="submit"
+          >
+            Sign Up
+          </button>
+        </div>
       </div>
     </div>
   );

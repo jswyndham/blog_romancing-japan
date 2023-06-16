@@ -56,6 +56,7 @@ export async function getLatestPostThree(): Promise<Post> {
   summary[]{
     ...,
   },
+  summaryShort,
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->,
@@ -76,6 +77,7 @@ export async function getLatestPostFour(): Promise<Post> {
   summary[]{
     ...,
   },
+  summaryShort,
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->,

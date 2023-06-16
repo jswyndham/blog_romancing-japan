@@ -12,36 +12,51 @@ export default async function ArticleCardTwo() {
 
   return (
     <Link key={post._id} href={`/posts/${post.slug}`}>
-      <div className="flex flex-col card rounded-none w-fit h-fit mx-2 my-1 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300  md:bg-base-200 md:h-96 md:w-full  md:my-2 md:mx-0 md:card-side ">
+      <div className="flex flex-col card rounded-none w-fit h-fit 2xl:h-full mx-2 my-1 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 md:hover:shadow-xl md:hover:shadow-slate-700 hover:transition-all duration-300 md:h-96 md:w-full md:my-2 md:mx-0 md:card-side">
+        {/* TITLE UNTIL MD */}
         <div className="h-9/12 ml-4 my-4 border-l-4 border-red-700 md:hidden">
           <h1 className="font-heading text-4xl p-3 text-black font-bold">
             {post.name}
           </h1>
         </div>
+
+        {/* IMAGE */}
         <figure>
           <Image
             src={(await urlFor(post.image)).url()}
             width={900}
             height={700}
             alt={post.image}
-            className="className='w-full h-full md:rounded-l-lg"
+            className="className='w-full h-full md:rounded-md"
             priority
           />
         </figure>
 
         {/* Layer between image and text */}
-        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-70% md:rounded-md"></div>
+        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-75% lg:to-65% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
-        <div className="card-body text-center md:w-96 md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-lg transition-all">
+        <div className="card-body text-center md:w-96 2xl:w-72 md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-md transition-all">
+          {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold">
+            <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2">
               {post.name}
             </h1>
           </div>
-          <div className="text-justify text-xl md:text-right">
+
+          {/* SUMMARY UNTIL 2XL */}
+          <div className="text-justify text-xl md:text-right 2xl:hidden">
             <PortableText
               value={post.summary}
+              onMissingComponent={false}
+              components={components}
+            />
+          </div>
+
+          {/* SHORT SUMMARY @ 2XL */}
+          <div className="hidden text-justify text-xl md:text-right 2xl:flex 2xl:mt-3">
+            <PortableText
+              value={post.summaryShort}
               onMissingComponent={false}
               components={components}
             />
