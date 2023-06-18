@@ -2,6 +2,7 @@ import { Post, Category } from '../typings';
 import { createClient, groq } from 'next-sanity';
 import clientConfig from './config/client-config';
 
+
 // Medium post cards on home page
 export async function getLatestPostOne(): Promise<Post> {
 	return createClient(clientConfig)
@@ -182,3 +183,5 @@ export async function getTags(): Promise<Post[]> {
   description 
   }`);
 }
+
+

@@ -34,19 +34,19 @@ export default async function ArticleCardOne() {
         </figure>
 
         {/* Layer between image and text */}
-        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-65% xl:to-60% md:rounded-md"></div>
+        <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-15% smd:via-30% md:to-base-200 md:to-60% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
-        <div className="card-body md:w-[43%] xl:w-[47%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
+        <div className="card-body md:w-[50%] smd:w-[45%] xl:w-[47%] 3xl:w-[55%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-3 text-right text-red-800 font-extrabold">
+            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-1 3xl:mt-0 3xl:pb-1 4xl:mt-6 text-right text-red-800 font-extrabold">
               {post.name}
             </h1>
           </div>
 
           {/* Text summary field */}
-          <div className="text-justify text-xl md:text-right md:bottom-0 md:mt-8 lg:mt-16">
+          <div className="text-justify text-xl md:text-right md:bottom-0 md:mt-8 lg:mt-12 2xl:mt-1 4xl:mt-12">
             <PortableText
               value={post.summary}
               onMissingComponent={false}

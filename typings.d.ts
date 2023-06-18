@@ -45,4 +45,10 @@ interface Tag extends Base {
 	slug: Slug;
 }
 
+interface UserEmail extends Base {
+	firstName: string;
+	lastName: string;
+	email: string;
+}
+
 
