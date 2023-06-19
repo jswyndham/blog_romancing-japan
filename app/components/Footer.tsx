@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="grid grid-flow-col gap-4">
-            <Link href="/">
+            <Link href="https://twitter.com/RomancingJapan">
               <Image
                 src="/images/twitter-50.png"
                 width={30}
