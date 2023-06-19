@@ -41,7 +41,7 @@ module.exports = {
         lg: "985px",
         // => @media (min-width: 1024px) { ... }
 
-        xl: "1180px",
+        xl: "1150px",
         // => @media (min-width: 1280px) { ... }
 
         "2xl": "1600px",
@@ -49,7 +49,7 @@ module.exports = {
 
         "3xl": "1800px",
 
-        "4xl": "1950px",
+        "4xl": "2000px",
       },
     },
   },

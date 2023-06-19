@@ -2,18 +2,6 @@
 
 import React, { useRef, useState } from "react";
 
-// type NewsLetter = {
-//   firstName: string;
-//   lastName: string;
-//   email: string;
-// };
-
-// const initialState: NewsLetter = {
-//   firstName: "",
-//   lastName: "",
-//   email: "",
-// };
-
 export default function SignupCard() {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Post } from "../../../typings";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/urlFor";
-import clientConfig from "@/sanity/config/client-config";
+import { readClient } from "@/sanity/config/client-config";
 import Link from "next/link";
 import { Metadata } from "next";
 import TextComponent from "@/app/components/TextComponent";
@@ -44,7 +44,7 @@ export async function generateMetadata({
   description,
   }`;
 
-  const post: Post = await createClient(clientConfig).fetch(query, {
+  const post: Post = await createClient(readClient).fetch(query, {
     slug,
   });
 
@@ -93,7 +93,7 @@ export default async function postArticle({ params: { slug } }: Props) {
   tag[]->{title, "slug": slug.current,},
   }`;
 
-  const post: Post = await createClient(clientConfig).fetch(query, { slug });
+  const post: Post = await createClient(readClient).fetch(query, { slug });
 
   return (
     <>

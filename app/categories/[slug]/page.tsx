@@ -1,6 +1,6 @@
 import React from "react";
 import { createClient, groq } from "next-sanity";
-import clientConfig from "@/sanity/config/client-config";
+import { readClient } from "@/sanity/config/client-config";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export async function generateMetadata({
   "slug":slug.current,
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
-  const category: Category = await createClient(clientConfig).fetch(query, {
+  const category: Category = await createClient(readClient).fetch(query, {
     slug,
   });
 
@@ -53,7 +53,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
   "slug":slug.current,
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
-  const category = await createClient(clientConfig).fetch(query, { slug });
+  const category = await createClient(readClient).fetch(query, { slug });
 
   const components = TextComponent();
 

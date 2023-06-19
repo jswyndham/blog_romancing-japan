@@ -1,6 +1,6 @@
 import React from "react";
 import { createClient, groq } from "next-sanity";
-import clientConfig from "@/sanity/config/client-config";
+import { readClient } from "@/sanity/config/client-config";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
@@ -23,7 +23,7 @@ export async function generateMetadata({
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}
   `;
 
-  const tag: Tag = await createClient(clientConfig).fetch(data, { slug });
+  const tag: Tag = await createClient(readClient).fetch(data, { slug });
   return {
     title: tag.title,
     description: tag.description,
@@ -51,7 +51,7 @@ export default async function tagPage({ params: { slug } }: Props) {
   "slug":slug.current, 
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}`;
 
-  const tag = await createClient(clientConfig).fetch(query, { slug });
+  const tag = await createClient(readClient).fetch(query, { slug });
 
   const components = TextComponent();
 
