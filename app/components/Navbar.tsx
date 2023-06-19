@@ -37,6 +37,7 @@ export default function Navbar() {
     <>
       <header className="relative h-24 bg-black overflow-hidden">
         {/* Nav for medium size up */}
+
         <nav className="z-50 mt-2 flex flex-row justify-between align-middle ">
           {/* Logo */}
           <div>
