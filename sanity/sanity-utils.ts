@@ -1,11 +1,11 @@
 import { Post, Category } from '../typings';
 import { createClient, groq } from 'next-sanity';
-import clientConfig from './config/client-config';
+import {readClient} from './config/client-config';
 
 
 // Medium post cards on home page
 export async function getLatestPostOne(): Promise<Post> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -25,7 +25,7 @@ export async function getLatestPostOne(): Promise<Post> {
 }
 
 export async function getLatestPostTwo(): Promise<Post> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -45,7 +45,7 @@ export async function getLatestPostTwo(): Promise<Post> {
 }
 
 export async function getLatestPostThree(): Promise<Post> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -66,7 +66,7 @@ export async function getLatestPostThree(): Promise<Post> {
 }
 
 export async function getLatestPostFour(): Promise<Post> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -88,7 +88,7 @@ export async function getLatestPostFour(): Promise<Post> {
 
 // Small post cards on home page
 export async function getPostsSmallCard(): Promise<Post[]> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -107,7 +107,7 @@ export async function getPostsSmallCard(): Promise<Post[]> {
 }
 
 export async function getPostsArchive(): Promise<Post[]> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -127,7 +127,7 @@ export async function getPostsArchive(): Promise<Post[]> {
 
 // Medium post cards on home page
 export async function getLatestPostMini(): Promise<Post> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -157,11 +157,11 @@ export async function getPostByCategory({ params: { slug } }: Props){
   "slug":slug.current,
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
-	return await createClient(clientConfig).fetch(query, { slug });
+	return await createClient(readClient).fetch(query, { slug });
 }
 
 export async function getCategories(): Promise<Category[]> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "category"] | order(_createdAt desc){
   _id,
   _createdAt,
@@ -173,7 +173,7 @@ export async function getCategories(): Promise<Category[]> {
 }
 
 export async function getTags(): Promise<Post[]> {
-	return createClient(clientConfig)
+	return createClient(readClient)
 		.fetch(groq`*[_type == "tag"] | order(_createdAt desc){
   _id,
   _createdAt,

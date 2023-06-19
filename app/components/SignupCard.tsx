@@ -1,7 +1,5 @@
 "use client";
 
-import clientConfig from "@/sanity/config/client-config";
-import { createClient } from "next-sanity";
 import React, { useRef, useState } from "react";
 
 // type NewsLetter = {
@@ -32,7 +30,6 @@ export default function SignupCard() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
-      
       firstName: firstNameRef.current?.value,
       lastName: lastNameRef.current?.value,
       email: emailRef.current?.value,
@@ -44,7 +41,7 @@ export default function SignupCard() {
         Accept: "application/json, text/plain",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     }).then((res) => {
       console.log(data, "Contact sent");
     });
