@@ -1,119 +1,33 @@
 "use client";
 
-import clientConfig from "@/sanity/config/client-config";
-import userEmail from "../../typings";
 import React, { useRef, useState } from "react";
 
-// type Props = {
-//   params: {
-//     firstName: string;
-//     lastName: string;
-//     email: string;
-//   };
-// };
+type NewsLetter = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
 
 export default function SignupCard() {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
 
-  const [inputValue, setInputValue] = useState({
+  const [contactDetails, setContactDetails] = useState<NewsLetter>({
     firstName: "",
     lastName: "",
     email: "",
   });
 
-  const [status, setStatus] = useState({
-    submitted: false,
-    submitting: false,
-    info: { error: false, msg: "" },
-  });
-
-  // const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
-  // const [messageError, setMessageError] = useState<boolean>(false);
-
-  const handleResponse = (status: number, msg: string) => {
-    if (!msg) {
-      return null;
-    }
-    if (status === 200) {
-      setStatus({
-        submitted: true,
-        submitting: false,
-        info: { error: false, msg: msg },
-      });
-      setInputValue({
-        firstName: "",
-        lastName: "",
-        email: "",
-      });
-    } else {
-      setStatus({
-        submitted: false,
-        submitting: false,
-        info: { error: true, msg: msg },
-      });
-    }
-  };
-
-  const handleOnChange = (e: {
-    persist: () => void;
-    target: { id: string; value: string };
-  }) => {
-    e.persist();
-    setInputValue((prev) => ({
-      ...prev,
-      [e.target.id]: e.target.value,
-    }));
-    setStatus({
-      submitted: false,
-      submitting: false,
-      info: { error: false, msg: "" },
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-
     const data = {
       firstName: firstNameRef.current?.value,
       lastName: lastNameRef.current?.value,
       email: emailRef.current?.value,
     };
-
-    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-
-    await fetch("api/userEmail", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then(async (res) => {
-      const text = await res.text();
-      handleResponse(res.status, text);
-      // If success, trigger alert, clear input fields, and clear alert after 5 secs.
-      if (res.status === 200) {
-        // setMessageSuccess(!messageSuccess);
-        setInputValue({
-          firstName: "",
-          lastName: "",
-          email: "",
-        });
-        console.log("sent message");
-
-        //   setTimeout(() => {
-        //     setMessageSuccess((messageSuccess) => !messageSuccess);
-        //   }, 5000);
-        //   // If error, trigger alert, clear after 5 secs, and retain text in input fields
-        // } else {
-        //   setMessageError(!messageError);
-        //   setTimeout(() => {
-        //     setMessageError((messageError) => !messageError);
-        //   }, 5000);
-        // }
-      }
-    });
+    setContactDetails(contactDetails);
+    console.log(data, "contact");
   };
 
   return (
@@ -148,11 +62,8 @@ export default function SignupCard() {
               placeholder="first name"
               className="w-full flex justify-start p-2 lg:py-1 2xl:py-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               required
-              ref={emailRef}
-              value={inputValue.email}
-              onChange={(e: any) =>
-                setInputValue({ ...inputValue, email: e.target.value })
-              }
+              ref={firstNameRef}
+              // value={contactDetails.firstName}
             />
           </div>
 
@@ -166,11 +77,8 @@ export default function SignupCard() {
               required
               minLength={2}
               maxLength={20}
-              ref={firstNameRef}
-              value={inputValue.firstName}
-              onChange={(e: any) =>
-                setInputValue({ ...inputValue, firstName: e.target.value })
-              }
+              ref={lastNameRef}
+              // value={contactDetails.lastName}
             />
           </div>
 
@@ -183,11 +91,9 @@ export default function SignupCard() {
               className="w-full flex justify-start p-2 ml-4 mr-2 lg:py-1 2xl:py-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               minLength={2}
               maxLength={20}
-              ref={lastNameRef}
-              value={inputValue.lastName}
-              onChange={(e: any) =>
-                setInputValue({ ...inputValue, lastName: e.target.value })
-              }
+              required
+              ref={emailRef}
+              // value={contactDetails.email}
             />
           </div>
         </form>
@@ -197,18 +103,9 @@ export default function SignupCard() {
           <button
             className="w-full h-full mt-2 mb-4 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300 md:my-1"
             type="submit"
-            disabled={status.submitting}
           >
-            {!status.submitting
-              ? !status.submitted
-                ? "Sign Up"
-                : "Submitted"
-              : "Submitting..."}
+            Submit
           </button>
-          {status.info.error && <div>Error: {status.info.msg}</div>}
-          {!status.info.error && status.info.msg && (
-            <div>{status.info.msg}</div>
-          )}
         </div>
       </div>
     </div>
