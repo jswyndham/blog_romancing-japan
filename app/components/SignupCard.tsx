@@ -1,33 +1,55 @@
 "use client";
 
+import clientConfig from "@/sanity/config/client-config";
+import { createClient } from "next-sanity";
 import React, { useRef, useState } from "react";
 
-type NewsLetter = {
-  firstName: string;
-  lastName: string;
-  email: string;
-};
+// type NewsLetter = {
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+// };
+
+// const initialState: NewsLetter = {
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+// };
 
 export default function SignupCard() {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
 
-  const [contactDetails, setContactDetails] = useState<NewsLetter>({
+  const [contactDetails, setContactDetails] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
 
-  const handleSubmit = (e: any) => {
+  const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = {
+      
       firstName: firstNameRef.current?.value,
       lastName: lastNameRef.current?.value,
       email: emailRef.current?.value,
     };
-    setContactDetails(contactDetails);
-    console.log(data, "contact");
+
+    await fetch("api/signup", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log(data, "Contact sent");
+    });
+
+    setContactDetails({ firstName: "", lastName: "", email: "" });
   };
 
   return (
@@ -63,7 +85,13 @@ export default function SignupCard() {
               className="w-full flex justify-start p-2 lg:py-1 2xl:py-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
               required
               ref={firstNameRef}
-              // value={contactDetails.firstName}
+              value={contactDetails.firstName}
+              onChange={(e: any) =>
+                setContactDetails({
+                  ...contactDetails,
+                  firstName: e.target.value,
+                })
+              }
             />
           </div>
 
@@ -78,7 +106,13 @@ export default function SignupCard() {
               minLength={2}
               maxLength={20}
               ref={lastNameRef}
-              // value={contactDetails.lastName}
+              value={contactDetails.lastName}
+              onChange={(e: any) =>
+                setContactDetails({
+                  ...contactDetails,
+                  lastName: e.target.value,
+                })
+              }
             />
           </div>
 
@@ -93,20 +127,23 @@ export default function SignupCard() {
               maxLength={20}
               required
               ref={emailRef}
-              // value={contactDetails.email}
+              value={contactDetails.email}
+              onChange={(e: any) =>
+                setContactDetails({ ...contactDetails, email: e.target.value })
+              }
             />
           </div>
-        </form>
 
-        {/* SEND BUTTON */}
-        <div className="pr-2 -mt-1 2xl:mx-2 2xl:my-14">
-          <button
-            className="w-full h-full mt-2 mb-4 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300 md:my-1"
-            type="submit"
-          >
-            Submit
-          </button>
-        </div>
+          {/* SEND BUTTON */}
+          <div className="pr-2 -mt-1 2xl:mx-2 2xl:my-14">
+            <button
+              className="w-full h-full mt-2 mb-4 m-1 bg-slate-500 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-blue-300 active:text-base-100 hover:bg-slate-600 hover:outline-slate-400 transition-all duration-300 md:my-1"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
