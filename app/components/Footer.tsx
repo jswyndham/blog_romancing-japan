@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="grid grid-flow-col gap-4">
             <Link href="https://twitter.com/RomancingJapan">
               <Image
-                src="/images/twitter-50.png"
+                src="/images/twitter-50-white.png"
                 width={30}
                 height={30}
                 alt="romancing japan logo"
@@ -33,15 +33,15 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <Image
-                src="/images/youtube-48.png"
+                src="/images/instagram-50-white.png"
                 width={30}
                 height={30}
                 alt="romancing japan logo"
               />
             </Link>
-            <Link href="/">
+            <Link href="https://www.facebook.com/profile.php?id=100093723613018">
               <Image
-                src="/images/facebook-50.png"
+                src="/images/facebook-50-white.png"
                 width={30}
                 height={30}
                 alt="romancing japan logo"
