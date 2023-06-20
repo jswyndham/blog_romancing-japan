@@ -18,7 +18,7 @@ export default function Footer() {
                 src="/images/logo-footer-white.png"
                 width={175}
                 height={65}
-                alt="romancing japan logo"
+                alt="romancing japan white logo"
               />
             </Link>
           </div>

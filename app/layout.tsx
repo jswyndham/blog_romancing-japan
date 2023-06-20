@@ -9,7 +9,7 @@ import {
 
 // Font settings
 const roboto_condensed = Roboto_Condensed({
-  weight: "400",
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-roboto-condensed",
