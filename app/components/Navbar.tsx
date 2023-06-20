@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* NAVBAR MENU */}
           <div className="hidden lg:flex">
-            <ul className="flex flex-row py-6 lg:space-x-9 xl:space-x-16 2xl:space-x-20 mr-3 lg:mr-6 xl:mr-9 2xl:mr-16 font-krona_one text-white text-md">
+            <ul className="flex flex-row py-6 lg:space-x-9 xl:space-x-16 2xl:space-x-20 mr-3 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
               <Link href={"/"}>
                 <li
                   className="
@@ -259,7 +259,7 @@ export default function Navbar() {
             >
               <AiOutlineCloseSquare />
             </button>
-            <ul className="flex flex-col py-3 font-krona_one text-white text-md text-left">
+            <ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
               <Link onClick={handleClick} href={"/"}>
                 <li
                   className="
@@ -275,7 +275,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:-ml-3
+                  before:-ml-6
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -284,7 +284,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/5
+									hover:before:w-3/6
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -311,7 +311,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:ml-1
+                  before:-ml-2
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -320,7 +320,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/4
+									hover:before:w-2/3
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -346,7 +346,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1
-                  before:ml-3
+                  before:-ml-1
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -355,7 +355,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-4/5
+									hover:before:w-4/6
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -381,7 +381,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:-ml-5
+                  before:-ml-6
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -416,7 +416,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:-ml-1
+                  before:-ml-4
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -425,7 +425,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-4/6
+									hover:before:w-3/5
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -451,7 +451,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:ml-1
+                  before:-ml-3
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -460,7 +460,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-9/12
+									hover:before:w-3/5
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
