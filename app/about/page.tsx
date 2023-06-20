@@ -16,16 +16,16 @@ export default function about() {
   return (
     <>
       <main>
-        <section className="z-0 flex flex-col">
+        <section className="z-0 h-screen flex flex-col bg-slate-900">
           {/* Top Image */}
-          <figure className="h-full w-full">
+          <figure className="flex justify-center">
             <Image
-              src="/images/Kibune.jpg"
+              src="/images/Miyajima.jpg"
               width={1000}
               height={1000}
               alt="image"
               priority
-              className="z-0 w-full h-full object-cover"
+              className="w-max-xl object-cover"
             />
           </figure>
 
@@ -36,14 +36,14 @@ export default function about() {
 
           {/* ARTICLE */}
           <article className="flex items-center justify-center align-middle">
-            <div className="absolute top-0 max-w-3xl flex flex-col justify-center align-middle py-4 px-12 -mt-96 backdrop-blur-sm bg-white/50 shadow-lg shadow-slate-100">
+            <div className="absolute top-40 md:top-56 md:w-[85%] lg:max-w-3xl flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/50 shadow-xl shadow-black">
               <div className="mt-8 mb-2 mx-8 flex justify-center">
-                <h2 className="text-4xl font-extrabold font-catTags">
+                <h2 className="text-2xl text-center md:text-3xl lg:text-4xl font-extrabold font-catTags">
                   Welcome to Romancing Japan
                 </h2>
               </div>
-              <div className="py-4">
-                <p className="text-2xl font-heading text-justify">
+              <div className="py-2">
+                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
                   Whilst the name of this site might be confusing to some, I
                   chose it because I wanted to reflect the fact that many people
                   who come to Japan often romanticize the idea of coming here.
@@ -53,13 +53,13 @@ export default function about() {
                   to be here.
                 </p>
               </div>
-              <div className="mt-8 mb-2 mx-8">
-                <h2 className="text-3xl font-extrabold font-catTags text-red-800">
+              <div className="mt-4 mx-4">
+                <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                   What is this site about?
                 </h2>
               </div>
-              <div className="py-4">
-                <p className="text-2xl font-heading text-justify">
+              <div className="py-2">
+                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
                   The purpose of this site is to provide insight and information
                   to readers about Japanese culture and lifestyle that won't be
                   common knowledge to those who live outside of Japan. I've
@@ -70,32 +70,32 @@ export default function about() {
                   experiences.
                 </p>
               </div>
-              <div className="mt-8 mb-2 mx-8">
-                <h2 className="text-3xl font-extrabold font-catTags text-red-800">
+              <div className="mt-4 mx-4">
+                <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                   I have two reasons why I started this website...
                 </h2>
               </div>
-              <div className="py-4">
-                <p className="text-xl font-heading">
+              <div className="py-2">
+                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
                   Firstly, I love to code and I was looking for a project to
                   build myself. Secondly, I've lived in Japan for so long that I
                   have a lot I want to say about it and share with others.
                 </p>
               </div>
-              <div>
-                <h3 className="text-xl font-extrabold font-catTags">
+              <div className="mt-4 mx-4">
+                <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                   Why build this site?
-                </h3>
+                </h2>
               </div>
-              <div className="py-4">
-                <p className="text-xl font-heading">
+              <div className="py-2">
+                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
                   Firstly, I love to code and I was looking for a project to
                   build myself. Secondly, I've lived in Japan for so long that I
                   have a lot I want to say about it and share with others.
                 </p>
               </div>
             </div>
-            </article>
+          </article>
         </section>
       </main>
     </>

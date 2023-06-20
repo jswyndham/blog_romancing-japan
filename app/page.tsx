@@ -36,7 +36,7 @@ export default async function Home() {
               />
             </div>
 
-            <div className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[78%] lg:w-[80%] xl:w-[70%] 2xl:w-[55%] 3xl:max-w-screen-xl">
+            <div className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[78%] lg:w-[80%] xl:w-[70%] 2xl:max-w-screen-lg">
               {/* Latest banner */}
               <div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
                 <h1>Latest Articles</h1>
