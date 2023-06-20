@@ -20,7 +20,7 @@ export default function about() {
           {/* Top Image */}
           <figure className="h-full w-full">
             <Image
-              src="/images/Osaka_Streets.jpg"
+              src="/images/Kibune.jpg"
               width={1000}
               height={1000}
               alt="image"
