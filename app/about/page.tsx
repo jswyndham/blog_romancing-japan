@@ -16,7 +16,7 @@ export default function about() {
   return (
     <>
       <main className="h-full">
-        <section className="z-0 flex flex-col items-center justify-center">
+        <section className="z-0 flex flex-col justify-center">
           {/* Top Image */}
           <figure className="h-full w-full">
             <Image
@@ -35,7 +35,7 @@ export default function about() {
           </div>
 
           {/* ARTICLE */}
-          <article className="absolute max-w-3xl flex flex-col justify-center py-4 px-12 -mt-96 backdrop-blur-sm bg-white/50 shadow-lg shadow-slate-100">
+          <article className="absolute max-w-3xl flex flex-col justify-center align-middle py-4 px-12 -mt-96 backdrop-blur-sm bg-white/50 shadow-lg shadow-slate-100">
             <div className="mt-8 mb-2 mx-8 flex justify-center">
               <h2 className="text-4xl font-extrabold font-catTags">
                 Welcome to Romancing Japan
