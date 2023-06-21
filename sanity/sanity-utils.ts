@@ -191,6 +191,8 @@ export async function aboutPage(): Promise<AboutPage> {
   _createdAt,
   titleMain,
   author[]->,
+  "profileImage": image.asset->url,
+  "subImageOne": image.asset->url,
   content[]{
     ...,
   },

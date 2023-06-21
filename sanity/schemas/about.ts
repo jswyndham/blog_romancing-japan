@@ -19,6 +19,24 @@ export default defineType({
     }),
 
     defineField({
+      name: "profileImage",
+      title: "Profile Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
+      name: "subImageOne",
+      title: "Sub-content Image One",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
       name: "content",
       title: "Main Content",
       type: "array",

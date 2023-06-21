@@ -3,6 +3,7 @@ import Image from "next/image";
 import { aboutPage } from "@/sanity/sanity-utils";
 import TextComponent from "../components/TextComponent";
 import { PortableText } from "@portabletext/react";
+import { urlFor } from "../../lib/urlFor";
 
 export const metadata = {
   title: "About Us",
@@ -25,19 +26,7 @@ export default async function about() {
   return (
     <>
       <main>
-        <section className="h-fit flex flex-col bg-slate-900">
-          {/* Top Image */}
-          <figure className="flex h-full w-full justify-center">
-            <Image
-              src="/images/Miyajima.jpg"
-              width={1000}
-              height={1000}
-              alt="Miyajima Japan"
-              priority
-              className="my-72 object-fill md:my-0 md:object-cover"
-            />
-          </figure>
-
+        <section className="h-full flex flex-col">
           {/* Page Banner */}
           <div className="absolute top-24 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">
             About Us
@@ -48,7 +37,7 @@ export default async function about() {
             {about_page.map(async (about: any) => (
               <div
                 key={about._id}
-                className="absolute top-40 md:top-56 md:w-[85%] lg:max-w-3xl flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black"
+                className="my-32 md:w-[95%] xl:w-[70%] flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black"
               >
                 <div className="flex flex-col mt-3 md:mt-8 mb-2 mx-8 justify-center text-center">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
@@ -63,14 +52,25 @@ export default async function about() {
                     ))}
                   </div>
                 </div>
-                <div className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
-                  <p className="py-2">
+                <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify xl:grid-flow-col xl:gap-8 xl:grid-cols-3">
+                  <div className="py-2 xl:col-span-2">
                     <PortableText
                       value={about.content}
                       onMissingComponent={false}
                       components={components}
                     />
-                  </p>
+                  </div>
+                  <div className="relative bg-red-700 flex justify-center mx-2 my-6 xl:col-span-1">
+                    <h1>THIS IS A TEST</h1>
+                    {/* <Image
+                      src={(await urlFor(about.profileImage)).url()}
+                      alt={about.titleMain}
+                      width={900}
+                      height={900}
+                      className="w-full mx-14 shadow-xl shadow-slate-500"
+                      priority
+                    /> */}
+                  </div>
                 </div>
                 <div className="mt-1 md:mt-4 mx-4">
                   <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
