@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
 
-const RichTextComponents = async ({ value, isInline }: any) => {
+const RichTextComponents = async ({ value }: any) => {
   return (
     <div className="flex items-center justify-center w-full h-full my-6">
       <Image
@@ -16,7 +16,7 @@ const RichTextComponents = async ({ value, isInline }: any) => {
   );
 };
 
-export default function TextComponent() {
+export default async function TextComponent() {
   const components = {
     types: {
       image: RichTextComponents,

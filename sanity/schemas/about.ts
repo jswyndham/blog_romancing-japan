@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-const post = defineType({
+export default defineType({
   name: "aboutPage",
   title: "About Page",
   type: "document",
@@ -196,4 +196,4 @@ const post = defineType({
   ],
 });
 
-export default post;
+

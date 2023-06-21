@@ -51,7 +51,7 @@ interface UserEmail extends Base {
 	email: string;
 }
 
-interface About extends Base {
+interface AboutPage extends Base {
 	titleMain: string;
 	author: Author[];
 	content: PortableTextBlock[];
