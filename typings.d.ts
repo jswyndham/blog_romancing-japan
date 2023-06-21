@@ -51,4 +51,16 @@ interface UserEmail extends Base {
 	email: string;
 }
 
+interface About extends Base {
+	titleMain: string;
+	author: Author[];
+	content: PortableTextBlock[];
+	subTitleOne: string;
+	subContentOne: PortableTextBlock[];
+	subTitleTwo: string;
+	subContentTwo: PortableTextBlock[];
+	subTitleThree: string;
+	subContentThree: PortableTextBlock[];
+	description: string;
+}
 
