@@ -16,7 +16,7 @@ export default function about() {
   return (
     <>
       <main>
-        <section className="h-screen flex flex-col bg-slate-900">
+        <section className="h-fit flex flex-col bg-slate-900">
           {/* Top Image */}
           <figure className="flex h-full w-full justify-center">
             <Image
@@ -25,7 +25,7 @@ export default function about() {
               height={1000}
               alt="Miyajima Japan"
               priority
-              className="object-cover"
+              className="my-72 object-fill md:my-0 md:object-cover"
             />
           </figure>
 
@@ -36,7 +36,7 @@ export default function about() {
 
           {/* ARTICLE */}
           <article className="flex items-center justify-center align-middle">
-            <div className="absolute top-40 md:top-48 md:w-[85%] lg:max-w-3xl flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black">
+            <div className="absolute top-40 md:top-56 md:w-[85%] lg:max-w-3xl flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black">
               <div className="flex flex-col mt-3 md:mt-8 mb-2 mx-8 justify-center text-center">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
                   Welcome to Romancing Japan

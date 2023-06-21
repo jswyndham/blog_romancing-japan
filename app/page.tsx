@@ -6,6 +6,7 @@ import BlogSmallCard from "./components/BlogSmallCard";
 import SignupCard from "./components/SignupCard";
 import Image from "next/image";
 
+
 export const metadata = {
   title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
   description:
@@ -41,6 +42,8 @@ export default async function Home() {
               <div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
                 <h1>Latest Articles</h1>
               </div>
+
+             
 
               {/* Article post components */}
 
