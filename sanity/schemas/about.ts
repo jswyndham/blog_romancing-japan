@@ -19,7 +19,7 @@ export default defineType({
     }),
 
     defineField({
-      name: "profileImage",
+      name: "image",
       title: "Profile Image",
       type: "image",
       options: {

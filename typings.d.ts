@@ -54,7 +54,7 @@ interface UserEmail extends Base {
 interface AboutPage extends Base {
 	titleMain: string;
 	author: Author[];
-	imageProfile: string;
+	image: string;
 	subImageOne: string;
 	content: PortableTextBlock[];
 	subTitleOne: string;

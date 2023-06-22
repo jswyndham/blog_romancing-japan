@@ -37,7 +37,7 @@ export default async function about() {
             {about_page.map(async (about: any) => (
               <div
                 key={about._id}
-                className="my-32 md:w-[95%] xl:w-[70%] flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black"
+                className="my-32 md:w-[97%] xl:max-w-5xl flex flex-col justify-center align-middle py-4 px-12  backdrop-blur-sm bg-white/60 shadow-xl shadow-black"
               >
                 <div className="flex flex-col mt-3 md:mt-8 mb-2 mx-8 justify-center text-center">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
@@ -53,23 +53,23 @@ export default async function about() {
                   </div>
                 </div>
                 <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify xl:grid-flow-col xl:gap-8 xl:grid-cols-3">
-                  <div className="py-2 xl:col-span-2">
+                  <div className="py-2 lg:col-span-2">
                     <PortableText
                       value={about.content}
                       onMissingComponent={false}
                       components={components}
                     />
                   </div>
-                  <div className="relative bg-red-700 flex justify-center mx-2 my-6 xl:col-span-1">
-                    <h1>THIS IS A TEST</h1>
-                    {/* <Image
-                      src={(await urlFor(about.profileImage)).url()}
+                  <div className="relative  flex justify-center mx-2 my-6 lg:col-span-1">
+                    
+                    <Image
+                      src={(await urlFor(about.image)).url()}
                       alt={about.titleMain}
                       width={900}
                       height={900}
                       className="w-full mx-14 shadow-xl shadow-slate-500"
                       priority
-                    /> */}
+                    />
                   </div>
                 </div>
                 <div className="mt-1 md:mt-4 mx-4">
