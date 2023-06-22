@@ -22,6 +22,9 @@ module.exports = {
         roboto_condensed: ["var(--font-roboto-condensed)"],
         playfair_display: ["var(--font-playfair_display)"],
         krona_one: ["var(--font-krona_one)"],
+        shadows_into_light: ["var(--font-shadows_into_light)"],
+        delicious_handraw: ["var(--font-delicious_handraw)"],
+        carter_one: ["var(--font-carter_one)"],
       },
       transitionDuration: {
         2000: "2000ms",

@@ -37,6 +37,7 @@ export async function getLatestPostTwo(): Promise<Post> {
   summary[]{
     ...,
   },
+  summaryShort,
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->,

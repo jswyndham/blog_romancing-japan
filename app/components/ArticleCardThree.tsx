@@ -36,7 +36,7 @@ export default async function ArticleCardThree() {
         <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-75% lg:to-65% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
-        <div className="card-body text-center md:w-96 2xl:w-72 3xl:w-[75%] 4xl:w-[65%] md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-md transition-all">
+        <div className="card-body text-center md:w-[50%] lg:w-[45%] xl:w-[60%] 3xl:w-[68%] 4xl:w-[65%] md:absolute md:flex md:p-4 md:items-center md:justify-between md:right-0 md:text-right md:rounded-md transition-all">
           {/* TITLE @ MD */}
           <div>
             <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 3xl:mt-0 3xl:pb-0 ">
@@ -45,7 +45,7 @@ export default async function ArticleCardThree() {
           </div>
 
           {/* SUMMARY UNTIL 2XL */}
-          <div className="text-justify text-xl md:text-right 2xl:hidden">
+          <div className="text-justify text-lg md:text-right xl:hidden">
             <PortableText
               value={post.summary}
               onMissingComponent={false}
@@ -54,7 +54,7 @@ export default async function ArticleCardThree() {
           </div>
 
           {/* SHORT SUMMARY @ 2XL */}
-          <div className="hidden text-justify text-xl md:text-right 2xl:flex 2xl:mt-3 3xl:mt-1 3xl:text-lg">
+          <div className="hidden text-justify text-lg md:text-right xl:flex 2xl:mt-3 3xl:mt-1 3xl:text-lg">
             <PortableText
               value={post.summaryShort}
               onMissingComponent={false}

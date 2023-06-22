@@ -39,9 +39,17 @@ export default async function ArticleCardTwo() {
               {post.name}
             </h1>
           </div>
-          <div className="text-justify text-xl md:text-left md:rounded-b-md">
+          <div className="text-justify text-xl md:text-left md:rounded-b-md lg:hidden">
             <PortableText
               value={post.summary}
+              onMissingComponent={false}
+              components={components}
+            />
+          </div>
+          {/* SHORT SUMMARY @ 2XL */}
+          <div className="hidden lg:text-justify text-lg md:text-right lg:flex 2xl:mt-3 3xl:mt-1 3xl:text-lg">
+            <PortableText
+              value={post.summaryShort}
               onMissingComponent={false}
               components={components}
             />

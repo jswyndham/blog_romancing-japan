@@ -40,13 +40,13 @@ export default async function ArticleCardOne() {
         <div className="card-body md:w-[55%] smd:w-[50%] xl:w-[52%] 3xl:w-[55%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-1 3xl:mt-0 3xl:pb-1 4xl:mt-6 text-right text-red-800 font-extrabold">
+            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl 2xl:text-4xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-1 3xl:mt-0 3xl:pb-1 4xl:mt-1 text-right text-red-800 font-extrabold">
               {post.name}
             </h1>
           </div>
 
           {/* Text summary field */}
-          <div className="text-justify text-xl md:text-right md:bottom-0 md:mt-8 lg:mt-12 2xl:mt-1 4xl:mt-12">
+          <div className="text-justify text-xl md:text-right md:bottom-0 md:mt-8 lg:mt-12 2xl:mt-1 4xl:mt-4">
             <PortableText
               value={post.summary}
               onMissingComponent={false}

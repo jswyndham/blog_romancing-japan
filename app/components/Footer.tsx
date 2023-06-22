@@ -33,7 +33,7 @@ export default function Footer() {
             </Link>
             <Link href="/">
               <Image
-                src="/images/instagram-50-white.png"
+                src="/images/instagram-50-white-2.png"
                 width={30}
                 height={30}
                 alt="romancing japan logo"

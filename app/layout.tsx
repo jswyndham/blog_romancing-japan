@@ -5,6 +5,9 @@ import {
   Roboto_Condensed,
   Playfair_Display,
   Krona_One,
+  Shadows_Into_Light,
+  Delicious_Handrawn,
+  Carter_One,
 } from "next/font/google";
 
 // Font settings
@@ -27,6 +30,27 @@ const krona_one = Krona_One({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-krona_one",
+});
+
+const shadows_into_light = Shadows_Into_Light({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-shadows_into_light",
+});
+
+const delicious_handrawn = Delicious_Handrawn({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-delicious_handraw",
+});
+
+const carter_one = Carter_One({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-carter_one",
 });
 
 export const metadata = {
@@ -61,7 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable}`}
+      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable}`}
     >
       <body className="bg-base-100">
         <div>
