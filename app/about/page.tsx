@@ -25,21 +25,22 @@ export default async function about() {
 
   return (
     <>
-      <main className="h-full flex flex-col items-center justify-center">
+      <main className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">
         {/* Page Banner */}
-        <div className="absolute top-24 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">
+        <div className="absolute top-0 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">
           <h1>About Us</h1>
         </div>
 
         {/* ARTICLE */}
-        <section>
+        <section className="">
           {about_page.map(async (about: any) => (
             <div
               key={about._id}
-              className="my-20 flex flex-col justify-center align-middle py-4 px-12"
+              className="my-20 w-full flex flex-col items-center justify-center align-middle"
             >
-              <article className="md:w-[97%] xl:max-w-5xl">
-                <div className="flex flex-col mt-3 md:mt-8 mb-2 mx-8 justify-center text-center">
+              {/* MAIN CONTENT */}
+              <article className="flex flex-col items-center justify-center px-2 w-[90%] md:w-[95%] xl:max-w-5xl">
+                <div className="mt-3 md:mt-8 mb-2 mx-8 text-center">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
                     {about.titleMain}
                   </h2>
@@ -54,11 +55,13 @@ export default async function about() {
                 </div>
                 <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
                   <div className="py-2 md:col-span-2">
-                    <PortableText
-                      value={about.content}
-                      onMissingComponent={false}
-                      components={components}
-                    />
+                    <div className="py-2">
+                      <PortableText
+                        value={about.content}
+                        onMissingComponent={false}
+                        components={components}
+                      />
+                    </div>
                   </div>
                   <div className="relative  flex justify-center mx-2 my-6 md:col-span-1">
                     <Image
@@ -72,65 +75,79 @@ export default async function about() {
                   </div>
                 </div>
               </article>
-              <article className="flex items-center justify-center">
+
+              {/* SUBSCRIPTION CARD */}
+              <article className="w-screen flex items-center justify-center">
                 <SignupCardLong />
               </article>
-              <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
-                <div className="py-2 md:col-span-2">
+
+              {/* PART TWO CONTENT */}
+              <article className="flex flex-col items-center justify-center md:w-[97%] xl:max-w-5xl">
+                <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
+                  <div className="relative  flex justify-center mx-2 my-6 md:col-span-1">
+                    <Image
+                      src={(
+                        await urlFor(
+                          "https://cdn.sanity.io/images/x0c10dda/production/c10d81f2fffca89866b0788d8a08ddf7bb75fb84-2592x3888.jpg"
+                        )
+                      ).url()}
+                      alt={about.titleMain}
+                      width={900}
+                      height={900}
+                      className="w-full mx-14 shadow-xl shadow-slate-500"
+                      priority
+                    />
+                  </div>
+                  <div className="py-2 md:col-span-2">
+                    <h2 className="text-right p-3 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                      {about.subTitleOne}
+                    </h2>
+                    <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
+                      <PortableText
+                        value={about.subContentOne}
+                        onMissingComponent={false}
+                        components={components}
+                      />
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              {/* PART THREE CONTENT */}
+              <article className="flex flex-col items-center justify-center md:w-[97%] xl:max-w-5xl">
+                <div className="mt-1 md:mt-4 mx-4">
                   <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
-                    {about.subTitleOne}
+                    {about.subTitleTwo}
                   </h2>
+                </div>
+                <div className="py-2">
                   <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
                     <PortableText
-                      value={about.subContentOne}
+                      value={about.subContentTwo}
                       onMissingComponent={false}
                       components={components}
                     />
                   </p>
                 </div>
-                <div className="relative  flex justify-center mx-2 my-6 md:col-span-1">
-                  <Image
-                    src={(
-                      await urlFor(
-                        "https://cdn.sanity.io/images/x0c10dda/production/c10d81f2fffca89866b0788d8a08ddf7bb75fb84-2592x3888.jpg"
-                      )
-                    ).url()}
-                    alt={about.titleMain}
-                    width={900}
-                    height={900}
-                    className="w-full mx-14 shadow-xl shadow-slate-500"
-                    priority
-                  />
+              </article>
+
+              {/* PART THREE CONTENT */}
+              <article>
+                <div className="mt-1 md:mt-4 mx-4">
+                  <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                    {about.subTitleThree}
+                  </h2>
                 </div>
-              </div>
-              <div className="mt-1 md:mt-4 mx-4">
-                <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
-                  {about.subTitleTwo}
-                </h2>
-              </div>
-              <div className="py-2">
-                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
-                  <PortableText
-                    value={about.subContentTwo}
-                    onMissingComponent={false}
-                    components={components}
-                  />
-                </p>
-              </div>
-              <div className="mt-1 md:mt-4 mx-4">
-                <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
-                  {about.subTitleThree}
-                </h2>
-              </div>
-              <div className="py-2">
-                <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
-                  <PortableText
-                    value={about.subContentThree}
-                    onMissingComponent={false}
-                    components={components}
-                  />
-                </p>
-              </div>
+                <div className="py-2">
+                  <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
+                    <PortableText
+                      value={about.subContentThree}
+                      onMissingComponent={false}
+                      components={components}
+                    />
+                  </p>
+                </div>
+              </article>
             </div>
           ))}
         </section>

@@ -41,7 +41,7 @@ export default function SignupCard() {
       {/* TITLE */}
       <div className=" flex justify-center px-5 pt-2 md:my-2 lg:pt-0 2xl:my-12">
         <h2 className="card-title font-carter_one py-4 text-base-100 font-extrabold text-3xl md:text-4xl lg:py-0 xl:py-2 ">
-          Subscribe now!
+          Subscribe now
         </h2>
       </div>
 
@@ -111,7 +111,7 @@ export default function SignupCard() {
         </div>
 
         {/* SEND BUTTON */}
-        <div className="my-4 py-2 2xl:mx-2 2xl:my-8">
+        <div className="my-4 py-2 mx-3 2xl:mx-2 2xl:my-8">
           <button
             className="w-full h-full bg-red-400 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-green-500 active:text-base-100 hover:bg-red-500 hover:outline-slate-400 transition-all duration-300"
             type="submit"
@@ -121,7 +121,7 @@ export default function SignupCard() {
         </div>
       </form>
 
-      {/* FOLLOW US */}
+      {/* FOLLOW US (SM LINKS)*/}
       <article className="flex flex-col items-center justify-center pb-1 my-3 2xl:pb-4">
         <div className="pb-3 2xl:pb-6">
           <h3 className="font-delicious_handraw  text-4xl md:text-5xl text-base-100">

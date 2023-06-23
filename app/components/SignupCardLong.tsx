@@ -37,23 +37,23 @@ export default function SignupCard() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center md:justify-between h-full w-screen bg-slate-700 drop-shadow-md md:p-2 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
-      <div className="flex flex-row-reverse">
-        <article className="w-[20%]">
+    <section className="flex flex-col items-center justify-center md:justify-between h-full w-full bg-slate-700 drop-shadow-md md:p-1 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
+      <div className="flex flex-col-reverse xl:flex-row-reverse">
+        <article className="">
           {/* TITLE */}
-          <div className=" flex justify-center px-5 pt-2 md:my-2 lg:pt-0 2xl:my-12">
-            <h2 className="card-title font-carter_one py-4 text-base-100 font-extrabold text-3xl md:text-4xl lg:py-0 xl:py-2 ">
-              Subscribe now!
+          <div className="flex flex-row items-center justify-center align-middle">
+          <div className=" flex justify-center px-1 pt-2 md:my-2 lg:pt-0 2xl:my-12">
+            <h2 className="card-title font-carter_one py-2 text-base-100 text-3xl md:text-4xl lg:py-0 xl:py-2 ">
+              Subscribe
             </h2>
           </div>
 
           {/* DESCRIPTION */}
-          <div className="flex justify-center my-1 px-5 md:my-4 lg:my-0 2xl:my-12 pb-4 text-base-100 text-xl lg:text-lg 2xl:text-2xl">
+          <div className="mt-7 px-3 lg:mt-5 pb-4 text-base-100 text-xl lg:text-lg 2xl:text-2xl">
             <p>
-              To receive updates on the latest articles discussing all things
-              Japan, register your email now! Your support can help us to make
-              this blog even better.
+              for updates on the latest articles!
             </p>
+          </div>
           </div>
 
           {/* FORM SECTION */}
@@ -128,9 +128,9 @@ export default function SignupCard() {
         </article>
 
         {/* FOLLOW US */}
-        <article className="flex flex-row items-center justify-center pb-1 my-3 2xl:pb-4">
-          <div className="pb-3 2xl:pb-6">
-            <h3 className="font-delicious_handraw  text-4xl md:text-5xl text-base-100">
+        <article className="flex flex-row items-center justify-center align-middle pb-1 my-3 2xl:pb-4">
+          <div className="px-8">
+            <h3 className="font-delicious_handraw  text-4xl text-base-100">
               Follow us!
             </h3>
           </div>

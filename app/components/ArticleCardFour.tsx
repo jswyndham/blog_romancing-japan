@@ -36,10 +36,10 @@ export default async function ArticleCardTwo() {
         <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-25% md:to-base-200 md:to-75% lg:to-65% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
-        <div className="card-body text-center md:w-[50%] lg:w-[45%] xl:w-[60%] 3xl:w-[68%] 4xl:w-[65%] md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-md transition-all">
+        <div className="card-body text-center md:w-[50%] lg:w-[45%] xl:w-[60%] 3xl:w-[55%] md:absolute md:flex md:p-4 md:right-0 md:text-right md:rounded-md transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 3xl:mt-0 3xl:pb-0 ">
+            <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 3xl:mt-0 3xl:pb-0">
               {post.name}
             </h1>
           </div>

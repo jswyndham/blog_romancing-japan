@@ -37,10 +37,10 @@ export default async function ArticleCardOne() {
         <div className="md:absolute md:inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:via-15% smd:via-30% md:to-base-200 md:to-60% xl:to-60% md:rounded-md"></div>
 
         {/* Title and article summary */}
-        <div className="card-body md:w-[55%] smd:w-[50%] xl:w-[52%] 3xl:w-[55%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
+        <div className="card-body md:w-[55%] smd:w-[46%] 3xl:w-[50%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl 2xl:text-4xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-1 3xl:mt-0 3xl:pb-1 4xl:mt-1 text-right text-red-800 font-extrabold">
+            <h1 className="hidden md:flex pb-2 text-4xl md:text-5xl 2xl:text-4xl font-playfair_display top-0 md:mt-2 lg:mt-6 2xl:mt-1 2xl:pb-4 3xl:mt-0 3xl:pb-8 4xl:mt-1 text-right text-red-800 font-extrabold">
               {post.name}
             </h1>
           </div>
