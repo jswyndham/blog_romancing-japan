@@ -243,7 +243,7 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Drop menu */}
+        {/* SLIDE MENU */}
         <nav
           ref={ref}
           className={`${

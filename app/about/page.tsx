@@ -39,31 +39,21 @@ export default async function about() {
               className="my-20 w-full flex flex-col items-center justify-center align-middle"
             >
               {/* MAIN CONTENT */}
-              <article className="flex flex-col items-center justify-center px-2 w-[90%] md:w-[95%] xl:max-w-5xl">
+              <article className="flex flex-col items-center justify-center px-3 w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="my-5 md:my-12 mx-8 text-center">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
                     {about.titleMain}
                   </h2>
-                  {/* <div className="mt-2 md:mt-3 pb-1 text-primary text-md lg:text-lg font-bold">
-                    <h3>Created & Edited by </h3>
-                    {about.author.map((author: any) => (
-                      <div key={about._id}>
-                        <h3 className="text-black italic">{author.name}</h3>
-                      </div>
-                    ))}
-                  </div> */}
                 </div>
                 <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
-                  <div className="py-2 md:col-span-2">
-                    <div className="py-2">
-                      <PortableText
-                        value={about.content}
-                        onMissingComponent={false}
-                        components={components}
-                      />
-                    </div>
+                  <div className="pt-4 md:col-span-2">
+                    <PortableText
+                      value={about.content}
+                      onMissingComponent={false}
+                      components={components}
+                    />
                   </div>
-                  <div className="relative  flex justify-center mx-2 my-6 md:col-span-1">
+                  <div className="flex justify-center mx-2 my-4 md:my-6 md:col-span-1">
                     <Image
                       src={(await urlFor(about.image)).url()}
                       alt={about.titleMain}
@@ -82,9 +72,9 @@ export default async function about() {
               </article>
 
               {/* PART TWO CONTENT */}
-              <article className="flex flex-col items-center justify-center md:w-[97%] xl:max-w-5xl">
+              <article className="flex flex-col items-center justify-center w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
-                  <div className="relative  flex justify-center mx-2 my-6 md:col-span-1">
+                  <div className="flex justify-center mx-2 md:mx-0 my-4 md:mt-6 md:col-span-1">
                     <Image
                       src={(
                         await urlFor(
@@ -94,15 +84,15 @@ export default async function about() {
                       alt={about.titleMain}
                       width={900}
                       height={900}
-                      className="w-full mx-14 shadow-xl shadow-slate-500"
+                      className="object-cover mx-14 shadow-xl shadow-slate-500"
                       priority
                     />
                   </div>
-                  <div className="py-2 md:col-span-2">
-                    <h2 className="text-right p-3 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                  <div className="py-2 mt-3 md:col-span-2">
+                    <h2 className="text-right pr-8 pb-6 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                       {about.subTitleOne}
                     </h2>
-                    <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
+                    <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                       <PortableText
                         value={about.subContentOne}
                         onMissingComponent={false}
@@ -114,14 +104,14 @@ export default async function about() {
               </article>
 
               {/* PART THREE CONTENT */}
-              <article className="flex flex-col items-center justify-center md:w-[97%] xl:max-w-5xl">
+              <article className="flex flex-col items-center justify-center my-12 w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="mt-1 md:mt-4 mx-4">
-                  <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                  <h2 className="mb-8 text-xl lg:text-2xl font-extrabold font-catTags text-red-800 text-left">
                     {about.subTitleTwo}
                   </h2>
                 </div>
                 <div className="py-2">
-                  <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
+                  <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                     <PortableText
                       value={about.subContentTwo}
                       onMissingComponent={false}
@@ -131,8 +121,8 @@ export default async function about() {
                 </div>
               </article>
 
-              {/* PART THREE CONTENT */}
-              <article>
+              {/* PART FOUR CONTENT */}
+              <article className="flex flex-col items-center justify-center px-3 w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="mt-1 md:mt-4 mx-4">
                   <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                     {about.subTitleThree}
