@@ -55,15 +55,6 @@ export default async function TextComponent() {
       ),
     },
 
-    // hardBreak: {
-    //   break: ({ children }: any): JSX.Element => {
-    //     if (children.length === 1 && children[0] === "") {
-    //       return <br />;
-    //     }
-    //     return <p>{children}</p>;
-    //   },
-    // },
-
     marks: {
       em: ({ children }: any) => (
         <em className="text-gray-600 font-semibold">{children}</em>

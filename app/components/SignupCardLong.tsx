@@ -135,7 +135,7 @@ export default function SignupCard() {
             </h3>
           </div>
           <div className="flex flex-row gap-4">
-            <Link href="https://twitter.com/RomancingJapan">
+            <Link href="https://twitter.com/RomancingJapan" target="_blank">
               <Image
                 src="/images/twitter-50-white.png"
                 width={30}
@@ -143,7 +143,7 @@ export default function SignupCard() {
                 alt="romancing japan twitter"
               />
             </Link>
-            <Link href="/">
+            <Link href="/" target="_blank">
               <Image
                 src="/images/instagram-50-white-2.png"
                 width={30}
@@ -151,7 +151,10 @@ export default function SignupCard() {
                 alt="romancing japan instagram"
               />
             </Link>
-            <Link href="https://www.facebook.com/profile.php?id=100093723613018">
+            <Link
+              href="https://www.facebook.com/profile.php?id=100093723613018"
+              target="_blank"
+            >
               <Image
                 src="/images/facebook-50-white.png"
                 width={30}
