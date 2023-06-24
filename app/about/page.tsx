@@ -40,18 +40,18 @@ export default async function about() {
             >
               {/* MAIN CONTENT */}
               <article className="flex flex-col items-center justify-center px-2 w-[90%] md:w-[95%] xl:max-w-5xl">
-                <div className="mt-3 md:mt-8 mb-2 mx-8 text-center">
+                <div className="my-5 md:my-12 mx-8 text-center">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
                     {about.titleMain}
                   </h2>
-                  <div className="mt-2 md:mt-3 pb-1 text-primary text-md lg:text-lg font-bold">
+                  {/* <div className="mt-2 md:mt-3 pb-1 text-primary text-md lg:text-lg font-bold">
                     <h3>Created & Edited by </h3>
                     {about.author.map((author: any) => (
                       <div key={about._id}>
                         <h3 className="text-black italic">{author.name}</h3>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
                   <div className="py-2 md:col-span-2">
