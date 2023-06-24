@@ -37,88 +37,88 @@ export default function SignupCard() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center md:justify-between h-full w-full bg-slate-700 drop-shadow-md md:p-1 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
-      <div className="flex flex-col-reverse xl:flex-row-reverse">
+    <section className="flex flex-col items-center justify-center my-8 md:justify-between h-full w-full bg-slate-700 drop-shadow-md md:p-1 lg:px-1 lg:py-0 2xl:text-center">
+      <div className="flex flex-col xl:flex-row-reverse xl:gap-16">
         <article className="">
           {/* TITLE */}
-          <div className="flex flex-row items-center justify-center align-middle">
-          <div className=" flex justify-center px-1 pt-2 md:my-2 lg:pt-0 2xl:my-12">
-            <h2 className="card-title font-carter_one py-2 text-base-100 text-3xl md:text-4xl lg:py-0 xl:py-2 ">
-              Subscribe
-            </h2>
-          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center align-middle">
+            <div className=" flex justify-center px-1 pt-2 mt-2 md:my-2 xl:py-2 lg:pt-0">
+              <h2 className="card-title font-carter_one text-base-100 text-4xl ">
+                Subscribe
+              </h2>
+            </div>
 
-          {/* DESCRIPTION */}
-          <div className="mt-7 px-3 lg:mt-5 pb-4 text-base-100 text-xl lg:text-lg 2xl:text-2xl">
-            <p>
-              for updates on the latest articles!
-            </p>
-          </div>
+            {/* DESCRIPTION */}
+            <div className="md:mt-7 px-3 lg:mt-5 pb-2 md:pb-4 text-base-100 text-xl lg:text-lg 2xl:text-2xl">
+              <p>for updates on the latest articles!</p>
+            </div>
           </div>
 
           {/* FORM SECTION */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col m-4 justify-center space-y-4 md:pb-2 2xl:space-y-8 2xl:my-16 xl:mx-1 xl:my-2"
+            className="flex flex-col m-4 justify-center md:items-center space-y-4 md:space-y-0 xl:mx-1 xl:mt-0 xl:mb-7 md:flex-row md:gap-4"
           >
-            {/* FIRST NAME INPUT */}
-            <div className="card-actions relative">
-              <Image
-                src="/images/firstName-24.png"
-                width={24}
-                height={24}
-                alt="romancing japan white logo"
-                className="absolute mt-2 ml-5 lg:mt-1 2xl:mt-2"
-              />
-              <input
-                type="text"
-                name="signup"
-                placeholder="first name"
-                className="w-full flex justify-start py-2 pl-8 lg:py-1 2xl:py-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
-                required
-                ref={firstNameRef}
-                value={contactDetails.firstName}
-                onChange={(e: any) =>
-                  setContactDetails({
-                    ...contactDetails,
-                    firstName: e.target.value,
-                  })
-                }
-              />
-            </div>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-1">
+              {/* FIRST NAME INPUT */}
+              <div className="card-actions relative">
+                <Image
+                  src="/images/firstName-24.png"
+                  width={24}
+                  height={24}
+                  alt="romancing japan white logo"
+                  className="absolute mt-2 ml-5 lg:mt-1 2xl:mt-2"
+                />
+                <input
+                  type="text"
+                  name="signup"
+                  placeholder="first name"
+                  className="w-full flex justify-start py-2 pl-8 lg:py-1 2xl:py-2 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
+                  required
+                  ref={firstNameRef}
+                  value={contactDetails.firstName}
+                  onChange={(e: any) =>
+                    setContactDetails({
+                      ...contactDetails,
+                      firstName: e.target.value,
+                    })
+                  }
+                />
+              </div>
 
-            {/* EMAIL INPUT */}
-            <div className="card-actions relative">
-              <Image
-                src="/images/mail-24.png"
-                width={24}
-                height={24}
-                alt="romancing japan white logo"
-                className="absolute mt-2 ml-5 lg:mt-1 2xl:mt-2 "
-              />
-              <input
-                type="text"
-                name="signup"
-                placeholder="email"
-                className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 lg:py-1 2xl:py-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
-                minLength={2}
-                maxLength={20}
-                required
-                ref={emailRef}
-                value={contactDetails.email}
-                onChange={(e: any) =>
-                  setContactDetails({
-                    ...contactDetails,
-                    email: e.target.value,
-                  })
-                }
-              />
+              {/* EMAIL INPUT */}
+              <div className="card-actions relative">
+                <Image
+                  src="/images/mail-24.png"
+                  width={24}
+                  height={24}
+                  alt="romancing japan white logo"
+                  className="absolute mt-2 ml-5 lg:mt-1 2xl:mt-2 "
+                />
+                <input
+                  type="text"
+                  name="signup"
+                  placeholder="email"
+                  className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 lg:py-1 2xl:py-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
+                  minLength={2}
+                  maxLength={20}
+                  required
+                  ref={emailRef}
+                  value={contactDetails.email}
+                  onChange={(e: any) =>
+                    setContactDetails({
+                      ...contactDetails,
+                      email: e.target.value,
+                    })
+                  }
+                />
+              </div>
             </div>
 
             {/* SEND BUTTON */}
-            <div className="my-4 py-2 2xl:mx-2 2xl:my-8">
+            <div className="my-4 py-3 md:w-[25%] md:mb-4">
               <button
-                className="w-full h-full bg-red-400 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-green-500 active:text-base-100 hover:bg-red-500 hover:outline-slate-400 transition-all duration-300"
+                className="w-full h-full md:h-7 bg-red-400 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-green-500 active:text-base-100 hover:bg-red-500 hover:outline-slate-400 transition-all duration-300"
                 type="submit"
               >
                 Subscribe
@@ -128,13 +128,13 @@ export default function SignupCard() {
         </article>
 
         {/* FOLLOW US */}
-        <article className="flex flex-row items-center justify-center align-middle pb-1 my-3 2xl:pb-4">
+        <article className="flex flex-row items-center justify-center align-middle pb-4">
           <div className="px-8">
             <h3 className="font-delicious_handraw  text-4xl text-base-100">
               Follow us!
             </h3>
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-4">
             <Link href="https://twitter.com/RomancingJapan">
               <Image
                 src="/images/twitter-50-white.png"
