@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <footer className="bottom-0 footer footer-center rounded bg-slate-900 p-10 text-base-content">
-        <div className="grid grid-flow-col gap-4 text-white">
+      <footer className="bottom-0 footer footer-center rounded bg-slate-900 p-6 text-base-content">
+        <div className="grid grid-flow-col gap-8 text-white">
           <Link href="/about">About us</Link>
           <Link href="/contact">Contact</Link>
-          <Link href="/">Privacy Policy</Link>
+          <Link href="/privacyPolicy">Privacy Policy</Link>
         </div>
         <div>
-          <div className="py-3">
+          <div className="py-1">
             <Link href="/">
               <Image
                 src="/images/logo-footer-white.png"
@@ -28,7 +28,7 @@ export default function Footer() {
                 src="/images/twitter-50-white.png"
                 width={30}
                 height={30}
-                alt="romancing japan logo"
+                alt="twitter logo"
               />
             </Link>
             <Link href="/" target="_blank">
@@ -36,7 +36,7 @@ export default function Footer() {
                 src="/images/instagram-50-white-2.png"
                 width={30}
                 height={30}
-                alt="romancing japan logo"
+                alt="instagram logo"
               />
             </Link>
             <Link
@@ -47,7 +47,7 @@ export default function Footer() {
                 src="/images/facebook-50-white.png"
                 width={30}
                 height={30}
-                alt="romancing japan logo"
+                alt="facebook logo"
               />
             </Link>
           </div>

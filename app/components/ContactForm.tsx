@@ -42,7 +42,6 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-
       // If success, trigger alert, clear input fields, and clear alert after 5 secs.
       if (res.status === 200) {
         setMessageSuccess(!messageSuccess);
@@ -55,7 +54,7 @@ export default function ContactForm() {
         });
         setTimeout(() => {
           setMessageSuccess((messageSuccess) => !messageSuccess);
-        }, 5000);
+        }, 7000);
 
         // If error, trigger alert, clear after 5 secs, and retain text in input fields
       } else {
@@ -65,7 +64,6 @@ export default function ContactForm() {
         }, 5000);
       }
     });
-    
   };
 
   return (
