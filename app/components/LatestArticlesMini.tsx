@@ -21,7 +21,7 @@ export default async function BlogSmallCard() {
             />
           </figure>
           <div className="card-body p-4 my-2 h-fit">
-            <div className="flex items-center h-24 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
+            <div className="flex items-center max-h-28 min-h-16 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
               <h2 className="font-roboto_condensed text-red-900 text-2xl font-bold">
                 {post.name}
               </h2>

@@ -25,6 +25,7 @@ module.exports = {
         shadows_into_light: ["var(--font-shadows_into_light)"],
         delicious_handraw: ["var(--font-delicious_handraw)"],
         carter_one: ["var(--font-carter_one)"],
+        caveat: ["var(--font-caveat)"],
       },
       transitionDuration: {
         2000: "2000ms",

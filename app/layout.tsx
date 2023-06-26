@@ -8,6 +8,7 @@ import {
   Shadows_Into_Light,
   Delicious_Handrawn,
   Carter_One,
+  Caveat,
 } from "next/font/google";
 
 // Font settings
@@ -53,6 +54,13 @@ const carter_one = Carter_One({
   variable: "--font-carter_one",
 });
 
+const caveat = Caveat({
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-caveat",
+});
+
 export const metadata = {
   metadataBase: new URL("https://romancing-japan.com"),
   title: {
@@ -85,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable}`}
+      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
       <body className="bg-base-100">
         <div>
