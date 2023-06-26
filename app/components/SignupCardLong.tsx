@@ -37,12 +37,12 @@ export default function SignupCard() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center my-8 md:my-14 md:justify-between h-full w-full bg-slate-700 drop-shadow-md md:p-1 lg:px-1 lg:py-0 2xl:text-center">
+    <section className="flex flex-col items-center justify-center  md:justify-between h-full w-full bg-slate-700 drop-shadow-md md:p-1 lg:px-1 lg:py-0 2xl:text-center">
       <div className="flex flex-col xl:flex-row-reverse xl:gap-16">
         <article className="">
           {/* TITLE */}
           <div className="flex flex-col md:flex-row items-center justify-center align-middle">
-            <div className=" flex justify-center px-1 pt-2 mt-2 md:my-2 xl:py-2 lg:pt-0">
+            <div className=" flex justify-center px-1 pt-2 mt-2 md:my-2 xl:py-1 lg:pt-0">
               <h2 className="card-title font-carter_one text-base-100 text-4xl ">
                 Subscribe
               </h2>
@@ -57,7 +57,7 @@ export default function SignupCard() {
           {/* FORM SECTION */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col m-4 justify-center md:items-center space-y-4 md:space-y-0 xl:mx-1 xl:mt-0 xl:mb-7 md:flex-row md:gap-4"
+            className="flex flex-col m-4 justify-center md:items-center space-y-4 md:space-y-0 xl:mx-1 xl:mt-0 xl:mb-4 md:flex-row md:gap-4"
           >
             <div className="flex flex-col md:flex-row gap-4 md:gap-1">
               {/* FIRST NAME INPUT */}
@@ -101,7 +101,7 @@ export default function SignupCard() {
                   placeholder="email"
                   className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 lg:py-1 2xl:py-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
                   minLength={2}
-                  maxLength={20}
+                  maxLength={80}
                   required
                   ref={emailRef}
                   value={contactDetails.email}

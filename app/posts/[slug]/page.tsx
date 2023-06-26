@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import TextComponent from "@/app/components/TextComponent";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
+import SignupCardLong from "@/app/components/SignupCardLong";
 
 type Props = {
   params: { slug: string };
@@ -97,6 +98,10 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   return (
     <>
+      {/* SUBSCRIPTION CARD */}
+      <section className="w-screen flex items-center justify-start">
+        <SignupCardLong />
+      </section>
       <main
         key={post._id}
         className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
@@ -117,7 +122,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                   {post.name}
                 </h1>
                 {post.author.map((author) => (
-                  <div key={post._id} className="">
+                  <div key={post._id}>
                     <h4 className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
                       Written by {author.name}
                     </h4>
@@ -175,22 +180,21 @@ export default async function postArticle({ params: { slug } }: Props) {
           </article>
 
           {/* ARTICLE BODY */}
-          <article>
-            <div className="container">
-              <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-                <div className="lg:w-11/12 px-8 py-4">
-                  <div className="font-heading text-justify text-xl whitespace-pre-line">
-                    <PortableText
-                      value={post.content}
-                      onMissingComponent={false}
-                      components={components}
-                      className="whitespace-pre-line"
-                    />
-                  </div>
+          <article className="container">
+            <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
+              <div className="lg:w-11/12 px-8 py-4">
+                <div className="font-heading text-justify text-xl whitespace-pre-line">
+                  <PortableText
+                    value={post.content}
+                    onMissingComponent={false}
+                    components={components}
+                    className="whitespace-pre-line"
+                  />
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
           </article>
+
           <article className="">
             <div className="h-8 mb-12 p-3 divide-y divide-red-700">
               <div className="h-1"></div>
@@ -201,9 +205,45 @@ export default async function postArticle({ params: { slug } }: Props) {
           </article>
         </section>
 
-        {/* SIDE MENU LATEST ARTICLES */}
-        <section className="md:w-[85%] xl:w-[20%] 2xl:w-[15%] mt-4 xl:mt-80  xl:border-l-4 xl:border-r-4 border-white">
-          <article className="flex flex-col px-4">
+        <section className="flex flex-col md:w-[85%] xl:w-[20%] 2xl:w-[15%] mt-4 items-start justify-start">
+          {/* AUTHOR BIO */}
+          <article className="mt-4 xl:border-l-4 xl:border-r-4 border-white">
+            <div className="flex flex-col px-4">
+              <div className="ml-6">
+                <h3 className="text-4xl font-playfair_display font-bold">
+                  Author Bio
+                </h3>
+              </div>
+              <>
+                {post.author.map(async (author) => (
+                  <div key={author._id} className="relative">
+                    <figure className="absolute my-4">
+                      <Image
+                        src={(await urlFor(author.image)).url()}
+                        alt={post.name}
+                        width={900}
+                        height={900}
+                        className="object-fill rounded-xl p-3"
+                        priority
+                      />
+                    </figure>
+                    <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 font-heading text-justify text-xl whitespace-pre-line p-2">
+                      <PortableText
+                        value={author.biography}
+                        onMissingComponent={false}
+                        components={components}
+                        className="whitespace-pre-line"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </>
+            </div>
+            <div className="divider mb-1"></div>
+          </article>
+
+          {/* SIDE MENU LATEST ARTICLES */}
+          <article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
             <div className="ml-6">
               <h3 className="text-4xl font-playfair_display font-bold">
                 Latest Posts
@@ -212,6 +252,8 @@ export default async function postArticle({ params: { slug } }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 xl:flex xl:flex-col my-4">
               <LatestArticlesMini />
             </div>
+
+            
           </article>
         </section>
       </main>

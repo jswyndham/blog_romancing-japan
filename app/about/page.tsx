@@ -67,7 +67,7 @@ export default async function about() {
               </article>
 
               {/* SUBSCRIPTION CARD */}
-              <article className="w-screen flex items-center justify-center">
+              <article className="w-screen my-12 flex items-center justify-center">
                 <SignupCardLong />
               </article>
 
