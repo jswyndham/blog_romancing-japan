@@ -45,15 +45,16 @@ export default function page() {
 
         {/* CONSENT */}
 
-        <h2 className="p-4 mb-3 text-3xl md:text-4xl text-center">Consent</h2>
-
         <article className="mb-12 mt-2 text-xl font-heading">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
+            Consent
+          </h2>
           <p>
             By using our website, you hereby consent to our Privacy Policy and
             agree to its terms.
           </p>
 
-          <h3 className="pl-2 pt-5 pb-2 text-2xl font-roboto_condensed font-bold">
+          <h3 className="pl-2 pt-5 text-2xl font-roboto_condensed font-bold">
             Information we collect
           </h3>
 
@@ -78,7 +79,7 @@ export default function page() {
             email address, and telephone number.
           </p>
 
-          <h3 className="pl-2 pt-5 pb-2 text-2xl font-roboto_condensed font-bold">
+          <h3 className="pl-2 pt-5 text-2xl font-roboto_condensed font-bold">
             How we use your information
           </h3>
 
@@ -86,22 +87,28 @@ export default function page() {
             We use the information we collect in various ways, including to:
           </p>
 
-          <ul>
+          <ul className="mt-2 mb-4">
             <li>Provide, operate, and maintain our website</li>
-            <li>Improve, personalize, and expand our website</li>
-            <li>Understand and analyze how you use our website</li>
-            <li>Develop new products, services, features, and functionality</li>
-            <li>
+            <li className="my-2">
+              Improve, personalize, and expand our website
+            </li>
+            <li className="my-2">
+              Understand and analyze how you use our website
+            </li>
+            <li className="my-2">
+              Develop new products, services, features, and functionality
+            </li>
+            <li className="my-2">
               Communicate with you, either directly or through one of our
               partners, including for customer service, to provide you with
               updates and other information relating to the website, and for
               marketing and promotional purposes
             </li>
-            <li>Send you emails</li>
-            <li>Find and prevent fraud</li>
+            <li className="my-2">Send you emails</li>
+            <li className="my-2">Find and prevent fraud</li>
           </ul>
 
-          <h3 className="pl-2 pt-5 pb-2 text-2xl font-roboto_condensed font-bold">
+          <h3 className="pl-2 pt-5 text-2xl font-roboto_condensed font-bold">
             Log Files
           </h3>
 
@@ -118,16 +125,16 @@ export default function page() {
             website, and gathering demographic information.
           </p>
 
-          <h3 className="pl-2 pt-5 pb-2 text-2xl font-roboto_condensed font-bold">
+          <h3 className="pl-2 pt-5 text-2xl font-roboto_condensed font-bold">
             Advertising Partners Privacy Policies
           </h3>
 
-          <p className="my-2">
+          <p className="mt-2 mb-5">
             You may consult this list to find the Privacy Policy for each of the
             advertising partners of Romancing Japan.
           </p>
 
-          <p>
+          <p className="my-5">
             Third-party ad servers or ad networks uses technologies like
             cookies, JavaScript, or Web Beacons that are used in their
             respective advertisements and links that appear on Romancing Japan,
@@ -138,13 +145,16 @@ export default function page() {
             websites that you visit.
           </p>
 
-          <p>
+          <p className="my-2">
             Note that Romancing Japan has no access to or control over these
             cookies that are used by third-party advertisers.
           </p>
         </article>
+
+        {/* Third Party Privacy Policies */}
+
         <article className="mb-12 mt-2 text-xl font-heading">
-          <h2 className="p-3 mb-3 text-3xl md:text-4xl text-center">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
             Third Party Privacy Policies
           </h2>
 
@@ -156,7 +166,7 @@ export default function page() {
             how to opt-out of certain options.{" "}
           </p>
 
-          <p>
+          <p className="my-5">
             You can choose to disable cookies through your individual browser
             options. To know more detailed information about cookie management
             with specific web browsers, it can be found at the browsers'
@@ -171,26 +181,28 @@ export default function page() {
             Under the CCPA, among other rights, California consumers have the
             right to:
           </p>
-          <p>
+          <p className="my-5">
             Request that a business that collects a consumer's personal data
             disclose the categories and specific pieces of personal data that a
             business has collected about consumers.
           </p>
-          <p>
+          <p className="my-5">
             Request that a business delete any personal data about the consumer
             that a business has collected.
           </p>
-          <p>
+          <p className="my-5">
             Request that a business that sells a consumer's personal data, not
             sell the consumer's personal data.
           </p>
-          <p>
+          <p className="my-5">
             If you make a request, we have one month to respond to you. If you
             would like to exercise any of these rights, please contact us.
           </p>
         </article>
+
+        {/* GDPR Data Protection Rights */}
         <article className="mb-12 mt-2 text-xl font-heading">
-          <h2 className="p-4 mb-3 text-3xl md:text-4xl text-center">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
             GDPR Data Protection Rights
           </h2>
 
@@ -231,8 +243,11 @@ export default function page() {
             would like to exercise any of these rights, please contact us.
           </p>
         </article>
+
+        {/* Children's Information */}
+
         <article className="mb-12 mt-2 text-xl font-heading">
-          <h2 className="p-4 mb-3 text-3xl md:text-4xl text-center">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
             Children's Information
           </h2>
 
@@ -250,8 +265,11 @@ export default function page() {
             best efforts to promptly remove such information from our records.
           </p>
         </article>
+
+        {/* Changes to This Privacy Policy */}
+
         <article className="mb-12 mt-2 text-xl font-heading">
-          <h2 className="p-4 mb-3 text-3xl md:text-4xl text-center">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
             Changes to This Privacy Policy
           </h2>
 
@@ -271,8 +289,11 @@ export default function page() {
             .
           </p>
         </article>
+
+        {/* CONTACT */}
+
         <article className="mb-12 mt-2 text-xl font-heading">
-          <h2 className="p-4 mb-3 text-3xl md:text-4xl text-center">
+          <h2 className="p-2 mb-2 text-3xl md:text-4xl text-center font-cardHeading">
             Contact Us
           </h2>
 
