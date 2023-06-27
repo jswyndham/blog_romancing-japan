@@ -37,7 +37,7 @@ export default function SignupCard() {
   };
 
   return (
-    <section className="flex items-center justify-center flex-col h-full w-full bg-slate-700 text-center">
+    <section className="flex items-center justify-center flex-col h-full w-full bg-slate-600 text-center">
       <div className="flex flex-col">
         <article className="">
           {/* TITLE */}
