@@ -88,24 +88,24 @@ export default function page() {
           </p>
 
           <ul className="mt-2 mb-4">
-            <li>Provide, operate, and maintain our website</li>
+            <li> - Provide, operate, and maintain our website</li>
             <li className="my-2">
-              Improve, personalize, and expand our website
+               - Improve, personalize, and expand our website
             </li>
             <li className="my-2">
-              Understand and analyze how you use our website
+               - Understand and analyze how you use our website
             </li>
             <li className="my-2">
-              Develop new products, services, features, and functionality
+               - Develop new products, services, features, and functionality
             </li>
             <li className="my-2">
-              Communicate with you, either directly or through one of our
+               - Communicate with you, either directly or through one of our
               partners, including for customer service, to provide you with
               updates and other information relating to the website, and for
               marketing and promotional purposes
             </li>
-            <li className="my-2">Send you emails</li>
-            <li className="my-2">Find and prevent fraud</li>
+            <li className="my-2"> - Send you emails</li>
+            <li className="my-2"> - Find and prevent fraud</li>
           </ul>
 
           <h3 className="pl-2 pt-5 text-2xl font-roboto_condensed font-bold">
