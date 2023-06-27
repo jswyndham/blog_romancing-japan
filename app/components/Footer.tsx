@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-white">
-          <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+          <p>Copyright © 2023 - All right reserved by JSW Web Dev</p>
         </div>
       </footer>
     </>
