@@ -11,6 +11,7 @@ import { BiCategory } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
+import SearchBar from "./SearchBar";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -35,10 +36,14 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative h-28 bg-black overflow-hidden">
-        {/* Nav for medium size up */}
+      <header className="relative h-40 smd:h-28 bg-black overflow-hidden">
+        {/* SEARCH BAR */}
+        <div className="smd:hidden">
+          <SearchBar />
+        </div>
 
-        <nav className="z-50 mt-3 flex flex-row justify-between align-middle relative">
+        {/* Nav for medium size up */}
+        <nav className="z-50 mt-3 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
 
           <Link href="/">
@@ -52,28 +57,9 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* SEARCH BAR */}
-          <div className="hidden smd:flex smd:flex-col">
-            <div className="flex flex-row justify-end">
-              <div className="relative mr-4">
-                <Image
-                  src="/images/search-26.png"
-                  width={26}
-                  height={26}
-                  alt="search"
-                  className="absolute right-64 2xl:right-60 mt-2 2xl:mr-5"
-                  priority
-                />
-
-                <input
-                  type="text"
-                  className="py-1 pl-12 my-1 mr-3 w-9/12 bg-base-200 rounded-full focus:outline-red-400"
-                  placeholder="search"
-                />
-
-                <button className="p-1 bg-rose-300">search</button>
-              </div>
-            </div>
+          {/* SEARCH BAR @ SMD*/}
+          <div className="hidden smd:flex smd: flex-col gap-2">
+            <SearchBar />
 
             {/* NAVBAR MENU */}
             <ul className="flex flex-row py-3 smd:space-x-7 xl:space-x-16 2xl:space-x-20 mr-3 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
@@ -248,7 +234,6 @@ export default function Navbar() {
               </Link>
             </ul>
           </div>
-
           {/* SIDEBAR MENU */}
           {/* Hamburger button */}
           <div className="absolute right-0 top-0 m-3 p-2 smd:hidden">
@@ -281,24 +266,6 @@ export default function Navbar() {
               <AiOutlineCloseSquare />
             </button>
             <ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
-              <div className="relative flex flex-row justify-end">
-                <Image
-                  src="/images/search-26.png"
-                  width={26}
-                  height={26}
-                  alt="search"
-                  className="absolute right-40 xl:right-64 2xl:right-72 mt-2 xl:mr-4 2xl:mr-7"
-                  priority
-                />
-
-                <input
-                  type="text"
-                  className="py-1 pl-12 my-1 w-11/12 bg-base-200 rounded-full focus:outline-red-400"
-                  placeholder="search"
-                />
-                <button className="p-1 bg-red-300">search</button>
-              </div>
-
               <Link onClick={handleClick} href={"/"}>
                 <li
                   className="

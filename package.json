@@ -3,13 +3,15 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 5000",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"email": "email dev --dir emails"
 	},
 	"dependencies": {
 		"@portabletext/react": "^3.0.0",
+		"@react-email/components": "0.0.7",
 		"@sanity/client": "^5.4.2",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/vision": "^3.10.0",
@@ -28,6 +30,7 @@
 		"postcss": "8.4.22",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-email": "^1.9.4",
 		"react-icons": "^4.8.0",
 		"react-loading-icons": "^1.1.0",
 		"sanity": "^3.10.0",
