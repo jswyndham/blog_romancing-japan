@@ -36,14 +36,14 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative h-40 smd:h-28 bg-black overflow-hidden">
+      <header className="relative h-24 bg-black overflow-hidden">
         {/* SEARCH BAR */}
-        <div className="smd:hidden">
+        {/* <div className="smd:hidden">
           <SearchBar />
-        </div>
+        </div> */}
 
         {/* Nav for medium size up */}
-        <nav className="z-50 mt-3 smd:mt-1 flex flex-row justify-between align-middle relative">
+        <nav className="z-50 mt-1 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
 
           <Link href="/">
@@ -59,10 +59,10 @@ export default function Navbar() {
 
           {/* SEARCH BAR @ SMD*/}
           <div className="hidden smd:flex smd: flex-col gap-2">
-            <SearchBar />
+            {/* <SearchBar /> */}
 
             {/* NAVBAR MENU */}
-            <ul className="flex flex-row py-3 smd:space-x-7 xl:space-x-16 2xl:space-x-20 mr-3 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
+            <ul className="flex flex-row py-3 smd:space-x-7 xl:space-x-16 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
               <Link href={"/"}>
                 <li
                   className="

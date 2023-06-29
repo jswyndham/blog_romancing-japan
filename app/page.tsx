@@ -50,6 +50,40 @@ export default async function Home() {
                     <ArticleCardOne />
                   </div>
 
+                  {/* <article className="hidden mt-4 xl:border-l-4 xl:border-r-4 border-white">
+                    <div className="flex flex-col justify-center px-4">
+                      <>
+                        {author.map(async (author) => (
+                          <div key={author._id} className="relative  mb-3">
+                            <figure className="absolute w-80 xl:w-64 m-auto left-0 right-0 -mt-4 xl:mt-6 rounded-xl">
+                              <Image
+                                src={(await urlFor(author.image)).url()}
+                                alt={post.name}
+                                width={900}
+                                height={900}
+                                className="object-fill px-3 pb-3"
+                                priority
+                              />
+                            </figure>
+                            <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 mx-2 text-justify font-playfair_display whitespace-pre-line">
+                              <div className="flex justify-center my-2">
+                                <h3 className="mb-2 font-caveat text-3xl xl:text-2xl">
+                                  {author.name}
+                                </h3>
+                              </div>
+                              <PortableText
+                                value={author.biography}
+                                onMissingComponent={false}
+                                components={components}
+                                className="whitespace-pre-line text-lg"
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    </div>
+                  </article> */}
+
                   <div className="md:row-span-1 md:col-span-6 lg:row-span-2 lg:col-span-4 2xl:col-span-5">
                     <ArticleCardTwo />
                   </div>
