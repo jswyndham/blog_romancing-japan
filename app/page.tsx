@@ -48,6 +48,7 @@ export default async function Home() {
               <div className="md:grid md:grid-rows-3 md:grid-cols-auto md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
                 {/* ARTICLE ONE */}
                 <article className="mx-2 my-3 md:my-0 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3">
+                  {/* @ts-expect-error Server Component */}
                   <ArticleCardOne />
                 </article>
 
@@ -57,23 +58,19 @@ export default async function Home() {
 
                 {/* JAMES & AKARI PROFILE */}
                 <article className="hidden lg:h-[90%] lg:flex mt-4 xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
-                  <AkariAndJamesProfile/>
+                  <AkariAndJamesProfile />
                 </article>
 
                 {/* ARTICLE TWO & SIGNUP CARD */}
                 <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-2">
+                  {/* @ts-expect-error Server Component */}
                   <ArticleCardTwo />
                 </article>
 
                 <article className="lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
+                  {/* @ts-expect-error Server Component */}
                   <ArticleCardThree />
                 </article>
-
-                {/* <article className="lg:row-span-1 lg:col-span-4">
-                <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
-              <BlogSmallCard />
-            </article>
-                </article> */}
               </div>
 
               {/* ARTICLE THREE & FOUR */}
@@ -83,6 +80,7 @@ export default async function Home() {
             <div className="divider lg:-mt-28"></div>
 
             <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
+              {/* @ts-expect-error Server Component */}
               <BlogSmallCard />
             </article>
           </div>

@@ -22,6 +22,7 @@ export default function page() {
         </div>
         <div className="mt-24 md:w-[85%] xl:w-[65%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8 xl:gap-12">
           {/* CARD */}
+          {/* @ts-expect-error Server Component */}
           <ArticleCollectionCard />
         </div>
       </main>

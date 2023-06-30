@@ -316,6 +316,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               </h3>
             </div>
             <div className="grid grid-cols-2 smd:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
+              {/* @ts-expect-error Server Component */}
               <LatestArticlesMini />
             </div>
           </article>
