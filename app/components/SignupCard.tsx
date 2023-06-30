@@ -43,7 +43,7 @@ export default function SignupCard() {
   };
 
   return (
-    <section className="flex flex-col justify-center md:justify-between h-full w-full bg-slate-600 drop-shadow-md md:p-2 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
+    <section className="flex flex-col justify-center md:justify-between h-full bg-slate-600 drop-shadow-md md:p-2 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
       {/* TITLE */}
       <div className=" flex justify-center px-5 pt-2 md:my-2 lg:pt-0 2xl:my-12">
         <h2 className="card-title font-carter_one py-4 text-base-100 font-extrabold text-3xl md:text-4xl lg:py-0 xl:py-2 ">
@@ -52,7 +52,7 @@ export default function SignupCard() {
       </div>
 
       {/* DESCRIPTION */}
-      <div className="flex justify-center my-1 px-5 md:my-4 lg:my-0 2xl:my-12 pb-4 text-base-100 text-xl lg:text-lg 2xl:text-2xl">
+      <div className="flex justify-center my-1 px-5 md:my-4 lg:my-0 2xl:my-12 pb-4 text-base-100 text-xl lg:my-1 lg:text-lg 2xl:text-2xl">
         <p>
           To receive updates on the latest articles discussing all things Japan,
           register your email now! Your support can help us to make this blog
@@ -63,7 +63,7 @@ export default function SignupCard() {
       {/* FORM SECTION */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col m-4 justify-center space-y-4 md:pb-2 2xl:space-y-8 2xl:my-16 xl:mx-1 xl:my-2"
+        className="h-full w-full flex flex-col m-4 justify-center space-y-4 md:pb-2 2xl:space-y-8 lg:my-8 xl:mx-1 xl:my-2"
       >
         {/* FIRST NAME INPUT */}
         <div className="card-actions relative">
