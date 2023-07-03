@@ -40,7 +40,7 @@ export default async function CategoryList() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 -mt-3 xl:-mt-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {categories.map(async (category: any) => (
               <Link href={`/categories/${category.slug}`}>

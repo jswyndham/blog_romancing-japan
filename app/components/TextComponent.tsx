@@ -61,5 +61,6 @@ export default async function TextComponent() {
       ),
     },
   };
+
   return components;
 }

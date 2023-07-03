@@ -89,7 +89,7 @@ export default async function about() {
                     />
                   </div>
                   <div className="py-2 mt-3 md:col-span-2">
-                    <h2 className="text-right pr-8 pb-6 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                    <h2 className="text-center md:text-right pr-8 pb-6 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
                       {about.subTitleOne}
                     </h2>
                     <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
@@ -106,7 +106,7 @@ export default async function about() {
               {/* PART THREE CONTENT */}
               <article className="flex flex-col items-center justify-center my-12 w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="mt-1 md:mt-4 mx-4">
-                  <h2 className="mb-8 text-xl lg:text-2xl font-extrabold font-catTags text-red-800 text-left">
+                  <h2 className="mb-8 text-xl text-center md:text-left lg:text-2xl font-extrabold font-catTags text-red-800">
                     {about.subTitleTwo}
                   </h2>
                 </div>
@@ -124,12 +124,12 @@ export default async function about() {
               {/* PART FOUR CONTENT */}
               <article className="flex flex-col items-center justify-center px-3 w-[90%] md:w-[95%] xl:max-w-5xl">
                 <div className="mt-1 md:mt-4 mx-4">
-                  <h2 className="text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
+                  <h2 className="mb-8 text-xl text-center md:text-left lg:text-2xl font-extrabold font-catTags text-red-800">
                     {about.subTitleThree}
                   </h2>
                 </div>
                 <div className="py-2">
-                  <p className="text-lg md:text-xl lg:text-2xl font-heading text-justify">
+                  <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                     <PortableText
                       value={about.subContentThree}
                       onMissingComponent={false}

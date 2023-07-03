@@ -58,11 +58,11 @@ export default function Navbar() {
           </Link>
 
           {/* SEARCH BAR @ SMD*/}
-          <div className="hidden smd:flex smd: flex-col gap-2">
+          <div className="hidden xl:flex smd: flex-col gap-2">
             {/* <SearchBar /> */}
 
             {/* NAVBAR MENU */}
-            <ul className="flex flex-row py-3 smd:space-x-7 xl:space-x-16 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
+            <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
               <Link href={"/"}>
                 <li
                   className="
@@ -92,7 +92,7 @@ export default function Navbar() {
                   <h4>Home</h4>
                 </li>
               </Link>
-              <Link href={"/collection"}>
+              <Link href={"/blog-collection"}>
                 <li
                   className="relative 
 									inline-block 
@@ -117,7 +117,7 @@ export default function Navbar() {
 									focus:font-bold 
 									active:text-red-400"
                 >
-                  <h4>Collection</h4>
+                  <h4 className="">Blog Collection</h4>
                 </li>
               </Link>
               <Link href={"/categories"}>
@@ -145,7 +145,7 @@ export default function Navbar() {
 									focus:font-bold 
 									active:text-red-400"
                 >
-                  <h4>Categories</h4>
+                  <h4>Article Categories</h4>
                 </li>
               </Link>
               <Link href={"/tags"}>
@@ -173,7 +173,7 @@ export default function Navbar() {
 									focus:font-bold 
 									active:text-red-400"
                 >
-                  <h4>Tags</h4>
+                  <h4>Article Tags</h4>
                 </li>
               </Link>
               <Link href={"/contact"}>
@@ -236,7 +236,7 @@ export default function Navbar() {
           </div>
           {/* SIDEBAR MENU */}
           {/* Hamburger button */}
-          <div className="absolute right-0 top-0 m-3 p-2 smd:hidden">
+          <div className="absolute right-0 top-0 m-3 p-2 xl:hidden">
             <button onClick={handleClick}>
               <Image
                 src="/images/hamburger-menu-50.png"
@@ -255,7 +255,7 @@ export default function Navbar() {
           className={`${
             !isOpen
               ? "translate-x-full z-50 fixed right-0 top-0 transition ease-in-out duration-300"
-              : "translate-x-0 z-50 w-60 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300"
+              : "translate-x-0 z-50 w-72 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300"
           }`}
         >
           <div className="h-screen pt-14 px-3 bg-gray-800">
@@ -281,7 +281,7 @@ export default function Navbar() {
 									before:-translate-x-1/2
 									before:w-0 
 									before:h-1 
-                  before:-ml-6
+                  before:-ml-12
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -290,7 +290,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-3/6
+									hover:before:w-5/12
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -302,7 +302,7 @@ export default function Navbar() {
                   <div>Home</div>
                 </li>
               </Link>
-              <Link onClick={handleClick} href={"/collection"}>
+              <Link onClick={handleClick} href={"/blog-collection"}>
                 <li
                   className="
 									flex 
@@ -314,10 +314,10 @@ export default function Navbar() {
 									before:absolute 
 									before:bottom-2 
 									before:left-1/2
+									before:-ml-4
 									before:-translate-x-1/2
 									before:w-0 
-									before:h-1 
-                  before:-ml-2
+									before:h-1
 									before:rounded-xl 
 									before:opacity-0 
 									before:transition-all 
@@ -326,7 +326,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-2/3
+									hover:before:w-8/12
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -335,7 +335,7 @@ export default function Navbar() {
                   <div className="mt-1 pl-2 pr-8">
                     <BsCollection />
                   </div>
-                  <div>Collection</div>
+                  <div>Blog Collection</div>
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/categories"}>
@@ -361,7 +361,7 @@ export default function Navbar() {
 									before:from-red-200
 									before:via-red-500
 									before:to-red-900
-									hover:before:w-4/6
+									hover:before:w-9/12
 									hover:before:opacity-100 
 									focus:text-red-200 
 									focus:font-bold 
@@ -370,7 +370,7 @@ export default function Navbar() {
                   <div className="mt-1 pl-2 pr-8">
                     <BiCategory />
                   </div>
-                  <div>Categories</div>
+                  <div>Article Categories</div>
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/tags"}>
@@ -405,7 +405,7 @@ export default function Navbar() {
                   <div className="mt-1 pl-2 pr-8">
                     <AiOutlineTags />
                   </div>
-                  <div>Tags</div>
+                  <div>Article Tags</div>
                 </li>
               </Link>
               <Link onClick={handleClick} href={"/contact"}>

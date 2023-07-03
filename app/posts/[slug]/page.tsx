@@ -6,7 +6,6 @@ import { urlFor } from "@/lib/urlFor";
 import { readClient } from "@/sanity/config/client-config";
 import Link from "next/link";
 import { Metadata } from "next";
-import TextComponent from "@/app/components/TextComponent";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 import SignupCardLong from "@/app/components/SignupCardLong";
 import SignupCardShort from "@/app/components/SignupCardShort";

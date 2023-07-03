@@ -33,7 +33,7 @@ export default async function TagList() {
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
           List of Article Tags
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 -mt-3 xl:-mt-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {tags.map(async (tag: any) => (
               <Link href={`/tags/${tag.slug}`}>

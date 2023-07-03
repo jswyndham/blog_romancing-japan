@@ -58,7 +58,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
   const components = TextComponent();
 
   return (
-    <main className="flex justify-center h-full px-8 py-4">
+    <main className="flex justify-center h-fit px-8 py-4">
       {/* Banner */}
       <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
         <h1>
@@ -98,7 +98,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
                       {post.name}
                     </h2>
                   </div>
-                  <div className="h-32 md:h-36 px-3 pt-4 text-md text-justify">
+                  <div className="h-32 md:h-44 3xl:h-32 px-3 md:my-2 text-md text-justify">
                     <PortableText
                       value={post.summaryShort}
                       onMissingComponent={false}

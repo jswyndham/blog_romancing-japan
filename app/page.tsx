@@ -6,6 +6,7 @@ import ArticleCardTwo from "./components/ArticleCardTwo";
 import BlogSmallCard from "./components/BlogSmallCard";
 import SignupCard from "./components/SignupCard";
 import Image from "next/image";
+import SignupCardLong from "./components/SignupCardLong";
 
 export const metadata = {
   title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
@@ -36,7 +37,7 @@ export default async function Home() {
             />
           </div>
 
-          <div className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[78%] lg:w-[97%] xl:max-w-screen-xl">
+          <div className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
             {/* Latest banner */}
             <div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
               <h1>Latest Articles</h1>
@@ -44,16 +45,20 @@ export default async function Home() {
 
             {/* Article post components */}
 
-            <section className="mt-20 flex flex-col">
-              <div className="md:grid md:grid-rows-3 md:grid-cols-auto md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
+            <section className="mt-20 flex flex-col items-center justify-center">
+              <div className="md:grid md:grid-rows-4 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
                 {/* ARTICLE ONE */}
-                <article className="mx-2 my-3 md:my-0 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3">
+                <article className="my-3 md:my-0 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3">
                   {/* @ts-expect-error Server Component */}
                   <ArticleCardOne />
                 </article>
 
-                <article className="md:row-span-1 md:col-span-6 lg:mt-4 lg:row-span-2 lg:col-span-1">
+                <article className="hidden lg:flex lg:mt-4 lg:row-span-2 lg:col-span-1">
                   <SignupCard />
+                </article>
+
+                <article className="w-screen my-12 flex items-center justify-center md:h-56 md:col-span-3 md:-ml-20 smd:-ml-24 md:mx-4 md:-mt-1 lg:hidden">
+                  <SignupCardLong />
                 </article>
 
                 {/* JAMES & AKARI PROFILE */}
@@ -61,20 +66,18 @@ export default async function Home() {
                   <AkariAndJamesProfile />
                 </article>
 
-                {/* ARTICLE TWO & SIGNUP CARD */}
+                {/* ARTICLE TWO */}
                 <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-2">
                   {/* @ts-expect-error Server Component */}
                   <ArticleCardTwo />
                 </article>
 
+                {/* ARTICLE THREE */}
                 <article className="lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
                   {/* @ts-expect-error Server Component */}
                   <ArticleCardThree />
                 </article>
               </div>
-
-              {/* ARTICLE THREE & FOUR */}
-              <article className="mx-4 my-2 md:mx-0 md:flex md:flex-col md:h-6/12 xl:gap-4 xl:grid xl:grid-cols-4 2xl:gap-4"></article>
             </section>
 
             <div className="divider lg:-mt-28"></div>
