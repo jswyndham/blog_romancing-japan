@@ -34,7 +34,7 @@ export const Welcome = ({ firstName }: WelcomeProps) => {
                 src={"/static/logo-nav.png"}
                 width="275"
                 height="70"
-                alt="Romancing Japan"
+                alt="Romancing Japan logo"
                 className="my-2 mx-auto"
               />
             </Section>

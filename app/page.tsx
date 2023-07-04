@@ -1,5 +1,4 @@
 import AkariAndJamesProfile from "./components/AkariAndJamesProfile";
-import ArticleCardFour from "./components/ArticleCardFour";
 import ArticleCardOne from "./components/ArticleCardOne";
 import ArticleCardThree from "./components/ArticleCardThree";
 import ArticleCardTwo from "./components/ArticleCardTwo";
@@ -49,7 +48,6 @@ export default async function Home() {
               <div className="md:grid md:grid-rows-4 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
                 {/* ARTICLE ONE */}
                 <article className="my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
-                  {/* @ts-expect-error Server Component */}
                   <ArticleCardOne />
                 </article>
 
@@ -68,13 +66,11 @@ export default async function Home() {
 
                 {/* ARTICLE TWO */}
                 <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-2">
-                  {/* @ts-expect-error Server Component */}
                   <ArticleCardTwo />
                 </article>
 
                 {/* ARTICLE THREE */}
                 <article className="md:row-span-1 md:col-span-6 lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
-                  {/* @ts-expect-error Server Component */}
                   <ArticleCardThree />
                 </article>
               </div>
@@ -83,7 +79,6 @@ export default async function Home() {
             <div className="divider lg:-mt-28"></div>
 
             <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
-              {/* @ts-expect-error Server Component */}
               <BlogSmallCard />
             </article>
           </div>

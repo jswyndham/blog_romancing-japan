@@ -66,7 +66,7 @@ export default function SignupCard() {
                   src="/images/firstName-24.png"
                   width={24}
                   height={24}
-                  alt="romancing japan white logo"
+                  alt="name input icon"
                   className="absolute mt-2 ml-5"
                 />
                 <input
@@ -92,7 +92,7 @@ export default function SignupCard() {
                   src="/images/mail-24.png"
                   width={24}
                   height={24}
-                  alt="romancing japan white logo"
+                  alt="email input icon"
                   className="absolute mt-2 ml-5"
                 />
                 <input

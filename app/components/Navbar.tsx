@@ -49,8 +49,8 @@ export default function Navbar() {
           <Link href="/">
             <Image
               src="/images/logo-nav.png"
-              width={260}
-              height={260}
+              width={235}
+              height={235}
               alt="romancing japan logo"
               className="absolute top-4 ml-4"
               priority
@@ -242,7 +242,7 @@ export default function Navbar() {
                 src="/images/hamburger-menu-50.png"
                 width={50}
                 height={50}
-                alt="romancing japan logo"
+                alt="hamburger menu logo"
                 className="z-50 btn-ghost btn-square btn p-2"
               />
             </button>

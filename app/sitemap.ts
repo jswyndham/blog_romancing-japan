@@ -4,7 +4,7 @@ import { getCategories, getPostsArchive, getTags } from '@/sanity/sanity-utils'
 
 export default async function sitemap() {
 
-  const baseUrl = "https://romancing-japan.com"
+  const baseUrl = "https://romancingjapan.com"
 
   // Get all posts from sanity-utils
   const posts = await getPostsArchive();
@@ -18,12 +18,12 @@ export default async function sitemap() {
   // Get all categories from sanity-utils
   const categories = await getCategories();
   const categoryUrls = categories?.map(categories => {
-    return { url: `${baseUrl}/categories/${categories.slug}`, lastModified: new Date}
+    return { url: `${baseUrl}/categories/${categories.slug}`, lastModified: new Date()}
   }) ?? [];
 
   const tags = await getTags();
   const tagUrls = tags?.map(tags => {
-    return { url: `${baseUrl}/tags/${tags.slug}`, lastModified: new Date}
+    return { url: `${baseUrl}/tags/${tags.slug}`, lastModified: new Date()}
   }) ?? [];
 
   return [

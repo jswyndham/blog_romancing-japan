@@ -1,7 +1,7 @@
 import { createClient, groq } from "next-sanity";
 import Image from "next/image";
 import { Post } from "../../../typings";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { urlFor } from "@/lib/urlFor";
 import { readClient } from "@/sanity/config/client-config";
 import Link from "next/link";
@@ -18,19 +18,20 @@ const RichTextComponents = async ({ value }: any) => {
   return (
     <div className="flex items-center justify-center w-full h-full my-6">
       <Image
-        src={(await urlFor(value)).url()}
+        src={(await urlFor(value)).fit("max").auto("format").url()}
         alt={value.name}
         width={700}
         height={700}
-        priority
+        loading="lazy"
       />
     </div>
   );
 };
 
-const components = {
+const components: PortableTextComponents = {
   types: {
     image: RichTextComponents,
+
     // Any other custom types you have in your content
     // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
   },
@@ -70,6 +71,11 @@ const components = {
     em: ({ children }: any) => (
       <em className="text-gray-600 font-semibold">{children}</em>
     ),
+    // link: ({ value }: any) => {
+    //   <Link href={value?.href} target="_blank">
+    //     {value}
+    //   </Link>;
+    // },
   },
 };
 
@@ -247,7 +253,6 @@ export default async function postArticle({ params: { slug } }: Props) {
                     value={post.content}
                     onMissingComponent={false}
                     components={components}
-                    className="whitespace-pre-line"
                   />
                 </div>
               </div>
@@ -293,7 +298,6 @@ export default async function postArticle({ params: { slug } }: Props) {
                         value={author.biography}
                         onMissingComponent={false}
                         components={components}
-                        className="whitespace-pre-line text-lg"
                       />
                     </div>
                   </div>
