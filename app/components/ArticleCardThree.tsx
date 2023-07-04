@@ -41,11 +41,22 @@ const components: PortableTextComponents = {
     em: ({ children }: any) => (
       <em className="text-gray-600 font-semibold">{children}</em>
     ),
-    // link: ({ value }: any) => {
-    //   <Link href={value?.href} target="_blank">
-    //     {value}
-    //   </Link>;
-    // },
+    link: ({ value, children }: any) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+
+      return (
+        <Link
+          href={value?.href}
+          target={target}
+          rel={"_blank" && "noindex nofollow"}
+          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900"
+        >
+          {children}
+        </Link>
+      );
+    },
   },
 };
 
