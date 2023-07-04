@@ -46,7 +46,7 @@ export default function SignupCard() {
     <section className="h-full w-full flex flex-col justify-center md:justify-between bg-slate-600 drop-shadow-md md:p-2 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
       {/* TITLE */}
       <div className=" flex justify-center px-5 pt-2 md:my-2 lg:pt-0 2xl:my-12">
-        <h2 className="card-title items-center text-justify font-carter_one text-base-100 font-extrabold text-3xl md:text-4xl lg:py-0 xl:py-2 ">
+        <h2 className="card-title items-center text-center font-carter_one text-base-100 font-extrabold text-3xl md:text-4xl lg:mt-6 g:py-0 xl:py-2 xl:text-5xl">
           Subscribe now
         </h2>
       </div>

@@ -48,7 +48,7 @@ export default async function Home() {
             <section className="mt-20 flex flex-col items-center justify-center">
               <div className="md:grid md:grid-rows-4 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
                 {/* ARTICLE ONE */}
-                <article className="my-3 md:my-0 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3">
+                <article className="my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
                   {/* @ts-expect-error Server Component */}
                   <ArticleCardOne />
                 </article>
@@ -73,7 +73,7 @@ export default async function Home() {
                 </article>
 
                 {/* ARTICLE THREE */}
-                <article className="lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
+                <article className="md:row-span-1 md:col-span-6 lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
                   {/* @ts-expect-error Server Component */}
                   <ArticleCardThree />
                 </article>
