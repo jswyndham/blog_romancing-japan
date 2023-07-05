@@ -171,7 +171,6 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   return (
     <>
-      {/* SUBSCRIPTION CARD */}
 
       <main
         key={post._id}
