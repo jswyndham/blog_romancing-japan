@@ -2,11 +2,6 @@ import { Post } from "@/typings";
 import { ImageResponse } from "next/server";
 import { createClient, groq } from "next-sanity";
 import { readClient } from "@/sanity/config/client-config";
-import { Metadata } from "next";
-
-// type Props = {
-//   params: { slug: string };
-// };
 
 // Route segment config
 export const runtime = "edge";
