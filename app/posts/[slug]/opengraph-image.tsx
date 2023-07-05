@@ -3,11 +3,10 @@ import { ImageResponse } from "next/server";
 import { createClient, groq } from "next-sanity";
 import { readClient } from "@/sanity/config/client-config";
 import { Metadata } from "next";
-import { urlFor } from "@/lib/urlFor";
 
-type Props = {
-  params: { slug: string };
-};
+// type Props = {
+//   params: { slug: string };
+// };
 
 // Route segment config
 export const runtime = "edge";
@@ -19,12 +18,10 @@ export const size = {
   height: 630,
 };
 
-export const contentType = "image/png";
+export const contentType = "image/jpg";
 
 // Image generation
-export default async function Image({
-  params: { slug },
-}: Props): Promise<Metadata> {
+export default async function Image({ params }: { params: { slug: string } }) {
   const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
   _id,
@@ -49,6 +46,8 @@ export default async function Image({
   description,
   }`;
 
+  const slug = params.slug;
+
   const post: Post = await createClient(readClient).fetch(query, {
     slug,
   });
@@ -56,37 +55,47 @@ export default async function Image({
 
   return new ImageResponse(
     (
-      <>
-        {/* ImageResponse JSX element */}
-        <div className="relative flex w-full h-full items-center justify-center">
-          {/* Background */}
-          <div className="absolute flex inset-0">
-            <img
-              src={post.image + "&w=1200&h=630&auto=format&q=75"}
-              alt={post.name}
-              className="flex flex-1"
-            />
+      <div
+        key={post._id}
+        tw="relative flex w-full h-full items-center justify-center"
+      >
+        {/* Background */}
+        <div tw="absolute flex inset-0">
+          <img
+            src={post.image}
+            alt={post.name}
+            height={630}
+            width={1200}
+            tw="flex flex-1"
+          />
 
-            {/* Overlay */}
-            <div className="absolute flex inset-0 bg-black bg-opacity-50 z-10" />
-          </div>
-
-          <div className="flex flex-col text-neutral-50">
-            {/* Title */}
-            <div className="text-7xl font-bold">{post.name}</div>
-
-            {/* Categories */}
-            {post.category.map((category) => (
-              <div key={category._id}>{category.title}</div>
-            ))}
-
-            {/* Tags */}
-            {post.tag.map((tag) => (
-              <div key={tag._id}>{tag.title}</div>
-            ))}
-          </div>
+          {/* Overlay */}
+          <div tw="absolute flex inset-0 bg-black bg-opacity-50 z-10" />
         </div>
-      </>
+
+        <div tw="flex flex-col text-neutral-50 items-center text-4xl m-2">
+          {/* Title */}
+          <div tw="flex text-7xl font-bold text-center">{post.name}</div>
+
+          {/* Categories */}
+
+          {post.category.map((category) => (
+            <div
+              key={category._id}
+              tw="flex flex-wrap mt-2 text-red-300 items-center justify-start text-left"
+            >
+              {category.title}
+            </div>
+          ))}
+
+          {/* Tags */}
+          {post.tag.map((tag) => (
+            <div key={tag._id} tw="flex flex-wrap text-blue-300 mt-2">
+              {tag.title}
+            </div>
+          ))}
+        </div>
+      </div>
     ),
     size
   );
