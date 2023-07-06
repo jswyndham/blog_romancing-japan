@@ -118,7 +118,7 @@ export default function SignupCard() {
             {/* SEND BUTTON */}
             <div className="my-4 py-3 md:w-[25%] md:mb-4">
               <button
-                className="w-full h-full md:h-7 bg-red-400 outline outline-offset-2 outline-slate-300 rounded-xl text-white font-bold active:bg-green-500 active:text-base-100 hover:bg-red-500 hover:outline-slate-400 transition-all duration-300"
+                className="w-full h-full py-1 outline outline-offset-2 outline-base-100 rounded-xl text-base-100 bg-red-700 font-bold hover:bg-base-100 hover:outline-red-600 hover:text-red-700 active:bg-red-400 active:text-base-200 active:outline-red-800 transition-all duration-300"
                 type="submit"
               >
                 Subscribe
