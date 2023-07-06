@@ -123,7 +123,7 @@ export default async function tagPage({ params: { slug } }: Props) {
         <section className="flex justify-center">
           <article
             key={tag._id}
-            className="mt-32 md:w-[85%] xl:w-[65%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8 xl:gap-12"
+            className="mt-32 md:w-[85%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
           >
             {tag.post.map(async (post: any) => (
               <Link key={post._id} href={`/posts/${post.slug}`}>
@@ -150,7 +150,7 @@ export default async function tagPage({ params: { slug } }: Props) {
                         {post.name}
                       </h2>
                     </div>
-                    <div className="h-32 md:h-44 3xl:h-32 px-3 md:my-2 text-md text-justify">
+                    <div className="h-32 md:h-44 3xl:h-32 px-3 md:my-2 text-lg text-justify">
                       <PortableText
                         value={post.summaryShort}
                         onMissingComponent={false}

@@ -20,8 +20,8 @@ const RichTextComponents = async ({ value }: any) => {
       <Image
         src={(await urlFor(value)).fit("max").auto("format").url()}
         alt={value.name}
-        width={700}
-        height={700}
+        width={500}
+        height={500}
         loading="lazy"
       />
     </div>
@@ -176,7 +176,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         key={post._id}
         className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
       >
-        <section className="mx-4 md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[30%] flex flex-col justify-center">
+        <section className="mx-4 md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
           {/* TOP BOARDER */}
           <article className="flex flex-col items-center justify-center">
             <div className="container ">
@@ -258,7 +258,7 @@ export default async function postArticle({ params: { slug } }: Props) {
           <article className="container">
             <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
               <div className="lg:w-11/12 px-8 py-4">
-                <div className="font-heading text-justify text-xl whitespace-pre-line">
+                <div className="font-heading text-left text-2xl whitespace-pre-line">
                   <PortableText
                     value={post.content}
                     onMissingComponent={false}

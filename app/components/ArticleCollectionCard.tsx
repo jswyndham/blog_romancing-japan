@@ -92,7 +92,7 @@ export default async function ArticleCollectionCard() {
                       {post.name}
                     </h2>
                   </div>
-                  <div className="h-32 md:h-44 3xl:h-32 px-3 md:my-2 text-md text-justify">
+                  <div className="h-32 md:h-44 3xl:h-32 px-3 md:my-2 text-lg text-left">
                     <PortableText
                       value={post.summaryShort}
                       onMissingComponent={false}
