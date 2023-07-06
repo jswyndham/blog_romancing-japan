@@ -43,14 +43,14 @@ export default function Navbar() {
         </div> */}
 
         {/* Nav for medium size up */}
-        <nav className="z-50 mt-1 smd:mt-1 flex flex-row justify-between align-middle relative">
+        <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
 
           <Link href="/">
             <Image
               src="/images/logo-nav.png"
-              width={235}
-              height={235}
+              width={240}
+              height={240}
               alt="romancing japan logo"
               className="absolute top-4 ml-4"
               priority
