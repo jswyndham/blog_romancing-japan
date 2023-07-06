@@ -9,6 +9,7 @@ export default defineType({
 			name: 'title',
 			title: 'Tag Title',
 			type: 'string',
+			validation: Rule => Rule.required()
 		}),
 		defineField({
 			name: 'slug',
@@ -18,6 +19,7 @@ export default defineType({
 				source: 'title',
 				maxLength: 96,
 			},
+			validation: Rule => Rule.required()
 		}),
 		defineField({
 			name: 'image',
@@ -25,11 +27,13 @@ export default defineType({
 			type: 'image',
 			options: { hotspot: true },
 			fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+			validation: Rule => Rule.required()
 		}),
 		defineField({
 			name: 'description',
 			title: 'Tag Description',
 			type: 'text',
+			validation: Rule => Rule.required()
 		}),
 	],
 });

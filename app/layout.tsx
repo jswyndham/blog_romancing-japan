@@ -79,6 +79,9 @@ export const metadata = {
     type: "website",
     siteName: "Romancing Japan",
   },
+  // verification: {
+  //   google: "",
+  // }
 };
 
 // Layout

@@ -82,7 +82,7 @@ export default async function Home() {
               </div>
             </section>
 
-            <div className="divider lg:-mt-28"></div>
+            <div className="divider md:-mt-16 lg:-mt-20"></div>
 
             <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
               <BlogSmallCard />

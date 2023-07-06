@@ -9,6 +9,7 @@ export default defineType({
       name: "name",
       title: "Name",
       type: "string",
+      validation: Rule => Rule.required()
     }),
 
     defineField({
@@ -19,6 +20,7 @@ export default defineType({
         source: "name",
         maxLength: 96,
       },
+      validation: Rule => Rule.required()
     }),
 
     defineField({
@@ -28,6 +30,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: Rule => Rule.required()
     }),
 
     {
@@ -80,4 +83,5 @@ export default defineType({
       ],
     },
   ],
+  validation: Rule => Rule.required()
 });

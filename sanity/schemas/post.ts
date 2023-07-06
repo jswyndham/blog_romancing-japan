@@ -9,6 +9,7 @@ const post = defineType({
 			name: 'name',
 			title: 'Name',
 			type: 'string',
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -16,6 +17,7 @@ const post = defineType({
 			title: 'Slug',
 			type: 'slug',
 			options: { source: 'name' },
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -38,6 +40,7 @@ const post = defineType({
 			type: 'image',
 			options: { hotspot: true },
 			fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -48,7 +51,7 @@ const post = defineType({
 
 		defineField({
 			name: 'content',
-			title: 'Article Body',
+			title: 'Article Body (press ctrl + enter buttons for new paragraph)',
 			type: 'array',
 			of: [
 				{
@@ -111,6 +114,7 @@ const post = defineType({
 					],
 				},
 			],
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -148,6 +152,7 @@ const post = defineType({
 					},
 				},
 			],
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -185,12 +190,14 @@ const post = defineType({
 					},
 				},
 			],
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
 			name: 'description',
 			title: 'Description (copy short summary for SEO)',
 			type: 'string',
+			validation: Rule => Rule.required()
 		}),
 
 		defineField({
@@ -198,8 +205,10 @@ const post = defineType({
 			title: 'Author',
 			type: 'array',
 			of: [{ type: 'reference', to: { type: 'author' } }],
+			validation: Rule => Rule.required()
 		}),
 	],
+	
 });
 
 export default post;

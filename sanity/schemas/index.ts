@@ -6,8 +6,8 @@ import tag from "./tag";
 import author from "./author";
 import siteSettings from "./siteSettings";
 import userSignup from "./userEmail";
-import aboutPage from "./about";
 
-const schemas = [post, category, tag, author, siteSettings, userSignup, aboutPage];
+
+const schemas = [post, category, tag, author, siteSettings, userSignup];
 
 export default schemas;

@@ -22,7 +22,7 @@ export default function AkariAndJamesProfile() {
             </h3>
           </div>
           <div>
-            <p className="text-lg">
+            <p className="text-lg text-left font-sans">
               Hi everyone! I'm James and this is my wonderful wife, Akari. We
               live in Kyoto, Japan, where we raise two beautiful children. Akari
               is a native to Kyoto and has lived here her whole life. I, on the

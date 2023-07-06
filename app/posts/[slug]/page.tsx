@@ -128,6 +128,9 @@ export async function generateMetadata({
     description: post.description,
     alternates: {
       canonical: `/posts/${post.slug}`,
+      languages: {
+        "en-US": `/en-US/posts/${post.slug}`,
+      },
     },
     openGraph: {
       title: post.name,
@@ -140,6 +143,7 @@ export async function generateMetadata({
       title: post.name,
       description: post.description,
       creator: "@RomancingJapan",
+      images: post.image,
     },
   };
 }
@@ -171,7 +175,6 @@ export default async function postArticle({ params: { slug } }: Props) {
 
   return (
     <>
-
       <main
         key={post._id}
         className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
@@ -288,7 +291,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               <>
                 {post.author.map(async (author) => (
                   <div key={author._id} className="relative  mb-3">
-                    <figure className="absolute w-80 xl:w-64 m-auto left-0 right-0 -mt-4 xl:mt-6 rounded-xl">
+                    <figure className="absolute w-80 xl:w-64 m-auto left-0 right-0 -mt-4 xl:mt-10 rounded-xl">
                       <Image
                         src={(await urlFor(author.image)).url()}
                         alt={post.name}
@@ -304,11 +307,13 @@ export default async function postArticle({ params: { slug } }: Props) {
                           {author.name}
                         </h3>
                       </div>
-                      <PortableText
-                        value={author.biography}
-                        onMissingComponent={false}
-                        components={components}
-                      />
+                      <div className="font-sans">
+                        <PortableText
+                          value={author.biography}
+                          onMissingComponent={false}
+                          components={components}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
