@@ -1,4 +1,4 @@
-import AkariAndJamesProfile from "./components/AkariAndJamesProfile";
+import AkariAndJamesProfileLg from "./components/AkariAndJamesProfileLg";
 import ArticleCardOne from "./components/ArticleCardOne";
 import ArticleCardThree from "./components/ArticleCardThree";
 import ArticleCardTwo from "./components/ArticleCardTwo";
@@ -6,6 +6,7 @@ import BlogSmallCard from "./components/BlogSmallCard";
 import SignupCard from "./components/SignupCard";
 import Image from "next/image";
 import SignupCardLong from "./components/SignupCardLong";
+import AkariAndJamesProfileSm from "./components/AkariAndJamesProfileSm";
 
 export const metadata = {
   title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
@@ -45,7 +46,7 @@ export default async function Home() {
             {/* Article post components */}
 
             <section className="mt-20 flex flex-col items-center justify-center">
-              <div className="md:grid md:grid-rows-4 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
+              <div className="md:grid md:grid-rows-5 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
                 {/* ARTICLE ONE */}
                 <article className="my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
                   <ArticleCardOne />
@@ -59,19 +60,24 @@ export default async function Home() {
                   <SignupCardLong />
                 </article>
 
-                {/* JAMES & AKARI PROFILE */}
+                {/* JAMES & AKARI PROFILE @ LG */}
                 <article className="hidden lg:h-[90%] lg:flex mt-4 xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
-                  <AkariAndJamesProfile />
+                  <AkariAndJamesProfileLg />
                 </article>
 
                 {/* ARTICLE TWO */}
-                <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-2">
+                <article className="md:-mt-56 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
                   <ArticleCardTwo />
                 </article>
 
                 {/* ARTICLE THREE */}
                 <article className="md:row-span-1 md:col-span-6 lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
                   <ArticleCardThree />
+                </article>
+
+                {/* JAMES & AKARI PROFILE @ SM */}
+                <article className="md:-mt-12 lg:hidden border-white md:row-span-1 md:col-span-6">
+                  <AkariAndJamesProfileSm />
                 </article>
               </div>
             </section>
