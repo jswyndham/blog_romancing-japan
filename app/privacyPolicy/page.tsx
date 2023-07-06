@@ -90,16 +90,16 @@ export default function page() {
           <ul className="mt-2 mb-4">
             <li> - Provide, operate, and maintain our website</li>
             <li className="my-2">
-               - Improve, personalize, and expand our website
+              - Improve, personalize, and expand our website
             </li>
             <li className="my-2">
-               - Understand and analyze how you use our website
+              - Understand and analyze how you use our website
             </li>
             <li className="my-2">
-               - Develop new products, services, features, and functionality
+              - Develop new products, services, features, and functionality
             </li>
             <li className="my-2">
-               - Communicate with you, either directly or through one of our
+              - Communicate with you, either directly or through one of our
               partners, including for customer service, to provide you with
               updates and other information relating to the website, and for
               marketing and promotional purposes
@@ -240,7 +240,11 @@ export default function page() {
           </p>
           <p className="my-5">
             If you make a request, we have one month to respond to you. If you
-            would like to exercise any of these rights, please contact us.
+            would like to exercise any of these rights, please{" "}
+            <Link href={"/contact"}>
+              <span className="text-blue-700">contact us</span>
+            </Link>
+            .
           </p>
         </article>
 
@@ -299,7 +303,11 @@ export default function page() {
 
           <p className="my-2">
             If you have any questions or suggestions about our Privacy Policy,
-            do not hesitate to contact us.
+            do not hesitate to{" "}
+            <Link href={"/contact"}>
+              <span className="text-blue-700">contact us</span>
+            </Link>
+            .
           </p>
         </article>
       </section>
