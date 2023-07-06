@@ -23,7 +23,7 @@ export default async function TagList() {
       <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
         <div className="mt-16 lg:mt-8 xl:mt-0">
           <Image
-            src="/images/TagCover.jpg"
+            src="/tags/opengraph-image.jpg"
             width={3840}
             height={1368}
             alt="Mt.Fuji Black and White"

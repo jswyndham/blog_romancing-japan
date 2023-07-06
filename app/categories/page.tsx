@@ -26,7 +26,7 @@ export default async function CategoryList() {
         {/* Top Image */}
         <div className="mt-16 lg:mt-8 xl:mt-0">
           <Image
-            src="/images/CategoryCover.jpg"
+            src="/categories/opengraph-image.jpg"
             width={3840}
             height={1368}
             alt="Mt.Fuji Black and White"
