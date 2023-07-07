@@ -124,7 +124,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
       <section className="flex justify-center h-screen">
         <article
           key={category._id}
-          className="mt-32 md:w-[85%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
+          className="mt-32 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
         >
           {category.post.map(async (post: any) => (
             <Link key={post._id} href={`/posts/${post.slug}`}>
