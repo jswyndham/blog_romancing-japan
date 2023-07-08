@@ -20,7 +20,7 @@ const RichTextComponents = async ({ value }: any) => {
       <Image
         src={(await urlFor(value)).fit("max").auto("format").url()}
         alt={value.name}
-        width={500}
+        width={700}
         height={500}
         loading="lazy"
       />
@@ -51,13 +51,13 @@ const components: PortableTextComponents = {
       <h2 className="text-2xl py-4 font-bold">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl py-7 font-bold">{children}</h3>
+      <h3 className="text-3xl pt-4 pb-2 font-bold">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl pt-7 pb-3 font-bold">{children}</h4>
+      <h4 className="text-2xl pt-7 pb-2 font-bold">{children}</h4>
     ),
     h5: ({ children }: any) => (
-      <h4 className="text-xl pt-7 pb-3 font-extrabold">{children}</h4>
+      <h4 className="text-xl pt-7 pb-2 font-extrabold">{children}</h4>
     ),
 
     blockquote: ({ children }: any) => (
