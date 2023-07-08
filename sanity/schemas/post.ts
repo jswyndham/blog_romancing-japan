@@ -51,7 +51,7 @@ const post = defineType({
 
 		defineField({
 			name: 'content',
-			title: 'Article Body (press ctrl + enter buttons for new paragraph)',
+			title: 'Article Body (press shift + enter buttons for new paragraph, press ctrl + enter buttons for full edit view)',
 			type: 'array',
 			of: [
 				{
