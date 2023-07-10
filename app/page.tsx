@@ -61,7 +61,7 @@ export default async function Home() {
                 </article>
 
                 {/* JAMES & AKARI PROFILE @ LG */}
-                <article className="hidden lg:h-[80%] lg:flex mt-4 xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+                <article className="hidden lg:h-[80%] lg:flex xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                   <AkariAndJamesProfileLg />
                 </article>
 

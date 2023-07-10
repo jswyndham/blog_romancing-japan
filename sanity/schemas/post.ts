@@ -39,7 +39,19 @@ const post = defineType({
 			title: 'Image',
 			type: 'image',
 			options: { hotspot: true },
-			fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+			fields: [
+				{ 
+					name: 'alt', title: 'Alt', type: 'string' 
+				}, 
+				{
+				name: 'caption',
+				type: 'string',
+				title: 'Caption',
+				description: `Text that's displayed with the image`,
+				options: {
+					isHighlighted: true // &lt;-- make this field easily accessible
+					}		
+			}],
 			validation: Rule => Rule.required()
 		}),
 
@@ -111,6 +123,15 @@ const post = defineType({
 							name: 'alt',
 							title: 'Alternative text',
 						},
+						{
+							name: 'caption',
+							type: 'string',
+							title: 'Caption',
+							description: `Text that's displayed with the image`,
+							options: {
+								isHighlighted: true
+							}
+						}
 					],
 				},
 			],

@@ -14,6 +14,7 @@ interface Post extends Base {
 	category: Category[];
 	tag: Tag[];
 	image: string;
+	caption:string;
 	url: string;
 	content: PortableTextBlock[];
 	summary: PortableTextBlock[];
