@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { aboutPage } from "@/sanity/sanity-utils";
 import SignupCardLong from "../components/SignupCardLong";
 export const metadata = {
   title: "About Us",
@@ -16,8 +15,6 @@ export const metadata = {
 };
 
 export default async function about() {
-  const about_page = await aboutPage();
-
   return (
     <>
       <main className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">
@@ -53,8 +50,8 @@ export default async function about() {
                     I had the opportunity to travel around the country checking
                     out places that travel guides almost never cover. I decided
                     that I wanted to settle down in Kyoto, and after a brief
-                    visit to Australia in my early thirties, I eventually moved
-                    down with my partner, Akari. I received jobs at different
+                    return to Australia in my early thirties, I eventually moved
+                    back with my partner, Akari. I received jobs at different
                     colleges, and my wife and I are currently raising two
                     wonderful children in one of Japan's oldest cities.
                   </p>
@@ -105,12 +102,13 @@ export default async function about() {
                     lifestyle, and travel that will interest those who either
                     wish to travel or simply want to learn more about the
                     country. Coming to Japan can provide many surprises because
-                    it is so different from other cultures around the world.
-                    Therefore, gaining a better understanding of life in Japan,
-                    whether you are preparing for travel or studying the
-                    language, is a positive move. This website should serve as a
-                    resource for all things Japanese, including travel,
-                    lifestyle, pop culture, cooking, and local experiences.
+                    it is so different from other cultures, which can often
+                    result in culture shock. Therefore, gaining an understanding
+                    of life in Japan, whether you are preparing for travel or
+                    studying the language, is a positive move. This website
+                    should serve as a resource for all things Japanese,
+                    including travel, lifestyle, pop culture, cooking, and local
+                    experiences.
                   </p>
                 </div>
               </div>
@@ -127,19 +125,19 @@ export default async function about() {
                 <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                   For a long time I had been toying with the idea of creating
                   online content to inform others about the country I've come to
-                  call home. But, being a father and husband, and working as a
+                  call home. But, being a parent and husband, and working as a
                   full-time teacher, can consume a lot of your time and energy.
                   However, in 2021 I began playing with the idea of learning to
                   build websites, specifically coding in JavaScript. I
                   discovered that I really enjoy coding, and as my skills
                   improved, I began looking for my first large project to build
-                  (in Next.js for anyone interested). Because I love living in
+                  (in Next.js for anyone interested). Since I love living in
                   Japan, I decided to merge my two interests, and thus Romancing
                   Japan was born. This website has evolved into a passion
                   project. I have poured a lot of effort and time into building
                   this site. As my audience grows (hopefully), I intend to
                   further improve this site by including additional features for
-                  users to enjoy. I hope that you enjoy my website and the
+                  users to try. I hope that you enjoy my website and the
                   articles I will be posting.
                 </p>
               </div>

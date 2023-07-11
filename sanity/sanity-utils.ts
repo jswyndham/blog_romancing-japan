@@ -1,4 +1,4 @@
-import { Post, Category, AboutPage, Author } from '../typings';
+import { Post, Category, Author } from '../typings';
 import { createClient, groq } from 'next-sanity';
 import {readClient} from './config/client-config';
 
@@ -182,33 +182,6 @@ export async function getTags(): Promise<Post[]> {
   "slug": slug.current,
   "image": image.asset->url,
   description 
-  }`);
-}
-
-export async function aboutPage(): Promise<AboutPage> {
-	return createClient(readClient)
-		.fetch(groq`*[_type == "aboutPage"] {
-  _id,
-  _createdAt,
-  titleMain,
-  author[]->,
-  "image": image.asset->url,
-  "subImageOne": image.asset->url,
-  content[]{
-    ...,
-  },
-  subTitleOne,
-  subContentOne[]{
-    ...,
-  },
-  subTitleTwo,
-  subContentTwo[]{
-    ...,
-  },
-  subTitleThree,
-  subContentThree[]{
-    ...,
-  },
   }`);
 }
 

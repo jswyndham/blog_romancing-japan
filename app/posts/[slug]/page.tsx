@@ -16,7 +16,7 @@ type Props = {
 
 const RichTextComponents = async ({ value }: any) => {
   return (
-    <div className="flex items-center justify-center w-full h-full my-6">
+    <figure className="flex flex-col my-6">
       <Image
         src={(await urlFor(value)).fit("max").auto("format").url()}
         alt={value.name}
@@ -24,7 +24,10 @@ const RichTextComponents = async ({ value }: any) => {
         height={500}
         loading="lazy"
       />
-    </div>
+      <figcaption className="italic text-base text-left mt-2">
+        {value.caption}
+      </figcaption>
+    </figure>
   );
 };
 
@@ -100,7 +103,7 @@ export async function generateMetadata({
   _createdAt,
   name,
   "slug": slug.current,
-  "image":image.asset->url, 
+  image{...}, 
   url,
   content[]{
     ...,
@@ -156,7 +159,8 @@ export default async function postArticle({ params: { slug } }: Props) {
   _createdAt,
   name,
   "slug": slug.current,
-  image{...,},
+  image{...},
+  "caption": image.caption,
   url,
   content[]{
     ...,
@@ -246,15 +250,19 @@ export default async function postArticle({ params: { slug } }: Props) {
 
           {/* IMAGE */}
           <article>
-            <figure className="relative flex justify-center mx-2 my-6">
+            <figure className="flex flex-col justify-center -ml-8 my-6">
               <Image
                 src={(await urlFor(post.image)).url()}
                 alt={post.name}
                 width={900}
                 height={900}
-                className="w-full mx-14 shadow-xl shadow-slate-500"
+                className="w-full  shadow-lg shadow-slate-500"
                 priority
               />
+
+              <figcaption className="italic text-base text-left mt-2">
+                {post.caption}
+              </figcaption>
             </figure>
           </article>
 

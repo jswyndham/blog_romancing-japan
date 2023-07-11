@@ -7,6 +7,7 @@ type Base = {
 };
 
 interface Post extends Base {
+  caption: string;
 	map(arg0: (post: any) => Promise<JSX.Element>): unknown;
 	name: string;
 	slug: Slug;
