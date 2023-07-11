@@ -100,7 +100,7 @@ export async function generateMetadata({
   _createdAt,
   name,
   "slug": slug.current,
-  "image": image.asset->url,
+  "image":image.asset->url, 
   url,
   content[]{
     ...,
@@ -156,7 +156,7 @@ export default async function postArticle({ params: { slug } }: Props) {
   _createdAt,
   name,
   "slug": slug.current,
-  "image":{"src":image.asset->url, "caption":image.caption, "alt":image.alt},
+  image,
   url,
   content[]{
     ...,
