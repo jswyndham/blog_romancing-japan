@@ -156,13 +156,13 @@ export default async function postArticle({ params: { slug } }: Props) {
   _createdAt,
   name,
   "slug": slug.current,
-  image{..., fields[]=>{caption}},
+  "image":{"src":image.asset->url, "caption":image.caption, "alt":image.alt},
   url,
   content[]{
     ...,
     _type == "image" => {
       ...,
-      caption,
+      caption, 
       asset->
     }
   },
