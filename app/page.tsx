@@ -29,7 +29,7 @@ export default async function Home() {
           {/* Homepage pic */}
           <div>
             <Image
-              src="/opengraph-image.png"
+              src="/opengraph-image.jpg"
               width={3840}
               height={1368}
               alt="Mt.Fuji Black and White"
