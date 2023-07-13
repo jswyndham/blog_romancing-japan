@@ -81,10 +81,6 @@ module.exports = {
 
           error: "#DF1A2F",
         },
-        // colors: {
-        //   accentGreen: "#003C3B",
-        //   // base: "#F1F1F1",
-        // }
       },
     ],
     base: true,

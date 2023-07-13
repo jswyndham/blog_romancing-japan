@@ -27,7 +27,7 @@ export default async function TagList() {
             width={3840}
             height={1368}
             alt="Mt.Fuji Black and White"
-            priority
+            loading="lazy"
           />
         </div>
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
@@ -47,7 +47,7 @@ export default async function TagList() {
                       width={220}
                       height={220}
                       alt={tag.image}
-                      priority
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-700"
                     />
                   </figure>

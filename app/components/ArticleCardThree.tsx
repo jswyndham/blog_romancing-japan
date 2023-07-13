@@ -81,7 +81,7 @@ export default async function ArticleCardThree() {
             height={700}
             alt={post.image}
             className="className='w-full h-full md:rounded-md"
-            priority
+            loading="lazy"
           />
         </figure>
 

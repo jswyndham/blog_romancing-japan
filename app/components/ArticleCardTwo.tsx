@@ -78,7 +78,7 @@ export default async function ArticleCardTwo() {
             height={700}
             alt={post.image}
             className="className='w-full h-full md:rounded-md"
-            priority
+            loading="lazy"
           />
         </figure>
 
