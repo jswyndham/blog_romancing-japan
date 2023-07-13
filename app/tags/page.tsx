@@ -64,7 +64,7 @@ export default async function TagList() {
               </Link>
             ))}
           </>
-        </div>
+        </article>
       </section>
     </>
   );
