@@ -48,13 +48,13 @@ const components: PortableTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl py-7 font-bold">{children}</h1>
+      <h1 className="text-3xl py-7 font-bold">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-2xl py-4 font-bold">{children}</h2>
+      <h2 className="text-3xl py-4 font-bold">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl pt-4 pb-2 font-bold">{children}</h3>
+      <h3 className="text-2xl pt-4 pb-2 font-bold">{children}</h3>
     ),
     h4: ({ children }: any) => (
       <h4 className="text-2xl pt-7 pb-2 font-bold">{children}</h4>
@@ -250,7 +250,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 
           {/* IMAGE */}
           <article>
-            <figure className="flex flex-col justify-center -ml-8 my-6">
+            <figure className="flex flex-col justify-center my-6">
               <Image
                 src={(await urlFor(post.image)).url()}
                 alt={post.name}
@@ -269,14 +269,12 @@ export default async function postArticle({ params: { slug } }: Props) {
           {/* ARTICLE BODY */}
           <article className="container">
             <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-              <div className="lg:w-11/12 px-8 py-4">
-                <div className="font-heading text-left text-2xl whitespace-pre-line">
-                  <PortableText
-                    value={post.content}
-                    onMissingComponent={false}
-                    components={components}
-                  />
-                </div>
+              <div className="lg:w-11/12 px-4 py-4 font-heading text-justify xl:text-left text-xl 2xl:text-2xl whitespace-pre-line">
+                <PortableText
+                  value={post.content}
+                  onMissingComponent={false}
+                  components={components}
+                />
               </div>
             </article>
           </article>
@@ -342,7 +340,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                 Latest Posts
               </h3>
             </div>
-            <div className="grid grid-cols-2 smd:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
               {/* @ts-expect-error Server Component */}
               <LatestArticlesMini />
             </div>
