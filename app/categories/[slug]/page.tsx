@@ -111,7 +111,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
   const category = await createClient(readClient).fetch(query, { slug });
 
   return (
-    <main className="flex justify-center h-screen px-8 py-4">
+    <main className="flex justify-center h-fit px-8 py-4">
       {/* Banner */}
       <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
         <h1>
@@ -130,7 +130,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={category._id}
-                className="card rounded-none w-fit h-full mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                className="card rounded-none w-fit h-fill mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
               >
                 {/* Card Image */}
                 <figure className="border-b-2 border-red-500">
