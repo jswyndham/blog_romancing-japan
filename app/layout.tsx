@@ -69,6 +69,20 @@ export const metadata = {
   },
   description:
     "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
+  keywords: [
+    "Japan",
+    "Travel in Japan",
+    "Japanese Culture",
+    "Japanese Lifestyle",
+    "Lifestyle in Japan",
+    "Living in Japan",
+  ],
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: {
       default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
