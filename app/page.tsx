@@ -61,12 +61,12 @@ export default async function Home() {
                 </article>
 
                 {/* JAMES & AKARI PROFILE @ LG */}
-                <article className="hidden lg:h-[80%] lg:flex xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+                <article className="hidden lg:h-[80%] lg:mt-32 lg:flex xl:border-l-4 xl:mt-20 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                   <AkariAndJamesProfileLg />
                 </article>
 
                 {/* ARTICLE TWO */}
-                <article className="md:-mt-56 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
+                <article className="md:-mt-52 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
                   <ArticleCardTwo />
                 </article>
 
@@ -76,13 +76,14 @@ export default async function Home() {
                 </article>
 
                 {/* JAMES & AKARI PROFILE @ SM */}
-                <article className="md:-mt-12 lg:hidden border-white md:row-span-1 md:col-span-6">
+                <article className="md:-mt-8 md:mb-2 lg:hidden border-white md:row-span-1 md:col-span-6 lg:-mt-2">
                   <AkariAndJamesProfileSm />
                 </article>
               </div>
             </section>
 
-            <div className="divider md:-mt-16 lg:-mt-44 2xl:-mt-24"></div>
+            {/* DIVIDE */}
+            <div className="divider md:-mt-16 2xl:-mt-24"></div>
 
             <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
               <BlogSmallCard />

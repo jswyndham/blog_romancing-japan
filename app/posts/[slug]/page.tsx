@@ -310,7 +310,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                     </figure>
                     <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 mx-2 text-justify font-playfair_display whitespace-pre-line">
                       <div className="flex justify-center my-2">
-                        <h3 className="mb-2 font-caveat text-3xl xl:text-2xl">
+                        <h3 className="mb-2 font-caveat text-3xl text-center xl:text-2xl">
                           {author.name}
                         </h3>
                       </div>
