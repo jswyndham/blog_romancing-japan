@@ -20,8 +20,8 @@ export default async function TagList() {
 
   return (
     <>
-      <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
-        <div className="mt-16 lg:mt-8 xl:mt-0">
+      <section className="h-screen z-0 flex flex-col items-center justify-center overflow-hidden">
+        <figure className="mt-16 lg:mt-8 xl:mt-0">
           <Image
             src="/tags/opengraph-image.jpg"
             width={3840}
@@ -29,11 +29,11 @@ export default async function TagList() {
             alt="Mt.Fuji Black and White"
             loading="lazy"
           />
-        </div>
+        </figure>
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
           List of Article Tags
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
+        <article className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {tags.map(async (tag: any) => (
               <Link href={`/tags/${tag.slug}`}>
@@ -65,8 +65,7 @@ export default async function TagList() {
             ))}
           </>
         </div>
-        <div></div>
-      </div>
+      </section>
     </>
   );
 }

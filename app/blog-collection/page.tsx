@@ -15,16 +15,16 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <main className="flex justify-center h-full px-8 py-4">
+      <main className="flex justify-center h-screen px-8 py-4">
         {/* Banner */}
         <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
           <h1>Article Collection</h1>
         </div>
-        <div className="mt-24 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8">
+        <section className="mt-24 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8">
           {/* CARD */}
 
           <ArticleCollectionCard />
-        </div>
+        </section>
       </main>
     </>
   );

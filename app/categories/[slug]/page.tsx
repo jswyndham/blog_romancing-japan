@@ -111,7 +111,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
   const category = await createClient(readClient).fetch(query, { slug });
 
   return (
-    <main className="flex justify-center h-fit px-8 py-4">
+    <main className="flex justify-center h-screen px-8 py-4">
       {/* Banner */}
       <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
         <h1>
