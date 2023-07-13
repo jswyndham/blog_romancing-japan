@@ -24,7 +24,7 @@ export const metadata = {
 export default async function Home() {
   return (
     <>
-      <main className="h-screen">
+      <main>
         <section className="flex flex-col items-center justify-center overflow-hidden">
           {/* Homepage pic */}
           <div>
