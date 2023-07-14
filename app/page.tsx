@@ -62,17 +62,17 @@ export default async function Home() {
                 </article>
 
                 {/* JAMES & AKARI PROFILE @ LG */}
-                <article className="hidden lg:h-[80%] lg:mt-6 lg:flex xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+                <article className="hidden lg:flex lg:items-center lg:h-[80%] lg:mt-6 xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                   <AkariAndJamesProfileLg />
                 </article>
 
                 {/* ARTICLE TWO */}
-                <article className="md:-mt-52 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
+                <article className="md:-mt-52 smd:-mt-72 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
                   <ArticleCardTwo />
                 </article>
 
                 {/* ARTICLE THREE */}
-                <article className="md:row-span-1 md:col-span-6 xl:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
+                <article className="md:row-span-1 md:col-span-6 xl:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-2 2xl:mt-0">
                   <ArticleCardThree />
                 </article>
 
@@ -84,7 +84,7 @@ export default async function Home() {
             </section>
 
             {/* DIVIDE */}
-            <div className="divider md:-mt-16 2xl:-mt-24"></div>
+            <div className="divider md:-mt-16 lg:-mt-32 2xl:-mt-28"></div>
 
             <article className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
               <BlogSmallCard />
