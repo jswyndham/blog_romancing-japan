@@ -22,9 +22,9 @@ export default async function CategoryList() {
 
   return (
     <>
-      <div className="z-0 flex flex-col items-center justify-center overflow-hidden">
+      <section className="z-0 flex flex-col items-center justify-center overflow-hidden">
         {/* Top Image */}
-        <div className="mt-16 lg:mt-8 xl:mt-0">
+        <figure className="mt-16 lg:mt-8 xl:mt-0">
           <Image
             src="/categories/opengraph-image.jpg"
             width={3840}
@@ -32,7 +32,7 @@ export default async function CategoryList() {
             alt="Mt.Fuji Black and White"
             loading="lazy"
           />
-        </div>
+        </figure>
 
         {/* Page Banner */}
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
@@ -40,7 +40,7 @@ export default async function CategoryList() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
+        <article className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {categories.map(async (category: any) => (
               <Link href={`/categories/${category.slug}`}>
@@ -76,9 +76,9 @@ export default async function CategoryList() {
               </Link>
             ))}
           </>
-        </div>
-        <div></div>
-      </div>
+        </article>
+        
+      </section>
     </>
   );
 }
