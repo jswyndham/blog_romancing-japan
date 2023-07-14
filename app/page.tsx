@@ -72,7 +72,7 @@ export default async function Home() {
                 </article>
 
                 {/* ARTICLE THREE */}
-                <article className="md:row-span-1 md:col-span-6 lg:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
+                <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
                   <ArticleCardThree />
                 </article>
 
