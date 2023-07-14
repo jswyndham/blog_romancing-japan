@@ -23,7 +23,7 @@ export default async function CategoryList() {
   return (
     <>
       <section className="z-0 flex flex-col items-center justify-center overflow-hidden">
-        {/* Top Image */}
+        {/* TOP IMAGE */}
         <figure className="mt-16 lg:mt-8 xl:mt-0">
           <Image
             src="/categories/opengraph-image.jpg"
