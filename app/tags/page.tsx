@@ -19,6 +19,7 @@ export default async function TagList() {
   const tags = await getTags();
 
   return (
+    <>
     <section className="h-screen z-0 flex flex-col items-center justify-center overflow-hidden">
       <figure className="mt-16 lg:mt-8 xl:mt-0">
         <Image
@@ -65,5 +66,6 @@ export default async function TagList() {
         </>
       </article>
     </section>
+    </>
   );
 }
