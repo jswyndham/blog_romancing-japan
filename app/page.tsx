@@ -62,7 +62,7 @@ export default async function Home() {
                 </article>
 
                 {/* JAMES & AKARI PROFILE @ LG */}
-                <article className="hidden lg:h-[80%] lg:mt-32 lg:flex xl:border-l-4 xl:mt-20 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+                <article className="hidden lg:h-[80%] lg:mt-6 lg:flex xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                   <AkariAndJamesProfileLg />
                 </article>
 
@@ -72,7 +72,7 @@ export default async function Home() {
                 </article>
 
                 {/* ARTICLE THREE */}
-                <article className="md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
+                <article className="md:row-span-1 md:col-span-6 xl:h-[80%] lg:row-span-1 lg:col-span-3 lg:-mt-5 2xl:mt-0">
                   <ArticleCardThree />
                 </article>
 
