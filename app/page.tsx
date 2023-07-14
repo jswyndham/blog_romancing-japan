@@ -8,19 +8,19 @@ import Image from "next/image";
 import SignupCardLong from "./components/SignupCardLong";
 import AkariAndJamesProfileSm from "./components/AkariAndJamesProfileSm";
 
-export const metadata = {
-  title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
-  description:
-    "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
-  openGraph: {
-    title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
-    description:
-      "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
-    type: "website",
-    siteName: "Romancing Japan",
-    url: "http://www.romancingjapan.com",
-  },
-};
+// export const metadata = {
+//   title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+//   description:
+//     "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
+//   openGraph: {
+//     title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+//     description:
+//       "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
+//     type: "website",
+//     siteName: "Romancing Japan",
+//     url: "http://www.romancingjapan.com",
+//   },
+// };
 
 export default async function Home() {
   return (
