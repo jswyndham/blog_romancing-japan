@@ -258,7 +258,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                 width={900}
                 height={900}
                 className="w-full  shadow-lg shadow-slate-500"
-                priority
+                loading="lazy"
               />
 
               <figcaption className="italic text-base text-left mt-2">
@@ -306,7 +306,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                         width={900}
                         height={900}
                         className="object-fill px-3 pb-3"
-                        priority
+                        loading="lazy"
                       />
                     </figure>
                     <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 mx-2 text-justify font-playfair_display whitespace-pre-line">
