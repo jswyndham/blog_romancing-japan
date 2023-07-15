@@ -52,8 +52,8 @@ export default function Navbar() {
               width={240}
               height={240}
               alt="romancing japan logo"
-              className="absolute top-4 ml-4"
-              priority
+              className="absolute top-4 p-6 -mt-4 -ml-6 md:ml-4 md:p-0 md:mt-0"
+              loading="lazy"
             />
           </Link>
 
