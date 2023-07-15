@@ -103,7 +103,7 @@ export async function generateMetadata({
   _createdAt,
   name,
   "slug": slug.current,
-  image{...}, 
+  "image":image.asset->url, 
   url,
   content[]{
     ...,
@@ -139,6 +139,7 @@ export async function generateMetadata({
       title: post.name,
       description: post.description,
       type: "article",
+      images: post.image,
       siteName: "Romancing Japan",
       url: `https://www.romancingjapan.com/`,
     },
