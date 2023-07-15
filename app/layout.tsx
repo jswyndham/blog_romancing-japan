@@ -62,7 +62,7 @@ const caveat = Caveat({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://romancingjapan.com"),
+  metadataBase: new URL("https://romancing-japan.com"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
     template: `%s | Romancing Japan`,
@@ -92,7 +92,7 @@ export const metadata = {
       "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
     type: "website",
     siteName: "Romancing Japan",
-    url: "http://www.romancingjapan.com",
+    url: "http://www.romancing-japan.com",
   },
   // verification: {
   //   google: "",

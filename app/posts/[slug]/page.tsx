@@ -130,7 +130,7 @@ export async function generateMetadata({
     title: post.name,
     description: post.description,
     alternates: {
-      canonical: `https://www.romancingjapan.com/posts/${post.slug}`,
+      canonical: `https://www.romancing-japan.com/posts/${post.slug}`,
       languages: {
         "en-US": `/en-US/posts/${post.slug}`,
       },
@@ -141,7 +141,7 @@ export async function generateMetadata({
       type: "article",
       images: post.image,
       siteName: "Romancing Japan",
-      url: `https://www.romancingjapan.com/`,
+      url: `https://www.romancing-japan.com/`,
     },
     twitter: {
       card: "summary_large_image",

@@ -12,4 +12,4 @@ Allow: /
 Crawl-delay: 10
 
 
-Sitemap: http://www.romancingjapan.com/sitemap.xml
+Sitemap: http://www.romancing-japan.com/sitemap.xml

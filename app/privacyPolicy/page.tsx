@@ -13,15 +13,15 @@ export default function page() {
         {/* INTRODUCTION */}
         <article className="mb-8 mt-2">
           <h1 className="py-4 mb-3 text-left text-4xl md:text-5xl">
-            Privacy Policy for romancingjapan.com
+            Privacy Policy for romancing-japan.com
           </h1>
 
           <div className="text-xl font-heading">
             <p>
-              At Romancing Japan, accessible from www.romancingjapan.com, one of
-              our main priorities is the privacy of our visitors. This Privacy
-              Policy document contains types of information that is collected
-              and recorded by Romancing Japan and how we use it.
+              At Romancing Japan, accessible from www.romancing-japan.com, one
+              of our main priorities is the privacy of our visitors. This
+              Privacy Policy document contains types of information that is
+              collected and recorded by Romancing Japan and how we use it.
             </p>
 
             <p className="py-4">

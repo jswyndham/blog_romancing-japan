@@ -18,7 +18,7 @@ import AkariAndJamesProfileSm from "./components/AkariAndJamesProfileSm";
 //       "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
 //     type: "website",
 //     siteName: "Romancing Japan",
-//     url: "http://www.romancingjapan.com",
+//     url: "http://www.romancing-japan.com",
 //   },
 // };
 
