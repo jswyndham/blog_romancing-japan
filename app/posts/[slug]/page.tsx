@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 import SignupCardLong from "@/app/components/SignupCardLong";
 import SignupCardShort from "@/app/components/SignupCardShort";
+import Head from "next/head";
 
 type Props = {
   params: { slug: string };
@@ -139,7 +140,7 @@ export async function generateMetadata({
       title: post.name,
       description: post.description,
       type: "article",
-      images: post.image,
+      images: { url: post.image, width: 600, height: 400 },
       siteName: "Romancing Japan",
       url: `https://www.romancing-japan.com/`,
     },
@@ -148,7 +149,7 @@ export async function generateMetadata({
       title: post.name,
       description: post.description,
       creator: "@RomancingJapan",
-      images: post.image,
+      images: { url: post.image, width: 600, height: 400 },
     },
   };
 }
