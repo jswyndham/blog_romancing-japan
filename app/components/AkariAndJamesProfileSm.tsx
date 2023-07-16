@@ -33,7 +33,7 @@ export default function AkariAndJamesProfile() {
         </div>
         <div className="p-6">
           <p className="text-lg font-sans">
-            Hi everyone! I'm James and this is my wonderful wife, Akari. We live
+            Hi everyone! I'm James and this is my amazing wife, Akari. We live
             in Kyoto, Japan, where we raise two beautiful children. Akari is a
             native to Kyoto and has lived here her whole life. I, on the other
             hand, am from Melbourne, Australia. I started coming to Japan as a
