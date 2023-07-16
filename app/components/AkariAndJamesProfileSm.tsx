@@ -36,9 +36,11 @@ export default function AkariAndJamesProfile() {
             Hi everyone! I'm James and this is my wonderful wife, Akari. We live
             in Kyoto, Japan, where we raise two beautiful children. Akari is a
             native to Kyoto and has lived here her whole life. I, on the other
-            hand, am from Melbourne, Australia. However, I've made Kyoto my
-            home. Together we've built the Romancing Japan site so we can share
-            our passion for Japanese culture, lifestyle, travel, and cooking.
+            hand, am from Melbourne, Australia. I started coming to Japan as a
+            teenager and have over 30 years of experience with Japanese culture.
+            We've made Kyoto our home and together we've built the Romancing
+            Japan site so we can share our passion for Japanese culture,
+            lifestyle, travel, and cooking.
           </p>
         </div>
       </div>
