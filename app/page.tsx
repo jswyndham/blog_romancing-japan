@@ -19,6 +19,7 @@ export const metadata = {
     type: "website",
     siteName: "Romancing Japan",
     url: "http://www.romancing-japan.com",
+    images: { url: `/opengraph-image.jpg`, width: 600, height: 400 },
   },
 };
 

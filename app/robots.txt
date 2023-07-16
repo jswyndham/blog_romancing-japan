@@ -9,13 +9,13 @@ index: true
 
 User-agent: bingbot
 Allow: /
+index: true
 Crawl-delay: 10
 
 User-agent: googleBot
 Allow: /
 index: true
 follow: true
-noimageindex: true
 
 
 
