@@ -65,14 +65,15 @@ export default async function Image({ params }: { params: { slug: string } }) {
           />
 
           {/* Overlay */}
-          <div tw="absolute flex inset-0 bg-black bg-opacity-50 z-10" />
+          <div tw="absolute flex inset-0 bg-black bg-opacity-25" />
         </div>
 
-        <div tw="flex flex-col text-neutral-50 items-center text-4xl m-2">
+        <div tw="flex flex-col text-neutral-50 text-4xl mx-4 mt-12">
           {/* Title */}
-          <div tw="flex text-7xl font-bold text-center">{post.name}</div>
+          <div tw="flex mt-56 text-6xl font-bold text-center">{post.name}</div>
 
-          {/* Categories */}
+          <div tw="text-left text-red-600 mt-12">www.romancing-japan.com</div>
+          {/* Categories & Tags
 
           {post.category.map((category) => (
             <div
@@ -83,12 +84,12 @@ export default async function Image({ params }: { params: { slug: string } }) {
             </div>
           ))}
 
-          {/* Tags */}
+          
           {post.tag.map((tag) => (
             <div key={tag._id} tw="flex flex-wrap text-blue-300 mt-2">
               {tag.title}
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     ),
