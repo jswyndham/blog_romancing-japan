@@ -272,7 +272,7 @@ export default async function postArticle({ params: { slug } }: Props) {
           {/* ARTICLE BODY */}
           <article className="container">
             <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-              <div className="lg:w-11/12 px-4 py-4 font-heading text-justify xl:text-left text-xl 2xl:text-2xl whitespace-pre-line">
+              <div className="lg:w-11/12 px-4 py-4 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line">
                 <PortableText
                   value={post.content}
                   onMissingComponent={false}
