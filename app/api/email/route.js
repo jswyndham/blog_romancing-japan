@@ -1,19 +1,19 @@
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
-import WelcomeEmail from ".../email/welcome";
-import { NextResponse } from "next/server";
+// import WelcomeEmail from ".../email/welcome";
+// import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.EMAIL_KEY);
+// const resend = new Resend(process.env.EMAIL_KEY);
 
-export default async function POST() {
-  const body = await req.json();
+// export default async function POST() {
+//   const body = await req.json();
 
-  resend.sendEmail({
-    from: process.env.USER,
-    to: "user@gmail.com",
-    subject: "Welcome to Romancing Japan!",
-    react: WelcomeEmail(),
-  });
+//   resend.sendEmail({
+//     from: process.env.USER,
+//     to: "user@gmail.com",
+//     subject: "Welcome to Romancing Japan!",
+//     react: WelcomeEmail(),
+//   });
 
-  return NextResponse
-}
+//   return NextResponse
+// }
