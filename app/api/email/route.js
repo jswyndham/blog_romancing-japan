@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
 import WelcomeEmail from ".../email/welcome";
+import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.EMAIL_KEY);
 
@@ -13,4 +14,6 @@ export default async function POST() {
     subject: "Welcome to Romancing Japan!",
     react: WelcomeEmail(),
   });
+
+  return NextResponse
 }
