@@ -68,7 +68,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           <div tw="absolute flex inset-0 bg-black bg-opacity-25" />
         </div>
 
-        <div tw="flex flex-col text-neutral-50 text-4xl mx-4 mt-12">
+        <div tw="w-9/12 flex flex-col text-neutral-50 text-4xl mx-4 mt-12">
           {/* Title */}
           <div tw="flex mt-56 text-6xl font-bold text-center">{post.name}</div>
 
