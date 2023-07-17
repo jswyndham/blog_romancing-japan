@@ -29,7 +29,7 @@ export default async function Home() {
       <main>
         <section className="flex flex-col items-center justify-center overflow-hidden">
           {/* Homepage pic */}
-          <div>
+          <figure>
             <Image
               src="/opengraph-image.jpg"
               width={3840}
@@ -37,7 +37,7 @@ export default async function Home() {
               alt="Mt.Fuji Black and White"
               loading="lazy"
             />
-          </div>
+          </figure>
 
           <div className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
             {/* Latest banner */}
