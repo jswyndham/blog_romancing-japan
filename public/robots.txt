@@ -6,16 +6,15 @@ Disallow: /admin
 # Allow all crawlers
 User-agent: *
 Allow: /
-index: true
+
 
 User-agent: bingbot
 Allow: /
 Crawl-delay: 10
+noimageindex: true
 
 User-agent: googleBot
 Allow: /
-index: true
-follow: true
 noimageindex: true
 
 
