@@ -78,10 +78,11 @@ export const metadata = {
     "Living in Japan",
   ],
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: { index: true, follow: true },
+    bingBot: { index: true, follow: true },
   },
   openGraph: {
     title: {
