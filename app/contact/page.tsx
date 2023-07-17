@@ -28,6 +28,7 @@ export default async function Contact() {
           </h3>
         </div>
 
+{/* CONTACT FORM */}
         <ContactForm />
       </div>
     </>
