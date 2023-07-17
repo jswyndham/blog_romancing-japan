@@ -4,6 +4,8 @@ import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
+
+// RICH TEXT EDITOR SETTINGS
 const components: PortableTextComponents = {
   list: {
     bullet: ({ children }: any) => (
@@ -59,6 +61,8 @@ const components: PortableTextComponents = {
     },
   },
 };
+
+
 
 export default async function ArticleCollectionCard() {
   const posts = await getPostsArchive();

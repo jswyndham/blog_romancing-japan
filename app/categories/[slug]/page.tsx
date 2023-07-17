@@ -12,6 +12,8 @@ type Props = {
   params: { slug: string };
 };
 
+
+// RICH TEXT EDITOR SETTINGS
 const components: PortableTextComponents = {
   list: {
     bullet: ({ children }: any) => (
@@ -68,6 +70,8 @@ const components: PortableTextComponents = {
   },
 };
 
+
+// GROQ QUERY WITH METADATA
 export async function generateMetadata({
   params: { slug },
 }: Props): Promise<Metadata> {
@@ -101,7 +105,7 @@ export async function generateMetadata({
   };
 }
 
-// GROQ query parameters
+// ARTICLE DISPLAY BY CATEGORY
 export default async function categoryPage({ params: { slug } }: Props) {
   const query = groq`*[_type == "category" && slug.current == $slug][0]
   {..., 
@@ -121,10 +125,10 @@ export default async function categoryPage({ params: { slug } }: Props) {
       </div>
 
       {/* CARD */}
-      <section className="flex justify-center h-screen">
+      <section className="flex justify-center">
         <article
           key={category._id}
-          className="mt-32 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
+          className="mt-32 mb-6 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
         >
           {category.post.map(async (post: any) => (
             <Link key={post._id} href={`/posts/${post.slug}`}>
