@@ -106,7 +106,7 @@ export default function SignupCard() {
             placeholder="email"
             className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 lg:py-1 2xl:py-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
             minLength={2}
-            maxLength={20}
+            maxLength={100}
             required
             ref={emailRef}
             value={contactDetails.email}
