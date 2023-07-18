@@ -63,9 +63,8 @@ export default function Navbar() {
 
             {/* NAVBAR MENU */}
             <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
-              <Link href={"/"}>
-                <li
-                  className="
+              <li
+                className="
 									relative 
 									inline-block 
 									before:content-[''] 
@@ -88,13 +87,14 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/"}>
                   <h4>Home</h4>
-                </li>
-              </Link>
-              <Link href={"/blog-collection"}>
-                <li
-                  className="relative 
+                </Link>
+              </li>
+
+              <li
+                className="relative 
 									inline-block 
 									before:content-[''] 
 									before:absolute 
@@ -116,13 +116,14 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/blog-collection"}>
                   <h4 className="">Blog Collection</h4>
-                </li>
-              </Link>
-              <Link href={"/categories"}>
-                <li
-                  className="relative 
+                </Link>
+              </li>
+
+              <li
+                className="relative 
 									inline-block 
 									before:content-[''] 
 									before:absolute 
@@ -144,13 +145,14 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/categories"}>
                   <h4>Article Categories</h4>
-                </li>
-              </Link>
-              <Link href={"/tags"}>
-                <li
-                  className="relative  
+                </Link>
+              </li>
+
+              <li
+                className="relative  
 									inline-block 
 									before:content-[''] 
 									before:absolute 
@@ -172,13 +174,14 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/tags"}>
                   <h4>Article Tags</h4>
-                </li>
-              </Link>
-              <Link href={"/contact"}>
-                <li
-                  className="relative 
+                </Link>
+              </li>
+
+              <li
+                className="relative 
 									inline-block 
 									before:content-[''] 
 									before:absolute 
@@ -200,13 +203,14 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/contact"}>
                   <h4>Contact</h4>
-                </li>
-              </Link>
-              <Link href={"/about"}>
-                <li
-                  className="relative 
+                </Link>
+              </li>
+
+              <li
+                className="relative 
 									inline-block 
 									before:content-[''] 
 									before:absolute 
@@ -228,10 +232,11 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
+              >
+                <Link href={"/about"}>
                   <h4>About us</h4>
-                </li>
-              </Link>
+                </Link>
+              </li>
             </ul>
           </div>
           {/* SIDEBAR MENU */}
@@ -266,9 +271,8 @@ export default function Navbar() {
               <AiOutlineCloseSquare />
             </button>
             <ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
-              <Link onClick={handleClick} href={"/"}>
-                <li
-                  className="
+              <li
+                className="
 									flex 
 									flex-row 
 									px-6 
@@ -295,16 +299,19 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <AiOutlineHome />
+              >
+                <Link onClick={handleClick} href={"/"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <AiOutlineHome />
+                    </div>
+                    <div>Home</div>
                   </div>
-                  <div>Home</div>
-                </li>
-              </Link>
-              <Link onClick={handleClick} href={"/blog-collection"}>
-                <li
-                  className="
+                </Link>
+              </li>
+
+              <li
+                className="
 									flex 
 									flex-row 
 									px-6 
@@ -331,16 +338,19 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <BsCollection />
+              >
+                <Link onClick={handleClick} href={"/blog-collection"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <BsCollection />
+                    </div>
+                    <div>Blog Collection</div>
                   </div>
-                  <div>Blog Collection</div>
-                </li>
-              </Link>
-              <Link onClick={handleClick} href={"/categories"}>
-                <li
-                  className="flex 
+                </Link>
+              </li>
+
+              <li
+                className="flex 
 									flex-row 
 									px-6 
 									py-4 
@@ -366,16 +376,19 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <BiCategory />
+              >
+                <Link onClick={handleClick} href={"/categories"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <BiCategory />
+                    </div>
+                    <div>Article Categories</div>
                   </div>
-                  <div>Article Categories</div>
-                </li>
-              </Link>
-              <Link onClick={handleClick} href={"/tags"}>
-                <li
-                  className="flex 
+                </Link>
+              </li>
+
+              <li
+                className="flex 
 									flex-row 
 									px-6 
 									py-4 
@@ -401,16 +414,19 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <AiOutlineTags />
+              >
+                <Link onClick={handleClick} href={"/tags"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <AiOutlineTags />
+                    </div>
+                    <div>Article Tags</div>
                   </div>
-                  <div>Article Tags</div>
-                </li>
-              </Link>
-              <Link onClick={handleClick} href={"/contact"}>
-                <li
-                  className="flex 
+                </Link>
+              </li>
+
+              <li
+                className="flex 
 									flex-row 
 									px-6 
 									py-4 
@@ -436,16 +452,19 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <AiOutlineMail />
+              >
+                <Link onClick={handleClick} href={"/contact"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <AiOutlineMail />
+                    </div>
+                    <div>Contact</div>
                   </div>
-                  <div>Contact</div>
-                </li>
-              </Link>
-              <Link onClick={handleClick} href={"/about"}>
-                <li
-                  className="flex 
+                </Link>
+              </li>
+
+              <li
+                className="flex 
 									flex-row 
 									px-6 
 									py-4 
@@ -471,13 +490,16 @@ export default function Navbar() {
 									focus:text-red-200 
 									focus:font-bold 
 									active:text-red-400"
-                >
-                  <div className="mt-1 pl-2 pr-8">
-                    <BsInfoCircle />
+              >
+                <Link onClick={handleClick} href={"/about"}>
+                  <div className="flex flex-row">
+                    <div className="mt-1 pl-2 pr-8">
+                      <BsInfoCircle />
+                    </div>
+                    <div>About us</div>
                   </div>
-                  <div>About us</div>
-                </li>
-              </Link>
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

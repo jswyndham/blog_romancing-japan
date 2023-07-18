@@ -20,7 +20,7 @@ const RichTextComponents = async ({ value }: any) => {
     <figure className="flex flex-col my-6">
       <Image
         src={(await urlFor(value)).fit("max").auto("format").url()}
-        alt={value.name}
+        alt={value.title}
         width={700}
         height={500}
         loading="lazy"
@@ -242,9 +242,9 @@ export default async function postArticle({ params: { slug } }: Props) {
                 {/* AUTHOR */}
                 {post.author.map((author) => (
                   <div key={post._id}>
-                    <h4 className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
+                    <p className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
                       {author.name}
-                    </h4>
+                    </p>
                   </div>
                 ))}
               </div>
