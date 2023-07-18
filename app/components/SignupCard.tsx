@@ -121,7 +121,7 @@ export default function SignupCard() {
           <button
             id="button-subscribe"
             className="w-full h-full py-1 outline outline-offset-2 outline-base-100 rounded-xl text-base-100 bg-red-700 font-bold hover:bg-base-100 hover:outline-red-600 hover:text-red-700 active:bg-red-400 active:text-base-200 active:outline-red-800 transition-all duration-300"
-            aria-label="Aria Subscribe"
+            aria-label="Subscribe button"
             type="submit"
           >
             Subscribe
