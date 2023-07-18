@@ -20,7 +20,7 @@ const RichTextComponents = async ({ value }: any) => {
     <figure className="flex flex-col my-6">
       <Image
         src={(await urlFor(value)).fit("max").auto("format").url()}
-        alt={value.title}
+        alt={value.caption}
         width={700}
         height={500}
         loading="lazy"
@@ -85,7 +85,7 @@ const components: PortableTextComponents = {
           href={value?.href}
           target={target}
           rel={"_blank"}
-          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900"
+          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl 2xl:text-3xl"
         >
           {children}
         </Link>
