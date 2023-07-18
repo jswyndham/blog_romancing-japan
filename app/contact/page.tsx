@@ -19,7 +19,7 @@ export default async function Contact() {
       <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
         Contact Us
       </div>
-      <div className="max-w-screen-md h-screen mx-auto p-5">
+      <div className="max-w-screen-md mx-auto p-5">
         {/* Heading Text */}
         <div className="flex text-center items-center justify-center mt-20 mb-16">
           <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
@@ -28,7 +28,7 @@ export default async function Contact() {
           </h3>
         </div>
 
-{/* CONTACT FORM */}
+        {/* CONTACT FORM */}
         <ContactForm />
       </div>
     </>
