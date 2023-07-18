@@ -7,8 +7,8 @@ export async function POST(req, res) {
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.USER,
       pass: process.env.PASS,
@@ -37,11 +37,9 @@ export async function POST(req, res) {
   };
 
   try {
-    transporter.sendMail(mail);
-    console.log("Message sent");
+    await transporter.sendMail(mail);
     return NextResponse.json({ data: body.data }, { message: "Success!" });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: "Could not send email." });
   }
 }
