@@ -39,21 +39,23 @@ export default async function about() {
                     My name is James Saunders-Wyndham, and I was born in Sydney
                     and raised in Melbourne, Australia. I have, however, been
                     living (on and off) in Japan since the mid-1990s. I am a
-                    permanent resident and have lived in Kyoto for almost half
-                    my life. I spent a year as an exchange student in Aichi
-                    Prefecture when I was a teenager. During that period, I
-                    would travel from Nagoya to Kyoto on weekends, spending the
-                    day exploring temples and shrines and afterwards relaxing on
-                    the banks of the Kamogawa River. In my late-twenties, I
-                    eventually returned to Kyoto to work as a language
-                    instructor. Life was exciting in Japan as a young adult and
-                    I had the opportunity to travel around the country checking
-                    out places that travel guides almost never cover. I decided
-                    that I wanted to settle down in Kyoto, and after a brief
-                    return to Australia in my early thirties, I eventually moved
-                    back with my partner, Akari. I received jobs at different
-                    colleges, and my wife and I are currently raising two
-                    wonderful children in one of Japan's oldest cities.
+                    permanent resident and have lived in Kyoto for half of my
+                    adult-life. I started out as a high school exchange student
+                    in Aichi Prefecture. During that year I spent my time
+                    learning the language and emersed in the culture. I first
+                    moved to Kyoto for a short period in 1999. Kyoto made a big
+                    impact on me as a teenager and I swore one day that I would
+                    settle down there. After going back to Australia for an
+                    extended period, I eventually returned to Kyoto to work as a
+                    language instructor in my late-twenties. Life was exciting
+                    in Japan as a young adult and I had the opportunity to
+                    travel around the country discovering places that travel
+                    guides almost never cover. By the time I reached my early
+                    thirties, my partner, Akari, and I decided we wanted to
+                    start a family. I eventually went back to university to
+                    become a teacher, which led tp jobs at several colleges. My
+                    wife and I are currently raising two wonderful children in
+                    one of Japan's oldest and most culturally rich cities.
                   </p>
                 </div>
                 <div className="flex justify-center mx-2 my-4 md:my-6 md:col-span-1">
@@ -93,7 +95,7 @@ export default async function about() {
                   </h2>
                   <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                     While the name of this website may be puzzling to some, I
-                    chose it because it symbolizes how many people romanticize
+                    chose it because it symbolizes how people often romanticize
                     the idea of experiencing Japanese culture and traditions.
                     Japan's culture has piqued the interest and attention of
                     people all over the world by distinguishing itself as a
@@ -125,20 +127,20 @@ export default async function about() {
                 <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                   For a long time I had been toying with the idea of creating
                   online content to inform others about the country I've come to
-                  call home. But, being a parent and husband, and working as a
-                  full-time teacher, can consume a lot of your time and energy.
-                  However, in 2021 I began playing with the idea of learning to
-                  build websites, specifically coding in JavaScript. I
-                  discovered that I really enjoy coding, and as my skills
+                  call home. However, being a parent, husband, and working
+                  multiple teaching jobs, can consume a lot of your time and
+                  energy. However, in 2021 I began playing with the idea of
+                  learning to build websites, specifically coding in JavaScript.
+                  I discovered that I really enjoy coding, and as my skills
                   improved, I began looking for my first large project to build
-                  (in Next.js for anyone interested). Since I love living in
-                  Japan, I decided to merge my two interests, and thus Romancing
-                  Japan was born. This website has evolved into a passion
-                  project. I have poured a lot of effort and time into building
-                  this site. As my audience grows (hopefully), I intend to
-                  further improve this site by including additional features for
-                  users to try. I hope that you enjoy my website and the
-                  articles I will be posting.
+                  (in Next.js and Tailwind for anyone interested). Since I love
+                  living in Japan, I decided to merge my two interests, and thus
+                  Romancing Japan was born. This website has evolved into a
+                  passion project. I have poured a lot of effort and time into
+                  building this site. As my audience grows (hopefully), I intend
+                  to further improve this site by including additional features
+                  for users to try. I hope that you enjoy our website and the
+                  articles that we will be posting.
                 </p>
               </div>
             </article>

@@ -37,11 +37,9 @@ export async function POST(req, res) {
   };
 
   try {
-    transporter.sendMail(mail);
-    console.log("Message sent");
+    await transporter.sendMail(mail);
     return NextResponse.json({ data: body.data }, { message: "Success!" });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ message: "Could not send email." });
   }
 }

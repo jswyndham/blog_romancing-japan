@@ -217,7 +217,7 @@ export default function ContactForm() {
             {/* Alert - Success */}
             {messageSuccess && (
               <div
-                className="bg-success flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-white shadow-lg shadow-slate-400 rounded-full"
+                className="bg-green-200 border-l-8 border-success flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-black shadow-lg shadow-slate-500 rounded-sm"
                 role="alert"
               >
                 <div className="text-2xl px-2">
@@ -232,7 +232,7 @@ export default function ContactForm() {
             {/* Alert - Error */}
             {messageError && (
               <div
-                className="bg-error flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-white shadow-lg shadow-slate-400 rounded-full"
+                className="bg-red-200 border-l-8 border-error flex flex-row items-center justify-center align-middle w-full mx-4 mt-2 p-2 text-lg font-bold transition duration-1000 ease-in-out text-black shadow-lg shadow-slate-500 rounded-sm"
                 role="alert"
               >
                 <div className="text-2xl px-2">
