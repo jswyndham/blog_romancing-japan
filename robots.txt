@@ -11,4 +11,4 @@ User-agent: bingbot
 Allow: /
 Crawl-delay: 10
 
-Sitemap: http://www.romancing-japan.com/sitemap.xml
+Sitemap: https://www.romancing-japan.com/sitemap.xml

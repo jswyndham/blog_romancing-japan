@@ -62,7 +62,7 @@ const caveat = Caveat({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://romancing-japan.com"),
+  metadataBase: new URL("https://www.romancing-japan.com"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
     template: `%s | Romancing Japan`,
@@ -82,7 +82,7 @@ export const metadata = {
     follow: true,
     nocache: false,
     googleBot: { index: true, follow: true },
-    bingBot: { index: true, follow: true },
+    bingbot: { index: true, follow: true },
   },
   openGraph: {
     title: {
