@@ -49,7 +49,7 @@ const components: PortableTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-3xl py-7 font-bold">{children}</h1>
+      <h1 className="text-2xl py-7 font-bold">{children}</h1>
     ),
     h2: ({ children }: any) => (
       <h2 className="text-3xl py-4 font-bold">{children}</h2>
