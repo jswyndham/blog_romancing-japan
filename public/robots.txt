@@ -11,11 +11,11 @@ Allow: /
 User-agent: bingbot
 Allow: /
 Crawl-delay: 10
-noimageindex: true
+
 
 User-agent: googleBot
 Allow: /
-noimageindex: true
+
 
 
 
