@@ -242,7 +242,7 @@ export default function Navbar() {
           {/* SIDEBAR MENU */}
           {/* Hamburger button */}
           <div className="absolute right-0 top-0 m-3 p-2 xl:hidden">
-            <button onClick={handleClick}>
+            <button onClick={handleClick} aria-label="Menu button">
               <Image
                 src="/images/hamburger-menu-50.png"
                 width={50}
@@ -266,6 +266,7 @@ export default function Navbar() {
           <div className="h-screen pt-14 px-3 bg-gray-800">
             <button
               onClick={handleClick}
+              aria-label="Menu button"
               className="absolute z-50 top-0 right-0 m-6 text-white text-2xl hover:text-red-300 focus:text-red-200 focus:font-bold active:text-red-400"
             >
               <AiOutlineCloseSquare />

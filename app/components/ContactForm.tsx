@@ -202,7 +202,7 @@ export default function ContactForm() {
               id="button-send"
               className="shadow mx-3 mt-2 bg-indigo-500 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white py-2 px-6 rounded-md hover:shadow-lg hover:shadow-slate-500 focus:shadow-slate-200 active:bg-indigo-600"
               type="submit"
-              aria-label="Aria Send"
+              aria-label="Contact button"
               disabled={
                 !firstNameRef ||
                 !lastNameRef ||
