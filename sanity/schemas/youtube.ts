@@ -1,3 +1,5 @@
+const YouTubePreview = props => ({<pre>{JSON.stringify(props, null, 2)}</pre>})
+
 export default {
   name: 'youtube',
   type: 'object',
@@ -8,5 +10,11 @@ export default {
       type: 'url',
       title: 'YouTube URL',
     }
-  ]
+  ],
+  preview: {
+    select: {
+      url: 'url',
+    },
+    component: YouTubePreview
+  }
 }
