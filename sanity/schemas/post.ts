@@ -92,16 +92,7 @@ const post = defineType({
 					},
 				},
 				{
-					name: 'youtube',
-  				type: 'object',
-  				title: 'YouTube Embed',
-  				fields: [
-    			{
-      			name: 'url',
-      			type: 'url',
-      			title: 'YouTube URL',
-    			}
-  				]
+  				type: 'youtube',
 				},
 				{
 					name: 'excerpt',
