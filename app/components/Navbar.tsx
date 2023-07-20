@@ -11,7 +11,7 @@ import { BiCategory } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import SearchBar from "./SearchBar";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,10 +37,7 @@ export default function Navbar() {
   return (
     <>
       <header className="relative h-24 bg-black overflow-hidden">
-        {/* SEARCH BAR */}
-        {/* <div className="smd:hidden">
-          <SearchBar />
-        </div> */}
+        
 
         {/* Nav for medium size up */}
         <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
@@ -57,9 +54,9 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* SEARCH BAR @ SMD*/}
+         
           <div className="hidden xl:flex smd: flex-col gap-2">
-            {/* <SearchBar /> */}
+           
 
             {/* NAVBAR MENU */}
             <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
