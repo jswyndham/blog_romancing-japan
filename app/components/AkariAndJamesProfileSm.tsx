@@ -27,8 +27,8 @@ export default function AkariAndJamesProfile() {
             />
           </figure>
           <div className="flex flex-col items-center justify-center m-auto font-caveat text-3xl md:text-4xl">
-            <h3>James and Akari</h3>
-            <h3>Saunders-Wyndham</h3>
+            <p>James and Akari</p>
+            <p>Saunders-Wyndham</p>
           </div>
         </div>
         <div className="p-6">
