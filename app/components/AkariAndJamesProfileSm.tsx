@@ -8,8 +8,8 @@ export default function AkariAndJamesProfile() {
         <Image
           src="/images/akari_james.jpg"
           alt="Romancing Japan - James & Akari profile"
-          width={300}
-          height={300}
+          width={384}
+          height={257}
           className="object-fill"
           priority
         />
