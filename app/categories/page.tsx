@@ -30,7 +30,7 @@ export default async function CategoryList() {
             width={3840}
             height={1368}
             alt="Mt.Fuji Black and White"
-            loading="lazy"
+            priority
           />
         </figure>
 
