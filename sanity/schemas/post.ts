@@ -91,11 +91,7 @@ const post = defineType({
 						],
 					},
 				},
-				// {
-				//   name: "break",
-				//   title: "Break",
-				//   type: "hardBreak",
-				// },
+				{type: 'youtube'},
 				{
 					name: 'excerpt',
 					title: 'Excerpt',
