@@ -78,7 +78,7 @@ export default function SignupCard() {
                   type="text"
                   name="signup"
                   placeholder="first name"
-                  className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
+                  className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400 active:disabled disabled:outline-slate-500"
                   required
                   ref={firstNameRef}
                   value={contactDetails.firstName}
@@ -104,7 +104,7 @@ export default function SignupCard() {
                   type="text"
                   name="signup"
                   placeholder="email"
-                  className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400"
+                  className="w-full flex justify-start py-2 pl-8 ml-4 mr-2 rounded-md outline outline-offset-2 outline-slate-400 focus:outline-green-400 active:disabled disabled:outline-slate-500"
                   minLength={2}
                   maxLength={100}
                   required
@@ -124,7 +124,7 @@ export default function SignupCard() {
             <div className="my-4 py-3 mx-2">
               <button
                 id="button-subscribe-signup-short"
-                className="w-full h-full py-1 outline outline-offset-2 outline-base-100 rounded-xl text-base-100 bg-red-700 font-bold hover:bg-base-100 hover:outline-red-600 hover:text-red-700 active:bg-red-400 active:text-base-200 active:outline-red-800 transition-all duration-300"
+                className="w-full h-full py-1 outline outline-offset-2 outline-base-100 rounded-xl text-base-100 bg-red-700 font-bold hover:bg-base-100 hover:outline-red-600 hover:text-red-700 active:bg-red-400 active:text-base-200 active:outline-red-800 transition-all duration-300 active:disabled disabled:bg-red-300"
                 aria-label="Subscribe button"
                 type="submit"
               >
