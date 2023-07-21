@@ -13,10 +13,9 @@ export default function SignupCard() {
     email: "",
   });
 
-  const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const data = {
       firstName: firstNameRef.current?.value,
       email: emailRef.current?.value,
@@ -33,9 +32,15 @@ export default function SignupCard() {
       console.log(data, "Contact sent");
     });
 
+    await fetch("api/emails", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(data, "Email sent");
+    });
+
     setContactDetails({ firstName: "", email: "" });
   };
-
   return (
     <section className="flex items-center justify-center flex-col h-full w-full bg-slate-600 text-center">
       <div className="flex flex-col">
