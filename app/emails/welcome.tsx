@@ -17,11 +17,13 @@ import {
 } from "@react-email/components";
 import React from "react";
 
-interface WelcomeProps {
-  firstName: string;
-}
+// interface WelcomeProps {
+//   firstName: string;
+// }
 
-export const Welcome = ({ firstName }: WelcomeProps) => {
+
+
+export const Welcome = () => {
   return (
     <Html>
       <Head />
@@ -31,7 +33,7 @@ export const Welcome = ({ firstName }: WelcomeProps) => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto pt-[20px] w-[600px] px-16 pb-16">
             <Section className="mt-[32px]">
               <Img
-                src={"/static/logo-nav.png"}
+                src='opengraph-image.png'
                 width="275"
                 height="70"
                 alt="Romancing Japan logo"
@@ -39,7 +41,7 @@ export const Welcome = ({ firstName }: WelcomeProps) => {
               />
             </Section>
             <Section>
-              <Heading>Welcome, {firstName}!</Heading>
+              <Heading>Thanks for joining Romancing Japan!</Heading>
               <Text className="text-lg">
                 Thanks for signing up to our blog site, Romancing Japan. Since
                 you have signed up with us, we will send you monthly messages to
