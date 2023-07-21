@@ -7,11 +7,12 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"email": "email"
+		"email": "email dev"
 	},
 	"dependencies": {
 		"@portabletext/react": "^3.0.4",
 		"@react-email/components": "0.0.7",
+		"@react-email/img": "^0.0.5",
 		"@sanity/client": "^5.4.2",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/vision": "^3.10.0",

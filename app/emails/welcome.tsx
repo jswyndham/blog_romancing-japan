@@ -33,7 +33,7 @@ export const Welcome = () => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto pt-[20px] w-[600px] px-16 pb-16">
             <Section className="mt-[32px]">
               <Img
-                src='opengraph-image.png'
+                src='https://www.romancing-japan.com/_next/image?url=%2Fimages%2Flogo-nav.png&w=256&q=75'
                 width="275"
                 height="70"
                 alt="Romancing Japan logo"
