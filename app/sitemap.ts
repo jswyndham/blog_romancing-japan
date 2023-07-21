@@ -10,7 +10,7 @@ export default async function sitemap() {
   const posts = await getPostsArchive();
   const postsUrls = posts?.map(post => {
     return {
-      url: `${baseUrl}/${post.slug}`,
+      url: `${baseUrl}/posts/${post.slug}`,
       lastModified: new Date(),
     }
   }) ?? [];
