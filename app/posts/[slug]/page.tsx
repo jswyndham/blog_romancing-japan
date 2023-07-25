@@ -92,7 +92,7 @@ const components: PortableTextComponents = {
           href={value?.href}
           target={target}
           rel={"_blank"}
-          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl 2xl:text-3xl"
+          className="decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl"
         >
           {children}
         </Link>
