@@ -9,7 +9,6 @@ import { Metadata } from "next";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 import SignupCardLong from "@/app/components/SignupCardLong";
 import SignupCardShort from "@/app/components/SignupCardShort";
-import Head from "next/head";
 
 type Props = {
   params: { slug: string };
@@ -58,7 +57,7 @@ const components: PortableTextComponents = {
       <h3 className="text-2xl pt-4 pb-2 font-bold">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl pt-7 pb-2 font-bold">{children}</h4>
+      <h4 className="text-xl pt-7 pb-2 font-extrabold">{children}</h4>
     ),
     h5: ({ children }: any) => (
       <h4 className="text-xl pt-7 pb-2 font-extrabold">{children}</h4>
@@ -357,4 +356,7 @@ export default async function postArticle({ params: { slug } }: Props) {
       </main>
     </>
   );
+}
+function getYouTubeId(url: any) {
+  throw new Error("Function not implemented.");
 }
