@@ -9,10 +9,17 @@ import { Metadata } from "next";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 import SignupCardLong from "@/app/components/SignupCardLong";
 import SignupCardShort from "@/app/components/SignupCardShort";
+<<<<<<< HEAD
+=======
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+>>>>>>> 4aead2c688d47236fe222c720cecd0e5d5a9f99e
 
 type Props = {
   params: { slug: string };
 };
+
+
 
 const RichTextComponents = async ({ value }: any) => {
   return (
@@ -35,9 +42,12 @@ const components: PortableTextComponents = {
   types: {
     image: RichTextComponents,
 
+    
+    
     // Any other custom types you have in your content
     // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
   },
+  
   list: {
     bullet: ({ children }: any) => (
       <ul className="list-disc ml-8 py-5 space-y-5">{children}</ul>
@@ -68,6 +78,7 @@ const components: PortableTextComponents = {
         {children}
       </blockquote>
     ),
+    
   },
 
   marks: {
@@ -84,7 +95,7 @@ const components: PortableTextComponents = {
           href={value?.href}
           target={target}
           rel={"_blank"}
-          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl 2xl:text-3xl"
+          className="decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl"
         >
           {children}
         </Link>
@@ -276,6 +287,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                   value={post.content}
                   onMissingComponent={false}
                   components={components}
+                  
                 />
               </div>
             </article>
@@ -321,6 +333,7 @@ export default async function postArticle({ params: { slug } }: Props) {
                           value={author.biography}
                           onMissingComponent={false}
                           components={components}
+                      
                         />
                       </div>
                     </div>
@@ -357,6 +370,13 @@ export default async function postArticle({ params: { slug } }: Props) {
     </>
   );
 }
+<<<<<<< HEAD
 function getYouTubeId(url: any) {
   throw new Error("Function not implemented.");
 }
+=======
+function getYouTubeID(url: any) {
+  throw new Error("Function not implemented.");
+}
+
+>>>>>>> 4aead2c688d47236fe222c720cecd0e5d5a9f99e

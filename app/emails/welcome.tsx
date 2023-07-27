@@ -17,11 +17,13 @@ import {
 } from "@react-email/components";
 import React from "react";
 
-interface WelcomeProps {
-  firstName: string;
-}
+// interface WelcomeProps {
+//   firstName: string;
+// }
 
-export const Welcome = ({ firstName }: WelcomeProps) => {
+
+
+export const Welcome = () => {
   return (
     <Html>
       <Head />
@@ -31,7 +33,7 @@ export const Welcome = ({ firstName }: WelcomeProps) => {
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto pt-[20px] w-[600px] px-16 pb-16">
             <Section className="mt-[32px]">
               <Img
-                src={"/static/logo-nav.png"}
+                src='https://www.romancing-japan.com/_next/image?url=%2Fimages%2Flogo-nav.png&w=256&q=75'
                 width="275"
                 height="70"
                 alt="Romancing Japan logo"
@@ -39,18 +41,16 @@ export const Welcome = ({ firstName }: WelcomeProps) => {
               />
             </Section>
             <Section>
-              <Heading>Welcome, {firstName}!</Heading>
+              <Heading className="font-shadows_into_light">Thanks for joining Romancing Japan!</Heading>
               <Text className="text-lg">
                 Thanks for signing up to our blog site, Romancing Japan. Since
-                you have signed up with us, we will send you monthly messages to
+                you have signed up with us, we will send you bi-monthly messages to
                 keep you up-to-date with our latest articles.
               </Text>
             </Section>
             <Section>
               <Text className="text-lg">
-                In addition, twice a year we'll send you a newsletter that will
-                inform you about what's happening with our website. The
-                newsletter will include you in our journey byu documenting the
+                We write and post regular content to our site to help people stay informed about the topics their interested in regarding Japan. We will be documenting our journey and documenting the
                 progress and changes made to the site over time.
               </Text>
             </Section>

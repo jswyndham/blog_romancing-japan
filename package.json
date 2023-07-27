@@ -6,11 +6,13 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"email": "email dev"
 	},
 	"dependencies": {
-		"@portabletext/react": "^3.0.0",
+		"@portabletext/react": "^3.0.4",
 		"@react-email/components": "0.0.7",
+		"@react-email/img": "^0.0.5",
 		"@sanity/client": "^5.4.2",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/vision": "^3.10.0",
@@ -32,7 +34,10 @@
 		"react-dom": "^18.2.0",
 		"react-email": "^1.9.4",
 		"react-icons": "^4.8.0",
+<<<<<<< HEAD
 		"react-iframe": "^1.8.5",
+=======
+>>>>>>> 4aead2c688d47236fe222c720cecd0e5d5a9f99e
 		"react-lite-youtube-embed": "^2.3.52",
 		"react-loading-icons": "^1.1.0",
 		"resend": "^0.16.0",
