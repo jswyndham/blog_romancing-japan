@@ -34,10 +34,7 @@
 		"react-dom": "^18.2.0",
 		"react-email": "^1.9.4",
 		"react-icons": "^4.8.0",
-<<<<<<< HEAD
 		"react-iframe": "^1.8.5",
-=======
->>>>>>> 4aead2c688d47236fe222c720cecd0e5d5a9f99e
 		"react-lite-youtube-embed": "^2.3.52",
 		"react-loading-icons": "^1.1.0",
 		"resend": "^0.16.0",
