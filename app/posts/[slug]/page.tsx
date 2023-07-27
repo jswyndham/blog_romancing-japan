@@ -9,7 +9,6 @@ import { Metadata } from "next";
 import LatestArticlesMini from "@/app/components/LatestArticlesMini";
 import SignupCardLong from "@/app/components/SignupCardLong";
 import SignupCardShort from "@/app/components/SignupCardShort";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 type Props = {
@@ -359,12 +358,4 @@ export default async function postArticle({ params: { slug } }: Props) {
       </main>
     </>
   );
-}
-
-function getYouTubeId(url: any) {
-  throw new Error("Function not implemented.");
-}
-
-function getYouTubeID(url: any) {
-  throw new Error("Function not implemented.");
 }
