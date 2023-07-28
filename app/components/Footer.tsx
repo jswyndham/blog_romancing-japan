@@ -31,7 +31,10 @@ export default function Footer() {
                 alt="twitter logo"
               />
             </Link>
-            <Link href="/" target="_blank">
+            <Link
+              href="https://www.instagram.com/romancingjapan/"
+              target="_blank"
+            >
               <Image
                 src="/images/instagram-50-white-2.png"
                 width={30}
