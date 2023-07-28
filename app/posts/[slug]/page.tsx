@@ -86,7 +86,7 @@ const components: PortableTextComponents = {
           href={value?.href}
           target={target}
           rel={"_blank"}
-          className="decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 m-2 text-2xl"
+          className="decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900 my-2 text-xl 2xl:text-2xl"
         >
           {children}
         </Link>
@@ -236,7 +236,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 
               {/* TITLE */}
               <div className="flex flex-col">
-                <h1 className="mt-2 text-5xl ml-5 p-1 font-heading font-bold sm:text-6xl">
+                <h1 className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
                   {post.name}
                 </h1>
 
