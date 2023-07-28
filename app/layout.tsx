@@ -112,14 +112,12 @@ export default function RootLayout({
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
       <body className="bg-base-100">
-        <div>
-          {/* <Header /> */}
-          <Navbar />
+        {/* <Header /> */}
+        <Navbar />
 
-          {children}
+        {children}
 
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );

@@ -183,179 +183,177 @@ export default async function postArticle({ params: { slug } }: Props) {
   const post: Post = await createClient(readClient).fetch(query, { slug });
 
   return (
-    <>
-      <main
-        key={post._id}
-        className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
-      >
-        <section className="mx-4 md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
-          {/* TOP BOARDER */}
-          <article className="flex flex-col items-center justify-center">
-            <div className="container ">
-              <div className="relative h-8 mt-6 p-3 divide-y divide-red-700">
-                <div className="h-1"></div>
-                <div className="h-1"></div>
-                <div className="h-1"></div>
-                <div className="h-1"></div>
-              </div>
+    <main
+      key={post._id}
+      className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
+    >
+      <section className="mx-4 md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
+        {/* TOP BOARDER */}
+        <article className="flex flex-col items-center justify-center">
+          <div className="container ">
+            <div className="relative h-8 mt-6 p-3 divide-y divide-red-700">
+              <div className="h-1"></div>
+              <div className="h-1"></div>
+              <div className="h-1"></div>
+              <div className="h-1"></div>
+            </div>
 
-              {/* CATEGORIES & TAGS */}
-              <article className="w-full ml-4 flex flex-col gap-1 items-start justify-start font-bold">
-                <div className="flex flex-col pt-1">
-                  <div>
-                    {/* Categories */}
-                    <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-                      {post.category.map((category) => (
-                        <div
-                          key={category._id}
-                          className="mx-3 px-3 pt-1 font-cardHeading text-red-700 text-md"
-                        >
-                          <Link href={`/categories/${category.slug}`}>
-                            {category.title}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col justify-start my-1">
-                  {/* Tags */}
+            {/* CATEGORIES & TAGS */}
+            <div className="w-full ml-4 flex flex-col gap-1 items-start justify-start font-bold">
+              <div className="flex flex-col pt-1">
+                <div>
+                  {/* Categories */}
                   <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-                    {post.tag.map((tag) => (
+                    {post.category.map((category) => (
                       <div
-                        key={tag._id}
-                        className="mx-3 px-3 pt-1 font-catTags text-info text-md"
+                        key={category._id}
+                        className="mx-3 px-3 pt-1 font-cardHeading text-red-700 text-md"
                       >
-                        <Link href={`/tags/${tag.slug}`}>{tag.title}</Link>
+                        <Link href={`/categories/${category.slug}`}>
+                          {category.title}
+                        </Link>
                       </div>
                     ))}
                   </div>
                 </div>
-              </article>
+              </div>
 
-              {/* TITLE */}
-              <div className="flex flex-col">
-                <h1 className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
-                  {post.name}
-                </h1>
-
-                {/* AUTHOR */}
-                {post.author.map((author) => (
-                  <div key={post._id}>
-                    <p className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
-                      {author.name}
-                    </p>
-                  </div>
-                ))}
+              <div className="flex flex-col justify-start my-1">
+                {/* Tags */}
+                <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
+                  {post.tag.map((tag) => (
+                    <div
+                      key={tag._id}
+                      className="mx-3 px-3 pt-1 font-catTags text-info text-md"
+                    >
+                      <Link href={`/tags/${tag.slug}`}>{tag.title}</Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </article>
 
-          {/* IMAGE */}
-          <article>
-            <figure className="flex flex-col justify-center my-6">
-              <Image
-                src={(await urlFor(post.image)).url()}
-                alt={post.name}
-                width={900}
-                height={900}
-                className="w-full  shadow-lg shadow-slate-500"
-                priority
+            {/* TITLE */}
+            <div className="flex flex-col">
+              <h1 className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
+                {post.name}
+              </h1>
+
+              {/* AUTHOR */}
+              {post.author.map((author) => (
+                <div key={post._id}>
+                  <p className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
+                    {author.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* IMAGE */}
+        <article>
+          <figure className="flex flex-col justify-center my-6">
+            <Image
+              src={(await urlFor(post.image)).url()}
+              alt={post.name}
+              width={900}
+              height={900}
+              className="w-full  shadow-lg shadow-slate-500"
+              priority
+            />
+
+            <figcaption className="italic text-base text-left mt-2">
+              {post.caption}
+            </figcaption>
+          </figure>
+        </article>
+
+        {/* ARTICLE BODY */}
+        <article className="container">
+          <div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
+            <div className="lg:w-11/12 px-4 py-4 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line">
+              <PortableText
+                value={post.content}
+                onMissingComponent={false}
+                components={components}
               />
-
-              <figcaption className="italic text-base text-left mt-2">
-                {post.caption}
-              </figcaption>
-            </figure>
-          </article>
-
-          {/* ARTICLE BODY */}
-          <article className="container">
-            <article className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-              <div className="lg:w-11/12 px-4 py-4 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line">
-                <PortableText
-                  value={post.content}
-                  onMissingComponent={false}
-                  components={components}
-                />
-              </div>
-            </article>
-          </article>
-
-          {/* BOTTOM BORDER */}
-          <article className="">
-            <div className="h-8 mb-12 p-3 divide-y divide-red-700">
-              <div className="h-1"></div>
-              <div className="h-1"></div>
-              <div className="h-1"></div>
-              <div className="h-1"></div>
             </div>
-          </article>
-        </section>
+          </div>
+        </article>
 
-        {/* SIDE / BOTTOM SECTION */}
-        <section className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
-          {/* AUTHOR BIO */}
-          <article className="mt-4 xl:border-l-4 xl:border-r-4 border-white">
-            <div className="flex flex-col justify-center px-4">
-              <>
-                {post.author.map(async (author) => (
-                  <div key={author._id} className="relative  mb-3">
-                    <figure className="absolute w-80 xl:w-64 m-auto left-0 right-0 -mt-4 xl:mt-10 rounded-xl">
-                      <Image
-                        src={(await urlFor(author.image)).url()}
-                        alt={post.name}
-                        width={900}
-                        height={900}
-                        className="object-fill px-3 pb-3"
-                        loading="lazy"
+        {/* BOTTOM BORDER */}
+        <article className="">
+          <div className="h-8 mb-12 p-3 divide-y divide-red-700">
+            <div className="h-1"></div>
+            <div className="h-1"></div>
+            <div className="h-1"></div>
+            <div className="h-1"></div>
+          </div>
+        </article>
+      </section>
+
+      {/* SIDE / BOTTOM SECTION */}
+      <section className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
+        {/* AUTHOR BIO */}
+        <article className="mt-4 xl:border-l-4 xl:border-r-4 border-white">
+          <div className="flex flex-col justify-center px-4">
+            <>
+              {post.author.map(async (author) => (
+                <div key={author._id} className="relative  mb-3">
+                  <figure className="absolute w-80 xl:w-64 m-auto left-0 right-0 -mt-4 xl:mt-10 rounded-xl">
+                    <Image
+                      src={(await urlFor(author.image)).url()}
+                      alt={post.name}
+                      width={900}
+                      height={900}
+                      className="object-fill px-3 pb-3"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 mx-2 text-justify font-playfair_display whitespace-pre-line">
+                    <div className="flex justify-center my-2">
+                      <h3 className="mb-2 font-caveat text-3xl text-center xl:text-2xl">
+                        {author.name}
+                      </h3>
+                    </div>
+                    <div className="font-sans">
+                      <PortableText
+                        value={author.biography}
+                        onMissingComponent={false}
+                        components={components}
                       />
-                    </figure>
-                    <div className="bg-slate-200 px-4 pt-16 pb-6 mt-36 mx-2 text-justify font-playfair_display whitespace-pre-line">
-                      <div className="flex justify-center my-2">
-                        <h3 className="mb-2 font-caveat text-3xl text-center xl:text-2xl">
-                          {author.name}
-                        </h3>
-                      </div>
-                      <div className="font-sans">
-                        <PortableText
-                          value={author.biography}
-                          onMissingComponent={false}
-                          components={components}
-                        />
-                      </div>
                     </div>
                   </div>
-                ))}
-              </>
-            </div>
-          </article>
+                </div>
+              ))}
+            </>
+          </div>
+        </article>
 
-          {/* SUBSCRIBE CARD @ XL */}
-          <section className="hidden w-full xl:flex items-center justify-start">
-            <SignupCardShort />
-          </section>
+        {/* SUBSCRIBE CARD @ XL */}
+        <article className="hidden w-full xl:flex items-center justify-start">
+          <SignupCardShort />
+        </article>
 
-          {/* SIDE MENU LATEST ARTICLES */}
-          <article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
-            <div className="ml-6 xl:mt-4">
-              <h3 className="text-4xl font-playfair_display font-bold">
-                Latest Posts
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
-              {/* @ts-expect-error Server Component */}
-              <LatestArticlesMini />
-            </div>
-          </article>
-        </section>
+        {/* SIDE MENU LATEST ARTICLES */}
+        <article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
+          <div className="ml-6 xl:mt-4">
+            <h3 className="text-4xl font-playfair_display font-bold">
+              Latest Posts
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
+            {/* @ts-expect-error Server Component */}
+            <LatestArticlesMini />
+          </div>
+        </article>
+      </section>
 
-        {/* SUBSCRIBE CARD @ SM - LG */}
-        <section className="w-screen flex items-center justify-start xl:hidden">
-          <SignupCardLong />
-        </section>
-      </main>
-    </>
+      {/* SUBSCRIBE CARD @ SM - LG */}
+      <section className="w-screen flex items-center justify-start xl:hidden">
+        <SignupCardLong />
+      </section>
+    </main>
   );
 }
