@@ -12,7 +12,6 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -37,8 +36,6 @@ export default function Navbar() {
   return (
     <>
       <header className="relative h-24 bg-black overflow-hidden">
-        
-
         {/* Nav for medium size up */}
         <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
@@ -47,17 +44,14 @@ export default function Navbar() {
             <Image
               src="/images/logo-nav.png"
               width={240}
-              height={240}
+              height={200}
               alt="romancing japan logo"
               className="absolute top-4 p-6 -mt-4 -ml-6 md:ml-4 md:p-0 md:mt-0"
-              loading="lazy"
+              priority
             />
           </Link>
 
-         
           <div className="hidden xl:flex smd: flex-col gap-2">
-           
-
             {/* NAVBAR MENU */}
             <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
               <li
