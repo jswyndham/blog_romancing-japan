@@ -11,7 +11,6 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "sign-up": "url('/images/Toufukuji.jpg')",
       },
       fontFamily: {
         sans: ["ui-sans-serif", "system-ui"],
