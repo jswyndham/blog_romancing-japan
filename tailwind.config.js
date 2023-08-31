@@ -83,7 +83,7 @@ module.exports = {
         },
       },
     ],
-    base: true,
+    base: false,
     utils: true,
     logs: true,
     rtl: false,
