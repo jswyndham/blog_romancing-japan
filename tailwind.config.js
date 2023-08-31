@@ -60,19 +60,19 @@ module.exports = {
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: [
-      // {
-      //   mytheme: {
-      //     primary: "#8C0327",
-      //     secondary: "#D85251",
-      //     accent: "#D59B6A",
-      //     neutral: "#826A5C",
-      //     "base-100": "#F1F1F1",
-      //     info: "#003C3B",
-      //     success: "#499380",
-      //     warning: "#E97F14",
-      //     error: "#DF1A2F",
-      //   },
-      // },
+      {
+        mytheme: {
+          primary: "#8C0327",
+          secondary: "#D85251",
+          accent: "#D59B6A",
+          neutral: "#826A5C",
+          "base-100": "#F1F1F1",
+          info: "#003C3B",
+          success: "#499380",
+          warning: "#E97F14",
+          error: "#DF1A2F",
+        },
+      },
     ],
   },
 };
