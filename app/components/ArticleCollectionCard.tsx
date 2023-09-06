@@ -4,7 +4,6 @@ import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
-
 // RICH TEXT EDITOR SETTINGS
 const components: PortableTextComponents = {
   list: {
@@ -62,8 +61,6 @@ const components: PortableTextComponents = {
   },
 };
 
-
-
 export default async function ArticleCollectionCard() {
   const posts = await getPostsArchive();
 
@@ -75,7 +72,7 @@ export default async function ArticleCollectionCard() {
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={post._id}
-                className="card rounded-none w-fit h-fit mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                className="card rounded-none w-fit h-full mx-2 my-3 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
               >
                 {/* Card Image */}
                 <figure className="border-b-2 border-red-500">
