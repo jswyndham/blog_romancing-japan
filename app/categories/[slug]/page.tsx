@@ -12,7 +12,6 @@ type Props = {
   params: { slug: string };
 };
 
-
 // RICH TEXT EDITOR SETTINGS
 const components: PortableTextComponents = {
   list: {
@@ -69,7 +68,6 @@ const components: PortableTextComponents = {
     },
   },
 };
-
 
 // GROQ QUERY WITH METADATA
 export async function generateMetadata({
@@ -134,7 +132,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
             <Link key={post._id} href={`/posts/${post.slug}`}>
               <div
                 key={category._id}
-                className="card rounded-none w-fit h-fill mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                className="card rounded-none w-fit h-full mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
               >
                 {/* Card Image */}
                 <figure className="border-b-2 border-red-500">

@@ -12,7 +12,6 @@ type Props = {
   params: { slug: string };
 };
 
-
 // RICH TEXT EDITOR SETTINGS
 const components: PortableTextComponents = {
   list: {
@@ -70,7 +69,6 @@ const components: PortableTextComponents = {
   },
 };
 
-
 // GROQ QUERY WITH METADATA
 export async function generateMetadata({
   params: { slug },
@@ -104,7 +102,6 @@ export async function generateMetadata({
   };
 }
 
-
 // ARTICLE DISPLAY BY TAG
 export default async function tagPage({ params: { slug } }: Props) {
   const query = groq`*[_type == "tag" && slug.current == $slug][0]
@@ -135,7 +132,7 @@ export default async function tagPage({ params: { slug } }: Props) {
               <Link key={post._id} href={`/posts/${post.slug}`}>
                 <div
                   key={tag._id}
-                  className="card rounded-none w-fit h-fit mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                  className="card rounded-none w-fit h-full mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
                 >
                   {/* Card Image */}
                   <figure className="border-b-2 border-red-500">
