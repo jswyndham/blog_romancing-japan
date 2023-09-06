@@ -76,6 +76,9 @@ export const metadata = {
     "Japanese Lifestyle",
     "Lifestyle in Japan",
     "Living in Japan",
+    "Japanese Society",
+    "Social Japan",
+    "Life in Japan",
   ],
   robots: {
     index: true,
@@ -111,7 +114,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
-      <body className="bg-gray-200">
+      <body className="bg-base-100">
         {/* <Header /> */}
         <Navbar />
 
