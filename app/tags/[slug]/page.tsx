@@ -132,7 +132,7 @@ export default async function tagPage({ params: { slug } }: Props) {
               <Link key={post._id} href={`/posts/${post.slug}`}>
                 <div
                   key={tag._id}
-                  className="card rounded-none w-fit h-full mx-2 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                  className="card rounded-none w-fit h-full mx-2 my-6 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
                 >
                   {/* Card Image */}
                   <figure className="border-b-2 border-red-500">
