@@ -61,11 +61,15 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
+// METADATA
 export const metadata = {
   metadataBase: new URL("https://www.romancing-japan.com"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
     template: `%s | Romancing Japan`,
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
   description:
     "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
@@ -114,6 +118,7 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className="bg-base-100">
         {/* <Header /> */}
         <Navbar />
