@@ -144,7 +144,7 @@ export async function getLatestPostMini(): Promise<Post> {
   author[]->,
   category[]->,
   tag[]->,  
-  }[1..5]`);
+  }[0..4]`);
 }
 
 type Props = {
