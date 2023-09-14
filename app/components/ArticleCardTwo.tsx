@@ -88,9 +88,9 @@ export default async function ArticleCardTwo() {
         {/* Title and article summary */}
         <div className="card-body text-center md:w-full md:absolute md:flex md:p-4 md:bottom-0 md:text-left md:rounded-lg transition-all">
           <div>
-            <h1 className="hidden text-3xl font-playfair_display md:flex text-red-800 font-extrabold">
+            <h2 className="hidden text-3xl font-playfair_display md:flex text-red-800 font-extrabold">
               {post.name}
-            </h1>
+            </h2>
           </div>
           <div className="text-justify text-xl md:text-left md:rounded-b-md lg:hidden">
             <PortableText

@@ -92,9 +92,9 @@ export default async function ArticleCardThree() {
         <div className="card-body text-center md:w-[50%] lg:w-[45%] md:absolute md:flex md:p-4 md:items-center md:justify-between md:right-0 md:text-right md:rounded-md transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h1 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 2xl:my-2 2xl:pb-2 2xl:text-5xl">
+            <h2 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 2xl:my-2 2xl:pb-2 2xl:text-5xl">
               {post.name}
-            </h1>
+            </h2>
           </div>
 
           {/* SUMMARY UNTIL 2XL */}
