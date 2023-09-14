@@ -65,9 +65,9 @@ export default async function CategoryList() {
 
                   {/* Title & Description */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all duration-700">
-                    <h1 className="font-krona_one text-2xl text-white mb-5">
+                    <h2 className="font-krona_one text-2xl text-white mb-5">
                       {category.title}
-                    </h1>
+                    </h2>
                     <p className="mb-2 text-xl italic text-white drop-shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
                       {category.description}
                     </p>
@@ -77,7 +77,6 @@ export default async function CategoryList() {
             ))}
           </>
         </article>
-        
       </section>
     </>
   );

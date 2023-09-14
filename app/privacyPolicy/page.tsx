@@ -12,9 +12,9 @@ export default function page() {
       <section className="mt-28 mb-24 flex flex-col items-center justify-center px-3 w-[90%] md:w-[75%] xl:max-w-4xl text-justify">
         {/* INTRODUCTION */}
         <article className="mb-8 mt-2">
-          <h1 className="py-4 mb-3 text-left text-4xl md:text-5xl">
+          <h2 className="py-4 mb-3 text-left text-4xl md:text-5xl">
             Privacy Policy for romancing-japan.com
-          </h1>
+          </h2>
 
           <div className="text-xl font-heading">
             <p>

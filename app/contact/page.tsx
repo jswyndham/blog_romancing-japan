@@ -17,7 +17,7 @@ export default async function Contact() {
   return (
     <>
       <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
-        Contact Us
+        <h1>Contact Us</h1>
       </div>
       <div className="max-w-screen-md mx-auto p-5">
         {/* Heading Text */}
