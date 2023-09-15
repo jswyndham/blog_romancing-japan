@@ -68,9 +68,9 @@ export default async function ArticleCardThree() {
       <div className="flex flex-col card rounded-none w-fit h-fit 2xl:h-full mx-2 my-1 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-gray-50 md:bg-gray-200 md:hover:shadow-xl md:rounded-md md:hover:shadow-slate-700 hover:transition-all duration-300 md:h-96 md:w-full md:my-2 md:mx-0 md:card-side">
         {/* TITLE UNTIL MD */}
         <div className="h-9/12 ml-4 my-4 border-l-4 border-red-700 md:hidden">
-          <h1 className="font-heading text-4xl p-3 text-black font-bold">
+          <h2 className="font-heading text-4xl p-3 text-black font-bold">
             {post.name}
-          </h1>
+          </h2>
         </div>
 
         {/* IMAGE */}
