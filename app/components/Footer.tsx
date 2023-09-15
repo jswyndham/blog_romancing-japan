@@ -12,10 +12,10 @@ export default function Footer() {
           <Link href="/privacyPolicy">Privacy Policy</Link>
         </div>
         <div>
-          <div className="py-1">
+          <div className="pb-3">
             <Link href="/">
               <Image
-                src="/images/logo-footer-white.png"
+                src="/images/logo-footer-white-2.png"
                 width={175}
                 height={65}
                 alt="romancing japan white logo"
@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="grid grid-flow-col gap-4">
             <Link href="https://twitter.com/RomancingJapan" target="_blank">
               <Image
-                src="/images/twitter-50-white.png"
+                src="/images/twitter-x-logo.png"
                 width={30}
                 height={30}
                 alt="twitter logo"

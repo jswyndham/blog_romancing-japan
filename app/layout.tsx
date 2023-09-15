@@ -65,14 +65,14 @@ const caveat = Caveat({
 export const metadata = {
   metadataBase: new URL("https://www.romancing-japan.com"),
   title: {
-    default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+    default: "Romancing Japan - Travel, Lifestyle, Culture",
     template: `%s | Romancing Japan`,
   },
   icons: {
     icon: "/favicon.ico",
   },
   description:
-    "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
+    "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.",
   keywords: [
     "Japan",
     "Travel in Japan",
@@ -93,11 +93,11 @@ export const metadata = {
   },
   openGraph: {
     title: {
-      default: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+      default: "Romancing Japan - Travel, Lifestyle, Culture",
       template: `%s | Romancing Japan`,
     },
     description:
-      "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
+      "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.",
     type: "website",
     siteName: "Romancing Japan",
     url: "http://www.romancing-japan.com",

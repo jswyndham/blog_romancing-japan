@@ -9,13 +9,13 @@ import SignupCardLong from "./components/SignupCardLong";
 import AkariAndJamesProfileSm from "./components/AkariAndJamesProfileSm";
 
 export const metadata = {
-  title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+  title: "Romancing Japan - Travel, Lifestyle, Culture",
   description:
-    "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and its culture.",
+    "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.",
   openGraph: {
-    title: "Romancing Japan - Travel, Lifestyle, Culture, Cooking",
+    title: "Romancing Japan - Travel, Lifestyle, Culture",
     description:
-      "Articles about Japanese travel, lifestyle, culture, and cooking. For those who wish to learn more about Japan and what goes on there.",
+      "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.",
     type: "website",
     siteName: "Romancing Japan",
     url: "https://www.romancing-japan.com",

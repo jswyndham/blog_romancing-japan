@@ -4,11 +4,11 @@ import SignupCardLong from "../components/SignupCardLong";
 export const metadata = {
   title: "About Us",
   description:
-    "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, culture and cooking.",
+    "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.",
   openGraph: {
     title: "About Us",
     description:
-      "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, culture and cooking.",
+      "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.",
     type: "website",
     siteName: "Romancing Japan",
   },
@@ -109,7 +109,7 @@ export default async function about() {
                     of life in Japan, whether you are preparing for travel or
                     studying the language, is a positive move. This website
                     should serve as a resource for all things Japanese,
-                    including travel, lifestyle, pop culture, cooking, and local
+                    including travel, lifestyle, pop culture, and local
                     experiences.
                   </p>
                 </div>

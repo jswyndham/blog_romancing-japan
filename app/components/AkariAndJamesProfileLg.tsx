@@ -30,7 +30,7 @@ export default function AkariAndJamesProfile() {
               teenager and have over 30 years of experience with Japanese
               culture. We've made Kyoto our home and together we've built the
               Romancing Japan site so we can share our passion for Japanese
-              culture, lifestyle, travel, and cooking.
+              culture, lifestyle, and travel.
             </p>
           </div>
         </div>

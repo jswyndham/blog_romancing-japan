@@ -42,7 +42,7 @@ export default function Navbar() {
 
           <Link href="/">
             <Image
-              src="/images/logo-nav.png"
+              src="/images/logo-nav-2.png"
               width={240}
               height={200}
               alt="romancing japan logo"
