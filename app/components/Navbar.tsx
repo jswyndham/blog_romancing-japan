@@ -492,6 +492,42 @@ export default function Navbar() {
                   </div>
                 </Link>
               </li>
+
+              {/* FOLLOW US (SM LINKS)*/}
+              <li className="flex flex-col items-center justify-center pb-1 my-3 2xl:pb-4">
+                <div className="flex flex-row gap-8">
+                  <Link
+                    href="https://twitter.com/RomancingJapan"
+                    target="_blank"
+                  >
+                    <Image
+                      src="/images/twitter-x-logo.png"
+                      width={30}
+                      height={30}
+                      alt="romancing japan twitter"
+                    />
+                  </Link>
+                  <Link href="/" target="_blank">
+                    <Image
+                      src="/images/instagram-50-white-2.png"
+                      width={30}
+                      height={30}
+                      alt="romancing japan instagram"
+                    />
+                  </Link>
+                  <Link
+                    href="https://www.facebook.com/profile.php?id=100093723613018"
+                    target="_blank"
+                  >
+                    <Image
+                      src="/images/facebook-50-white.png"
+                      width={30}
+                      height={30}
+                      alt="romancing japan facebook"
+                    />
+                  </Link>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>

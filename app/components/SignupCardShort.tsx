@@ -144,7 +144,7 @@ export default function SignupCard() {
           <div className="flex flex-row gap-4">
             <Link href="https://twitter.com/RomancingJapan" target="_blank">
               <Image
-                src="/images/twitter-50-white.png"
+                src="/images/twitter-x-logo.png"
                 width={30}
                 height={30}
                 alt="romancing japan twitter"
