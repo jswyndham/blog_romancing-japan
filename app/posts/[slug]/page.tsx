@@ -55,7 +55,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.romancing-japan.com/posts/${post.slug}`,
       languages: {
-        "en-US": `/en-US/posts/${post.slug}`,
+        "en-US": `https://www.romancing-japan.com/en-US/posts/${post.slug}`,
       },
     },
     openGraph: {

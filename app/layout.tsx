@@ -89,7 +89,6 @@ export const metadata = {
     follow: true,
     nocache: false,
     googleBot: { index: true, follow: true },
-    bingbot: { index: true, follow: true },
   },
   openGraph: {
     title: {
@@ -102,9 +101,6 @@ export const metadata = {
     siteName: "Romancing Japan",
     url: "http://www.romancing-japan.com",
   },
-  // verification: {
-  //   google: "",
-  // }
 };
 
 // Layout
