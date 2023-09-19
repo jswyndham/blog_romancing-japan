@@ -19,6 +19,7 @@ export default function Footer() {
                 width={175}
                 height={65}
                 alt="romancing japan white logo"
+                loading="lazy"
               />
             </Link>
           </div>
@@ -29,6 +30,7 @@ export default function Footer() {
                 width={30}
                 height={30}
                 alt="twitter logo"
+                loading="lazy"
               />
             </Link>
             <Link
@@ -40,6 +42,7 @@ export default function Footer() {
                 width={30}
                 height={30}
                 alt="instagram logo"
+                loading="lazy"
               />
             </Link>
             <Link
@@ -51,6 +54,7 @@ export default function Footer() {
                 width={30}
                 height={30}
                 alt="facebook logo"
+                loading="lazy"
               />
             </Link>
           </div>

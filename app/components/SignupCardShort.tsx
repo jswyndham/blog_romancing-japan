@@ -99,6 +99,7 @@ export default function SignupCard() {
                   height={24}
                   alt="email input icon"
                   className="absolute mt-2 ml-5"
+                  loading="lazy"
                 />
                 <input
                   type="text"
@@ -148,6 +149,7 @@ export default function SignupCard() {
                 width={30}
                 height={30}
                 alt="romancing japan twitter"
+                loading="lazy"
               />
             </Link>
             <Link
@@ -159,6 +161,7 @@ export default function SignupCard() {
                 width={30}
                 height={30}
                 alt="romancing japan instagram"
+                loading="lazy"
               />
             </Link>
             <Link
@@ -170,6 +173,7 @@ export default function SignupCard() {
                 width={30}
                 height={30}
                 alt="romancing japan facebook"
+                loading="lazy"
               />
             </Link>
           </div>

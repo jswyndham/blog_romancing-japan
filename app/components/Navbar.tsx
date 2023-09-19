@@ -47,7 +47,7 @@ export default function Navbar() {
               height={200}
               alt="romancing japan logo"
               className="absolute top-4 p-6 -mt-4 -ml-6 md:ml-4 md:p-0 md:mt-0"
-              priority
+              loading="lazy"
             />
           </Link>
 
@@ -240,6 +240,7 @@ export default function Navbar() {
                 height={50}
                 alt="hamburger menu logo"
                 className="z-50 btn-ghost btn-square btn p-2"
+                loading="lazy"
               />
             </button>
           </div>
