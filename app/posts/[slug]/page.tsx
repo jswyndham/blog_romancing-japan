@@ -158,14 +158,14 @@ export default async function postArticle({ params: { slug } }: Props) {
 
             {/* TITLE */}
             <div className="flex flex-col">
-              <h1 className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
+              <div className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
                 {post.name}
-              </h1>
+              </div>
 
               {/* AUTHOR */}
               {post.author.map((author) => (
                 <div key={post._id}>
-                  <p className="ml-8 mt-3 pb-1 text-primary text-md font-bold">
+                  <p className="ml-8 mt-3 pb-1 text-primary text-lg font-bold">
                     {author.name}
                   </p>
                 </div>
