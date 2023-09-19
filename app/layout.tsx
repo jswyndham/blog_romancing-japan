@@ -71,8 +71,6 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  description:
-    "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.",
   keywords: [
     "Japan",
     "Travel in Japan",
@@ -95,8 +93,6 @@ export const metadata = {
       default: "Romancing Japan - Travel, Lifestyle, Culture",
       template: `%s | Romancing Japan`,
     },
-    description:
-      "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.",
     type: "website",
     siteName: "Romancing Japan",
     url: "http://www.romancing-japan.com",
