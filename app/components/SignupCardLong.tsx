@@ -3,8 +3,9 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
-export default function SignupCard() {
+const SignupCardLong = () => {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
 
@@ -183,4 +184,6 @@ export default function SignupCard() {
       </div>
     </section>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(SignupCardLong), { ssr: false });

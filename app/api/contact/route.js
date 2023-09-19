@@ -22,6 +22,7 @@ export async function POST(req, res) {
     subject: `Message from Romancing Japan, subject: ${body.subject}, from: ${body.firstName} ${body.lastName}`,
     text: `${body.message} sent from ${body.email}`,
     html: `
+    <div>
       <p>Name:</p> 
       <p>${body.firstName} ${body.lastName}</p>
       <br />
@@ -33,6 +34,7 @@ export async function POST(req, res) {
       <br />
       <p>Message:</p> 
       <p>${body.message}</p>
+      </div>
       `,
   };
 

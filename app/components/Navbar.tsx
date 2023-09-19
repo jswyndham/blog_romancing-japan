@@ -11,8 +11,9 @@ import { BiCategory } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 
-export default function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const ref = useRef<HTMLInputElement>(null);
@@ -538,4 +539,6 @@ export default function Navbar() {
       </header>
     </>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Navbar), { ssr: false });
