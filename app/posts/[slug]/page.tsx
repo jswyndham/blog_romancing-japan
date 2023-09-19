@@ -105,6 +105,7 @@ export default async function postArticle({ params: { slug } }: Props) {
     slug,
   });
 
+  // RICH TEXT EDITOR
   const components = PortableTextComp();
 
   return (
