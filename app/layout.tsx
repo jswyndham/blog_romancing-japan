@@ -63,7 +63,7 @@ const caveat = Caveat({
 
 // METADATA
 export const metadata = {
-  metadataBase: new URL("https://www.romancing-japan.com"),
+  metadataBase: new URL("https://www.romancing-japan.com/"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture",
     template: `%s | Romancing Japan`,

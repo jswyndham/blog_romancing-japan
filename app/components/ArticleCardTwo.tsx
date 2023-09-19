@@ -2,67 +2,12 @@ import Image from "next/image";
 import { getLatestPostTwo } from "@/sanity/sanity-utils";
 import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
-import { PortableText, PortableTextComponents } from "@portabletext/react";
-
-const components: PortableTextComponents = {
-  list: {
-    bullet: ({ children }: any) => (
-      <ul className="list-disc ml-8 py-5 space-y-5">{children}</ul>
-    ),
-    number: ({ children }: any) => (
-      <ol className="list-decimal mt-lg ml-4 py-6 space-y-5">{children}</ol>
-    ),
-  },
-  block: {
-    h1: ({ children }: any) => (
-      <h1 className="text-5xl py-7 font-bold">{children}</h1>
-    ),
-    h2: ({ children }: any) => (
-      <h2 className="text-2xl py-4 font-bold">{children}</h2>
-    ),
-    h3: ({ children }: any) => (
-      <h3 className="text-3xl py-7 font-bold">{children}</h3>
-    ),
-    h4: ({ children }: any) => (
-      <h4 className="text-2xl pt-7 pb-3 font-bold">{children}</h4>
-    ),
-    h5: ({ children }: any) => (
-      <h4 className="text-xl pt-7 pb-3 font-extrabold">{children}</h4>
-    ),
-
-    blockquote: ({ children }: any) => (
-      <blockquote className="border-l-[#CA3433] border-l-4 pl-5 py-5 my-5">
-        {children}
-      </blockquote>
-    ),
-  },
-
-  marks: {
-    em: ({ children }: any) => (
-      <em className="text-gray-600 font-semibold">{children}</em>
-    ),
-    link: ({ value, children }: any) => {
-      const target = (value?.href || "").startsWith("http")
-        ? "_blank"
-        : undefined;
-
-      return (
-        <Link
-          href={value?.href}
-          target={target}
-          rel={"_blank"}
-          className="underline decoration-blue-600 text-blue-600 hover:decoration-blue-900 hover:text-blue-900"
-        >
-          {children}
-        </Link>
-      );
-    },
-  },
-};
+import { PortableText } from "@portabletext/react";
+import PortableTextComp from "./PortableTextComponents";
 
 export default async function ArticleCardTwo() {
   const post = await getLatestPostTwo();
-
+  const components = PortableTextComp();
   return (
     <Link key={post._id} href={`/posts/${post.slug}`}>
       <div className="h-full w-full flex flex-col card rounded-none my-4 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700  hover:drop-shadow  hover:bg-gray-50 hover:transition-all duration-300 group md:bg-gray-200 md:h-full md:w-full md:my-2 md:ml-0 md:mr-3 md:mb-3 md:card-side md:rounded-md">

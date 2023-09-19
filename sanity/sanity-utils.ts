@@ -1,6 +1,11 @@
 import { Post, Category, Author } from "../typings";
 import { createClient, groq } from "next-sanity";
 import { readClient } from "./config/client-config";
+import { Metadata } from "next";
+
+type Props = {
+  params: { slug: string };
+};
 
 // Medium post cards on home page
 export async function getLatestPostOne(): Promise<Post> {
@@ -147,10 +152,6 @@ export async function getLatestPostMini(): Promise<Post> {
   }[0..4]`);
 }
 
-type Props = {
-  params: { slug: string };
-};
-
 export async function getPostByCategory({ params: { slug } }: Props) {
   const query = groq`*[_type == "category" && slug.current == $slug][0]
   {..., 
@@ -194,4 +195,63 @@ export async function getAuthor(): Promise<Author[]> {
   "image": image.asset->url,
   description 
   }`);
+}
+
+export async function createMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const query = groq`*[_type=="post" && slug.current == $slug][0]
+    {
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  "image":image.asset->url, 
+  url,
+  content[]{
+    ...,
+    _type == "image" => {
+      ...,
+      asset->
+    }
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->{title, "slug": slug.current,},
+  tag[]->{title, "slug": slug.current,},
+  summary,
+  summaryShort,
+  description,
+  }`;
+
+  return await createClient(readClient).fetch(query, { slug });
+}
+
+export async function createArticle({
+  params: { slug },
+}: Props): Promise<Post> {
+  const query = groq`*[_type=="post" && slug.current == $slug][0]
+    {
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  image{...},
+  "caption": image.caption,
+  url,
+  content[]{
+    ...,
+    image[] => {
+      ...,
+      caption, 
+      asset->
+    }
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->{title, "slug": slug.current,},
+  tag[]->{title, "slug": slug.current,},
+  }`;
+
+  return await createClient(readClient).fetch(query, { slug });
 }
