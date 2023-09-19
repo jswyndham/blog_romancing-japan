@@ -37,16 +37,16 @@ function PortableTextComp() {
         <h1 className="text-5xl py-7 font-bold">{children}</h1>
       ),
       h2: ({ children }: any) => (
-        <h2 className="text-4xl py-4 font-bold">{children}</h2>
+        <h2 className="text-3xl py-4 font-bold">{children}</h2>
       ),
       h3: ({ children }: any) => (
-        <h3 className="text-3xl py-7 font-bold">{children}</h3>
+        <h3 className="text-2xl py-7 font-bold">{children}</h3>
       ),
       h4: ({ children }: any) => (
-        <h4 className="text-2xl pt-7 pb-3 font-bold">{children}</h4>
+        <h4 className="text-xl pt-7 pb-3 font-bold">{children}</h4>
       ),
       h5: ({ children }: any) => (
-        <h5 className="text-xl pt-7 pb-3 font-extrabold">{children}</h5>
+        <h5 className="text-lg pt-7 pb-3 font-extrabold">{children}</h5>
       ),
 
       blockquote: ({ children }: any) => (
