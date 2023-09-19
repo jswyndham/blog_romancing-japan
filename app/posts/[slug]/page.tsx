@@ -183,7 +183,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               width={900}
               height={900}
               className="w-full  shadow-lg shadow-slate-500"
-              priority
+              loading="lazy"
             />
 
             <figcaption className="italic text-base text-left mt-2">
