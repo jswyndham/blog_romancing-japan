@@ -1,8 +1,8 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Script from "next/script";
-import { Analytics } from '@vercel/analytics/react';
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Roboto_Condensed,
   Playfair_Display,
@@ -116,20 +116,11 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
-      <div className="container">
-        <Script src="https://https://www.googletagmanager.com/gtag/js?id=G-CZ9D7BX5L0" />
-        <Script id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
- 
-          gtag('config', 'G-CZ9D7BX5L0');
-        `}
-        </Script>
-      </div>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className="bg-base-100">
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         {/* <Header /> */}
         <Navbar />
         <Analytics />
