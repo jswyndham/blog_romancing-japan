@@ -22,7 +22,7 @@ module.exports = {
         playfair_display: ["var(--font-playfair_display)"],
         krona_one: ["var(--font-krona_one)"],
         shadows_into_light: ["var(--font-shadows_into_light)"],
-        delicious_handraw: ["var(--font-delicious_handraw)"],
+        patrick_hand: ["var(--font-patrick_hand)"],
         carter_one: ["var(--font-carter_one)"],
         caveat: ["var(--font-caveat)"],
       },

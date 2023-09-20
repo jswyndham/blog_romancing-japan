@@ -8,7 +8,7 @@ import {
   Playfair_Display,
   Krona_One,
   Shadows_Into_Light,
-  Delicious_Handrawn,
+  Patrick_Hand,
   Carter_One,
   Caveat,
 } from "next/font/google";
@@ -42,11 +42,11 @@ const shadows_into_light = Shadows_Into_Light({
   variable: "--font-shadows_into_light",
 });
 
-const delicious_handrawn = Delicious_Handrawn({
+const patrick_hand = Patrick_Hand({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-delicious_handraw",
+  variable: "--font-patrick_hand",
 });
 
 const carter_one = Carter_One({
@@ -68,7 +68,7 @@ export const metadata = {
   metadataBase: new URL("https://www.romancing-japan.com/"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture",
-    template: `%s | Romancing Japan`,
+    template: `%s`,
   },
   icons: {
     icon: "/favicon.ico",
@@ -95,7 +95,7 @@ export const metadata = {
   openGraph: {
     title: {
       default: "Romancing Japan - Travel, Lifestyle, Culture",
-      template: `%s | Romancing Japan`,
+      template: `%s`,
     },
     description:
       "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.",
@@ -114,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
+      className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable}`}
     >
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className="bg-base-100">

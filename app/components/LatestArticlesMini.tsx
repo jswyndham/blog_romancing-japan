@@ -26,24 +26,6 @@ export default async function BlogSmallCard() {
                 {post.name}
               </h2>
             </div>
-
-            {/* CATEGORIES & TAGS */}
-            {/* <div className="flex flex-col pt-2 my-3">
-              <div>
-                <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-                  {(await posts).category.map((category) => (
-                    <div
-                      key={category._id}
-                      className="mx-3 px-3 pt-1 font-cardHeading text-red-700 text-md"
-                    >
-                      <Link href={`/categories/${category.slug}`}>
-                        {category.title}
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
         <div className="divider mb-1"></div>

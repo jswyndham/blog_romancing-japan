@@ -17,9 +17,9 @@ export default function AkariAndJamesProfile() {
         </figure>
         <div className="bg-slate-300 w-52 px-4 2xl:px-4 pt-16 pb-6 mx-2 text-justify font-playfair_display whitespace-pre-line">
           <div className="flex justify-center my-2">
-            <h3 className="mb-2 font-caveat text-2xl 2xl:text-3xl">
+            <p className="mb-2 font-caveat text-2xl 2xl:text-3xl">
               James and Akari Saunders-Wyndham
-            </h3>
+            </p>
           </div>
           <div>
             <p className="text-lg text-left font-sans">

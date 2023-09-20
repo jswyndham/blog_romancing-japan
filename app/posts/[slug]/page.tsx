@@ -205,6 +205,11 @@ export default async function postArticle({ params: { slug } }: Props) {
           </div>
         </article>
 
+        {/* SUBSCRIBE CARD @ SM - LG */}
+        <section className="w-screen flex items-center justify-start xl:hidden">
+          <SignupCardLong />
+        </section>
+
         {/* BOTTOM BORDER */}
         <article className="">
           <div className="h-8 mb-12 p-3 divide-y divide-red-700">
@@ -271,11 +276,6 @@ export default async function postArticle({ params: { slug } }: Props) {
             <LatestArticlesMini />
           </div>
         </article>
-      </section>
-
-      {/* SUBSCRIBE CARD @ SM - LG */}
-      <section className="w-screen flex items-center justify-start xl:hidden">
-        <SignupCardLong />
       </section>
     </main>
   );

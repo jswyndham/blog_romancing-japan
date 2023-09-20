@@ -49,9 +49,9 @@ const SignupCardShort = () => {
           {/* TITLE */}
           <div className="flex flex-col items-center justify-center align-middle">
             <div className="flex justify-center px-1 pt-2 mt-2">
-              <h2 className="card-title font-carter_one text-base-100 text-4xl">
+              <p className="card-title font-carter_one text-base-100 text-4xl">
                 Subscribe
-              </h2>
+              </p>
             </div>
 
             {/* DESCRIPTION */}
@@ -137,13 +137,13 @@ const SignupCardShort = () => {
         </article>
 
         {/* FOLLOW US */}
-        <article className="flex flex-row items-center justify-center align-middle pb-4">
-          <div className="px-8">
-            <h3 className="font-delicious_handraw  text-4xl text-base-100">
+        <article className="flex flex-col items-center justify-center align-middle pb-4">
+          <div className="px-5 pt-2 pb-4">
+            <p className="font-patrick_hand  text-4xl text-base-100">
               Follow us!
-            </h3>
+            </p>
           </div>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row gap-6">
             <Link href="https://twitter.com/RomancingJapan" target="_blank">
               <Image
                 src="/images/twitter-x-logo.png"

@@ -50,9 +50,9 @@ const SignupCardLong = () => {
           {/* TITLE */}
           <div className="flex flex-col md:flex-row items-center justify-center align-middle">
             <div className=" flex justify-center px-1 pt-2 mt-2 md:my-2 xl:py-1 lg:pt-0">
-              <h2 className="card-title font-carter_one text-base-100 text-4xl ">
+              <p className="card-title font-carter_one text-base-100 text-4xl ">
                 Subscribe
-              </h2>
+              </p>
             </div>
 
             {/* DESCRIPTION */}
@@ -141,9 +141,9 @@ const SignupCardLong = () => {
         {/* FOLLOW US */}
         <article className="flex flex-row items-center justify-center align-middle pb-4">
           <div className="px-8">
-            <h3 className="font-delicious_handraw  text-4xl text-base-100">
+            <p className="font-patrick_hand  text-4xl text-base-100">
               Follow us!
-            </h3>
+            </p>
           </div>
           <div className="flex flex-row gap-4">
             <Link href="https://twitter.com/RomancingJapan" target="_blank">
