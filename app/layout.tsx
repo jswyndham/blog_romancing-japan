@@ -124,7 +124,7 @@ export default function RootLayout({
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'GA_MEASUREMENT_ID');
+          gtag('config', 'G-CZ9D7BX5L0');
         `}
         </Script>
       </div>
