@@ -158,9 +158,9 @@ export default async function postArticle({ params: { slug } }: Props) {
 
             {/* TITLE */}
             <div className="flex flex-col">
-              <div className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
+              <h1 className="mt-2 text-4xl md:text-5xl ml-5 p-1 font-heading font-bold">
                 {post.name}
-              </div>
+              </h1>
 
               {/* AUTHOR */}
               {post.author.map((author) => (
