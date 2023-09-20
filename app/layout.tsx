@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Script from "next/script";
 import {
   Roboto_Condensed,
   Playfair_Display,
@@ -114,6 +115,18 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
+      <div className="container">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
+      </div>
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className="bg-base-100">
         {/* <Header /> */}
