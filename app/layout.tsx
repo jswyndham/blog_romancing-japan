@@ -117,7 +117,7 @@ export default function RootLayout({
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${delicious_handrawn.variable} ${carter_one.variable} ${caveat.variable}`}
     >
       <div className="container">
-        <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+        <Script src="https://https://www.googletagmanager.com/gtag/js?id=G-CZ9D7BX5L0" />
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
