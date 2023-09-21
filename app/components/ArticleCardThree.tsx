@@ -37,7 +37,7 @@ export default async function ArticleCardThree() {
         <div className="card-body text-center md:w-[50%] lg:w-[45%] md:absolute md:flex md:p-4 md:items-center md:justify-between md:right-0 md:text-right md:rounded-md transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h2 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-800 font-semibold 2xl:mt-2 2xl:my-2 2xl:pb-2 2xl:text-5xl">
+            <h2 className="hidden text-3xl font-playfair_display md:flex pb-2 top-0 text-red-900 2xl:mt-2 2xl:my-2 2xl:pb-2 2xl:text-5xl">
               {post.name}
             </h2>
           </div>
@@ -50,15 +50,6 @@ export default async function ArticleCardThree() {
               components={components}
             />
           </div>
-
-          {/* SHORT SUMMARY @ 2XL */}
-          {/* <div className="hidden text-justify text-lg md:text-right xl:flex 2xl:mt-3 3xl:mt-1 3xl:text-lg">
-            <PortableText
-              value={post.summaryShort}
-              onMissingComponent={false}
-              components={components}
-            />
-          </div> */}
         </div>
       </div>
     </Link>

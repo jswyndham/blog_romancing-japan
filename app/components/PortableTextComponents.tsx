@@ -34,7 +34,7 @@ function PortableTextComp() {
     },
     block: {
       h1: ({ children }: any) => (
-        <h1 className="text-5xl py-7 font-bold">{children}</h1>
+        <h1 className="text-4xl py-7 font-bold">{children}</h1>
       ),
       h2: ({ children }: any) => (
         <h2 className="text-3xl pt-3 pb-2 font-bold">{children}</h2>
@@ -70,7 +70,7 @@ function PortableTextComp() {
             href={value?.href}
             target={target}
             rel={"_blank"}
-            className="text-blue-600 hover:text-blue-900"
+            className="text-blue-900 hover:underline"
           >
             {children}
           </Link>

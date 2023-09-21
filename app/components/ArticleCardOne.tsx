@@ -38,7 +38,7 @@ export default async function ArticleCardOne() {
         <div className="card-body md:w-[52%] lg:w-[50%] xl:w-[43%] md:absolute md:flex md:p-4 md:right-0 text-center transition-all">
           {/* TITLE @ MD */}
           <div>
-            <h2 className="hidden md:flex pb-1 text-4xl font-playfair_display top-0 md:mt-1 lg:mt-2 xl:text-5xl 2xl:mt-6 2xl:pb-2 3xl:pb-4 text-right text-red-800 font-extrabold">
+            <h2 className="hidden md:flex pb-1 text-4xl font-playfair_display top-0 md:mt-1 lg:mt-2 xl:text-5xl 2xl:mt-6 2xl:pb-2 3xl:pb-4 text-right text-red-800">
               {post.name}
             </h2>
           </div>
