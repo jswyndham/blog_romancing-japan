@@ -25,6 +25,7 @@ export async function generateMetadata({
   _id,
   _createdAt,
   name,
+  title,
   "slug": slug.current,
   "image":image.asset->url, 
   url,
@@ -50,13 +51,13 @@ export async function generateMetadata({
 
   // RETURN METADATA
   return {
-    title: post.name,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `https://www.romancing-japan.com/posts/${post.slug}`,
     },
     openGraph: {
-      title: post.name,
+      title: post.title,
       description: post.description,
       type: "article",
       images: { url: post.image, width: 600, height: 400 },
@@ -65,7 +66,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.name,
+      title: post.title,
       description: post.description,
       creator: "@RomancingJapan",
       images: { url: post.image, width: 600, height: 400 },

@@ -7,7 +7,7 @@ const post = defineType({
   fields: [
     defineField({
       name: "name",
-      title: "Name",
+      title: "Article Title",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
@@ -17,6 +17,13 @@ const post = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "name" },
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: "title",
+      title: "Page Title (max 60 characters)",
+      type: "string",
       validation: (Rule) => Rule.required(),
     }),
 
@@ -208,7 +215,7 @@ const post = defineType({
 
     defineField({
       name: "description",
-      title: "Description (copy short summary for SEO)",
+      title: "Description (min 25 char - max 155 char)",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
