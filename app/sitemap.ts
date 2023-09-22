@@ -1,7 +1,7 @@
 import { getCategories, getPostsArchive, getTags } from "@/sanity/sanity-utils";
 
 export default async function sitemap() {
-  const baseUrl = "https://www.romancing-japan.com/";
+  const baseUrl = "https://www.romancing-japan.com";
 
   // Get all posts from sanity-utils
   const posts = await getPostsArchive();

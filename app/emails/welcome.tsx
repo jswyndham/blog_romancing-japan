@@ -58,7 +58,7 @@ export const Welcome = () => {
             </Section>
             <Section>
               <Button
-                href="https://www.romancing-japan.com/"
+                href="https://www.romancing-japan.com"
                 className="h-6 w-fit p-3 mt-6 bg-blue-700 text-white font-bold rounded-lg drop-shadow-md shadow-md shadow-slate-9"
               >
                 Go to the homepage
