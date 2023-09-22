@@ -10,7 +10,7 @@ interface Post extends Base {
   caption: string;
   map(arg0: (post: any) => Promise<JSX.Element>): unknown;
   name: string;
-  title: string;
+  pageName: string;
   slug: Slug;
   author: Author[];
   category: Category[];

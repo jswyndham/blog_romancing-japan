@@ -21,7 +21,7 @@ const post = defineType({
     }),
 
     defineField({
-      name: "title",
+      name: "pageName",
       title: "Page Title (max 60 characters)",
       type: "string",
       validation: (Rule) => Rule.required(),
