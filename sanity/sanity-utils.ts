@@ -152,15 +152,6 @@ export async function getLatestPostMini(): Promise<Post> {
   }[0..4]`);
 }
 
-export async function getPostByCategory({ params: { slug } }: Props) {
-  const query = groq`*[_type == "category" && slug.current == $slug][0]
-  {..., 
-  "slug":slug.current,
-  "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
-
-  return await createClient(readClient).fetch(query, { slug });
-}
-
 export async function getCategories(): Promise<Category[]> {
   return createClient(readClient)
     .fetch(groq`*[_type == "category"] | order(_createdAt desc){
@@ -195,36 +186,6 @@ export async function getAuthor(): Promise<Author[]> {
   "image": image.asset->url,
   description 
   }`);
-}
-
-export async function createMetadata({
-  params: { slug },
-}: Props): Promise<Metadata> {
-  const query = groq`*[_type=="post" && slug.current == $slug][0]
-    {
-  _id,
-  _createdAt,
-  name,
-  "slug": slug.current,
-  "image":image.asset->url, 
-  url,
-  content[]{
-    ...,
-    _type == "image" => {
-      ...,
-      asset->
-    }
-  },
-  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
-  author[]->,
-  category[]->{title, "slug": slug.current,},
-  tag[]->{title, "slug": slug.current,},
-  summary,
-  summaryShort,
-  description,
-  }`;
-
-  return await createClient(readClient).fetch(query, { slug });
 }
 
 export async function createArticle({

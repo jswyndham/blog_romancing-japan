@@ -1,17 +1,16 @@
-"use server";
-
 import { createClient, groq } from "next-sanity";
 import React from "react";
 import { Post } from "@/typings";
 import { readClient } from "@/sanity/config/client-config";
 import PortableTextComp from "./PortableTextComponents";
-import SignupCardShort from "./SignupCardShort";
+import LatestArticlesMini from "@/app/components/LatestArticlesMini";
+import SignupCardShort from "@/app/components/SignupCardShort";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
 
 type Props = {
-  params: { slug: string };
+  params: { slug?: string };
 };
 
 // FETCH SANITY DATA AND POST ARTICLES

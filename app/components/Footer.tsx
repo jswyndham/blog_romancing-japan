@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 export default function Footer() {
   return (
@@ -23,41 +24,7 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <div className="grid grid-flow-col gap-4">
-            <Link href="https://twitter.com/RomancingJapan" target="_blank">
-              <Image
-                src="/images/twitter-x-logo.png"
-                width={30}
-                height={30}
-                alt="twitter logo"
-                loading="lazy"
-              />
-            </Link>
-            <Link
-              href="https://www.instagram.com/romancingjapan/"
-              target="_blank"
-            >
-              <Image
-                src="/images/instagram-50-white-2.png"
-                width={30}
-                height={30}
-                alt="instagram logo"
-                loading="lazy"
-              />
-            </Link>
-            <Link
-              href="https://www.facebook.com/profile.php?id=100093723613018"
-              target="_blank"
-            >
-              <Image
-                src="/images/facebook-50-white.png"
-                width={30}
-                height={30}
-                alt="facebook logo"
-                loading="lazy"
-              />
-            </Link>
-          </div>
+          <SocialMediaLinks />
         </div>
         <div className="text-white">
           <p>Copyright © 2023 - All right reserved by JSW Web Dev</p>
