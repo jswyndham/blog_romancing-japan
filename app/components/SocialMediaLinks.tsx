@@ -6,31 +6,34 @@ function SocialMediaLinks() {
   return (
     <div className="flex flex-row gap-8">
       <Link href="https://twitter.com/RomancingJapan" target="_blank">
-        <Image
-          src="/images/twitter-x-logo.png"
-          width={30}
-          height={30}
-          alt="romancing japan twitter"
-        />
+        <div className="w-7 h-7 relative">
+          <Image
+            src="/images/twitter-x-logo.png"
+            fill
+            alt="romancing japan twitter"
+          />
+        </div>
       </Link>
       <Link href="https://www.instagram.com/romancingjapan/" target="_blank">
-        <Image
-          src="/images/instagram-50-white-2.png"
-          width={30}
-          height={30}
-          alt="romancing japan instagram"
-        />
+        <div className="w-7 h-7 relative">
+          <Image
+            src="/images/instagram-50-white-2.png"
+            fill
+            alt="romancing japan instagram"
+          />
+        </div>
       </Link>
       <Link
         href="https://www.facebook.com/profile.php?id=100093723613018"
         target="_blank"
       >
-        <Image
-          src="/images/facebook-50-white.png"
-          width={30}
-          height={30}
-          alt="romancing japan facebook"
-        />
+        <div className="w-7 h-7 relative">
+          <Image
+            src="/images/facebook-50-white.png"
+            fill
+            alt="romancing japan facebook"
+          />
+        </div>
       </Link>
     </div>
   );

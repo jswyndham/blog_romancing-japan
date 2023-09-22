@@ -38,20 +38,21 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="relative h-24 bg-black overflow-hidden">
+      <header className="relative h-28 bg-black overflow-hidden">
         {/* Nav for medium size up */}
         <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
 
           <Link href="/">
-            <Image
-              src="/images/logo-nav-2.png"
-              width={240}
-              height={200}
-              alt="romancing japan logo"
-              className="absolute top-4 p-6 -mt-4 -ml-6 md:ml-4 md:p-0 md:mt-0"
-              priority
-            />
+            <div className="flex justify-center items-center mt-6 w-64 h-14 relative">
+              <Image
+                src="/images/logo-nav-2.png"
+                fill
+                alt="romancing japan logo"
+                className="absolute top-4 md:ml-4 md:p-0 md:mt-0"
+                priority
+              />
+            </div>
           </Link>
 
           {/* TOP NAV MENU */}
@@ -59,7 +60,7 @@ const Navbar = () => {
 
           {/* SIDEBAR MENU */}
           {/* Hamburger button */}
-          <div className="absolute right-0 top-0 m-3 p-2 xl:hidden">
+          <div className="absolute right-0 top-0 m-4 p-2 xl:hidden">
             <button onClick={handleClick} aria-label="Menu button">
               <Image
                 src="/images/hamburger-menu-50.png"
