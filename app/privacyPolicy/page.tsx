@@ -1,6 +1,21 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "Romancing Japan Privacy Policy",
+  description:
+    "This page contains information about privacy policies that are used in relation to our users.",
+  openGraph: {
+    title: "Romancing Japan Privacy Policy",
+    description:
+      "This page contains information about privacy policies that are used in relation to our users.",
+    type: "website",
+    siteName: "Romancing Japan",
+    url: "https://www.romancing-japan.com/",
+    images: { url: `/opengraph-image.jpg`, width: 600, height: 400 },
+  },
+};
+
 export default function page() {
   return (
     <main className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">

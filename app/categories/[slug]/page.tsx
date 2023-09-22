@@ -27,20 +27,20 @@ export async function generateMetadata({
   });
 
   return {
-    title: category.title,
+    title: `Romancing Japan | ${category.title}`,
     description: category.description,
     alternates: {
       canonical: `/categories/${category.slug}`,
     },
     openGraph: {
-      title: category.title,
+      title: `Romancing Japan | ${category.title}`,
       description: category.description,
       type: "article",
       siteName: "Romancing Japan",
     },
     twitter: {
       card: "summary_large_image",
-      title: category.title,
+      title: `Romancing Japan | ${category.title}`,
       description: category.description,
       creator: "@RomancingJapan",
     },

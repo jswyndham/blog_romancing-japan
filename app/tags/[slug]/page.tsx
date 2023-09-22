@@ -26,20 +26,20 @@ export async function generateMetadata({
 
   const tag: Tag = await createClient(readClient).fetch(data, { slug });
   return {
-    title: tag.title,
+    title: `Romancing Japan | ${tag.title}`,
     description: tag.description,
     alternates: {
       canonical: `/tags/${tag.slug}`,
     },
     openGraph: {
-      title: tag.title,
+      title: `Romancing Japan | ${tag.title}`,
       description: tag.description,
       type: "article",
       siteName: "Romancing Japan",
     },
     twitter: {
       card: "summary_large_image",
-      title: tag.title,
+      title: `Romancing Japan | ${tag.title}`,
       description: tag.description,
       creator: "@RomancingJapan",
     },
