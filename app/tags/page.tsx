@@ -32,7 +32,8 @@ export default async function TagList() {
           />
         </figure>
         <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
-          <h1>List of Article Tags</h1>
+          <h1 className="m-1">List of Article</h1>
+          <h2 className="m-1">Tags</h2>
         </div>
         <article className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>

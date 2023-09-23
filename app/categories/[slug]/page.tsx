@@ -62,11 +62,9 @@ export default async function categoryPage({ params: { slug } }: Props) {
   return (
     <main className="flex justify-center h-fit px-8 py-4">
       {/* Banner */}
-      <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">
-        <h1>
-          Category:{" "}
-          <span className="italic text-red-500">{category.title}</span>
-        </h1>
+      <div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
+        <h1 className="m-1">Category:</h1>
+        <h2 className="m-1 px-1 italic text-red-500">{category.title}</h2>
       </div>
 
       {/* CARD */}
