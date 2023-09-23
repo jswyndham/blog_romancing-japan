@@ -1,8 +1,10 @@
-import { defineConfig } from "sanity";
+//import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from "./sanity/schemas";
+const { defineConfig } = dynamic(() => import("sanity"));
 import { deskStructure } from "./deskStructure";
 import { visionTool } from "@sanity/vision";
+import dynamic from "next/dynamic";
 
 // This configures the sanity studio, where the model object is stored.
 const config = defineConfig({
