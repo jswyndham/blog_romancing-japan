@@ -1,8 +1,7 @@
 "use client";
 
-// Dynamically imported libraries
-const config = (await import("../../../sanity.config")).default;
-const { NextStudio } = (await import("next-sanity/studio")).default;
+import config from "../../../sanity.config";
+import { NextStudio } from "next-sanity/studio";
 
 const AdminPage = () => {
   return <NextStudio config={config} />;

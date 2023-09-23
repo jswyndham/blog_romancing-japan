@@ -2,8 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const SignupCard = () => {
   const firstNameRef = useRef<HTMLInputElement>(null);
@@ -139,41 +139,7 @@ const SignupCard = () => {
             Follow us!
           </p>
         </div>
-        <div className="flex flex-row gap-8">
-          <Link href="https://twitter.com/RomancingJapan" target="_blank">
-            <Image
-              src="/images/twitter-x-logo.png"
-              width={30}
-              height={30}
-              alt="romancing japan twitter"
-              loading="lazy"
-            />
-          </Link>
-          <Link
-            href="https://www.instagram.com/romancingjapan/"
-            target="_blank"
-          >
-            <Image
-              src="/images/instagram-50-white-2.png"
-              width={30}
-              height={30}
-              alt="romancing japan instagram"
-              loading="lazy"
-            />
-          </Link>
-          <Link
-            href="https://www.facebook.com/profile.php?id=100093723613018"
-            target="_blank"
-          >
-            <Image
-              src="/images/facebook-50-white.png"
-              width={30}
-              height={30}
-              alt="romancing japan facebook"
-              loading="lazy"
-            />
-          </Link>
-        </div>
+        <SocialMediaLinks />
       </article>
     </section>
   );

@@ -3,9 +3,7 @@ import ArticleCardOne from "./components/ArticleCardOne";
 import ArticleCardThree from "./components/ArticleCardThree";
 import ArticleCardTwo from "./components/ArticleCardTwo";
 import BlogSmallCard from "./components/BlogSmallCard";
-//import SignupCard from "./components/SignupCard";
 import Image from "next/image";
-//import SignupCardLong from "./components/SignupCardLong";
 import AkariAndJamesProfileSm from "./components/AkariAndJamesProfileSm";
 import dynamic from "next/dynamic";
 
