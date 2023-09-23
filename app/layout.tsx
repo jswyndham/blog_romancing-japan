@@ -1,5 +1,4 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import { Analytics } from "@vercel/analytics/react";
@@ -12,6 +11,9 @@ import {
   Carter_One,
   Caveat,
 } from "next/font/google";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("./components/Navbar"), { ssr: false });
 
 // Font settings
 const roboto_condensed = Roboto_Condensed({
