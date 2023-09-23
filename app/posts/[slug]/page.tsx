@@ -6,11 +6,17 @@ import { urlFor } from "@/lib/urlFor";
 import { readClient } from "@/sanity/config/client-config";
 import Link from "next/link";
 import { Metadata } from "next";
-import SignupCardLong from "@/app/components/SignupCardLong";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import PortableTextComp from "@/app/components/PortableTextComponents";
 import SideBioSubscriptionLatestArt from "@/app/components/SideBioSubscriptionLatestArt";
 import { createArticle } from "@/sanity/sanity-utils";
+import dynamic from "next/dynamic";
+const SignupCardLong = dynamic(
+  () => import("@/app/components/SignupCardLong"),
+  {
+    ssr: false,
+  }
+);
 
 type Props = {
   params: { slug: string };
@@ -152,7 +158,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         </article>
 
         {/* IMAGE */}
-        <article>
+        <div>
           <figure className="flex flex-col justify-center my-6">
             <Image
               src={(await urlFor(post.image)).url()}
@@ -167,7 +173,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               {post.caption}
             </figcaption>
           </figure>
-        </article>
+        </div>
 
         {/* ARTICLE BODY */}
         <article className="container">

@@ -1,8 +1,9 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import schemas from "./sanity/schemas";
+//import schemas from "./sanity/schemas";
 import { deskStructure } from "./deskStructure";
 import { visionTool } from "@sanity/vision";
+const schemas = (await import("./sanity/schemas")).default;
 
 // This configures the sanity studio, where the model object is stored.
 const config = defineConfig({

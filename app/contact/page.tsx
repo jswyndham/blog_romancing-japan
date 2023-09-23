@@ -1,11 +1,15 @@
-import ContactForm from "../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../components/ContactForm"), {
+  ssr: false,
+});
 
+// METADATA
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Page | Romancing Japan",
   description:
     "Contact us if you have any questions or want to know more about the website.",
   openGraph: {
-    title: "Contact Us",
+    title: "Contact Page | Romancing Japan",
     description:
       "Contact us if you have any questions or want to know more about the website.",
     type: "website",
@@ -13,6 +17,7 @@ export const metadata = {
   },
 };
 
+// CONTACT PAGE
 export default async function Contact() {
   return (
     <>
@@ -22,10 +27,10 @@ export default async function Contact() {
       <div className="max-w-screen-md mx-auto p-5">
         {/* Heading Text */}
         <div className="flex text-center items-center justify-center mt-20 mb-16">
-          <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+          <h2 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
             Get In Touch with <br />
             <span className="text-red-700">Romancing Japan</span>
-          </h3>
+          </h2>
         </div>
 
         {/* CONTACT FORM */}

@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import SignupCardLong from "../components/SignupCardLong";
 export const metadata = {
-  title: "About Us",
+  title: "About Us Page | Romancing Japan",
   description:
     "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.",
   openGraph: {
-    title: "About Us",
+    title: "About Us Page | Romancing Japan",
     description:
       "An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.",
     type: "website",
