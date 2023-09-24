@@ -11,6 +11,7 @@ import SideBioSubscriptionLatestArt from "@/app/components/SideBioSubscriptionLa
 import { createArticle } from "@/sanity/sanity-utils";
 import dynamic from "next/dynamic";
 import CategoriesAndTags from "@/app/components/CategoriesAndTags";
+import RedBarDecoration from "@/app/components/RedBarDecoration";
 const SignupCardLong = dynamic(
   () => import("@/app/components/SignupCardLong"),
   {
@@ -97,12 +98,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         {/* TOP BOARDER */}
         <article className="flex flex-col items-center justify-center">
           <div className="container ">
-            <div className="relative h-8 mt-6 p-3 divide-y divide-red-700">
-              <div className="h-1"></div>
-              <div className="h-1"></div>
-              <div className="h-1"></div>
-              <div className="h-1"></div>
-            </div>
+            <RedBarDecoration />
 
             {/* CATEGORIES & TAGS */}
             <CategoriesAndTags
@@ -166,14 +162,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         </section>
 
         {/* BOTTOM BORDER */}
-        <article className="">
-          <div className="h-8 mb-12 p-3 divide-y divide-red-700">
-            <div className="h-1"></div>
-            <div className="h-1"></div>
-            <div className="h-1"></div>
-            <div className="h-1"></div>
-          </div>
-        </article>
+        <RedBarDecoration />
       </section>
 
       {/* SIDE / BOTTOM SECTION */}
