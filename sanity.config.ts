@@ -11,6 +11,7 @@ const config = defineConfig({
   title: "Blog_Japan",
   apiVersion: "2023-04-25",
   basePath: "/admin",
+  useCdn: true,
   plugins: [
     deskTool({
       structure: deskStructure,
