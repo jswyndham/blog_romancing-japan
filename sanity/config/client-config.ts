@@ -1,12 +1,10 @@
-
-
-export const writeClient = ({
+export const writeClient = {
   projectId: "x0c10dda",
   dataset: "production",
   token: process.env.SANITY_AUTH_TOKEN,
-  useCdn: false,
+  useCdn: true,
   apiVersion: "2023-04-25",
-})
+};
 
 export const readClient = {
   projectId: "x0c10dda",
@@ -14,6 +12,3 @@ export const readClient = {
   useCdn: true,
   apiVersion: "2023-04-25",
 };
-
-
-
