@@ -191,6 +191,7 @@ export async function getAuthor(): Promise<Author[]> {
 export async function createArticle({
   params: { slug },
 }: Props): Promise<Post> {
+  const revalidate = 60; //Time interval
   const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
   _id,
@@ -214,5 +215,5 @@ export async function createArticle({
   tag[]->{title, "slug": slug.current,},
   }`;
 
-  return await createClient(readClient).fetch(query, { slug });
+  return await createClient(readClient).fetch(query, { slug, revalidate });
 }
