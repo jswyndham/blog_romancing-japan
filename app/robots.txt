@@ -2,6 +2,8 @@
 # Block all crawlers for /admin
 User-agent: *
 Disallow: /admin
+Disallow: /tags/
+Disallow: /categories/
 
 
 
