@@ -14,7 +14,6 @@ type Props = {
 };
 
 // FETCH SANITY DATA AND POST ARTICLES
-
 export default async function SideBioSubscriptionLatestArt({
   params: { slug },
 }: Props) {

@@ -4,13 +4,13 @@ import { Post } from "../../../typings";
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/urlFor";
 import { readClient } from "@/sanity/config/client-config";
-import Link from "next/link";
 import { Metadata } from "next";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import PortableTextComp from "@/app/components/PortableTextComponents";
 import SideBioSubscriptionLatestArt from "@/app/components/SideBioSubscriptionLatestArt";
 import { createArticle } from "@/sanity/sanity-utils";
 import dynamic from "next/dynamic";
+import CategoriesAndTags from "@/app/components/CategoriesAndTags";
 const SignupCardLong = dynamic(
   () => import("@/app/components/SignupCardLong"),
   {
@@ -105,39 +105,11 @@ export default async function postArticle({ params: { slug } }: Props) {
             </div>
 
             {/* CATEGORIES & TAGS */}
-            <div className="w-full ml-4 flex flex-col gap-1 items-start justify-start font-bold">
-              <div className="flex flex-col pt-1">
-                <div>
-                  {/* Categories */}
-                  <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-                    {post.category.map((category) => (
-                      <div
-                        key={category._id}
-                        className="mx-3 px-3 pt-1 font-cardHeading text-red-700 text-md"
-                      >
-                        <Link href={`/categories/${category.slug}`}>
-                          {category.title}
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-start my-1">
-                {/* Tags */}
-                <div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-                  {post.tag.map((tag) => (
-                    <div
-                      key={tag._id}
-                      className="mx-3 px-3 pt-1 font-catTags text-info text-md"
-                    >
-                      <Link href={`/tags/${tag.slug}`}>{tag.title}</Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <CategoriesAndTags
+              params={{
+                slug: slug,
+              }}
+            />
 
             {/* TITLE */}
             <div className="flex flex-col">
