@@ -83,7 +83,33 @@ export async function generateMetadata({
 // ARTICLE LAYOUT
 export default async function postArticle({ params: { slug } }: Props) {
   // FETCH SANITY UTILITIES
-  const post = await createArticle({ params: { slug } });
+
+  const query = groq`*[_type=="post" && slug.current == $slug][0]
+    {
+  _id,
+  _createdAt,
+  name,
+  "slug": slug.current,
+  image{...},
+  "caption": image.caption,
+  url,
+  content[]{
+    ...,
+    image[] => {
+      ...,
+      caption, 
+      asset->
+    }
+  },
+  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+  author[]->,
+  category[]->{title, "slug": slug.current,},
+  tag[]->{title, "slug": slug.current,},
+  }`;
+
+  const post: Post = await createClient(readClient).fetch(query, {
+    slug,
+  });
 
   // RICH TEXT EDITOR
   const components = PortableTextComp();
