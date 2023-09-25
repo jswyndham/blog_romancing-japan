@@ -11,7 +11,7 @@ export default async function ArticleCardOne() {
   return (
     <Link key={post._id} href={`/posts/${post.slug}`}>
       {/* Card with responsive sizes */}
-      <div className="flex flex-col card rounded-none h-full w-full mx-2 my-1 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700  hover:drop-shadow  hover:bg-gray-50 hover:transition-all duration-300 md:rounded-md md:bg-gray-200 md:flex-row md:my-4 md:mx-0 md:card lg:card-side group">
+      <div className="flex flex-col card rounded-none h-full w-full aspect-auto mx-2 my-1 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700  hover:drop-shadow  hover:bg-gray-50 hover:transition-all duration-300 md:rounded-md md:bg-gray-200 md:flex-row md:my-4 md:mx-0 md:card lg:card-side group">
         {/* Title only visible in mobile/small window */}
         <div className="h-9/12 ml-2 my-4 border-l-4 border-red-700 md:hidden">
           <h2 className="font-heading text-4xl p-3 text-black font-bold md:hidden">

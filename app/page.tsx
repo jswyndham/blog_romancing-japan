@@ -57,9 +57,9 @@ export default async function Home() {
           {/* Article post components */}
 
           <div className="mt-20 flex flex-col items-center justify-center">
-            <div className="md:grid md:grid-rows-5 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
+            <div className="h-full w-full aspect-auto md:grid md:grid-rows-5 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
               {/* ARTICLE ONE */}
-              <div className="my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
+              <div className="aspect-auto my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
                 <ArticleCardOne />
               </div>
 
@@ -67,12 +67,12 @@ export default async function Home() {
                 <SignupCard />
               </div>
 
-              <div className="w-screen my-12 flex items-center justify-center md:h-56 md:col-span-3 md:-ml-20 smd:-ml-24 md:mx-4 md:-mt-1 lg:hidden">
+              <div className="w-screen my-6 flex items-center justify-center md:h-56 md:col-span-3 md:-ml-20 smd:-ml-24 md:mx-4 md:-mt-1 lg:hidden">
                 <SignupCardLong />
               </div>
 
               {/* JAMES & AKARI PROFILE @ LG */}
-              <div className="hidden lg:flex lg:items-center lg:h-[80%] lg:mt-24 xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+              <div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-24 xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                 <AkariAndJamesProfileLg />
               </div>
 

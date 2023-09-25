@@ -97,6 +97,25 @@ const post = defineType({
               { title: "Strike", value: "strike-through" },
               { title: "Code", value: "code" },
             ],
+            // Internal links
+            annotations: [
+              {
+                name: "internalLink",
+                type: "object",
+                title: "Internal link",
+                fields: [
+                  {
+                    name: "reference",
+                    type: "reference",
+                    title: "Reference",
+                    to: [
+                      { type: "post" },
+                      // other types you may want to link to
+                    ],
+                  },
+                ],
+              },
+            ],
           },
         },
         {
