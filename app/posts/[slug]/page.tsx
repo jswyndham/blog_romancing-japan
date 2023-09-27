@@ -92,9 +92,9 @@ export default async function postArticle({ params: { slug } }: Props) {
   return (
     <main
       key={post._id}
-      className="flex flex-col items-center justify-center xl:items-start xl:flex-row"
+      className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
     >
-      <section className="mx-4 md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
+      <section className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
         {/* TOP BOARDER */}
         <article className="flex flex-col items-center justify-center">
           <div className="container ">
@@ -137,7 +137,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               loading="lazy"
             />
 
-            <figcaption className="italic text-base text-left mt-2">
+            <figcaption className="italic text-base text-left m-3">
               {post.caption}
             </figcaption>
           </figure>
@@ -146,7 +146,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         {/* ARTICLE BODY */}
         <article className="container">
           <div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-            <div className="lg:w-11/12 px-4 py-4 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line">
+            <div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line leading-8">
               <PortableText
                 value={post.content}
                 onMissingComponent={false}

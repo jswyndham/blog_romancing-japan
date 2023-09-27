@@ -31,7 +31,7 @@ export default async function BlogSmallCard() {
                 {post.name}
               </h2>
             </div>
-            <div className="h-28 md:h-44 lg:h-48 xl:h-40 pl-3 py-1 pr-1 text-md text-left md:items-center xl:py-4">
+            <div className="h-40 md:h-44 lg:h-48 xl:h-40 pl-3 my-3 pr-1 text-lg text-left md:items-center xl:py-4">
               <PortableText
                 value={post.summaryShort}
                 onMissingComponent={false}

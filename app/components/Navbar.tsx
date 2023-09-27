@@ -42,9 +42,8 @@ const Navbar = () => {
         {/* Nav for medium size up */}
         <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
-
           <Link href="/">
-            <div className="flex justify-center items-center mt-6 w-64 h-14 relative">
+            <div className="flex justify-center items-center mt-6 w-52 h-12 relative">
               <Image
                 src="/images/logo-nav-2.png"
                 fill
@@ -60,7 +59,7 @@ const Navbar = () => {
 
           {/* SIDEBAR MENU */}
           {/* Hamburger button */}
-          <div className="absolute right-0 top-0 m-4 p-2 xl:hidden">
+          <div className="absolute right-0 top-0 mt-5 mx-2 xl:hidden">
             <button onClick={handleClick} aria-label="Menu button">
               <Image
                 src="/images/hamburger-menu-50.png"
