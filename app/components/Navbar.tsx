@@ -43,7 +43,7 @@ const Navbar = () => {
         <nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
           {/* Logo */}
           <Link href="/">
-            <div className="flex justify-center items-center mt-6 w-52 h-12 relative">
+            <div className="flex justify-center items-center mt-6 w-52 h-12 xl:w-60 xl:h-14 2xl:w-64 2xl:h-16 relative">
               <Image
                 src="/images/logo-nav-2.png"
                 fill
