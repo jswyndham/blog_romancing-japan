@@ -22,7 +22,7 @@ export default async function ArticleCardTwo() {
             width={900}
             height={700}
             alt={post.image}
-            className="className='w-full h-full md:rounded-md"
+            className="w-full h-full md:rounded-md"
             loading="lazy"
           />
         </figure>

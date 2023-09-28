@@ -48,7 +48,7 @@ export default async function Home() {
           />
         </figure>
 
-        <article className="flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
+        <article className="h-full w-full aspect-auto flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
           {/* Latest banner */}
           <div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
             <h1>Latest Articles</h1>
@@ -59,7 +59,7 @@ export default async function Home() {
           <div className="mt-20 flex flex-col items-center justify-center">
             <div className="h-full w-full aspect-auto md:grid md:grid-rows-5 md:grid-cols-3 md:gap-8 md:mb-8 md:mt-4 lg:grid-rows-3 lg:grid-cols-4">
               {/* ARTICLE ONE */}
-              <div className="aspect-auto my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
+              <div className="w-full h-full aspect-auto my-3 md:-mt-1 md:mx-0 md:row-span-1 md:col-span-6 lg:row-span-1 lg:col-span-3 lg:mt-0">
                 <ArticleCardOne />
               </div>
 
@@ -72,7 +72,7 @@ export default async function Home() {
               </div>
 
               {/* JAMES & AKARI PROFILE @ LG */}
-              <div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-24 xl:border-l-4 xl:mt-0 xl:h-[93%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+              <div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-24 xl:border-l-4 xl:mt-8 xl:h-[90%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
                 <AkariAndJamesProfileLg />
               </div>
 
@@ -94,7 +94,7 @@ export default async function Home() {
           </div>
 
           {/* DIVIDE */}
-          <div className="divider md:-mt-16 lg:-mt-32 2xl:-mt-28"></div>
+          <div className="divider md:-mt-16 lg:-mt-32 xl:-mt-16 2xl:-mt-28"></div>
 
           <div className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
             <BlogSmallCard />

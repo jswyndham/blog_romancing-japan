@@ -190,7 +190,7 @@ export async function getAuthor(): Promise<Author[]> {
 export async function createArticle({
   params: { slug },
 }: Props): Promise<Post> {
-  const revalidate = 3600; //Time interval
+  const revalidate = 60; //Time interval
   const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
   _id,
