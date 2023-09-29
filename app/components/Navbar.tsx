@@ -107,7 +107,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <AiOutlineHome />
                     </div>
-                    <div>Home</div>
+                    <div>
+                      <p>Home</p>
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -146,7 +148,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <BsCollection />
                     </div>
-                    <div>Blog Collection</div>
+                    <div>
+                      <p>Blog Collection</p>
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -184,7 +188,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <BiCategory />
                     </div>
-                    <div>Article Categories</div>
+                    <div>
+                      <p>Article Categories</p>
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -222,7 +228,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <AiOutlineTags />
                     </div>
-                    <div>Article Tags</div>
+                    <div>
+                      <p>Article Tags</p>
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -260,7 +268,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <AiOutlineMail />
                     </div>
-                    <div>Contact</div>
+                    <div>
+                      <p>Contact</p>
+                    </div>
                   </div>
                 </Link>
               </li>
@@ -298,7 +308,9 @@ const Navbar = () => {
                     <div className="mt-1 pl-2 pr-8">
                       <BsInfoCircle />
                     </div>
-                    <div>About us</div>
+                    <div>
+                      <p>About us</p>
+                    </div>
                   </div>
                 </Link>
               </li>

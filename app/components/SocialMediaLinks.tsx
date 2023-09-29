@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function SocialMediaLinks() {
   return (
-    <div className="flex flex-row gap-8">
+    <div className="flex flex-row gap-9 my-3">
       <Link href="https://twitter.com/RomancingJapan" target="_blank">
         <div className="w-7 h-7 relative">
           <Image
