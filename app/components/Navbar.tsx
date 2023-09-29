@@ -10,32 +10,14 @@ import { BsCollection, BsInfoCircle } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import NavbarMenuLarge from "./NavbarMenuLarge";
 import SocialMediaLinks from "./SocialMediaLinks";
+import NavbarHooks from "../hooks/NavbarHooks";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const ref = useRef<HTMLInputElement>(null);
-
-  React.useEffect(() => {
-    const checkOutsideNavbar = (e: any) => {
-      if (isOpen && ref.current && !ref.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("click", checkOutsideNavbar);
-    return () => {
-      document.removeEventListener("click", checkOutsideNavbar);
-    };
-  }, [isOpen]);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const { isOpen, ref, handleClick } = NavbarHooks();
   return (
     <>
       <header className="relative h-28 bg-black overflow-hidden">

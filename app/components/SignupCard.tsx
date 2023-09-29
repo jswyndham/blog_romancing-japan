@@ -1,47 +1,20 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import SocialMediaLinks from "./SocialMediaLinks";
+import SignupCardHooks from "../hooks/SignupCardHooks";
 
 const SignupCard = () => {
-  const firstNameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-
-  const [contactDetails, setContactDetails] = useState({
-    firstName: "",
-    email: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const data = {
-      firstName: firstNameRef.current?.value,
-      email: emailRef.current?.value,
-    };
-
-    await fetch("api/signup", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log(data, "Contact sent");
-    });
-
-    await fetch("api/emails", {
-      method: "POST",
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log(data, "Email sent");
-    });
-
-    setContactDetails({ firstName: "", email: "" });
-  };
+  // CUSTOM HOOKS
+  const {
+    firstNameRef,
+    emailRef,
+    contactDetails,
+    setContactDetails,
+    handleSubmit,
+  } = SignupCardHooks();
 
   return (
     <section className="h-full w-full flex flex-col justify-center md:justify-between bg-slate-600 drop-shadow-md md:p-2 lg:px-1 lg:py-0 2xl:p-2 2xl:text-center">
