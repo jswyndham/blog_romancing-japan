@@ -7,7 +7,7 @@ export default function AkariAndJamesProfile() {
       <div className="relative">
         <figure className="absolute w-80 xl:w-64 m-auto -left-3 -mt-20 rounded-xl">
           <Image
-            src="/images/akari_james.jpg"
+            src="/images/akari-james.jpg"
             alt="Romancing Japan - James & Akari profile"
             width={250}
             height={250}

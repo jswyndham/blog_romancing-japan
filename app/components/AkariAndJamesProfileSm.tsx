@@ -6,7 +6,7 @@ export default function AkariAndJamesProfile() {
     <div className="relative bg-slate-300 w-fit text-left font-playfair_display">
       <figure className="w-80 rounded-xl p-4 m-auto md:hidden">
         <Image
-          src="/images/akari_james.jpg"
+          src="/images/akari-james.jpg"
           alt="Romancing Japan - James & Akari profile"
           width={384}
           height={257}
@@ -18,7 +18,7 @@ export default function AkariAndJamesProfile() {
         <div className="md:w-full md:flex md:flex-row md:items-center m-auto">
           <figure className="hidden md:flex w-80 rounded-xl p-4">
             <Image
-              src="/images/akari_james.jpg"
+              src="/images/akari-james.jpg"
               alt="Romancing Japan - James & Akari profile"
               width={384}
               height={257}
