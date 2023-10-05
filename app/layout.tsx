@@ -107,6 +107,8 @@ export const metadata = {
   },
 };
 
+export const revalidate = 60; // revalidate every minute
+
 // Layout
 export default function RootLayout({
   children,
