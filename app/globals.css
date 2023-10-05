@@ -15,3 +15,61 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+@layer components {
+  .nav-menu {
+    @apply relative 
+		inline-block 
+		before:content-[''] 
+		before:absolute 
+		before:-bottom-1 
+		before:left-1/2
+		before:-translate-x-1/2
+		before:w-0 
+		before:h-1 
+		before:rounded-xl 
+		before:opacity-0 
+		before:transition-all 
+		before:duration-500
+		before:bg-gradient-to-r
+		before:from-red-200
+		before:via-red-500
+		before:to-red-900
+		hover:before:w-full 
+		hover:before:opacity-100 
+		focus:text-red-200 
+		focus:font-bold 
+		active:text-red-400;
+  }
+
+  .nav-list {
+    @apply flex 
+		flex-row 
+		px-6 
+		py-4 
+		relative 
+		before:content-[''] 
+		before:absolute 
+		before:bottom-2 
+		before:left-1/2
+		before:-translate-x-1/2
+		before:w-0 
+		before:h-1
+		before:rounded-xl 
+		before:opacity-0 
+		before:transition-all 
+		before:duration-500
+		before:bg-gradient-to-r
+		before:from-red-200
+		before:via-red-500
+		before:to-red-900
+		hover:before:opacity-100 
+		focus:text-red-200 
+		focus:font-bold 
+		active:text-red-400;
+  }
+
+  .nav-close {
+    @apply absolute z-50 top-0 right-0 m-6 text-white text-2xl hover:text-red-300 focus:text-red-200 focus:font-bold active:text-red-400;
+  }
+}

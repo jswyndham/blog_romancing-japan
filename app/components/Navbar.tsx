@@ -68,40 +68,12 @@ const Navbar = () => {
             <button
               onClick={handleClick}
               aria-label="Menu button"
-              className="absolute z-50 top-0 right-0 m-6 text-white text-2xl hover:text-red-300 focus:text-red-200 focus:font-bold active:text-red-400"
+              className="nav-close"
             >
               <AiOutlineCloseSquare />
             </button>
             <ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
-              <li
-                className="
-									flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1 
-                  before:-ml-12
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-5/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list before:-ml-12 hover:before:w-5/12">
                 <Link onClick={handleClick} href={"/"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
@@ -114,35 +86,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li
-                className="
-									flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-ml-4
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-8/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list hover:before:w-8/12 before:-ml-4">
                 <Link onClick={handleClick} href={"/blog-collection"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
@@ -155,34 +99,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li
-                className="flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1
-                  before:-ml-1
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-9/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list hover:before:w-9/12 before:-ml-1">
                 <Link onClick={handleClick} href={"/categories"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
@@ -195,34 +112,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li
-                className="flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1 
-                  before:-ml-6
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-7/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list hover:before:w-7/12 before:-ml-6">
                 <Link onClick={handleClick} href={"/tags"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
@@ -235,34 +125,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li
-                className="flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1 
-                  before:-ml-9
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-6/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list hover:before:w-6/12 before:-ml-9">
                 <Link onClick={handleClick} href={"/contact"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
@@ -275,34 +138,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li
-                className="flex 
-									flex-row 
-									px-6 
-									py-4 
-									relative 
-									before:content-[''] 
-									before:absolute 
-									before:bottom-2 
-									before:left-1/2
-									before:-translate-x-1/2
-									before:w-0 
-									before:h-1 
-                  before:-ml-9
-									before:rounded-xl 
-									before:opacity-0 
-									before:transition-all 
-									before:duration-500
-									before:bg-gradient-to-r
-									before:from-red-200
-									before:via-red-500
-									before:to-red-900
-									hover:before:w-6/12
-									hover:before:opacity-100 
-									focus:text-red-200 
-									focus:font-bold 
-									active:text-red-400"
-              >
+              <li className="nav-list hover:before:w-6/12 before:-ml-9">
                 <Link onClick={handleClick} href={"/about"}>
                   <div className="flex flex-row">
                     <div className="mt-1 pl-2 pr-8">
