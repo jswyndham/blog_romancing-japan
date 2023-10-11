@@ -4,10 +4,6 @@ User-agent: *
 Disallow: /admin
 Disallow: /tags/
 Disallow: /categories/
-Disallow: https://www.romancing-japan.com/favicon.ico
-Disallow: https://www.romancing-japan.com/tags/hotels
-Disallow: https://www.romancing-japan.com/tags/nara
-Disallow: https://www.romancing-japan.com/categories/food-and-beverage
 
 
 
