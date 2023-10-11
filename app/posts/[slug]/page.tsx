@@ -29,6 +29,7 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
+  ...,
   _id,
   _createdAt,
   name,
@@ -43,7 +44,6 @@ export async function generateMetadata({
       asset->
     }
   },
-  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->{title, "slug": slug.current,},
   tag[]->{title, "slug": slug.current,},

@@ -9,7 +9,6 @@ const post = defineType({
       name: "name",
       title: "Article Title",
       type: "string",
-      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -17,14 +16,12 @@ const post = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "name" },
-      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: "pageName",
       title: "Page Title (max 60 characters)",
       type: "string",
-      validation: (Rule) => Rule.required(),
     }),
 
     defineField({

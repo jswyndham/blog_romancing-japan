@@ -25,15 +25,21 @@ const NotFound = () => {
             Error 404
           </h2>
         </div>
-        <div className="w-80 ml-4 mt-64 text-2xl text-center font-bold">
-          <h3 className="m-3 text-red-600">There was a problem...</h3>
-          <p>We could not find the page you were looking for.</p>
-        </div>
-        <div className="m-5 text-2xl flex flex-col justify-center text-center align-middle">
-          <p>Go back to</p>
-          <p className="font-krona_one text-red-900 hover:text-blue-900">
-            <Link href="/">Romancing Japan</Link>
-          </p>
+        <div className="h-screen flex flex-col justify-center -mt-32">
+          <div className="w-72 md:w-96 ml-5 text-center font-bold">
+            <h3 className="m-3 text-2xl md:text-3xl text-red-600">
+              There was a problem...
+            </h3>
+            <p className="text-xl md:text-2xl">
+              We could not find the page you were looking for.
+            </p>
+          </div>
+          <div className="m-5 text-2xl md:text-3xl flex flex-col justify-center text-center align-middle">
+            <p>Go back to</p>
+            <p className="ml-2 font-krona_one text-red-900 hover:text-blue-900">
+              <Link href="/">Romancing Japan</Link>
+            </p>
+          </div>
         </div>
       </div>
     </main>
