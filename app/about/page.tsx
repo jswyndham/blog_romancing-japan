@@ -65,7 +65,7 @@ export default async function about() {
                     width={500}
                     height={500}
                     className="object-cover mx-14 shadow-xl shadow-slate-500"
-                    priority
+                    priority={true}
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default async function about() {
                     width={500}
                     height={500}
                     className="object-cover mx-14 shadow-xl shadow-slate-500"
-                    priority
+                    loading="lazy"
                   />
                 </div>
                 <div className="py-2 mt-3 md:col-span-2">

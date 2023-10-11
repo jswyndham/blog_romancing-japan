@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-export default async function NotFound() {
+const error = () => {
   return (
     <main className="h-full flex justify-center align-middle bg-black">
       {/* background image */}
@@ -43,4 +45,6 @@ export default async function NotFound() {
       </div>
     </main>
   );
-}
+};
+
+export default error;

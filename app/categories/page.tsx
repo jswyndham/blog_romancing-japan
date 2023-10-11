@@ -30,7 +30,7 @@ export default async function CategoryList() {
             width={3840}
             height={1368}
             alt="Mt.Fuji Black and White"
-            priority
+            priority={true}
           />
         </figure>
 
@@ -56,7 +56,7 @@ export default async function CategoryList() {
                       width={220}
                       height={220}
                       alt={category.image}
-                      priority
+                      priority={true}
                       className="w-full h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-700"
                     />
                   </figure>

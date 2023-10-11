@@ -11,7 +11,7 @@ export default function AkariAndJamesProfile() {
           width={384}
           height={257}
           className="object-fill"
-          priority
+          priority={true}
         />
       </figure>
       <div className="flex flex-col items-end justify-end px-4">
@@ -23,7 +23,7 @@ export default function AkariAndJamesProfile() {
               width={384}
               height={257}
               className="object-fill"
-              priority
+              priority={true}
             />
           </figure>
           <div className="flex flex-col items-center justify-center m-auto font-caveat text-3xl md:text-4xl">

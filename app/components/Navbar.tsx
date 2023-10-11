@@ -31,7 +31,7 @@ const Navbar = () => {
                 fill
                 alt="romancing japan logo"
                 className="absolute top-4 md:ml-4 md:p-0 md:mt-0"
-                priority
+                priority={true}
               />
             </div>
           </Link>
