@@ -27,7 +27,7 @@ export default async function TagList() {
             src="/tags/opengraph-image.jpg"
             width={3840}
             height={1368}
-            alt="Mt.Fuji Black and White"
+            alt="Osaka Umeda Traffic"
             priority={true}
           />
         </figure>
