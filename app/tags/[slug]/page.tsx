@@ -76,7 +76,7 @@ export default async function tagPage({ params: { slug } }: Props) {
             className="mt-32 mb-6 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8"
           >
             {tag.post.map(async (post: any) => (
-              <Link key={post._id} href={`/posts/${post.slug}`}>
+              <Link key={post._id} href={`/posts/${post.slug}/`}>
                 <div
                   key={tag._id}
                   className="card rounded-none w-fit h-full mx-2 my-6 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"

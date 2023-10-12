@@ -13,7 +13,7 @@ export default async function BlogSmallCard() {
 
   return posts.map(async (post: any) => {
     return (
-      <Link key={post._id} href={`/posts/${post.slug}`}>
+      <Link key={post._id} href={`/posts/${post.slug}/`}>
         <div className="card rounded-none w-fit h-fit mx-2 my-2 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group">
           <figure className="border-b-2 border-red-500">
             <Image
