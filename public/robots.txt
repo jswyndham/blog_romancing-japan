@@ -2,13 +2,12 @@
 # Block all crawlers for /admin
 User-agent: *
 Disallow: /admin
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /the-top-5-historical-temples-in-kyoto
 
-# Allow all crawlers
-User-agent: *
-Allow: /
 
-User-agent: bingbot
-Allow: /
-Crawl-delay: 10
+
 
 Sitemap: https://www.romancing-japan.com/sitemap.xml
+

@@ -79,14 +79,10 @@ export default function page() {
             at the point we ask you to provide your personal information.
           </p>
           <p className="my-5">
-            If you{" "}
-            <Link href={"/contact"}>
-              <span className="text-blue-700">contact us</span>
-            </Link>{" "}
-            directly, we may receive additional information about you such as
-            your name, email address, phone number, the contents of the message
-            and/or attachments you may send us, and any other information you
-            may choose to provide.
+            If you contact us directly, we may receive additional information
+            about you such as your name, email address, phone number, the
+            contents of the message and/or attachments you may send us, and any
+            other information you may choose to provide.
           </p>
           <p className="my-5">
             When you register for an Account, we may ask for your contact
@@ -255,11 +251,7 @@ export default function page() {
           </p>
           <p className="my-5">
             If you make a request, we have one month to respond to you. If you
-            would like to exercise any of these rights, please{" "}
-            <Link href={"/contact"}>
-              <span className="text-blue-700">contact us</span>
-            </Link>
-            .
+            would like to exercise any of these rights, please contact us.
           </p>
         </article>
 
@@ -299,14 +291,6 @@ export default function page() {
             These changes are effective immediately, after they are posted on
             this page.
           </p>
-
-          <p className="my-5">
-            Our Privacy Policy was created with the help of the{" "}
-            <a href="https://www.privacypolicygenerator.info">
-              Privacy Policy Generator
-            </a>
-            .
-          </p>
         </article>
 
         {/* CONTACT */}
@@ -318,11 +302,7 @@ export default function page() {
 
           <p className="my-2">
             If you have any questions or suggestions about our Privacy Policy,
-            do not hesitate to{" "}
-            <Link href={"/contact"}>
-              <span className="text-blue-700">contact us</span>
-            </Link>
-            .
+            do not hesitate to contact us.
           </p>
         </article>
       </section>
