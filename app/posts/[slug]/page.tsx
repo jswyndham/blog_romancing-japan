@@ -61,7 +61,7 @@ export async function generateMetadata({
     title: post.pageName,
     description: post.description,
     alternates: {
-      canonical: `https://www.romancing-japan.com/posts/${post.slug}`,
+      canonical: `https://www.romancing-japan.com/posts/${post.slug}/`,
     },
     openGraph: {
       title: post.pageName,
@@ -69,7 +69,7 @@ export async function generateMetadata({
       type: "article",
       images: { url: post.image, width: 600, height: 400 },
       siteName: "Romancing Japan",
-      url: `https://www.romancing-japan.com/posts/${post.slug}`,
+      url: `https://www.romancing-japan.com/posts/${post.slug}/`,
     },
     twitter: {
       card: "summary_large_image",
