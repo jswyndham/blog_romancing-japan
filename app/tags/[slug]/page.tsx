@@ -77,7 +77,7 @@ export default async function tagPage({ params: { slug } }: Props) {
                 <Link key={post._id} href={`/posts/${post.slug}/`}>
                   <div
                     key={tag._id}
-                    className="card rounded-none w-fit h-fit mx-2 mt-6 mb-8 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                    className="card rounded-none w-fit h-fit md:h-full mt-6 mb-8 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
                   >
                     {/* Card Image */}
                     <figure className="border-b-2 border-red-500">
@@ -92,13 +92,13 @@ export default async function tagPage({ params: { slug } }: Props) {
                     </figure>
 
                     {/* Card Title & Summary */}
-                    <div className="card-body p-4 rounded-2xl">
+                    <div className="card-body p-2 rounded-2xl">
                       <div className="flex items-center h-24 pl-2 mt-1 mb-2 border-l-2 border-red-600 xl:h-28">
                         <h2 className="font-roboto_condensed text-red-900 text-2xl font-bold justify-left">
                           {post.name}
                         </h2>
                       </div>
-                      <div className="h-36 my-2 px-3 text-lg text-left md:h-44 3xl:h-32 md:my-2">
+                      <div className="h-44 lg:h-20 m-2 px-2 text-lg text-left md:h-44 3xl:h-32">
                         <PortableText
                           value={post.summaryShort}
                           onMissingComponent={false}
