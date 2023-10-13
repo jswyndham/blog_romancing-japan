@@ -70,14 +70,14 @@ export default async function tagPage({ params: { slug } }: Props) {
         </div>
 
         {/* CARD */}
-        <section className="flex justify-center">
-          <article key={tag._id}>
-            <div className="mt-24 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8">
+        <section>
+          <article key={tag._id} className="flex justify-center">
+            <div className="mt-24 mb-4 pb-2 md:w-[95%] xl:w-[70%] md:grid md:grid-cols-2 2xl:grid-cols-3 md:gap-8">
               {tag.post.map(async (post: any) => (
                 <Link key={post._id} href={`/posts/${post.slug}/`}>
                   <div
                     key={tag._id}
-                    className="card rounded-none w-fit h-full mx-2 mt-6 mb-8 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+                    className="card rounded-none w-fit h-fit mx-2 mt-6 mb-8 pb-3 md:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
                   >
                     {/* Card Image */}
                     <figure className="border-b-2 border-red-500">
