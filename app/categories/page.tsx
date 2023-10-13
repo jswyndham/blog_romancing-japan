@@ -35,7 +35,7 @@ export default async function CategoryList() {
         </figure>
 
         {/* Page Banner */}
-        <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
+        <div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-2xl md:text-3xl font-bold">
           <h1 className="m-1">List of Article</h1>
           <h2 className="m-1">Categories</h2>
         </div>
