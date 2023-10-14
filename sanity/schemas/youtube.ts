@@ -1,4 +1,3 @@
-import React from "react";
 import { defineType, defineField } from "sanity";
 import { YouTubePreview } from "../../app/components/YouTubePreview";
 
