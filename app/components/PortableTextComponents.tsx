@@ -2,7 +2,6 @@ import { urlFor } from "@/lib/urlFor";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import YouTubePlayer from "react-player/youtube";
 
 function PortableTextComp() {
   return {
@@ -21,18 +20,6 @@ function PortableTextComp() {
               {value.caption}
             </figcaption>
           </figure>
-        );
-      },
-      youtube: ({ value }: any) => {
-        const { url } = value;
-        return (
-          <YouTubePlayer
-            url={url}
-            height="40vh"
-            width="80vh"
-            controls={true}
-            className="bg-dark overflow-hidden"
-          />
         );
       },
     },
