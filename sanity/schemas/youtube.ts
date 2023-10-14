@@ -1,6 +1,5 @@
-// import React from "react";
 import { defineType, defineField } from "sanity";
-// import { YouTubePreview } from "../../app/components/YouTubePreview";
+import { YouTubePreview } from "../../app/components/YouTubePreview";
 
 export default defineType({
   name: "youtube",
@@ -13,4 +12,12 @@ export default defineType({
       title: "URL",
     }),
   ],
+  preview: {
+    select: {
+      url: "url",
+    },
+  },
+  components: {
+    preview: YouTubePreview,
+  },
 });
