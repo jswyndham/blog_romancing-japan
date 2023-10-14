@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType, defineArrayMember } from "sanity";
 
 const post = defineType({
   name: "post",
@@ -52,12 +52,6 @@ const post = defineType({
         },
       ],
       validation: (Rule) => Rule.required(),
-    }),
-
-    defineField({
-      name: "url",
-      title: "URL",
-      type: "url",
     }),
 
     defineField({
@@ -169,6 +163,9 @@ const post = defineType({
             },
           ],
         },
+        defineArrayMember({
+          type: "youtube",
+        }),
       ],
       validation: (Rule) => Rule.required(),
     }),
