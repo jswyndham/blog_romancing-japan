@@ -9,7 +9,7 @@ export default defineType({
     defineField({
       name: "url",
       type: "url",
-      title: "YouTube video URL",
+      title: "URL",
     }),
   ],
   preview: {
