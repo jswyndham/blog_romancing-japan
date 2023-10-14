@@ -1,7 +1,7 @@
 import type { PreviewProps } from "sanity";
 import { Flex, Text } from "@sanity/ui";
 import YouTubePlayer from "react-player/youtube";
-import getYouTubeID from "get-youtube-id";
+// import getYouTubeID from "get-youtube-id";
 
 interface PreviewYouTubeProps extends PreviewProps {
   selection?: {

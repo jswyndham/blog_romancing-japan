@@ -44,7 +44,7 @@
     "app/components/ArticleCollectionCard.tsx",
     "app/components/RichTextComponent.tsx",
     "app/api/contact/route.js", 
-    "sanity/schemas/youtube.js"  ],
+    "sanity/schemas/youtube.ts"  ],
   "exclude": [
     "node_modules"
   ]
