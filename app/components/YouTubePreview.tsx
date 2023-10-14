@@ -13,7 +13,7 @@ export function YouTubePreview(props: PreviewYouTubeProps) {
   const url = selection?.url;
   return (
     <Flex padding={4} justify={"center"}>
-      {url ? <YouTubePlayer url={url} /> : <Text>Add a YouTube URL</Text>}
+      <YouTubePlayer url={url} />
     </Flex>
   );
 }
