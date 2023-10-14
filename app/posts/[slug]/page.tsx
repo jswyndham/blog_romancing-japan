@@ -12,6 +12,7 @@ import { createArticle } from "@/sanity/sanity-utils";
 import dynamic from "next/dynamic";
 import CategoriesAndTags from "@/app/components/CategoriesAndTags";
 import RedBarDecoration from "@/app/components/RedBarDecoration";
+import ReactPlayer from "react-player";
 const SignupCardLong = dynamic(
   () => import("@/app/components/SignupCardLong"),
   {

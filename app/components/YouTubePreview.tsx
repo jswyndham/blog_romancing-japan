@@ -15,8 +15,8 @@ export function YouTubePreview(props: PreviewYouTubeProps) {
     <Flex padding={4} justify={"center"}>
       <YouTubePlayer
         url={url}
-        height="85vh"
-        width="100vh"
+        height="40vh"
+        width="80vh"
         controls={true}
         className="bg-dark overflow-hidden"
       />
