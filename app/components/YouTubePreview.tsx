@@ -1,5 +1,5 @@
 import type { PreviewProps } from "sanity";
-import { Flex } from "@sanity/ui";
+import { Flex, Text } from "@sanity/ui";
 import YouTubePlayer from "react-player/youtube";
 
 interface PreviewYouTubeProps extends PreviewProps {
@@ -13,13 +13,17 @@ export function YouTubePreview(props: PreviewYouTubeProps) {
   const url = selection?.url;
   return (
     <Flex padding={4} justify={"center"}>
-      <YouTubePlayer
-        url={url}
-        height="40vh"
-        width="80vh"
-        controls={true}
-        className="bg-dark overflow-hidden"
-      />
+      {url ? (
+        <YouTubePlayer
+          url={url}
+          height="40vh"
+          width="80vh"
+          controls={true}
+          className="bg-dark overflow-hidden"
+        />
+      ) : (
+        <Text>Add a YouTube URL</Text>
+      )}
     </Flex>
   );
 }
