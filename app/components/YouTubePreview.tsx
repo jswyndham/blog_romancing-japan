@@ -3,7 +3,7 @@ import { Flex, Text } from "@sanity/ui";
 import YouTubePlayer from "react-player/youtube";
 import getYouTubeID from "get-youtube-id";
 
-export const YouTubePreview = ({ value }: any) => {
+export default async function YouTube({ value }: any) {
   const id = getYouTubeID(value.url);
   const url = `https://www.youtube.com/embed/${id}`;
   if (!id) {
@@ -19,7 +19,7 @@ export const YouTubePreview = ({ value }: any) => {
       allowFullScreen
     />
   );
-};
+}
 
 // interface PreviewYouTubeProps extends PreviewProps {
 //   selection?: {

@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-import { YouTubePreview } from "../../app/components/YouTubePreview";
+import YouTubePreview from "../../app/components/YouTubePreview";
 
 export default defineType({
   name: "youtube",
