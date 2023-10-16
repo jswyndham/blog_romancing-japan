@@ -143,6 +143,8 @@ const post = defineType({
           ],
         },
 
+        { type: "table" },
+
         {
           title: "Image",
           type: "image",
