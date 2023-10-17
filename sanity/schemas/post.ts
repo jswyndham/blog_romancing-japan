@@ -163,9 +163,6 @@ const post = defineType({
             },
           ],
         },
-        defineArrayMember({
-          type: "youtube",
-        }),
       ],
       validation: (Rule) => Rule.required(),
     }),

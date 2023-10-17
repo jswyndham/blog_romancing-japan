@@ -23,10 +23,6 @@ function PortableTextComp() {
           </figure>
         );
       },
-      youtube: ({ node }: any) => {
-        const { url } = node;
-        return <ReactPlayer url={url} />;
-      },
     },
 
     list: {

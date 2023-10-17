@@ -5,7 +5,6 @@ import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/lib/urlFor";
 import { readClient } from "@/sanity/config/client-config";
 import { Metadata } from "next";
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import PortableTextComp from "@/app/components/PortableTextComponents";
 import SideBioSubscriptionLatestArt from "@/app/components/SideBioSubscriptionLatestArt";
 import { createArticle } from "@/sanity/sanity-utils";

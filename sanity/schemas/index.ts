@@ -6,7 +6,7 @@ import tag from "./tag";
 import author from "./author";
 import siteSettings from "./siteSettings";
 import userSignup from "./userEmail";
-import youtube from "./youtube";
+
 
 
 const schemas = [
@@ -16,7 +16,7 @@ const schemas = [
   author,
   siteSettings,
   userSignup,
-  youtube,
+  
 ];
 
 export default schemas;
