@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import { getPostsArchive } from "@/sanity/sanity-utils";
 import { urlFor } from "@/lib/urlFor";

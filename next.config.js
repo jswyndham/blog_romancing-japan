@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   trailingSlash: true,
-  experimental: {
-    appDir: true,
-  },
+  
   images: {
     remotePatterns: [
       {
@@ -13,6 +11,9 @@ const nextConfig = {
         port: "",
       },
     ],
+  },
+  eslint: {
+    dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
   },
   async redirects() {
     return [

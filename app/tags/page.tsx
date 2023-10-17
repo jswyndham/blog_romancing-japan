@@ -38,11 +38,8 @@ export default async function TagList() {
         <article className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {tags.map(async (tag: any) => (
-              <Link href={`/tags/${tag.slug}`}>
-                <div
-                  key={tag._id}
-                  className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0"
-                >
+              <Link key={tag._id} href={`/tags/${tag.slug}`}>
+                <div className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0">
                   <figure className="h-56 w-80">
                     <Image
                       src={(await urlFor(tag.image)).url()}

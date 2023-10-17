@@ -44,12 +44,9 @@ export default async function CategoryList() {
         <article className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 -mt-3 xl:-mt-6">
           <>
             {categories.map(async (category: any) => (
-              <Link href={`/categories/${category.slug}`}>
+              <Link key={category._id} href={`/categories/${category.slug}`}>
                 {/* Category Cards (array) */}
-                <div
-                  key={category._id}
-                  className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0 hover:transition-all duration-300"
-                >
+                <div className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0 hover:transition-all duration-300">
                   <figure className="h-56 w-80">
                     <Image
                       src={(await urlFor(category.image)).url()}

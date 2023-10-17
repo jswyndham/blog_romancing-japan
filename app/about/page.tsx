@@ -55,7 +55,7 @@ export default async function about() {
                     start a family. I eventually went back to university to
                     become a teacher, which led tp jobs at several colleges. My
                     wife and I are currently raising two wonderful children in
-                    one of Japan's oldest and most culturally rich cities.
+                    one of Japan&apos;s oldest and most culturally rich cities.
                   </p>
                 </div>
                 <div className="flex justify-center mx-2 my-4 md:my-6 md:col-span-1">
@@ -91,13 +91,13 @@ export default async function about() {
                 </div>
                 <div className="py-2 mt-3 md:col-span-2">
                   <h2 className="text-center md:text-right pr-8 pb-6 text-xl lg:text-2xl font-extrabold font-catTags text-red-800">
-                    Why "Romancing Japan"?
+                    Why &apos;Romancing Japan&apos;?
                   </h2>
                   <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                     While the name of this website may be puzzling to some, I
                     chose it because it symbolizes how people often romanticize
                     the idea of experiencing Japanese culture and traditions.
-                    Japan's culture has piqued the interest and attention of
+                    Japan&apos;s culture has piqued the interest and attention of
                     people all over the world by distinguishing itself as a
                     distinct cultural identity. The goal of this website is to
                     provide readers with insight and information about culture,
@@ -126,7 +126,7 @@ export default async function about() {
               <div className="py-2">
                 <p className="text-lg px-2 md:text-xl lg:text-2xl font-heading text-justify">
                   For a long time I had been toying with the idea of creating
-                  online content to inform others about the country I've come to
+                  online content to inform others about the country I&apos;ve come to
                   call home. However, being a parent, husband, and working
                   multiple teaching jobs, can consume a lot of your time and
                   energy. However, in 2021 I began playing with the idea of
