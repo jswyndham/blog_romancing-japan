@@ -6,6 +6,7 @@ import tag from "./tag";
 import author from "./author";
 import siteSettings from "./siteSettings";
 import userSignup from "./userEmail";
+import table from "./table"
 
 
 
@@ -16,7 +17,7 @@ const schemas = [
   author,
   siteSettings,
   userSignup,
-  
+  table,
 ];
 
 export default schemas;
