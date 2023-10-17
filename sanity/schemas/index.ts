@@ -7,7 +7,7 @@ import author from "./author";
 import siteSettings from "./siteSettings";
 import userSignup from "./userEmail";
 import youtube from "./youtube";
-import table from "./table";
+
 
 const schemas = [
   post,
@@ -17,7 +17,6 @@ const schemas = [
   siteSettings,
   userSignup,
   youtube,
-  table,
 ];
 
 export default schemas;
