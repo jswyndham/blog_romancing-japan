@@ -9,6 +9,11 @@
 		"lint": "next lint",
 		"email": "email dev"
 	},
+	"browser": {
+		"fs": false,
+		"path": false,
+		"os": false
+	  },
 	"dependencies": {
 		"@babel/eslint-parser": "^7.22.15",
 		"@next/bundle-analyzer": "^13.5.2",

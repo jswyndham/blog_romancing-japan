@@ -1,5 +1,7 @@
 import React from "react";
-import ArticleCollectionCard from "../components/ArticleCollectionCard";
+import dynamic from "next/dynamic";
+
+const ArticleCollectionCard = dynamic(() => import("../components/ArticleCollectionCard"), { ssr: false });
 
 export const metadata = {
   title: "Article Collection",

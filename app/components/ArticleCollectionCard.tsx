@@ -6,8 +6,9 @@ import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import PortableTextComp from "./PortableTextComponents";
+import dynamic from "next/dynamic";
 
-export default async function ArticleCollectionCard() {
+const ArticleCollectionCard = async () => {
   const posts = await getPostsArchive();
 
   // RICH TEXT EDITOR
@@ -58,3 +59,5 @@ export default async function ArticleCollectionCard() {
     );
   });
 }
+
+export default dynamic(() => Promise.resolve(ArticleCollectionCard), { ssr: false });

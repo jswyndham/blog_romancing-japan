@@ -1,10 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import React, { useRef, useState } from "react";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BiErrorCircle } from "react-icons/bi";
 
-export default function ContactForm() {
+const ContactForm = () => {
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -249,3 +250,5 @@ export default function ContactForm() {
     </>
   );
 }
+export default dynamic(() => Promise.resolve(ContactForm), { ssr: false });
+
