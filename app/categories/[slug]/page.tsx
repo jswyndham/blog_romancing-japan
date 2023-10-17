@@ -93,7 +93,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 
                   {/* Card Title & Summary */}
                   <div className="card-body p-4 rounded-2xl">
-                    <div className="flex items-center h-28 pl-2 py-2 mt-1 mb-2 border-l-2 border-red-600">
+                    <div className="flex items-center h-24 pl-2 py-2 mt-1 mb-2 border-l-2 border-red-600 xl:h-28">
                       <h2 className="font-roboto_condensed text-red-900 text-2xl font-bold justify-left">
                         {post.name}
                       </h2>
