@@ -13,15 +13,15 @@ const nextConfig = {
     ],
   },
   
-  async redirects() {
-    return [
-      {
-        source: '/posts/the-top-5-historical-temples-in-kyoto',
-        destination: '/posts/top-5-historical-temples-in-kyoto', // Matched parameters can be used in the destination
-        permanent: true,
-      },
-    ]
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/posts/the-top-5-historical-temples-in-kyoto',
+  //       destination: '/posts/top-5-historical-temples-in-kyoto', // Matched parameters can be used in the destination
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
