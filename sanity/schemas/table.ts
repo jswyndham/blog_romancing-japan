@@ -8,7 +8,7 @@ export default defineType({
 		defineField({
 			// Include the table as a field
             name: 'sizeChart',
-            title: 'Table Chart',
+            title: 'Size Chart',
             type: 'table',
 		}),
 	],
