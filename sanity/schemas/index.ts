@@ -7,7 +7,8 @@ import author from "./author";
 import siteSettings from "./siteSettings";
 import userSignup from "./userEmail";
 import table from "./table";
+import youtube from "./youtube";
 
-const schemas = [post, category, tag, author, siteSettings, userSignup, table];
+const schemas = [post, category, tag, author, siteSettings, userSignup, table, youtube];
 
 export default schemas;

@@ -126,6 +126,7 @@ const post = defineType({
                   },
                 ],
               },
+             
             ],
           },
         },
@@ -143,6 +144,7 @@ const post = defineType({
           ],
         },
 
+      
         {
           title: "Image",
           type: "image",
