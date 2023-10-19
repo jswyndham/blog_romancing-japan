@@ -1,7 +1,5 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const ArticleCollectionCard = dynamic(() => import("../components/ArticleCollectionCard"), { ssr: false });
+import ArticleCollectionCard from "../components/ArticleCollectionCard";
 
 export const metadata = {
   title: "Article Collection",
@@ -13,7 +11,6 @@ export const metadata = {
     siteName: "Romancing Japan",
   },
 };
-
 
 export default function page() {
   return (

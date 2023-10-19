@@ -2,7 +2,18 @@
 const nextConfig = {
   reactStrictMode: false,
   trailingSlash: true,
-  
+
+  async redirects() {
+    return [
+      {
+        source: "/posts/the-top-5-historical-temples-in-kyoto/",
+        destination: "/posts/top-5-historical-temples-in-kyoto/",
+        // Matched parameters can be used in the destination
+        permanent: true,
+      },
+    ];
+  },
+
   images: {
     remotePatterns: [
       {
@@ -11,32 +22,6 @@ const nextConfig = {
         port: "",
       },
     ],
-  },
-
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          net: false,
-          dns: false,
-          tls: false,
-          fs: false,
-          request: false,
-        },
-      };
-    }
-    return config;
-  },
-  
-  async redirects() {
-    return [
-      {
-        source: '/posts/the-top-5-historical-temples-in-kyoto',
-        destination: '/posts/top-5-historical-temples-in-kyoto', // Matched parameters can be used in the destination
-        permanent: true,
-      },
-    ]
   },
 };
 

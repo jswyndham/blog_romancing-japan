@@ -1,12 +1,9 @@
-'use client'
-
 import Image from "next/image";
 import { getPostsArchive } from "@/sanity/sanity-utils";
 import { urlFor } from "@/lib/urlFor";
 import Link from "next/link";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import PortableTextComp from "./PortableTextComponents";
-import dynamic from "next/dynamic";
 
 const ArticleCollectionCard = async () => {
   const posts = await getPostsArchive();
@@ -58,6 +55,6 @@ const ArticleCollectionCard = async () => {
       </>
     );
   });
-}
+};
 
-export default dynamic(() => Promise.resolve(ArticleCollectionCard), { ssr: false });
+export default ArticleCollectionCard;

@@ -1,11 +1,7 @@
-'use client'
-
 import { Post } from "@/typings";
 import { ImageResponse } from "next/server";
 import { createClient, groq } from "next-sanity";
 import { readClient } from "@/sanity/config/client-config";
-
-
 
 // Route segment config
 export const runtime = "edge";
@@ -74,11 +70,11 @@ export default async function Image({ params }: { params: { slug: string } }) {
 
         <div tw="w-9/12 flex flex-col text-neutral-50 text-4xl mx-4 mt-12">
           {/* Title */}
-          <div tw="flex mt-82 mb-6 text-6xl font-bold text-center">{post.name}</div>
+          <div tw="flex mt-82 mb-6 text-6xl font-bold text-center">
+            {post.name}
+          </div>
 
-          
           <div tw="text-left text-red-600">www.romancing-japan.com</div>
-          
         </div>
       </div>
     ),

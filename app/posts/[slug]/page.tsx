@@ -127,7 +127,7 @@ export default async function postArticle({ params: { slug } }: Props) {
         </article>
 
         {/* IMAGE */}
-        <div>
+        <article>
           <figure className="flex flex-col justify-center my-6">
             <Image
               src={(await urlFor(post.image)).url()}
@@ -142,7 +142,7 @@ export default async function postArticle({ params: { slug } }: Props) {
               {post.caption}
             </figcaption>
           </figure>
-        </div>
+        </article>
 
         {/* ARTICLE BODY */}
         <article className="container">
@@ -158,9 +158,9 @@ export default async function postArticle({ params: { slug } }: Props) {
         </article>
 
         {/* SUBSCRIBE CARD @ SM - LG */}
-        <section className="w-screen flex items-center justify-start xl:hidden">
+        <article className="w-screen flex items-center justify-start xl:hidden">
           <SignupCardLong />
-        </section>
+        </article>
 
         {/* BOTTOM BORDER */}
         <RedBarDecoration />
