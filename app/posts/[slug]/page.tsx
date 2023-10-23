@@ -2,7 +2,6 @@ import { createClient, groq } from 'next-sanity';
 import Image from 'next/image';
 import { Post } from '../../../typings';
 import { PortableText } from '@portabletext/react';
-// import ReactPlayer from 'react-player';
 import { urlFor } from '@/lib/urlFor';
 import { readClient } from '@/sanity/config/client-config';
 import { Metadata } from 'next';
@@ -12,6 +11,7 @@ import { createArticle } from '@/sanity/sanity-utils';
 import dynamic from 'next/dynamic';
 import CategoriesAndTags from '@/app/components/CategoriesAndTags';
 import RedBarDecoration from '@/app/components/RedBarDecoration';
+import CustomPortableText from '@/app/components/CustomPortableText';
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
 	{
@@ -84,21 +84,15 @@ export async function generateMetadata({
 export const revalidate = 60; //Time interval
 
 // ARTICLE LAYOUT
-export default async function postArticle({ params: { slug } }: Props) {
+export default async function postArticle(
+	{ params: { slug } }: Props,
+	{ blocks }: any
+) {
 	// FETCH SANITY UTILITIES
 	const post = await createArticle({ params: { slug } });
 
 	// RICH TEXT EDITOR
 	const components = PortableTextComp();
-
-	// const serializers = {
-	// 	types: {
-	// 		youtube: ({ value }: any) => {
-	// 			const { url } = value;
-	// 			return <ReactPlayer url={url} />;
-	// 		},
-	// 	},
-	// };
 
 	return (
 		<main
@@ -158,6 +152,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 				<article className="container">
 					<div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
 						<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl 2xl:text-2xl whitespace-pre-line leading-9">
+							<CustomPortableText blocks={blocks} />
 							<PortableText
 								value={post.content}
 								onMissingComponent={false}
