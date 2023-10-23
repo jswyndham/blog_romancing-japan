@@ -2,6 +2,7 @@ import { createClient, groq } from 'next-sanity';
 import Image from 'next/image';
 import { Post } from '../../../typings';
 import { PortableText } from '@portabletext/react';
+// import ReactPlayer from 'react-player';
 import { urlFor } from '@/lib/urlFor';
 import { readClient } from '@/sanity/config/client-config';
 import { Metadata } from 'next';
@@ -89,6 +90,15 @@ export default async function postArticle({ params: { slug } }: Props) {
 
 	// RICH TEXT EDITOR
 	const components = PortableTextComp();
+
+	// const serializers = {
+	// 	types: {
+	// 		youtube: ({ value }: any) => {
+	// 			const { url } = value;
+	// 			return <ReactPlayer url={url} />;
+	// 		},
+	// 	},
+	// };
 
 	return (
 		<main

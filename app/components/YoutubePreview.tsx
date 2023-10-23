@@ -1,26 +1,19 @@
-// import getYouTubeId from 'get-youtube-id'
-import LiteYouTubeEmbed from "react-lite-youtube-embed"
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
+import type { PreviewProps } from 'sanity';
+import { Flex, Text } from '@sanity/ui';
+import YouTubePlayer from 'react-player/youtube';
 
-export default async function YouTubePreview () {
-//   const {value } = ""
-//   const id = getYouTubeId(url)
-//   if (!url) {
-//     return <div>Missing YouTube URL</div>
-//   }
-  
+interface PreviewYouTubeProps extends PreviewProps {
+	selection?: {
+		url: string;
+	};
+}
 
-  return (
-    <div>
-    <LiteYouTubeEmbed
-       id="tlUMWDHWEQ4?si=ijpnlZWaA0FDhxHq" // Default none, id of the video or playlist
-       adNetwork={true} // Default true, to preconnect or not to doubleclick addresses called by YouTube iframe (the adnetwork from Google)
-       params="9 & 16" // any params you want to pass to the URL, assume we already had '&' and pass your parameters string
-       playlist={false} // Use  true when your ID be from a playlist
-       playlistCoverId="tlUMWDHWEQ4?si=ijpnlZWaA0FDhxHq" // The ids for playlists did not bring the cover in a pattern to render so you'll need pick up a video from the playlist (or in fact, whatever id) and use to render the cover. There's a programmatic way to get the cover from YouTube API v3 but the aim of this component is do not make any another call and reduce requests and bandwidth usage as much as possibe
-       title="YouTube Embed" // a11y, always provide a title for iFrames: https://dequeuniversity.com/tips/provide-iframe-titles Help the web be accessible ;)
-       noCookie={true} //Default false, connect to YouTube via the Privacy-Enhanced Mode using https://www.youtube-nocookie.com
-    />
-  </div>
-  )
+export function YouTubePreview(props: PreviewYouTubeProps) {
+	const { selection } = props;
+	const url = selection?.url;
+	return (
+		<Flex padding={4} justify={'center'}>
+			{url ? <YouTubePlayer url={url} /> : <Text>Add a YouTube URL</Text>}
+		</Flex>
+	);
 }
