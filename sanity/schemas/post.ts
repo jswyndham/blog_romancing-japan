@@ -63,7 +63,7 @@ const post = defineType({
 					name: 'body',
 					title: 'Block',
 					type: 'block',
-					of: [{ type: 'reference', to: { type: 'blockContent' } }],
+					of: [{ type: 'blockContent' }],
 				},
 				{
 					name: 'excerpt',
