@@ -128,9 +128,7 @@ const post = defineType({
 						],
 					},
 				},
-				{
-					type: 'youtube',
-				},
+
 				{
 					name: 'excerpt',
 					title: 'Excerpt',
