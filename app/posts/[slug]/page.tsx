@@ -83,10 +83,7 @@ export async function generateMetadata({
 export const revalidate = 60; //Time interval
 
 // ARTICLE LAYOUT
-export default async function postArticle(
-	{ params: { slug } }: Props,
-	{ blocks }: any
-) {
+export default async function postArticle({ params: { slug } }: Props) {
 	// FETCH SANITY UTILITIES
 	const post = await createArticle({ params: { slug } });
 
