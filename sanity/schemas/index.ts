@@ -1,6 +1,5 @@
 'use client';
 
-import { blockContent } from './blockContent';
 import post from './post';
 import category from './category';
 import tag from './tag';
@@ -12,7 +11,6 @@ import { youtube } from './youtube';
 
 const schemas = [
 	post,
-	blockContent,
 	category,
 	tag,
 	author,
