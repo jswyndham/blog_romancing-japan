@@ -60,10 +60,7 @@ const post = defineType({
 			type: 'array',
 			of: [
 				{
-					name: 'body',
-					title: 'Block',
-					type: 'block',
-					of: [{ type: 'blockContent' }],
+					type: 'blockContent',
 				},
 				{
 					name: 'excerpt',
