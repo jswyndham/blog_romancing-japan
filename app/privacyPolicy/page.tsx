@@ -11,7 +11,7 @@ export const metadata = {
       "This page contains information about privacy policies that are used in relation to our users.",
     type: "website",
     siteName: "Romancing Japan",
-    url: "https://www.romancing-japan.com",
+    url: "https://www.romancing-japan.com/",
     images: { url: `/opengraph-image.jpg`, width: 600, height: 400 },
   },
 };

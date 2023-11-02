@@ -67,13 +67,13 @@ const caveat = Caveat({
 
 // METADATA
 export const metadata = {
-  metadataBase: new URL("https://www.romancing-japan.com"),
+  metadataBase: new URL("https://www.romancing-japan.com/"),
   title: {
     default: "Romancing Japan - Travel, Lifestyle, Culture",
     template: `%s`,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "favicon.ico",
   },
   description:
     "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.",
@@ -103,7 +103,7 @@ export const metadata = {
       "Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.",
     type: "website",
     siteName: "Romancing Japan",
-    url: "http://www.romancing-japan.com",
+    url: "http://www.romancing-japan.com/",
   },
 };
 

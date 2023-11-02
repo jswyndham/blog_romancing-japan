@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -24,10 +20,8 @@
       }
     ],
     "paths": {
-      "react": [ "./node_modules/@types/react" ],
-      "@/*": [
-        "./*"
-      ]
+      "react": ["./node_modules/@types/react"],
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -42,10 +36,7 @@
     "app/components/BlogSmallCard.tsx",
     "app/components/ArticleCardOne.tsx",
     "app/components/ArticleCollectionCard.tsx",
-    "app/components/RichTextComponent.tsx",
-    "app/api/contact/route.js", "sanity/schemas/youtube.ts", 
-      ],
-  "exclude": [
-    "node_modules"
-  ]
+    "app/components/RichTextComponent.tsx"
+  ],
+  "exclude": ["node_modules"]
 }
