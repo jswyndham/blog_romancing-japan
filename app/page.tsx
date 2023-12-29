@@ -72,7 +72,7 @@ export default async function Home() {
 							</div>
 
 							{/* JAMES & AKARI PROFILE @ LG */}
-							<div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-20 xl:border-l-4 xl:mt-12 xl:h-[90%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+							<div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-28 xl:mt-12 xl:h-[90%] xl:border-l-4 xl:border-r-4 border-white lg:row-span-2 lg:col-span-1 lg:pt-5">
 								<AkariAndJamesProfileLg />
 							</div>
 
@@ -87,14 +87,14 @@ export default async function Home() {
 							</div>
 
 							{/* JAMES & AKARI PROFILE @ SM */}
-							<div className="md:-mt-8 md:mb-2 lg:hidden border-white md:row-span-1 md:col-span-6 lg:-mt-2">
+							<div className="md:-mt-12 md:mb-2 lg:hidden border-white md:row-span-1 md:col-span-6 lg:-mt-2">
 								<AkariAndJamesProfileSm />
 							</div>
 						</div>
 					</div>
 
 					{/* DIVIDE */}
-					<div className="divider md:-mt-16 lg:-mt-32 2xl:-mt-28"></div>
+					<div className="divider md:-mt-16 lg:-mt-16 2xl:-mt-24"></div>
 
 					<div className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
 						<BlogSmallCard />
