@@ -5,7 +5,7 @@ export default function AkariAndJamesProfile() {
 	return (
 		<div className="flex flex-col items-end justify-end px-4 2xl:items-center 2xl:justify-center">
 			<div className="relative">
-				<figure className="absolute w-80 xl:w-64 m-auto -left-3 -mt-24 rounded-xl">
+				<figure className="absolute w-80 xl:w-64 m-auto -left-3 -mt-20 rounded-xl">
 					<Image
 						src="/images/akari-james.jpg"
 						alt="Romancing Japan - James & Akari profile"
