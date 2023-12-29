@@ -72,12 +72,12 @@ export default async function Home() {
 							</div>
 
 							{/* JAMES & AKARI PROFILE @ LG */}
-							<div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-28 xl:border-l-4 xl:mt-6 xl:h-[90%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
+							<div className="hidden h-full w-full aspect-square lg:flex lg:items-center lg:h-[80%] lg:mt-20 xl:border-l-4 xl:mt-6 xl:h-[90%] xl:border-r-4 border-white lg:row-span-2 lg:col-span-1">
 								<AkariAndJamesProfileLg />
 							</div>
 
 							{/* ARTICLE TWO */}
-							<div className="md:-mt-52 smd:-mt-72 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
+							<div className="md:-mt-64 smd:-mt-60 md:row-span-1 md:col-span-6 lg:mt-0 lg:row-span-1 lg:col-span-2">
 								<ArticleCardTwo />
 							</div>
 

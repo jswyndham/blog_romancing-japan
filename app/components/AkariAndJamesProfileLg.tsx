@@ -5,7 +5,7 @@ export default function AkariAndJamesProfile() {
 	return (
 		<div className="flex flex-col items-end justify-end px-4 2xl:items-center 2xl:justify-center">
 			<div className="relative">
-				<figure className="absolute w-80 xl:w-64 m-auto -left-3 -mt-16 rounded-xl">
+				<figure className="absolute w-80 xl:w-64 m-auto -left-3 -mt-24 rounded-xl">
 					<Image
 						src="/images/akari-james.jpg"
 						alt="Romancing Japan - James & Akari profile"
@@ -15,7 +15,7 @@ export default function AkariAndJamesProfile() {
 						priority
 					/>
 				</figure>
-				<div className="bg-slate-300 w-52 px-4 2xl:px-4 pt-16 pb-6 mx-2 text-justify font-playfair_display whitespace-pre-line">
+				<div className="bg-slate-300 w-52 px-3 2xl:px-4 pt-16 pb-4 mx-2 text-justify font-playfair_display whitespace-pre-line">
 					<div className="flex justify-center my-2">
 						<p className="mb-2 font-caveat text-2xl 2xl:text-3xl">
 							James and Akari Saunders-Wyndham

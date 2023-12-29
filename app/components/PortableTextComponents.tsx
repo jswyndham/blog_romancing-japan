@@ -52,7 +52,7 @@ function PortableTextComp() {
 				</h3>
 			),
 			h4: ({ children }: any) => (
-				<h4 className="text-xl pt-3 pb-2 font-bold text-red-500">
+				<h4 className="text-xl pt-3 pb-2 ml-3 font-bold text-red-500">
 					{children}
 				</h4>
 			),
