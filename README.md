@@ -2,6 +2,16 @@
 
 Welcome to [Romancing Japan](https://www.romancing-japan.com/), a comprehensive platform dedicated to exploring the beauty and intricacies of Japan. This site is crafted with Next.js and styled using Tailwind CSS, offering a modern, responsive user experience. With Sanity.io powering the backend, the site delivers dynamic content seamlessly.
 
+## Screenshots
+
+### Homepage
+![public/images/romancing-japan-homepage.png](URL_to_homepage_screenshot)
+*The homepage showcases featured articles and latest updates.*
+
+### Article View
+![public/images/romancing-japan-article.png](URL_to_article_view_screenshot)
+*Articles are rich with images and detailed insights.*
+
 ## Features
 
 - **Engaging Content**: Dive into a rich collection of articles and stories that bring Japan's culture, traditions, and modern lifestyle closer to you.
