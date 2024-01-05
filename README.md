@@ -30,4 +30,8 @@ Welcome to [Romancing Japan](https://www.romancing-japan.com/), a comprehensive 
 
 Dive into the world of "Romancing Japan" and explore a variety of topics from the majestic Mount Fuji to the bustling streets of Tokyo. Whether you're planning a trip to Japan or just curious about its rich culture, our website is your gateway to the Land of the Rising Sun.
 
+## License
+
+This website is licensed under the business name JSW Web Dev.
+
 Enjoy your journey through Romancing Japan!
