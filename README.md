@@ -5,11 +5,11 @@ Welcome to [Romancing Japan](https://www.romancing-japan.com/), a comprehensive 
 ## Screenshots
 
 ### Homepage
-public/images/romancing-japan-homepage.png(URL_to_homepage_screenshot)
+![Homepage of Romancing Japan](public/images/rj-homepage.png)
 *The homepage showcases featured articles and latest updates.*
 
 ### Article View
-public/images/romancing-japan-article.png(URL_to_article_view_screenshot)
+![Detailed Article View](public/images/rj-article.png)
 *Articles are rich with images and detailed insights.*
 
 ## Features
