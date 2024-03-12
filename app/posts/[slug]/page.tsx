@@ -6,6 +6,7 @@ import { urlFor } from '@/lib/urlFor';
 import { readClient } from '@/sanity/config/client-config';
 import { Metadata } from 'next';
 import PortableTextComp from '@/app/components/PortableTextComponents';
+import { TableOfContents } from '@/app/components/TableOfContents';
 import SideBioSubscriptionLatestArt from '@/app/components/SideBioSubscriptionLatestArt';
 import { createArticle } from '@/sanity/sanity-utils';
 import dynamic from 'next/dynamic';
@@ -22,40 +23,93 @@ type Props = {
 	params: { slug: string };
 };
 
-// DYNAMIC METADATA TAGS
+interface PortableTextBlock {
+	_key: string;
+	_type: string;
+	style?: string;
+	children?: PortableTextBlock[];
+}
+
+interface HeadingNode extends PortableTextBlock {
+	subheadings: HeadingNode[];
+}
+
+const filter = (
+	ast: PortableTextBlock[],
+	match: (node: PortableTextBlock) => boolean
+): PortableTextBlock[] =>
+	ast.reduce((acc: PortableTextBlock[], node: PortableTextBlock) => {
+		if (match(node)) acc.push(node);
+		if (node.children) acc.push(...filter(node.children, match));
+		return acc;
+	}, []);
+
+const findHeadings = (ast: PortableTextBlock[]): HeadingNode[] =>
+	filter(ast, (node: PortableTextBlock) => node.style === 'h2').map(
+		(node) => ({
+			...node,
+			subheadings: [],
+		})
+	);
+
+const get = (object: any, path: (string | number)[]): any =>
+	path.reduce((prev: any, curr: string | number) => prev[curr], object);
+
+const getObjectPath = (path: number[]): (string | number)[] =>
+	path.length === 0
+		? path
+		: ['subheadings', ...path.flatMap((p) => ['subheadings', p])];
+
+const parseOutline = (ast: PortableTextBlock[]): HeadingNode[] => {
+	const outline = { subheadings: [] as HeadingNode[] };
+	const headings: HeadingNode[] = findHeadings(ast);
+	const path: number[] = [];
+	let lastLevel = 0;
+
+	headings.forEach((heading) => {
+		const level = Number(heading.style?.slice(1));
+		if (level < lastLevel)
+			for (let i = lastLevel; i >= level; i--) path.pop();
+		else if (level === lastLevel) path.pop();
+
+		const prop = get(outline, getObjectPath(path)) as HeadingNode;
+		prop.subheadings.push(heading);
+		path.push(prop.subheadings.length - 1);
+		lastLevel = level;
+	});
+
+	return outline.subheadings;
+};
+
 export async function generateMetadata({
 	params: { slug },
 }: Props): Promise<Metadata> {
-	const query = groq`*[_type=="post" && slug.current == $slug][0]
-    {
-  ...,
-  _id,
-  _createdAt,
-  name,
-  pageName,
-  "slug": slug.current,
-  "image":image.asset->url, 
-  url,
-  content[]{
-    ...,
-    _type == "image" => {
-      ...,
-      asset->
-    }
-  },
-  author[]->,
-  category[]->{title, "slug": slug.current,},
-  tag[]->{title, "slug": slug.current,},
-  summary,
-  summaryShort,
-  description,
-  }`;
+	const query = groq`*[_type=="post" && slug.current == $slug][0] {
+			...,
+			_id,
+			_createdAt,
+			name,
+			pageName,
+			"slug": slug.current,
+			"image": image.asset->url, 
+			url,
+			content[]{
+					...,
+					_type == "image" => {
+							...,
+							asset->
+					}
+			},
+			author[]->,
+			category[]->{title, "slug": slug.current,},
+			tag[]->{title, "slug": slug.current,},
+			summary,
+			summaryShort,
+			description,
+	}`;
 
-	const post: Post = await createClient(readClient).fetch(query, {
-		slug,
-	});
+	const post: Post = await createClient(readClient).fetch(query, { slug });
 
-	// RETURN METADATA
 	return {
 		title: post.pageName,
 		description: post.description,
@@ -80,24 +134,21 @@ export async function generateMetadata({
 	};
 }
 
-export const revalidate = 60; //Time interval
+export const revalidate = 60; // Time interval
 
-// ARTICLE LAYOUT
 export default async function postArticle({ params: { slug } }: Props) {
-	// FETCH SANITY UTILITIES
 	const post = await createArticle({ params: { slug } });
-
-	// RICH TEXT EDITOR
 	const components = PortableTextComp();
+	const outline = parseOutline(post.content);
 
 	return (
-		<main
+		<section
 			key={post._id}
 			className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
 		>
-			<section className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
+			<article className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
 				{/* TOP BOARDER */}
-				<article className="flex flex-col items-center justify-center">
+				<div className="flex flex-col items-center justify-center">
 					<div className="container ">
 						<RedBarDecoration />
 
@@ -124,10 +175,10 @@ export default async function postArticle({ params: { slug } }: Props) {
 							))}
 						</div>
 					</div>
-				</article>
+				</div>
 
 				{/* IMAGE */}
-				<article>
+				<div>
 					<figure className="flex flex-col justify-center my-6">
 						<Image
 							src={(await urlFor(post.image)).url()}
@@ -142,10 +193,14 @@ export default async function postArticle({ params: { slug } }: Props) {
 							{post.caption}
 						</figcaption>
 					</figure>
-				</article>
+				</div>
+
+				<div>
+					<TableOfContents outline={outline} />
+				</div>
 
 				{/* ARTICLE BODY */}
-				<article className="container">
+				<div className="container">
 					<div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
 						<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
 							<PortableText
@@ -155,26 +210,26 @@ export default async function postArticle({ params: { slug } }: Props) {
 							/>
 						</div>
 					</div>
-				</article>
+				</div>
 
 				{/* SUBSCRIBE CARD @ SM - LG */}
-				<article className="w-screen flex items-center justify-start xl:hidden">
+				<div className="w-screen flex items-center justify-start xl:hidden">
 					<SignupCardLong />
-				</article>
+				</div>
 
 				{/* BOTTOM BORDER */}
 				<RedBarDecoration />
-			</section>
+			</article>
 
 			{/* SIDE / BOTTOM SECTION */}
 
-			<section className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
+			<article className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
 				<SideBioSubscriptionLatestArt
 					params={{
 						slug: slug,
 					}}
 				/>
-			</section>
-		</main>
+			</article>
+		</section>
 	);
 }

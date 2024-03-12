@@ -41,8 +41,11 @@ function PortableTextComp() {
 			h1: ({ children }: any) => (
 				<h1 className="text-4xl py-7 font-bold">{children}</h1>
 			),
-			h2: ({ children }: any) => (
-				<h2 className="text-3xl pt-3 pb-2 text-red-800 font-bold">
+			h2: ({ children, node }: any) => (
+				<h2
+					id={node._key}
+					className="text-3xl pt-3 pb-2 text-red-800 font-bold"
+				>
 					{children}
 				</h2>
 			),

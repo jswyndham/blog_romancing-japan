@@ -14,12 +14,12 @@ const ArticleCollectionCard = async () => {
 	return posts.map(async (post: any) => {
 		return (
 			<>
-				<section className="flex justify-center">
-					<article key={post._id}>
+				<div className="flex justify-center">
+					<div key={post._id}>
 						<Link key={post._id} href={`/posts/${post.slug}/`}>
 							<div
 								key={post._id}
-								className="card rounded-none w-fit h-fit md:h-full mt-6 mb-8 pb-6 2xl:pb-0 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
+								className="card rounded-none w-fit h-10/12 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
 							>
 								{/* Card Image */}
 								<figure className="border-b-2 border-red-500">
@@ -40,7 +40,7 @@ const ArticleCollectionCard = async () => {
 											{post.name}
 										</h2>
 									</div>
-									<div className="h-44 lg:h-20 m-1 text-lg text-left md:h-44 3xl:h-32">
+									<div className="h-44 lg:h-36 m-1 text-lg text-left md:pb-6 2xl:h-40">
 										<PortableText
 											value={post.summaryShort}
 											onMissingComponent={false}
@@ -50,8 +50,8 @@ const ArticleCollectionCard = async () => {
 								</div>
 							</div>
 						</Link>
-					</article>
-				</section>
+					</div>
+				</div>
 			</>
 		);
 	});
