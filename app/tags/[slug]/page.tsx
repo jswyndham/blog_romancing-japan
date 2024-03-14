@@ -1,10 +1,12 @@
+'use server';
+
 import React from 'react';
 import { createClient, groq } from 'next-sanity';
 import { readClient } from '@/sanity/config/client-config';
 import Image from 'next/image';
 import { urlFor } from '@/lib/urlFor';
 import Link from 'next/link';
-import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
 import { Metadata } from 'next/types';
 import { Tag } from '@/typings';
 import PortableTextComp from '@/app/components/PortableTextComponents';

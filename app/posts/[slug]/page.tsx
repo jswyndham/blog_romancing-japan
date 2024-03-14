@@ -91,7 +91,7 @@ export async function generateMetadata({
 			name,
 			pageName,
 			"slug": slug.current,
-			"image": image.asset->url, 
+			"image": image.asset->url,
 			url,
 			content[]{
 					...,

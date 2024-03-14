@@ -1,5 +1,5 @@
 export const TableOfContents = ({ outline }) => (
-	<ol className="ml-20">
+	<ol className="ml-10 lg:ml-20">
 		<p className="font-bold text-xl text-info underline underline-offset-4 pb-2">
 			Table of contents:
 		</p>

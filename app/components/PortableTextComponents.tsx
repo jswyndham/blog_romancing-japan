@@ -2,6 +2,7 @@ import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { YouTubePreview } from '../../sanity/youtubePreview';
 
 function PortableTextComp() {
 	return {
@@ -25,6 +26,7 @@ function PortableTextComp() {
 					</figure>
 				);
 			},
+			youtube: YouTubePreview,
 		},
 
 		list: {

@@ -1,3 +1,5 @@
+'use server';
+
 import React from 'react';
 import { createClient, groq } from 'next-sanity';
 import { readClient } from '@/sanity/config/client-config';
@@ -18,7 +20,7 @@ export async function generateMetadata({
 	params: { slug },
 }: Props): Promise<Metadata> {
 	const query = groq`*[_type == "category" && slug.current == $slug][0]
-  {..., 
+  {...,
   "slug":slug.current,
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort, description}}`;
 
