@@ -26,7 +26,10 @@ function PortableTextComp() {
 					</figure>
 				);
 			},
-			youtube: YouTubePreview,
+			youtube: ({ value }: any) => {
+				// Assuming 'value' is the URL string directly
+				return <YouTubePreview url={value.url} />;
+			},
 		},
 
 		list: {

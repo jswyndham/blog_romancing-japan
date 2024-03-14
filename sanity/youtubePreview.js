@@ -1,17 +1,17 @@
-'use client';
-
-import React from 'react';
 import { Flex, Text } from '@sanity/ui';
-import ReactPlayer from 'react-player';
+import YouTubePlayer from 'react-player/youtube';
 
-export const YouTubePreview = ({ value }) => {
+export function YouTubePreview(props) {
+	// 'props' contains a property 'url' which is a string URL
+	const { url } = props;
+
 	return (
-		<Flex direction="column" align="center" justify="center">
-			{value && value.url ? (
-				<ReactPlayer url={value.url} width="100%" />
+		<Flex padding={3} align="center" justify="center">
+			{typeof url === 'string' ? (
+				<YouTubePlayer url={url} />
 			) : (
 				<Text>Add a YouTube URL</Text>
 			)}
 		</Flex>
 	);
-};
+}
