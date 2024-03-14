@@ -33,6 +33,12 @@ function PortableTextComp() {
 				);
 			},
 			youtube: ({ value }: any) => {
+				if (!value || !value.url) {
+					console.error('Missing URL for YouTube video');
+					return null;
+				}
+
+				// Dynamically render the YouTube component
 				return <YouTubePreviewDynamic url={value.url} />;
 			},
 		},

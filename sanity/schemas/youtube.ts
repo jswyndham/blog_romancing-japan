@@ -1,6 +1,5 @@
 import { defineType, defineField } from 'sanity';
 import { PlayIcon } from '@sanity/icons';
-import { YouTubePreview } from '../youtubePreview';
 
 const youtube = defineType({
 	name: 'youtube',
@@ -12,13 +11,20 @@ const youtube = defineType({
 			name: 'url',
 			type: 'url',
 			title: 'YouTube video URL',
+			description: 'Enter URL of the YouTube video',
 		}),
 	],
 	preview: {
-		select: { title: 'url' },
-	},
-	components: {
-		preview: YouTubePreview,
+		select: {
+			url: 'url',
+		},
+		prepare({ url }) {
+			return {
+				title: 'YouTube Video',
+				subtitle: url,
+				// Custom component rendering can be defined here, if necessary
+			};
+		},
 	},
 });
 

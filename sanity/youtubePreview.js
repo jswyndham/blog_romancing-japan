@@ -1,17 +1,18 @@
 import { Flex, Text } from '@sanity/ui';
 import YouTubePlayer from 'react-player/youtube';
 
-export function YouTubePreview(props) {
-	// 'props' contains a property 'url' which is a string URL
-	const { url } = props;
+export const YouTubePreview = ({ url }) => {
+	if (!url) {
+		return <Text>No YouTube URL provided</Text>;
+	}
+
+	if (!YouTubePlayer.canPlay(url)) {
+		return <Text>Invalid YouTube URL</Text>;
+	}
 
 	return (
 		<Flex padding={3} align="center" justify="center">
-			{typeof url === 'string' ? (
-				<YouTubePlayer url={url} />
-			) : (
-				<Text>Add a YouTube URL</Text>
-			)}
+			<YouTubePlayer url={url} />
 		</Flex>
 	);
-}
+};
