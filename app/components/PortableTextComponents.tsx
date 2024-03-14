@@ -2,7 +2,13 @@ import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { YouTubePreview } from '../../sanity/youtubePreview';
+import dynamic from 'next/dynamic';
+
+const YouTubePreviewDynamic = dynamic(
+	() =>
+		import('../../sanity/youtubePreview').then((mod) => mod.YouTubePreview),
+	{ ssr: false }
+);
 
 function PortableTextComp() {
 	return {
@@ -27,8 +33,7 @@ function PortableTextComp() {
 				);
 			},
 			youtube: ({ value }: any) => {
-				// Assuming 'value' is the URL string directly
-				return <YouTubePreview url={value.url} />;
+				return <YouTubePreviewDynamic url={value.url} />;
 			},
 		},
 
