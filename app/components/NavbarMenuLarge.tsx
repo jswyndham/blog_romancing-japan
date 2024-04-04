@@ -14,31 +14,31 @@ function NavbarMenuLarge() {
 
 				<li className="nav-menu">
 					<Link href={'/blog-collection'}>
-						<h1 className="">Blog Collection</h1>
+						<h2 className="">Blog Collection</h2>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/categories'}>
-						<h1>Article Categories</h1>
+						<h2>Article Categories</h2>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/tags'}>
-						<h1>Article Tags</h1>
+						<h2>Article Tags</h2>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/contact'}>
-						<h1>Contact</h1>
+						<h2>Contact</h2>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/about'}>
-						<h1>About us</h1>
+						<h2>About us</h2>
 					</Link>
 				</li>
 			</ul>
