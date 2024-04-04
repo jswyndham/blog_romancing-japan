@@ -1,10 +1,11 @@
-import dynamic from "next/dynamic";
-const ContactForm = dynamic(() => import("../components/ContactForm"), {
-  ssr: false,
+import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
+
+const ContactForm = dynamic(() => import('../components/ContactForm'), {
+	ssr: false,
 });
 
-// METADATA
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Contact Page | Romancing Japan',
 	description:
 		'If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website.',
@@ -17,6 +18,17 @@ export const metadata = {
 			'If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website.',
 		type: 'website',
 		siteName: 'Romancing Japan',
+		url: 'https://www.romancing-japan.com/contact/',
+		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: 'https://twitter.com/RomancingJapan',
+		title: 'Romancing Japan - Travel, Lifestyle, Culture',
+		description:
+			'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		creator: '@RomancingJapan',
+		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
 	},
 };
 
