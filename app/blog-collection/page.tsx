@@ -3,12 +3,10 @@ import ArticleCollectionCard from '../components/ArticleCollectionCard';
 
 export const metadata = {
 	title: 'Article Collection',
-	description: 'A collection of articles from Romancing Japan.',
-	openGraph: {
-		title: 'Article Collection',
-		description: 'A collection of articles from Romancing Japan.',
-		type: 'website',
-		siteName: 'Romancing Japan',
+	description:
+		'A collection of all articles published by Romancing Japan. These articles cover a broad range of topics related to lifestyle, culture, and travel within Japan.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/blog-collection/`,
 	},
 };
 
