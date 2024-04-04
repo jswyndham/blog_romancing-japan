@@ -1,7 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
 import SignupCardLong from '../components/SignupCardLong';
-export const metadata = {
+
+export const metadata: Metadata = {
 	title: 'About Us Page | Romancing Japan',
 	description:
 		'An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.',
@@ -14,6 +16,17 @@ export const metadata = {
 			'An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.',
 		type: 'website',
 		siteName: 'Romancing Japan',
+		url: 'https://www.romancing-japan.com/about/',
+		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: 'https://twitter.com/RomancingJapan',
+		title: 'Romancing Japan - Travel, Lifestyle, Culture',
+		description:
+			'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		creator: '@RomancingJapan',
+		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
 	},
 };
 
