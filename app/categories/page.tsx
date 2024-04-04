@@ -5,16 +5,19 @@ import Image from "next/image";
 import { urlFor } from "@/lib/urlFor";
 
 export const metadata = {
-  title: "List of Categories",
-  description:
-    "A list of categories related to articles from Romancing in Japan.",
-  openGraph: {
-    title: "List of Categories",
-    description:
-      "A list of categories related to articles from Romancing in Japan.",
-    type: "website",
-    siteName: "Romancing Japan",
-  },
+	title: 'Romancing Japan Article Categories',
+	description:
+		'This page is a collection of all article categories that identified the main themes related to articles published by Romancing Japan.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/categories/`,
+	},
+	openGraph: {
+		title: 'Romancing Japan Article Categories',
+		description:
+			'This page is a collection of all article categories that identified the main themes related to articles published by Romancing Japan.',
+		type: 'website',
+		siteName: 'Romancing Japan',
+	},
 };
 
 export default async function CategoryList() {
