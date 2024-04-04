@@ -5,12 +5,16 @@ import Image from 'next/image';
 import { urlFor } from '@/lib/urlFor';
 
 export const metadata = {
-	title: 'List of Tags',
-	description: 'A list of tags related to articles from Romancing in Japan.',
+	title: 'Romancing Japan Article Tags',
+	description:
+		'This page is a collection of all article tags that identified the main themes related to articles published by Romancing Japan.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/tags/`,
+	},
 	openGraph: {
-		title: 'List of Tags',
+		title: 'Romancing Japan Article Tags',
 		description:
-			'A list of tags related to articles from Romancing in Japan.',
+			'This page is a collection of all article tags that identified the main themes related to articles published by Romancing Japan.',
 		type: 'website',
 		siteName: 'Romancing Japan',
 	},
