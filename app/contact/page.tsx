@@ -5,16 +5,19 @@ const ContactForm = dynamic(() => import("../components/ContactForm"), {
 
 // METADATA
 export const metadata = {
-  title: "Contact Page | Romancing Japan",
-  description:
-    "Contact us if you have any questions or want to know more about the website.",
-  openGraph: {
-    title: "Contact Page | Romancing Japan",
-    description:
-      "Contact us if you have any questions or want to know more about the website.",
-    type: "website",
-    siteName: "Romancing Japan",
-  },
+	title: 'Contact Page | Romancing Japan',
+	description:
+		'If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/contact/`,
+	},
+	openGraph: {
+		title: 'Contact Page | Romancing Japan',
+		description:
+			'If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website.',
+		type: 'website',
+		siteName: 'Romancing Japan',
+	},
 };
 
 // CONTACT PAGE
