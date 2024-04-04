@@ -22,7 +22,10 @@ const SignupCardLong = dynamic(
 export const metadata: Metadata = {
 	title: 'Romancing Japan - Travel, Lifestyle, Culture',
 	description:
-		'Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/`,
+	},
 	openGraph: {
 		title: 'Romancing Japan - Travel, Lifestyle, Culture',
 		description:
@@ -30,6 +33,15 @@ export const metadata: Metadata = {
 		type: 'website',
 		siteName: 'Romancing Japan',
 		url: 'https://www.romancing-japan.com/',
+		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: 'https://twitter.com/RomancingJapan',
+		title: 'Romancing Japan - Travel, Lifestyle, Culture',
+		description:
+			'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		creator: '@RomancingJapan',
 		images: { url: `opengraph-image.jpg`, width: 600, height: 400 },
 	},
 };
