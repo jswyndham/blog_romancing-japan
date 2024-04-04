@@ -8,37 +8,37 @@ function NavbarMenuLarge() {
       <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
 				<li className="nav-menu">
 					<Link href={'/'}>
-						<h1>Home</h1>
+						<p>Home</p>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/blog-collection'}>
-						<h2 className="">Blog Collection</h2>
+						<p className="">Blog Collection</p>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/categories'}>
-						<h2>Article Categories</h2>
+						<p>Article Categories</p>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/tags'}>
-						<h2>Article Tags</h2>
+						<p>Article Tags</p>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/contact'}>
-						<h2>Contact</h2>
+						<p>Contact</p>
 					</Link>
 				</li>
 
 				<li className="nav-menu">
 					<Link href={'/about'}>
-						<h2>About us</h2>
+						<p>About us</p>
 					</Link>
 				</li>
 			</ul>
