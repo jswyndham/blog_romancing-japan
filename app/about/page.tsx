@@ -5,6 +5,9 @@ export const metadata = {
 	title: 'About Us Page | Romancing Japan',
 	description:
 		'An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.',
+	alternates: {
+		canonical: `https://www.romancing-japan.com/about/`,
+	},
 	openGraph: {
 		title: 'About Us Page | Romancing Japan',
 		description:
