@@ -2,7 +2,7 @@
 # Block all crawlers for /admin
 User-agent: *
 Disallow: /admin
-Disallow: /the-top-5-historical-temples-in-kyoto
+
 
 
 
