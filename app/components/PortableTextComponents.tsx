@@ -91,7 +91,7 @@ function PortableTextComp() {
 				<em className="text-gray-600 font-semibold">{children}</em>
 			),
 			link: ({ value, children }: any) => {
-				const target = (value?.href || '').startsWith('http')
+				const target = (value?.href || '').startsWith('https')
 					? '_blank'
 					: undefined;
 

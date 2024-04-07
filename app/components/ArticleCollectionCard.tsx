@@ -42,7 +42,7 @@ const ArticleCollectionCard = async () => {
 											{post.name}
 										</h2>
 									</div>
-									<div className="h-44 lg:h-36 m-1 text-lg text-left md:pb-6 2xl:h-40">
+									<div className="h-64 lg:h-44 2xl:h-36 m-1 text-lg text-left md:pb-6">
 										<PortableText
 											value={post.summaryShort}
 											onMissingComponent={false}
