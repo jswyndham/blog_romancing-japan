@@ -1,5 +1,6 @@
 import { createClient, groq } from 'next-sanity';
 import Image from 'next/image';
+import Head from 'next/head';
 import { Post } from '../../../typings';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '@/lib/urlFor';
@@ -142,94 +143,100 @@ export default async function postArticle({ params: { slug } }: Props) {
 	const outline = parseOutline(post.content);
 
 	return (
-		<section
-			key={post._id}
-			className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
-		>
-			<article className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
-				{/* TOP BOARDER */}
-				<div className="flex flex-col items-center justify-center">
-					<div className="container ">
-						<RedBarDecoration />
+		<>
+			{/* Include the Head component here to add the robots meta tag */}
+			<Head>
+				<meta name="robots" content="index, follow" />
+			</Head>
+			<section
+				key={post._id}
+				className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
+			>
+				<article className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
+					{/* TOP BOARDER */}
+					<div className="flex flex-col items-center justify-center">
+						<div className="container ">
+							<RedBarDecoration />
 
-						{/* CATEGORIES & TAGS */}
-						<CategoriesAndTags
-							params={{
-								slug: slug,
-							}}
-						/>
-
-						{/* TITLE */}
-						<div className="flex flex-col">
-							<h1 className="mt-2 text-3xl md:text-5xl ml-5 p-1 font-heading font-bold">
-								{post.name}
-							</h1>
-
-							{/* AUTHOR */}
-							{post.author.map((author) => (
-								<div key={post._id}>
-									<p className="ml-8 mt-3 pb-1 text-primary text-lg font-bold">
-										{author.name}
-									</p>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-
-				{/* IMAGE */}
-				<div>
-					<figure className="flex flex-col justify-center my-6">
-						<Image
-							src={(await urlFor(post.image)).url()}
-							alt={post.name}
-							width={900}
-							height={900}
-							className="w-full  shadow-lg shadow-slate-500"
-							priority={true}
-						/>
-
-						<figcaption className="italic text-base text-left m-3">
-							{post.caption}
-						</figcaption>
-					</figure>
-				</div>
-
-				<div>
-					<TableOfContents outline={outline} />
-				</div>
-
-				{/* ARTICLE BODY */}
-				<div className="container">
-					<div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-						<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
-							<PortableText
-								value={post.content}
-								onMissingComponent={false}
-								components={components}
+							{/* CATEGORIES & TAGS */}
+							<CategoriesAndTags
+								params={{
+									slug: slug,
+								}}
 							/>
+
+							{/* TITLE */}
+							<div className="flex flex-col">
+								<h1 className="mt-2 text-3xl md:text-5xl ml-5 p-1 font-heading font-bold">
+									{post.name}
+								</h1>
+
+								{/* AUTHOR */}
+								{post.author.map((author) => (
+									<div key={post._id}>
+										<p className="ml-8 mt-3 pb-1 text-primary text-lg font-bold">
+											{author.name}
+										</p>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
-				</div>
 
-				{/* SUBSCRIBE CARD @ SM - LG */}
-				<div className="w-screen flex items-center justify-start xl:hidden">
-					<SignupCardLong />
-				</div>
+					{/* IMAGE */}
+					<div>
+						<figure className="flex flex-col justify-center my-6">
+							<Image
+								src={(await urlFor(post.image)).url()}
+								alt={post.name}
+								width={900}
+								height={900}
+								className="w-full  shadow-lg shadow-slate-500"
+								priority={true}
+							/>
 
-				{/* BOTTOM BORDER */}
-				<RedBarDecoration />
-			</article>
+							<figcaption className="italic text-base text-left m-3">
+								{post.caption}
+							</figcaption>
+						</figure>
+					</div>
 
-			{/* SIDE / BOTTOM SECTION */}
+					<div>
+						<TableOfContents outline={outline} />
+					</div>
 
-			<article className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
-				<SideBioSubscriptionLatestArt
-					params={{
-						slug: slug,
-					}}
-				/>
-			</article>
-		</section>
+					{/* ARTICLE BODY */}
+					<div className="container">
+						<div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
+							<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
+								<PortableText
+									value={post.content}
+									onMissingComponent={false}
+									components={components}
+								/>
+							</div>
+						</div>
+					</div>
+
+					{/* SUBSCRIBE CARD @ SM - LG */}
+					<div className="w-screen flex items-center justify-start xl:hidden">
+						<SignupCardLong />
+					</div>
+
+					{/* BOTTOM BORDER */}
+					<RedBarDecoration />
+				</article>
+
+				{/* SIDE / BOTTOM SECTION */}
+
+				<article className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
+					<SideBioSubscriptionLatestArt
+						params={{
+							slug: slug,
+						}}
+					/>
+				</article>
+			</section>
+		</>
 	);
 }
