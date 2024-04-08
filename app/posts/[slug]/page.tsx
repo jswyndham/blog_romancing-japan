@@ -147,6 +147,11 @@ export default async function postArticle({ params: { slug } }: Props) {
 			{/* Include the Head component here to add the robots meta tag */}
 			<Head>
 				<meta name="robots" content="index, follow" />
+				<link
+					rel="canonical"
+					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
+					key="canonical"
+				/>
 			</Head>
 			<section
 				key={post._id}
