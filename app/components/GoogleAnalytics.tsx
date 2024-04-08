@@ -1,11 +1,11 @@
 import Script from 'next/script';
-import * as gtag from '../../gtag';
+import { NEXT_PUBLIC_GOOGLE_ANALYTICS } from '../../gtag';
 
 export const GoogleAnalytics = () => (
 	<>
 		<Script
 			strategy="afterInteractive"
-			src={`https://www.googletagmanager.com/gtag/js?id=${gtag.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+			src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
 		/>
 		<Script
 			id="gtag-init"
@@ -15,7 +15,7 @@ export const GoogleAnalytics = () => (
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gtag.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            gtag('config', '${NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
               page_path: window.location.pathname,
             });
           `,
