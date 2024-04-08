@@ -1,6 +1,6 @@
 import './globals.css';
 import Footer from './components/Footer';
-import GoogleAnalytics from './components/GoogleAnalytics';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { Analytics } from '@vercel/analytics/react';
 import {
 	Roboto_Condensed,
@@ -123,12 +123,7 @@ export default function RootLayout({
 		>
 			<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 			<body className="bg-base-100">
-				{process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-					<GoogleAnalytics
-						ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
-					/>
-				) : null}
-				{/* <Header /> */}
+				<GoogleAnalytics />
 				<Navbar />
 				<Analytics />
 				{children}
