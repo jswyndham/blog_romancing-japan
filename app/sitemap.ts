@@ -50,7 +50,7 @@ export default async function sitemap() {
 			lastModified: new Date(),
 		},
 		{
-			url: `${baseUrl}privacy-policy/`, // Privacy Policy page
+			url: `${baseUrl}privacyPolicy/`, // Privacy Policy page
 			lastModified: new Date(),
 		},
 	];
