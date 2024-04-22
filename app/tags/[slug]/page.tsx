@@ -31,13 +31,15 @@ export async function generateMetadata({
 		title: `Romancing Japan | ${tag.title}`,
 		description: tag.description,
 		alternates: {
-			canonical: `/tags/${tag.slug}`,
+			canonical: `https://www.romancing-japan.com/tags/${tag.slug}/`,
 		},
 		openGraph: {
 			title: `Romancing Japan | ${tag.title}`,
 			description: tag.description,
 			type: 'article',
+			images: { url: tag.image, width: 600, height: 400 },
 			siteName: 'Romancing Japan',
+			url: `https://www.romancing-japan.com/tags/${tag.slug}/`,
 		},
 		twitter: {
 			card: 'summary_large_image',
