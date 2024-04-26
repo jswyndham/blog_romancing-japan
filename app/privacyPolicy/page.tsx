@@ -4,11 +4,11 @@ import React from "react";
 export const metadata = {
   title: "Romancing Japan Privacy Policy",
   description:
-    "This page provides detailed information about the privacy policies we uphold in relation to our users, detailing how personal data is collected, used, and protected to ensure the confidentiality and security of user information.",
+    "This page provides detailed information about the privacy policies we uphold in relation to our users, detailing how personal data is collected, used, and protected for confidentiality.",
   openGraph: {
     title: "Romancing Japan Privacy Policy",
     description:
-      "This page provides detailed information about the privacy policies we uphold in relation to our users, detailing how personal data is collected, used, and protected to ensure the confidentiality and security of user information.",
+      "This page provides detailed information about the privacy policies we uphold in relation to our users, detailing how personal data is collected, used, and protected for confidentiality.",
     type: "website",
     siteName: "Romancing Japan",
     url: "https://www.romancing-japan.com/",
