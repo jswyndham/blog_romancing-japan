@@ -68,30 +68,7 @@ export default async function tagPage({ params: { slug } }: Props) {
 	return (
 		<>
 			{/* <Head /> */}
-			<Head>
-				<title>{tag.title}</title>
-				<meta name="description" content={tag.description} />
-				<link rel="canonical" href={tag.alternates.canonical} />
-				<meta property="og:title" content={tag.openGraph.title} />
-				<meta
-					property="og:description"
-					content={tag.openGraph.description}
-				/>
-				<meta property="og:type" content={tag.openGraph.type} />
-				<meta property="og:url" content={tag.openGraph.url} />
-				<meta property="og:image" content={tag.openGraph.images.url} />
-				<meta
-					property="og:site_name"
-					content={tag.openGraph.siteName}
-				/>
-				<meta name="twitter:card" content={tag.twitter.card} />
-				<meta name="twitter:title" content={tag.twitter.title} />
-				<meta
-					name="twitter:description"
-					content={tag.twitter.description}
-				/>
-				<meta name="twitter:creator" content={tag.twitter.creator} />
-			</Head>
+
 			<section className="flex justify-center h-fit px-8 py-4">
 				{/* Banner */}
 				<article className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
