@@ -91,6 +91,12 @@ function PortableTextComp() {
 			em: ({ children }: any) => (
 				<em className="text-gray-600 font-semibold">{children}</em>
 			),
+			// Handling internal links
+			internalLink: ({ value, children }: any) => {
+				const href = `/${value.reference.slug.current}`;
+				return <Link href={href}>{children}</Link>;
+			},
+
 			link: ({ value, children }: any) => {
 				const target = (value?.href || '').startsWith('http')
 					? '_blank'

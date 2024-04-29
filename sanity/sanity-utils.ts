@@ -1,15 +1,15 @@
-import { Post, Category, Author } from "../typings";
-import { createClient, groq } from "next-sanity";
-import { readClient } from "./config/client-config";
+import { Post, Category, Author } from '../typings';
+import { createClient, groq } from 'next-sanity';
+import { readClient } from './config/client-config';
 
 type Props = {
-  params: { slug: string };
+	params: { slug: string };
 };
 
 // Medium post cards on home page
 export async function getLatestPostOne(): Promise<Post> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -28,8 +28,8 @@ export async function getLatestPostOne(): Promise<Post> {
 }
 
 export async function getLatestPostTwo(): Promise<Post> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -49,8 +49,8 @@ export async function getLatestPostTwo(): Promise<Post> {
 }
 
 export async function getLatestPostThree(): Promise<Post> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -70,8 +70,8 @@ export async function getLatestPostThree(): Promise<Post> {
 }
 
 export async function getLatestPostFour(): Promise<Post> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -92,8 +92,8 @@ export async function getLatestPostFour(): Promise<Post> {
 
 // Small post cards on home page
 export async function getPostsSmallCard(): Promise<Post[]> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -111,8 +111,8 @@ export async function getPostsSmallCard(): Promise<Post[]> {
 }
 
 export async function getPostsArchive(): Promise<Post[]> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -131,8 +131,8 @@ export async function getPostsArchive(): Promise<Post[]> {
 
 // Medium post cards on home page
 export async function getLatestPostMini(): Promise<Post> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "post"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
   _id,
   _createdAt,
   name,
@@ -152,8 +152,8 @@ export async function getLatestPostMini(): Promise<Post> {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "category"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "category"] | order(_createdAt desc){
   _id,
   _createdAt,
   title,
@@ -164,8 +164,8 @@ export async function getCategories(): Promise<Category[]> {
 }
 
 export async function getTags(): Promise<Post[]> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "tag"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "tag"] | order(_createdAt desc){
   _id,
   _createdAt,
   title,
@@ -176,8 +176,8 @@ export async function getTags(): Promise<Post[]> {
 }
 
 export async function getAuthor(): Promise<Author[]> {
-  return createClient(readClient)
-    .fetch(groq`*[_type == "author"] | order(_createdAt desc){
+	return createClient(readClient)
+		.fetch(groq`*[_type == "author"] | order(_createdAt desc){
   _id,
   _createdAt,
   title,
@@ -188,10 +188,10 @@ export async function getAuthor(): Promise<Author[]> {
 }
 
 export async function createArticle({
-  params: { slug },
+	params: { slug },
 }: Props): Promise<Post> {
-  const revalidate = 60; //Time interval
-  const query = groq`*[_type=="post" && slug.current == $slug][0]
+	const revalidate = 60; //Time interval
+	const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
   _id,
   _createdAt,
@@ -203,10 +203,19 @@ export async function createArticle({
   url,
   content[]{
     ...,
-    image[] => {
+    _type == 'image' => {
       ...,
       caption, 
-      asset->
+      asset->,
+    },
+    
+    markDefs[]{
+      ...,
+      _type == "internalLink" => {
+        "reference": @.reference->{
+          "slug": slug.current
+        }
+      }
     }
   },
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
@@ -215,5 +224,5 @@ export async function createArticle({
   tag[]->{title, "slug": slug.current,},
   }`;
 
-  return await createClient(readClient).fetch(query, { slug, revalidate });
+	return await createClient(readClient).fetch(query, { slug, revalidate });
 }
