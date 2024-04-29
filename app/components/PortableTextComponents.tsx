@@ -93,8 +93,15 @@ function PortableTextComp() {
 			),
 			// Handling internal links
 			internalLink: ({ value, children }: any) => {
-				const href = `/${value.reference.slug.current}`;
-				return <Link href={href}>{children}</Link>;
+				const href = `/${value.name}`;
+				return (
+					<Link
+						href={href}
+						className="text-blue-600 hover:underline mx-1"
+					>
+						{children}
+					</Link>
+				);
 			},
 
 			link: ({ value, children }: any) => {
