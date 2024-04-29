@@ -21,7 +21,8 @@ function PortableTextComp() {
 								.fit('max')
 								.auto('format')
 								.url()}
-							alt={value.caption}
+							alt={value.caption || 'Romancing Japan'}
+							title={value.caption || 'Romancing Japan'}
 							width={700}
 							height={500}
 							loading="lazy"

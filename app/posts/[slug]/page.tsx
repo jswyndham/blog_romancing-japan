@@ -141,6 +141,13 @@ export default async function postArticle({ params: { slug } }: Props) {
 	const post = await createArticle({ params: { slug } });
 	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
+	const jsonLdImage = {
+		'@context': 'http://schema.org',
+		'@type': 'ImageObject',
+		url: post.url,
+		caption: post.caption || 'Default image caption',
+		name: post.name || 'Default image title',
+	};
 
 	return (
 		<>
@@ -152,6 +159,9 @@ export default async function postArticle({ params: { slug } }: Props) {
 					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
 					key="canonical"
 				/>
+				<script type="application/ld+json">
+					{JSON.stringify(jsonLdImage)}
+				</script>
 			</Head>
 			<section
 				key={post._id}
@@ -193,7 +203,8 @@ export default async function postArticle({ params: { slug } }: Props) {
 						<figure className="flex flex-col justify-center my-6">
 							<Image
 								src={(await urlFor(post.image)).url()}
-								alt={post.name}
+								alt={post.name || 'Romancing Japan'}
+								title={post.caption || 'Romancing Japan'}
 								width={900}
 								height={900}
 								className="w-full  shadow-lg shadow-slate-500"
