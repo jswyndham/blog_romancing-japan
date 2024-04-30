@@ -92,18 +92,18 @@ function PortableTextComp() {
 				<em className="text-gray-600 font-semibold">{children}</em>
 			),
 			// Handling internal links
-			internalLink: ({ value, children }: any) => {
-				const href = `/${value.internal.slug.current}`;
-				return (
-					<Link
-						href={href}
-						rel={'_blank'}
-						className="text-blue-600 hover:underline mx-1"
-					>
-						{children}
-					</Link>
-				);
-			},
+			// internalLink: ({ value, children }: any) => {
+			// 	const href = `/${value.internal.slug.current}`;
+			// 	return (
+			// 		<Link
+			// 			href={href}
+			// 			rel={'_blank'}
+			// 			className="text-blue-600 hover:underline mx-1"
+			// 		>
+			// 			{children}
+			// 		</Link>
+			// 	);
+			// },
 
 			link: ({ value, children }: any) => {
 				const target = (value?.href || '').startsWith('http')

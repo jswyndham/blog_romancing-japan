@@ -141,13 +141,13 @@ export default async function postArticle({ params: { slug } }: Props) {
 	const post = await createArticle({ params: { slug } });
 	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
-	const jsonLdImage = {
-		'@context': 'http://schema.org',
-		'@type': 'ImageObject',
-		url: post.url,
-		caption: post.caption || 'Default image caption',
-		name: post.name || 'Default image title',
-	};
+	// const jsonLdImage = {
+	// 	'@context': 'http://schema.org',
+	// 	'@type': 'ImageObject',
+	// 	url: post.url,
+	// 	caption: post.caption || 'Default image caption',
+	// 	name: post.name || 'Default image title',
+	// };
 
 	return (
 		<>
@@ -159,9 +159,9 @@ export default async function postArticle({ params: { slug } }: Props) {
 					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
 					key="canonical"
 				/>
-				<script type="application/ld+json">
+				{/* <script type="application/ld+json">
 					{JSON.stringify(jsonLdImage)}
-				</script>
+				</script> */}
 			</Head>
 			<section
 				key={post._id}
