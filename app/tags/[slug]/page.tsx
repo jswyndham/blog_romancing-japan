@@ -38,13 +38,14 @@ export async function generateMetadata({
 		openGraph: {
 			title: `Romancing Japan | ${tag.title}`,
 			description: tag.description,
-			type: 'article',
+			type: 'website',
 			images: { url: tag.image, width: 600, height: 400 },
 			siteName: 'Romancing Japan',
 			url: `https://www.romancing-japan.com/tags/${tag.slug}/`,
 		},
 		twitter: {
 			card: 'summary_large_image',
+			site: 'https://twitter.com/RomancingJapan',
 			title: `Romancing Japan | ${tag.title}`,
 			description: tag.description,
 			creator: '@RomancingJapan',
