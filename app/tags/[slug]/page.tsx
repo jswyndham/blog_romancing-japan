@@ -74,7 +74,7 @@ export default async function tagPage({ params: { slug } }: Props) {
 				{/* Banner */}
 				<article className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
 					<h1>
-						Tag:{' '}
+						Romancing Japan | Tag:{' '}
 						<span className="italic text-red-500">{tag.title}</span>
 					</h1>
 				</article>

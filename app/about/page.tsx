@@ -36,7 +36,7 @@ export default async function about() {
 			<section className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">
 				{/* Page Banner */}
 				<article className="absolute top-0 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">
-					<h1>About Us</h1>
+					<h1>About Us | Romancing Japan</h1>
 				</article>
 
 				{/* ARTICLE */}
