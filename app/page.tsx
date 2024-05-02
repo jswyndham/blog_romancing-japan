@@ -64,7 +64,7 @@ export default async function Home() {
 				{/* Latest banner */}
 				<div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
 					<h1 className="flex flex-row">
-						<span className="hidden lg:flex">
+						<span className="hidden lg:flex mr-2">
 							Romancing Japan |{' '}
 						</span>
 						Latest Articles
