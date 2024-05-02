@@ -63,7 +63,12 @@ export default async function Home() {
 			<article className="h-full w-full aspect-auto flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
 				{/* Latest banner */}
 				<div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
-					<h1>Romancing Japan | Latest Articles</h1>
+					<h1>
+						<span className="hidden lg:flex">
+							Romancing Japan |{' '}
+						</span>
+						Latest Articles
+					</h1>
 				</div>
 
 				{/* Article post components */}
