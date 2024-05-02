@@ -13,9 +13,10 @@ export default async function BlogSmallCard() {
 					<figure className="">
 						<Image
 							src={(await urlFor(post.image)).url()}
+							alt={post.name || 'Romancing Japan'}
+							title={post.caption || 'Romancing Japan'}
 							width={700}
 							height={650}
-							alt={post.image}
 							loading="lazy"
 							className="top-0 group-hover:scale-105 transition-transform duration-700"
 						/>
