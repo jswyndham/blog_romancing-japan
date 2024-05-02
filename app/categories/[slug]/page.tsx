@@ -66,7 +66,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 			{/* Banner */}
 			<div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
 				<h1>
-					Category:{' '}
+					Romancing Japan | Category:{' '}
 					<span className="italic text-red-500">
 						{category.title}
 					</span>
