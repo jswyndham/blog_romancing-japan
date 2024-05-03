@@ -84,7 +84,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 									className="card rounded-none w-fit h-fit md:h-full mx-2 mt-6 mb-8 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
 								>
 									{/* Card Image */}
-									<figure className="border-b-2 border-red-500">
+									<figure className="h-44 3xl:h-56 border-b-2 border-red-500">
 										<Image
 											src={(
 												await urlFor(post.image)
@@ -104,7 +104,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 												{post.name}
 											</h2>
 										</div>
-										<div className="h-44 lg:h-20 m-1 text-lg text-left md:h-44 3xl:h-32">
+										<div className="h-44 md:h-52 lg:h-36 2xl:h-48 3xl:h-32 m-1 text-lg text-left px-2">
 											<PortableText
 												value={post.summaryShort}
 												onMissingComponent={false}

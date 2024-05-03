@@ -24,7 +24,7 @@ const ArticleCollectionCard = async () => {
 								className="card rounded-none w-fit h-10/12 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
 							>
 								{/* Card Image */}
-								<figure className="border-b-2 border-red-500">
+								<figure className="h-56 3xl:h-60 border-b-2 border-red-500">
 									<Image
 										src={(await urlFor(post.image)).url()}
 										width={700}
@@ -45,7 +45,7 @@ const ArticleCollectionCard = async () => {
 											{post.name}
 										</h2>
 									</div>
-									<div className="h-64 lg:h-44 2xl:h-36 m-1 text-lg text-left md:pb-6">
+									<div className="h-48 lg:h-44 2xl:h-52 3xl:h-40 m-1 text-lg text-left md:pb-6">
 										<PortableText
 											value={post.summaryShort}
 											onMissingComponent={false}

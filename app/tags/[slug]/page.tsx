@@ -73,8 +73,11 @@ export default async function tagPage({ params: { slug } }: Props) {
 			<section className="flex justify-center h-fit px-8 py-4">
 				{/* Banner */}
 				<article className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
-					<h1>
-						Romancing Japan | Tag:{' '}
+					<h1 className="flex flex-row">
+						<span className="hidden lg:flex mr-2">
+							Romancing Japan |{' '}
+						</span>
+						Tag:{' '}
 						<span className="italic text-red-500">{tag.title}</span>
 					</h1>
 				</article>
@@ -93,7 +96,7 @@ export default async function tagPage({ params: { slug } }: Props) {
 										className="card rounded-none w-fit h-fit md:h-full mt-6 mb-8 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
 									>
 										{/* Card Image */}
-										<figure className="border-b-2 border-red-500">
+										<figure className="h-44 3xl:h-56 border-b-2 border-red-500">
 											<Image
 												src={(
 													await urlFor(post.image)
@@ -113,7 +116,7 @@ export default async function tagPage({ params: { slug } }: Props) {
 													{post.name}
 												</h2>
 											</div>
-											<div className="h-44 lg:h-20 m-1 text-lg text-left md:h-44 3xl:h-32">
+											<div className="h-44 md:h-52 lg:h-36 2xl:h-48 3xl:h-32 m-1 text-lg text-left px-2">
 												<PortableText
 													value={post.summaryShort}
 													onMissingComponent={false}
