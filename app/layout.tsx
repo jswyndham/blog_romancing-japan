@@ -80,6 +80,7 @@ export const metadata = {
 	keywords: [
 		'Japan',
 		'Travel in Japan',
+		'Japan Tourism',
 		'Japanese Culture',
 		'Japanese Lifestyle',
 		'Lifestyle in Japan',

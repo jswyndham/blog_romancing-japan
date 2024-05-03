@@ -25,6 +25,7 @@ module.exports = {
 				patrick_hand: ['var(--font-patrick_hand)'],
 				carter_one: ['var(--font-carter_one)'],
 				caveat: ['var(--font-caveat)'],
+				ubuntu: ['Ubuntu Sans', 'sans-serif'],
 			},
 			transitionDuration: {
 				2000: '2000ms',
