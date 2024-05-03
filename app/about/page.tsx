@@ -51,23 +51,7 @@ export default async function about() {
 				<article className="">
 					<div className="my-20 w-full flex flex-col items-center justify-center align-middle">
 						{/* MAIN CONTENT */}
-						<div className="md:my-12 mx-8 mt-12 text-center">
-							<h2 className="flex flex-col text-2xl md:text-3xl lg:text-4xl font-extrabold font-catTags">
-								<span className="text-4xl md:text-5xl -mt-4">
-									Welcome to
-								</span>
-								<figure className="h-fit py-2">
-									<Image
-										src="/about/opengraph-image3.png"
-										alt="logo"
-										width={350}
-										height={75}
-										className="-mt-20 h-48"
-										loading="lazy"
-									/>
-								</figure>
-							</h2>
-						</div>
+
 						{/* Introduction */}
 						<div className="-mt-12 flex flex-col items-center justify-center w-[90%] md:w-[95%] xl:max-w-5xl">
 							<div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
