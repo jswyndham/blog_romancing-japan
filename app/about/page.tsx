@@ -53,7 +53,7 @@ export default async function about() {
 						{/* MAIN CONTENT */}
 
 						{/* Introduction */}
-						<div className="-mt-12 flex flex-col items-center justify-center w-[90%] md:w-[95%] xl:max-w-5xl">
+						<div className="mt-12 flex flex-col items-center justify-center w-[90%] md:w-[95%] xl:max-w-5xl">
 							<div className="grid text-lg md:text-xl lg:text-2xl font-heading text-justify md:grid-flow-col md:gap-8 md:grid-cols-3">
 								<div className="flex justify-center mx-2 md:mx-0 my-2 md:mt-6 md:col-span-1">
 									<Image
