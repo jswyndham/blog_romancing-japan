@@ -29,9 +29,11 @@ const Navbar = () => {
 							<Image
 								src="/images/logo-nav-2.png"
 								fill
+								width={750}
+								height={189}
 								alt="romancing japan logo"
 								className="absolute top-4 md:ml-4 md:p-0 md:mt-0"
-								priority={true}
+								loading="lazy"
 							/>
 						</div>
 					</Link>

@@ -208,7 +208,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 								title={post.caption || 'Romancing Japan'}
 								width={900}
 								height={900}
-								className="w-full  shadow-lg shadow-slate-500"
+								className="w-full shadow-lg shadow-slate-500"
 								priority={true}
 							/>
 

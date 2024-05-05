@@ -9,10 +9,10 @@ export default function AkariAndJamesProfile() {
 					<Image
 						src="/images/akari-james.jpg"
 						alt="Romancing Japan - James & Akari profile"
-						width={250}
-						height={250}
+						width={640}
+						height={428}
 						className="object-fill px-4"
-						priority
+						loading="lazy"
 					/>
 				</figure>
 				<div className="bg-slate-300 w-52 px-3 2xl:px-4 pt-20 pb-4 mx-2 text-justify font-playfair_display whitespace-pre-line">
