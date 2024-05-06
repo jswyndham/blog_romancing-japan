@@ -23,8 +23,8 @@ function PortableTextComp() {
 								.url()}
 							alt={value.caption || 'Romancing Japan'}
 							title={value.caption || 'Romancing Japan'}
-							width={700}
-							height={500}
+							width={900}
+							height={700}
 							loading="lazy"
 						/>
 						<figcaption className="italic text-base text-left mt-2">
