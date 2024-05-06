@@ -115,7 +115,7 @@ function PortableTextComp() {
 						href={value?.href}
 						target={target}
 						rel={'_blank'}
-						className="text-blue-700 hover:underline mx-1 underline underline-offset-8"
+						className="text-blue-800 hover:underline mx-1 underline underline-offset-4"
 					>
 						{children}
 					</Link>
