@@ -16,7 +16,7 @@ const ArticleCollectionCard = async () => {
 	return posts.map(async (post: any) => {
 		return (
 			<>
-				<div className="flex justify-center">
+				<article className="flex justify-center">
 					<div key={post._id}>
 						<Link key={post._id} href={`/posts/${post.slug}/`}>
 							<div
@@ -24,7 +24,7 @@ const ArticleCollectionCard = async () => {
 								className="card rounded-none w-fit h-10/12 my-6 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group"
 							>
 								{/* Card Image */}
-								<figure className="h-56 3xl:h-60 border-b-2 border-red-500">
+								<figure className="h-40 3xl:h-56 border-b-2 border-red-500">
 									<Image
 										src={(await urlFor(post.image)).url()}
 										width={700}
@@ -40,12 +40,12 @@ const ArticleCollectionCard = async () => {
 
 								{/* Card Title & Summary */}
 								<div className="card-body p-4 rounded-2xl">
-									<div className="flex items-center h-fit pl-2 py-2 mt-1 mb-2 border-l-2 border-red-600 xl:h-28">
+									<div className="flex items-center h-24 xl:h-28 pl-2 py-2 mt-1 mb-2 border-l-2 border-red-600">
 										<h2 className="font-roboto_condensed text-red-900 text-2xl font-bold justify-left">
 											{post.name}
 										</h2>
 									</div>
-									<div className="h-48 lg:h-44 2xl:h-52 3xl:h-40 m-1 text-lg text-left md:pb-6">
+									<div className="h-44 md:h-52 lg:h-36 2xl:h-48 3xl:h-32 m-1 text-lg text-left md:pb-6">
 										<PortableText
 											value={post.summaryShort}
 											onMissingComponent={false}
@@ -56,7 +56,7 @@ const ArticleCollectionCard = async () => {
 							</div>
 						</Link>
 					</div>
-				</div>
+				</article>
 			</>
 		);
 	});

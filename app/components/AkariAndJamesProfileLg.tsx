@@ -11,7 +11,7 @@ export default function AkariAndJamesProfile() {
 						alt="Romancing Japan - James & Akari profile"
 						width={640}
 						height={428}
-						className="object-fill px-4"
+						className="px-4"
 						loading="lazy"
 					/>
 				</figure>

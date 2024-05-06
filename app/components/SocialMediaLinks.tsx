@@ -12,7 +12,8 @@ function SocialMediaLinks() {
 			>
 				<Image
 					src="/images/twitter-x-logo.png"
-					fill
+					width={28}
+					height={28}
 					alt="romancing japan twitter"
 				/>
 			</Link>
@@ -23,7 +24,8 @@ function SocialMediaLinks() {
 			>
 				<Image
 					src="/images/instagram-50-white-2.png"
-					fill
+					width={28}
+					height={28}
 					alt="romancing japan instagram"
 				/>
 			</Link>
@@ -34,7 +36,8 @@ function SocialMediaLinks() {
 			>
 				<Image
 					src="/images/facebook-50-white.png"
-					fill
+					width={28}
+					height={28}
 					alt="romancing japan facebook"
 				/>
 			</Link>
@@ -45,7 +48,8 @@ function SocialMediaLinks() {
 			>
 				<Image
 					src="/images/linkedin2.png"
-					fill
+					width={28}
+					height={28}
 					alt="romancing japan linkedIn"
 				/>
 			</Link>

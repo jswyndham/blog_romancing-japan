@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
 	return (
-		<section className="flex flex-col items-center justify-center overflow-hidden">
+		<article className="flex flex-col items-center justify-center overflow-hidden">
 			{/* Homepage pic */}
 			<figure>
 				<Image
@@ -60,7 +60,7 @@ export default async function Home() {
 				/>
 			</figure>
 
-			<article className="h-full w-full aspect-auto flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
+			<div className="h-full w-full aspect-auto flex flex-col justify-center align-middle drop-shadow-2xl md:w-[80%] lg:w-[97%] xl:max-w-screen-xl">
 				{/* Latest banner */}
 				<div className="absolute top-2 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
 					<h1 className="flex flex-row">
@@ -113,10 +113,10 @@ export default async function Home() {
 				{/* DIVIDE */}
 				<div className="divider md:-mt-16 lg:-mt-16 2xl:-mt-24"></div>
 
-				<div className="flex flex-col space-y-6 mx-4 mb-6 md:mb-3 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
+				<div className="flex flex-col space-y-6 mx-4 mb-6 md:mx-0 md:space-y-0 md:grid md:grid-cols-2 md:gap-4 2xl:grid-cols-3">
 					<BlogSmallCard />
 				</div>
-			</article>
-		</section>
+			</div>
+		</article>
 	);
 }

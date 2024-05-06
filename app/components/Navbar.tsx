@@ -28,11 +28,10 @@ const Navbar = () => {
 						<div className="flex justify-center items-center mt-6 w-52 h-12 xl:w-60 xl:h-14 2xl:w-64 2xl:h-16 relative">
 							<Image
 								src="/images/logo-nav-2.png"
-								fill
 								width={750}
 								height={189}
 								alt="romancing japan logo"
-								className="absolute top-4 md:ml-4 md:p-0 md:mt-0"
+								className="absolute top-0 md:ml-4"
 								loading="lazy"
 							/>
 						</div>

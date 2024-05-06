@@ -61,9 +61,9 @@ export default async function SideBioSubscriptionLatestArt({
 								<Image
 									src={(await urlFor(author.image)).url()}
 									alt={post.name}
-									width={900}
-									height={900}
-									className="object-fill px-3 pb-3"
+									width={256}
+									height={180}
+									className="px-3 pb-3"
 									loading="lazy"
 								/>
 							</figure>

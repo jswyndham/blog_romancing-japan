@@ -10,7 +10,6 @@ export default function AkariAndJamesProfile() {
 					alt="Romancing Japan - James & Akari profile"
 					width={384}
 					height={257}
-					className="object-fill"
 					loading="lazy"
 				/>
 			</figure>
@@ -22,7 +21,6 @@ export default function AkariAndJamesProfile() {
 							alt="Romancing Japan - James & Akari profile"
 							width={384}
 							height={257}
-							className="object-fill"
 							loading="lazy"
 						/>
 					</figure>

@@ -188,8 +188,8 @@ export default async function postArticle({ params: { slug } }: Props) {
 								</h1>
 
 								{/* AUTHOR */}
-								{post.author.map((author) => (
-									<div key={post._id}>
+								{post.author.map((author, index) => (
+									<div key={`${post._id}-author-${index}`}>
 										<p className="ml-8 mt-3 pb-1 text-primary text-lg font-bold">
 											{author.name}
 										</p>

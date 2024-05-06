@@ -109,14 +109,14 @@ const SignupCard = () => {
 			</form>
 
 			{/* FOLLOW US (SM LINKS)*/}
-			<article className="flex flex-col items-center justify-center pb-1 my-3 2xl:pb-4">
+			<div className="flex flex-col items-center justify-center pb-1 my-3 2xl:pb-4">
 				<div className="pb-3 2xl:pb-6">
 					<p className="font-patrick_hand  text-4xl md:text-5xl text-base-100">
 						Follow us!
 					</p>
 				</div>
 				<SocialMediaLinks />
-			</article>
+			</div>
 		</div>
 	);
 };

@@ -15,7 +15,7 @@ export default async function BlogSmallCard() {
 		return (
 			<Link key={post._id} href={`/posts/${post.slug}/`}>
 				<div className="card rounded-none w-fit h-fit mx-2 my-2 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow  hover:bg-base-100 hover:transition-all duration-300 group">
-					<figure className="border-b-2 border-red-500">
+					<figure className="h-40 3xl:h-56 border-b-2 border-red-500">
 						<Image
 							src={(await urlFor(post.image)).url()}
 							width={700}
@@ -32,7 +32,7 @@ export default async function BlogSmallCard() {
 								{post.name}
 							</h2>
 						</div>
-						<div className="h-40 md:h-44 lg:h-48 xl:h-40 pl-3 my-3 pr-1 text-lg text-left md:items-center xl:py-4">
+						<div className="h-40 md:h-44 lg:h-48 xl:h-44 pl-3 my-3 pr-1 text-lg text-left md:items-center xl:py-4">
 							<PortableText
 								value={post.summaryShort}
 								onMissingComponent={false}

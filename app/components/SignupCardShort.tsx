@@ -111,14 +111,14 @@ const SignupCardShort = () => {
 				</div>
 
 				{/* FOLLOW US */}
-				<article className="flex flex-col items-center justify-center align-middle pb-4">
+				<div className="flex flex-col items-center justify-center align-middle pb-4">
 					<div className="px-5 pt-2 pb-4">
 						<p className="font-patrick_hand  text-4xl text-base-100">
 							Follow us!
 						</p>
 					</div>
 					<SocialMediaLinks />
-				</article>
+				</div>
 			</div>
 		</div>
 	);
