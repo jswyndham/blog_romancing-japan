@@ -12,6 +12,7 @@ import {
   Caveat,
 } from "next/font/google";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const Navbar = dynamic(() => import("./components/Navbar"), { ssr: false });
 
@@ -122,8 +123,11 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable}`}
     >
-      <link rel="icon" href="favicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <Head>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      </Head>
+
       <body className="bg-base-100">
         <GoogleAnalytics />
         <Navbar />
