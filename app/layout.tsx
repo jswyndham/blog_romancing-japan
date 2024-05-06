@@ -122,8 +122,8 @@ export default function RootLayout({
       lang="en"
       className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable}`}
     >
-      <link rel="icon" href="/app/favicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="/app/favicon.ico" type="image/x-icon" />
+      <link rel="icon" href="favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       <body className="bg-base-100">
         <GoogleAnalytics />
         <Navbar />
