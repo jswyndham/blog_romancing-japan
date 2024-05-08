@@ -142,13 +142,22 @@ export default async function postArticle({ params: { slug } }: Props) {
 	const post = await createArticle({ params: { slug } });
 	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
-	// const jsonLdImage = {
-	// 	'@context': 'http://schema.org',
-	// 	'@type': 'ImageObject',
-	// 	url: post.url,
-	// 	caption: post.caption || 'Default image caption',
-	// 	name: post.name || 'Default image title',
-	// };
+
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: post.pageName,
+		image: (await urlFor(post.image)).url(), // Ensure this resolves before rendering the component
+		author: {
+			'@type': 'Person',
+			name: post.author,
+		},
+		datePublished: post._createdAt,
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': `https://www.romancing-japan.com/posts/${post.slug}/`,
+		},
+	};
 
 	return (
 		<>
@@ -160,9 +169,10 @@ export default async function postArticle({ params: { slug } }: Props) {
 					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
 					key="canonical"
 				/>
-				{/* <script type="application/ld+json">
-					{JSON.stringify(jsonLdImage)}
-				</script> */}
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 			</Head>
 			<section
 				key={post._id}

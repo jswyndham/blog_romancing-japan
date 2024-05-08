@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import SignupCardLong from '../components/SignupCardLong';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
 	title: 'About Us Page | Romancing Japan',
@@ -31,8 +32,44 @@ export const metadata: Metadata = {
 };
 
 export default async function about() {
+	const aboutPageJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'AboutPage',
+		name: 'About Us | Romancing Japan',
+		description:
+			'An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture.',
+		url: 'https://www.romancing-japan.com/about/',
+		publisher: {
+			'@type': 'Organization',
+			name: 'Romancing Japan',
+			logo: {
+				'@type': 'ImageObject',
+				url: 'https://www.romancing-japan.com/logo.jpg',
+			},
+		},
+		image: {
+			'@type': 'ImageObject',
+			url: 'https://www.romancing-japan.com/opengraph-image.jpg',
+			width: 600,
+			height: 400,
+		},
+	};
 	return (
 		<>
+			<Head>
+				<title>About Us Page | Romancing Japan</title>
+				<meta
+					name="description"
+					content="An explanation about how and why we decided to build this site and write about Japanese travel, lifestyle, and culture."
+				/>
+				<link
+					rel="canonical"
+					href="https://www.romancing-japan.com/about/"
+				/>
+				<script type="application/ld+json">
+					{JSON.stringify(aboutPageJsonLd)}
+				</script>
+			</Head>
 			<section className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">
 				{/* Page Banner */}
 				<article className="absolute top-0 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">

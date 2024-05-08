@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import { urlFor } from '@/lib/urlFor';
+import Head from 'next/head';
 
 export const metadata = {
 	title: 'Romancing Japan Article Tags',
@@ -33,8 +34,22 @@ export const metadata = {
 export default async function TagList() {
 	const tags = await getTags();
 
+	const tagsListJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: 'Article Tags of Romancing Japan',
+		description:
+			'This page is a collection of all article tags that identify the main themes related to articles published by Romancing Japan.',
+		url: 'https://www.romancing-japan.com/tags/',
+	};
+
 	return (
 		<>
+			<Head>
+				<script type="application/ld+json">
+					{JSON.stringify(tagsListJsonLd)}
+				</script>
+			</Head>
 			<section className="z-0 flex flex-col items-center justify-center overflow-hidden">
 				{/* Top Image */}
 				<figure className="mt-16 lg:mt-8 xl:mt-0">

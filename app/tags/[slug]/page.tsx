@@ -10,6 +10,7 @@ import { PortableText } from '@portabletext/react';
 import { Metadata } from 'next/types';
 import { Tag } from '@/typings';
 import PortableTextComp from '@/app/components/PortableTextComponents';
+import Head from 'next/head';
 
 type Props = {
 	params: { slug: string };
@@ -60,13 +61,28 @@ export default async function tagPage({ params: { slug } }: Props) {
   "post":*[_type=="post" && references(^._id)]{_id, name, "slug": slug.current, "image": image.asset->url, summary, summaryShort}}`;
 
 	const tag = await createClient(readClient).fetch(query, { slug });
-	const metadata = await generateMetadata({ params: { slug } });
 
 	// RICH TEXT EDITOR SETTINGS
 	const components = PortableTextComp();
 
+	const tagPageJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: `Articles tagged with ${tag.title} | Romancing Japan`,
+		description: tag.description,
+		url: `https://www.romancing-japan.com/tags/${tag.slug}/`,
+	};
+
 	return (
 		<>
+			<Head>
+				<title>{tag.title}</title>
+				<meta name="description" content={tag.description} />
+				<link rel="canonical" href={`/tags/${tag.slug}/`} />
+				<script type="application/ld+json">
+					{JSON.stringify(tagPageJsonLd)}
+				</script>
+			</Head>
 			<section className="flex justify-center h-fit px-8 py-4">
 				{/* Banner */}
 				<article className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">

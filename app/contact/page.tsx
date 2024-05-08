@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 const ContactForm = dynamic(() => import('../components/ContactForm'), {
 	ssr: false,
@@ -34,8 +35,45 @@ export const metadata: Metadata = {
 
 // CONTACT PAGE
 export default async function Contact() {
+	const contactPageJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'ContactPage',
+		name: 'Contact Page | Romancing Japan',
+		description:
+			'If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website.',
+		url: 'https://www.romancing-japan.com/contact/',
+		publisher: {
+			'@type': 'Organization',
+			name: 'Romancing Japan',
+			url: 'https://www.romancing-japan.com',
+			logo: {
+				'@type': 'ImageObject',
+				url: 'https://www.romancing-japan.com/logo.jpg',
+			},
+		},
+		image: {
+			'@type': 'ImageObject',
+			url: 'https://www.romancing-japan.com/opengraph-image.jpg',
+			width: 600,
+			height: 400,
+		},
+	};
 	return (
 		<>
+			<Head>
+				<title>Contact Page | Romancing Japan</title>
+				<meta
+					name="description"
+					content="If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website."
+				/>
+				<link
+					rel="canonical"
+					href="https://www.romancing-japan.com/contact/"
+				/>
+				<script type="application/ld+json">
+					{JSON.stringify(contactPageJsonLd)}
+				</script>
+			</Head>
 			<div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
 				<h1>Contact Us | Romancing Japan</h1>
 			</div>

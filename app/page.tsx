@@ -7,6 +7,7 @@ import Image from 'next/image';
 import AkariAndJamesProfileSm from './components/AkariAndJamesProfileSm';
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 // Dynamic components imported
 const SignupCard = dynamic(() => import('./components/SignupCard'), {
@@ -47,8 +48,46 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+	const homePageJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'Romancing Japan',
+		url: 'https://www.romancing-japan.com/',
+		potentialAction: {
+			'@type': 'SearchAction',
+			target: 'https://www.romancing-japan.com/search?query={search_term_string}',
+			'query-input': 'required name=search_term_string',
+		},
+		description:
+			'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		publisher: {
+			'@type': 'Organization',
+			name: 'Romancing Japan',
+			logo: {
+				'@type': 'ImageObject',
+				url: 'https://www.romancing-japan.com/logo.png',
+			},
+		},
+	};
+
+	// JSON-LD stringified
+	const jsonLdString = JSON.stringify(homePageJsonLd);
+
 	return (
 		<article className="flex flex-col items-center justify-center overflow-hidden">
+			<Head>
+				<title>Romancing Japan - Travel, Lifestyle, Culture</title>
+				<meta
+					name="description"
+					content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
+				/>
+				<link rel="canonical" href="https://www.romancing-japan.com/" />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: jsonLdString }}
+				></script>
+			</Head>
+
 			{/* Homepage pic */}
 			<figure>
 				<Image
