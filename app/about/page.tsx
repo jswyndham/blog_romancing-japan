@@ -69,6 +69,10 @@ export default async function about() {
         />
       </Head>
       <section className="relative h-full flex flex-col items-center justify-center overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+        />
         {/* Page Banner */}
         <article className="absolute top-0 w-full bg-slate-700 py-4 flex justify-center text-white text-3xl font-bold">
           <h1 className="flex flex-row">
