@@ -3,7 +3,11 @@ import { getCategories, getPostsArchive, getTags } from '@/sanity/sanity-utils';
 export const revalidate = 50; // revalidate every minute
 
 export default async function sitemap() {
+<<<<<<< HEAD
 	const baseUrl = 'https://www.romancing-japan.com/';
+=======
+  const baseUrl = "(https://www.romancing-japan.com/)";
+>>>>>>> b7fee2c3a0fe7656f73ac0db2c4ad2aac430c6ea
 
 	// ********** Get all posts from sanity-utils
 	const posts = await getPostsArchive();
