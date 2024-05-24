@@ -144,11 +144,11 @@ export default async function postArticle({ params: { slug } }: Props) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.pageName,
-    image: (await urlFor(post.image)).url(), // Ensure this resolves before rendering the component
-    author: {
+    image: (await urlFor(post.image)).url(),
+    author: post.author.map((author: any) => ({
       "@type": "Person",
-      name: post.author,
-    },
+      name: author.name,
+    })),
     datePublished: post._createdAt,
     mainEntityOfPage: {
       "@type": "WebPage",
