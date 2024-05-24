@@ -29,9 +29,6 @@ export async function generateMetadata({
 
   const tag: Tag = await createClient(readClient).fetch(data, { slug });
 
-  const imageUrl =
-    tag.post.length > 0 ? tag.post[0].image : "default-image-url";
-
   return {
     title: `Romancing Japan | ${tag.title}`,
     description: tag.description,
@@ -42,7 +39,7 @@ export async function generateMetadata({
       title: `Romancing Japan | ${tag.title}`,
       description: tag.description,
       type: "website",
-      images: { url: imageUrl, width: 600, height: 400 },
+      images: { url: tag.image, width: 600, height: 400 },
       siteName: "Romancing Japan",
       url: `https://www.romancing-japan.com/tags/${tag.slug}/`,
     },
