@@ -45,6 +45,7 @@ const filter = (
 		return acc;
 	}, []);
 
+// ***** Article Contents Heading *********
 const findHeadings = (ast: PortableTextBlock[]): HeadingNode[] =>
 	filter(ast, (node: PortableTextBlock) => node.style === 'h2').map(
 		(node) => ({
