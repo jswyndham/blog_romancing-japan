@@ -169,15 +169,15 @@ export default async function postArticle({ params: { slug } }: Props) {
 					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
 					key="canonical"
 				/>
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-				/>
 			</Head>
 			<section
 				key={post._id}
 				className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
 			>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 				<article className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
 					{/* TOP BOARDER */}
 					<div className="flex flex-col items-center justify-center">
