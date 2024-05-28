@@ -21,7 +21,7 @@ export const TableOfContents = ({ outline }) => (
 								>
 									<a
 										href={'#' + subheading._key}
-										className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-400"
+										className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-500"
 									>
 										{subheading.children[0].text}
 									</a>
