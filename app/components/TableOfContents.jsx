@@ -8,7 +8,7 @@ export const TableOfContents = ({ outline }) => (
 				<li key={heading._key} className="list-disc py-2 font-serif">
 					<a
 						href={'#' + heading._key}
-						className="text-md lg:text-lg text-red-700 font-bold hover:text-primary"
+						className="text-md lg:text-lg text-text-primary hover:text-red-700 font-bold"
 					>
 						{heading.children[0].text}
 					</a>
@@ -21,7 +21,7 @@ export const TableOfContents = ({ outline }) => (
 								>
 									<a
 										href={'#' + subheading._key}
-										className="text-md lg:text-lg text-slate-600 font-bold hover:text-primary"
+										className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-500"
 									>
 										{subheading.children[0].text}
 									</a>
