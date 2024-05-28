@@ -39,7 +39,6 @@ function PortableTextComp() {
 					return null;
 				}
 
-				// Dynamically render the YouTube component
 				return <YouTubePreviewDynamic url={value.url} />;
 			},
 		},
@@ -61,18 +60,23 @@ function PortableTextComp() {
 			h2: ({ children, node }: any) => (
 				<h2
 					id={node._key}
-					className="text-3xl pt-3 pb-2 text-red-800 font-bold"
+					className="text-2xl xl:3xl pt-3 pb-2 text-red-800 font-bold"
 				>
 					{children}
 				</h2>
 			),
-			h3: ({ children }: any) => (
-				<div className="w-fit border-b-4 border-b-slate-300 mb-2 mt-3">
-					<h3 className="text-2xl text-info font-bold">{children}</h3>
+			h3: ({ children, node }: any) => (
+				<div className="w-fit border-y-2 border-y-red-800 mb-2 mt-3 py-2 px-6 ml-4 bg-red-50">
+					<h3
+						id={node._key}
+						className="text-xl xl:text-2xl text-info font-bold"
+					>
+						{children}
+					</h3>
 				</div>
 			),
 			h4: ({ children }: any) => (
-				<h4 className="text-xl pt-3 pb-2 ml-3 font-bold text-red-500">
+				<h4 className="text-xl pt-3 pb-2 ml-3 font-bold border-b-red-500">
 					{children}
 				</h4>
 			),
@@ -91,20 +95,6 @@ function PortableTextComp() {
 			em: ({ children }: any) => (
 				<em className="text-gray-600 font-semibold">{children}</em>
 			),
-			// Handling internal links
-			// internalLink: ({ value, children }: any) => {
-			// 	const href = `/${value.internal.slug.current}`;
-			// 	return (
-			// 		<Link
-			// 			href={href}
-			// 			rel={'_blank'}
-			// 			className="text-blue-600 hover:underline mx-1"
-			// 		>
-			// 			{children}
-			// 		</Link>
-			// 	);
-			// },
-
 			link: ({ value, children }: any) => {
 				const target = (value?.href || '').startsWith('http')
 					? '_blank'

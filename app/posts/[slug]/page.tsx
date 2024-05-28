@@ -13,6 +13,14 @@ import { createArticle } from '@/sanity/sanity-utils';
 import dynamic from 'next/dynamic';
 import CategoriesAndTags from '@/app/components/CategoriesAndTags';
 import RedBarDecoration from '@/app/components/RedBarDecoration';
+import {
+	filter,
+	findHeadings,
+	get,
+	getObjectPath,
+	parseOutline,
+} from '../../utils/outlineUtils';
+
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
 	{
@@ -24,65 +32,7 @@ type Props = {
 	params: { slug: string };
 };
 
-interface PortableTextBlock {
-	_key: string;
-	_type: string;
-	style?: string;
-	children?: PortableTextBlock[];
-}
-
-interface HeadingNode extends PortableTextBlock {
-	subheadings: HeadingNode[];
-}
-
-const filter = (
-	ast: PortableTextBlock[],
-	match: (node: PortableTextBlock) => boolean
-): PortableTextBlock[] =>
-	ast.reduce((acc: PortableTextBlock[], node: PortableTextBlock) => {
-		if (match(node)) acc.push(node);
-		if (node.children) acc.push(...filter(node.children, match));
-		return acc;
-	}, []);
-
-// ***** Article Contents Heading *********
-const findHeadings = (ast: PortableTextBlock[]): HeadingNode[] =>
-	filter(ast, (node: PortableTextBlock) => node.style === 'h2').map(
-		(node) => ({
-			...node,
-			subheadings: [],
-		})
-	);
-
-const get = (object: any, path: (string | number)[]): any =>
-	path.reduce((prev: any, curr: string | number) => prev[curr], object);
-
-const getObjectPath = (path: number[]): (string | number)[] =>
-	path.length === 0
-		? path
-		: ['subheadings', ...path.flatMap((p) => ['subheadings', p])];
-
-const parseOutline = (ast: PortableTextBlock[]): HeadingNode[] => {
-	const outline = { subheadings: [] as HeadingNode[] };
-	const headings: HeadingNode[] = findHeadings(ast);
-	const path: number[] = [];
-	let lastLevel = 0;
-
-	headings.forEach((heading) => {
-		const level = Number(heading.style?.slice(1));
-		if (level < lastLevel)
-			for (let i = lastLevel; i >= level; i--) path.pop();
-		else if (level === lastLevel) path.pop();
-
-		const prop = get(outline, getObjectPath(path)) as HeadingNode;
-		prop.subheadings.push(heading);
-		path.push(prop.subheadings.length - 1);
-		lastLevel = level;
-	});
-
-	return outline.subheadings;
-};
-
+// ******** Page Metadata *****************
 export async function generateMetadata({
 	params: { slug },
 }: Props): Promise<Metadata> {
