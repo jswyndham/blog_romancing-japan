@@ -8,12 +8,12 @@ export const TableOfContents = ({ outline }) => (
 				<li key={heading._key} className="list-disc py-2 font-serif">
 					<a
 						href={'#' + heading._key}
-						className="text-md lg:text-lg text-text-primary hover:text-red-700 font-bold"
+						className="text-md lg:text-lg text-red-800 hover:text-red-700 font-bold"
 					>
 						{heading.children[0].text}
 					</a>
 					{heading.subheadings && heading.subheadings.length > 0 && (
-						<ul className="ml-5 font-sans text-red-700">
+						<ul className="ml-5 font-sans text-red-600">
 							{heading.subheadings.map((subheading) => (
 								<li
 									key={subheading._key}
@@ -21,7 +21,7 @@ export const TableOfContents = ({ outline }) => (
 								>
 									<a
 										href={'#' + subheading._key}
-										className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-500"
+										className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-400"
 									>
 										{subheading.children[0].text}
 									</a>
