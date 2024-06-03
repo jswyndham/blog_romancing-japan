@@ -66,7 +66,7 @@ function PortableTextComp() {
 				</h2>
 			),
 			h3: ({ children, node }: any) => (
-				<div className="w-full mb-2 mt-3 py-2 px-6 bg-red-700 rounded-lg drop-shadow-xl">
+				<div className="w-full mb-2 mt-3 py-2 px-6 bg-red-700 rounded-lg drop-shadow-xl shadow-md shadow-slate-300">
 					<h3
 						id={node._key}
 						className="text-xl text-white font-bold ml-4 font-sans"
