@@ -60,7 +60,7 @@ function PortableTextComp() {
 			h2: ({ children, node }: any) => (
 				<h2
 					id={node._key}
-					className="text-2xl xl:3xl pt-3 pb-2 text-red-800 font-bold"
+					className="text-2xl xl:text-3xl pt-3 pb-2 text-red-800 font-bold"
 				>
 					{children}
 				</h2>
