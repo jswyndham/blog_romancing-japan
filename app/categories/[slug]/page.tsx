@@ -107,7 +107,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 												{post.name}
 											</h2>
 										</div>
-										<div className="h-44 md:h-52 lg:h-36 2xl:h-48 3xl:h-32 m-1 text-lg text-left px-2">
+										<div className="h-44 md:h-52 lg:h-48 2xl:h-64 3xl:h-44 m-1 text-lg text-left px-2">
 											<PortableText
 												value={post.summaryShort}
 												onMissingComponent={false}
