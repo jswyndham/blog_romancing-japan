@@ -9,19 +9,16 @@ export const comment = defineType({
 			name: 'name',
 			title: 'Name',
 			type: 'string',
-			readOnly: true,
 		},
 		{
 			name: 'email',
 			title: 'Email',
 			type: 'string',
-			readOnly: true,
 		},
 		{
 			name: 'comment',
 			title: 'Comment',
 			type: 'text',
-			readOnly: true,
 		},
 		{
 			name: 'post',
