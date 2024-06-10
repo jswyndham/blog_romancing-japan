@@ -56,9 +56,11 @@ interface UserEmail extends Base {
 
 interface Comments extends Base {
 	name: string;
-	email: string;
+	email?: string;
 	comment: string;
 	isPinned?: boolean;
+	likes?: boolean;
+	dislikes?: boolean;
 }
 
 type PageProps = {

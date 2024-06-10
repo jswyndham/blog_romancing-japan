@@ -66,8 +66,9 @@ export default function AddComment({ postId }: Props) {
 					<label className="my-1 ml-3 font-semibold">
 						Email{' '}
 						<span className="italic font-normal">
-							(<span className="text-yellow-500">Optional:</span>{' '}
-							Your email will not be published)
+							(<span className="text-red-600">Optional:</span>{' '}
+							Include your email if you would Like to join our
+							mailing list.)
 						</span>
 					</label>
 					<input
