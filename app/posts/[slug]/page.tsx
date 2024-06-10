@@ -201,7 +201,7 @@ export default async function postArticle({
 						{/* ARTICLE BODY */}
 						<div className="container mx-auto">
 							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
-								<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
+								<div className="lg:w-11/12 px-4 py-4 mt-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}

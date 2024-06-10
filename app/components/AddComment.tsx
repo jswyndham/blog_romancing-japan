@@ -36,10 +36,7 @@ export default function AddComment({ postId }: Props) {
 
 	return (
 		<div className="flex justify-center">
-			<div className="flex flex-col w-11/12 mt-12">
-				<h2 className="my-3 ml-4 text-2xl text-red-800 font-bold">
-					Leave a comment <span role="img">💬</span>
-				</h2>
+			<div className="flex flex-col w-11/12 mt-1">
 				<form
 					className="flex flex-col border shadow-md shadow-slate-400 rounded-lg px-6 py-8 mb-10 bg-slate-50"
 					onSubmit={handleSubmit((data) => onSubmit(data))}
