@@ -59,10 +59,6 @@ export default async function sitemap() {
 			url: addTrailingSlash(`${baseUrl}privacyPolicy`), // Privacy Policy page
 			lastModified: new Date().toISOString(),
 		},
-		{
-			url: addTrailingSlash(`${baseUrl}favicon.ico`), // Favicon (trailing slash not necessary here)
-			lastModified: new Date().toISOString(),
-		},
 	];
 
 	return [...staticPages, ...postsUrls, ...categoryUrls, ...tagUrls];
