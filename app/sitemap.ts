@@ -61,5 +61,12 @@ export default async function sitemap() {
 		},
 	];
 
+	console.log('Generated sitemap:', [
+		...staticPages,
+		...postsUrls,
+		...categoryUrls,
+		...tagUrls,
+	]);
+
 	return [...staticPages, ...postsUrls, ...categoryUrls, ...tagUrls];
 }
