@@ -66,7 +66,7 @@ function PortableTextComp() {
 				</h2>
 			),
 			h3: ({ children, node }: any) => (
-				<div className="w-full mb-2 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-sm">
+				<div className="w-full mb-2 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg">
 					<div className="bg-white p-1">
 						<h3
 							id={node._key}
