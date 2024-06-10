@@ -16,7 +16,7 @@ export default async function sitemap() {
 	const postsUrls =
 		posts?.map((post) => {
 			return {
-				url: addTrailingSlash(`${baseUrl}posts/${post.slug}`),
+				url: addTrailingSlash(`${baseUrl}posts/${post.slug}/`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
@@ -26,7 +26,7 @@ export default async function sitemap() {
 	const categoryUrls =
 		categories?.map((category) => {
 			return {
-				url: addTrailingSlash(`${baseUrl}categories/${category.slug}`),
+				url: addTrailingSlash(`${baseUrl}categories/${category.slug}/`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
@@ -36,7 +36,7 @@ export default async function sitemap() {
 	const tagUrls =
 		tags?.map((tag) => {
 			return {
-				url: addTrailingSlash(`${baseUrl}tags/${tag.slug}`),
+				url: addTrailingSlash(`${baseUrl}tags/${tag.slug}/`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
@@ -48,15 +48,15 @@ export default async function sitemap() {
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: addTrailingSlash(`${baseUrl}contact`), // Contact page
+			url: addTrailingSlash(`${baseUrl}contact/`), // Contact page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: addTrailingSlash(`${baseUrl}about`), // About Us page
+			url: addTrailingSlash(`${baseUrl}about/`), // About Us page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: addTrailingSlash(`${baseUrl}privacyPolicy`), // Privacy Policy page
+			url: addTrailingSlash(`${baseUrl}privacyPolicy/`), // Privacy Policy page
 			lastModified: new Date().toISOString(),
 		},
 	];
