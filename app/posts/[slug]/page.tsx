@@ -175,7 +175,7 @@ export default async function postArticle({
 							{/* AUTHOR */}
 							{post.author.map((author, index) => (
 								<div key={`${post._id}-author-${index}`}>
-									<p className="absolute flex items-end align-bottom ml-6 2xl:ml-8 mb-2 text-yellow-400 text-lg md:text-2xl bottom-24 smx:bottom-20 smx:pb-2 md:pb-4">
+									<p className="absolute flex items-end align-bottom ml-6 2xl:ml-8 mb-1 text-yellow-400 text-lg md:text-2xl bottom-24 smx:bottom-20 smx:pb-2 md:pb-4">
 										{author.name}
 									</p>
 								</div>
