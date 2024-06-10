@@ -4,12 +4,13 @@ import { urlFor } from '@/lib/urlFor';
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import PortableTextComp from './PortableTextComponents';
+import { addTrailingSlash } from '../utils/urlUtils';
 
 export default async function ArticleCardOne() {
 	const post = await getLatestPostOne();
 	const components = PortableTextComp();
 	return (
-		<Link key={post._id} href={`/posts/${post.slug}/`}>
+		<Link key={post._id} href={addTrailingSlash(`/posts/${post.slug}`)}>
 			{/* Card with responsive sizes */}
 			<div className="flex flex-col card rounded-none h-fit w-fit mx-2 my-1 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700 hover:drop-shadow hover:bg-gray-50 hover:transition-all duration-300 md:h-[100%] md:w-[100%] md:rounded-md md:bg-gray-200 md:flex-row md:my-4 md:mx-0 lg:card-side 2xl:h-full group">
 				{/* Title only visible in mobile/small window */}
