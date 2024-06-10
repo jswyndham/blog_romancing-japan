@@ -99,7 +99,6 @@ export default async function SideBioSubscriptionLatestArt({
 					</h3>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
-					{/* @ts-expect-error Server Component */}
 					<LatestArticlesMini />
 				</div>
 			</div>

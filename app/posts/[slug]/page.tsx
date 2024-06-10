@@ -20,6 +20,9 @@ import {
 	getObjectPath,
 	parseOutline,
 } from '../../utils/outlineUtils';
+import AddComment from '@/app/components/AddComment';
+import AllComments from '@/app/components/AllComments';
+import { addTrailingSlash } from '@/app/utils/urlUtils';
 
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
@@ -28,14 +31,15 @@ const SignupCardLong = dynamic(
 	}
 );
 
-type Props = {
+type PageProps = {
 	params: { slug: string };
+	searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 // ******** Page Metadata *****************
 export async function generateMetadata({
 	params: { slug },
-}: Props): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
 	const query = groq`*[_type=="post" && slug.current == $slug][0] {
 			...,
 			_id,
@@ -58,6 +62,7 @@ export async function generateMetadata({
 			summary,
 			summaryShort,
 			description,
+			"comments": *[_type == "comment" && post._ref == ^._id]
 	}`;
 
 	const post: Post = await createClient(readClient).fetch(query, { slug });
@@ -87,10 +92,26 @@ export async function generateMetadata({
 	};
 }
 
-export const revalidate = 60; // Time interval
+export const revalidate = 10; // Time interval
 
-export default async function postArticle({ params: { slug } }: Props) {
-	const post = await createArticle({ params: { slug } });
+export default async function postArticle({
+	params: { slug },
+	searchParams,
+}: PageProps) {
+	const commentsOrder = Array.isArray(searchParams?.commentsOrder)
+		? searchParams.commentsOrder[0]
+		: searchParams?.commentsOrder || 'desc';
+	const post = await createArticle({
+		params: { slug },
+		commentsOrder,
+	});
+
+	if (!post) {
+		return <div>Post not found</div>;
+	}
+
+	const postUrl = addTrailingSlash(`/posts/${post.slug}`);
+
 	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
 
@@ -106,7 +127,7 @@ export default async function postArticle({ params: { slug } }: Props) {
 		datePublished: post._createdAt,
 		mainEntityOfPage: {
 			'@type': 'WebPage',
-			'@id': `https://www.romancing-japan.com/posts/${post.slug}/`,
+			'@id': postUrl,
 		},
 	};
 
@@ -114,104 +135,107 @@ export default async function postArticle({ params: { slug } }: Props) {
 		<>
 			<Head>
 				<meta name="robots" content="index, follow" />
-				<link
-					rel="canonical"
-					href={`https://www.romancing-japan.com/posts/${post.slug}/`}
-					key="canonical"
-				/>
+				<link rel="canonical" href={postUrl} key="canonical" />
 			</Head>
 			<section
 				key={post._id}
-				className="flex flex-col items-center justify-center w-fit  xl:items-start xl:flex-row overflow-hidden"
+				className="flex flex-col justify-center items-center w-full"
 			>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
-				<article className="w-fit md:w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] 3xl:w-[40%] flex flex-col justify-center">
-					{/* TOP BOARDER */}
-					<div className="flex flex-col items-center justify-center">
-						<div className="container ">
-							<RedBarDecoration />
-
-							{/* CATEGORIES & TAGS */}
-							<CategoriesAndTags
-								params={{
-									slug: slug,
-								}}
-							/>
-
-							{/* TITLE */}
-							<div className="flex flex-col">
-								<h1 className="mt-2 text-3xl md:text-5xl ml-5 p-1 font-heading font-bold">
-									{post.name}
-								</h1>
-
-								{/* AUTHOR */}
-								{post.author.map((author, index) => (
-									<div key={`${post._id}-author-${index}`}>
-										<p className="ml-8 mt-3 pb-1 text-primary text-lg font-bold">
-											{author.name}
-										</p>
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-
+				<article className="relative w-full">
 					{/* IMAGE */}
-					<div>
-						<figure className="flex flex-col justify-center my-6">
-							<Image
-								src={(await urlFor(post.image)).url()}
-								alt={post.name || 'Romancing Japan'}
-								title={post.caption || 'Romancing Japan'}
-								width={900}
-								height={900}
-								className="w-full shadow-lg shadow-slate-500"
-								priority={true}
-							/>
+					<figure className="relative flex justify-center h-full overflow-hidden">
+						<Image
+							src={(await urlFor(post.image)).url()}
+							alt={post.name || 'Romancing Japan'}
+							title={post.caption || 'Romancing Japan'}
+							width={1440}
+							height={1080}
+							className="w-full 2xl:w-4/5 3xl:w-4/6 maxw-2xl h-full object-cover object-center shadow-lg shadow-slate-500"
+							priority={true}
+						/>
+					</figure>
+					<figcaption className="absolute w-fit right-6 2xl:right-44 3xl:right-1/4 bg-black bg-opacity-20 italic text-white text-right m-2 p-1 top-0 text-sm lg:text-lg rounded-md">
+						{post.caption}
+					</figcaption>
 
-							<figcaption className="italic text-base text-left m-3">
-								{post.caption}
-							</figcaption>
-						</figure>
-					</div>
+					{/* The title div */}
+					<div className="absolute w-full md:w-5/6 max-w-6xl h-64 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
+						<div>
+							{/* TITLE */}
+							<h1 className="absolute mt-2 ml-5 p-2 text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
+								{post.name}
+							</h1>
+						</div>
 
-					<div>
-						<TableOfContents outline={outline} />
-					</div>
-
-					{/* ARTICLE BODY */}
-					<div className="container">
-						<div className="flex flex-col justify-center whitespace-pre-line md:flex-row">
-							<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
-								<PortableText
-									value={post.content}
-									onMissingComponent={false}
-									components={components}
+						<div>
+							{/* AUTHOR */}
+							{post.author.map((author, index) => (
+								<div key={`${post._id}-author-${index}`}>
+									<p className="absolute flex items-end align-bottom ml-6 2xl:ml-8 mb-2 text-yellow-400 text-lg md:text-2xl bottom-24 smx:bottom-20 smx:pb-2 md:pb-4">
+										{author.name}
+									</p>
+								</div>
+							))}
+							{/* CATEGORIES & TAGS */}
+							<div className="absolute bottom-0 m-2">
+								<CategoriesAndTags
+									params={{
+										slug: slug,
+									}}
 								/>
 							</div>
 						</div>
 					</div>
-
-					{/* SUBSCRIBE CARD @ SM - LG */}
-					<div className="w-screen flex items-center justify-start xl:hidden">
-						<SignupCardLong />
-					</div>
-
-					{/* BOTTOM BORDER */}
-					<RedBarDecoration />
 				</article>
 
-				{/* SIDE / BOTTOM SECTION */}
+				<article className="mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+					<div className="flex flex-col items-center w-full">
+						<div className="flex justify-center mt-32 smx:mt-24 md:mt-16 xl:-mt-32">
+							<TableOfContents outline={outline} />
+						</div>
 
-				<article className="flex flex-col xl:max-w-xs md:w-[80%] mt-4 items-start justify-start">
-					<SideBioSubscriptionLatestArt
-						params={{
-							slug: slug,
-						}}
-					/>
+						{/* ARTICLE BODY */}
+						<div className="container mx-auto">
+							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
+								<div className="lg:w-11/12 px-4 py-4 my-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
+									<PortableText
+										value={post.content}
+										onMissingComponent={false}
+										components={components}
+									/>
+								</div>
+							</div>
+						</div>
+						<div className="w-full">
+							<AddComment postId={post?._id} />
+							<AllComments
+								comments={post?.comments || []}
+								slug={post.slug.toString()}
+								commentsOrder={commentsOrder}
+							/>
+						</div>
+
+						{/* SUBSCRIBE CARD @ SM - LG */}
+						<div className="w-screen flex mx-auto items-center justify-center xl:hidden">
+							<SignupCardLong />
+						</div>
+
+						{/* BOTTOM BORDER */}
+						<RedBarDecoration />
+					</div>
+
+					{/* SIDE / BOTTOM SECTION */}
+					<div className="flex flex-col xl:max-w-xs md:w-[80%] mx-3 -mt-40 items-start justify-start xl:sticky xl:top-0">
+						<SideBioSubscriptionLatestArt
+							params={{
+								slug: slug,
+							}}
+						/>
+					</div>
 				</article>
 			</section>
 		</>

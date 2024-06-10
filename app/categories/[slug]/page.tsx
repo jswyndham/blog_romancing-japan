@@ -64,7 +64,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 	return (
 		<section className="flex justify-center h-fit px-8 py-4">
 			{/* Banner */}
-			<div className="absolute top-32 w-screen font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
+			<div className="absolute top-32 w-full font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex flex-row justify-center text-3xl font-bold">
 				<h1 className="flex flex-row">
 					<span className="hidden lg:flex mr-2">
 						Romancing Japan |{' '}

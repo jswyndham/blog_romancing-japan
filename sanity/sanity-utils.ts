@@ -4,6 +4,7 @@ import { readClient } from './config/client-config';
 
 type Props = {
 	params: { slug: string };
+	commentsOrder?: string;
 };
 
 // Medium post cards on home page
@@ -130,25 +131,27 @@ export async function getPostsArchive(): Promise<Post[]> {
 }
 
 // Medium post cards on home page
-export async function getLatestPostMini(): Promise<Post> {
-	return createClient(readClient)
-		.fetch(groq`*[_type == "post"] | order(_createdAt desc){
-  _id,
-  _createdAt,
-  name,
-  "slug": slug.current,
-  "image": image.asset->url,
-  url,
-  content,
-  summary[]{
-    ...,
-  },
-  summaryShort,
-  "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
-  author[]->,
-  category[]->,
-  tag[]->,  
-  }[0..4]`);
+
+export async function getLatestPostMini(): Promise<Post[]> {
+	return createClient(readClient).fetch(groq`
+    *[_type == "post"] | order(_createdAt desc)[0..4] {
+      _id,
+      _createdAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content,
+      summary[]{
+        ...,
+      },
+      summaryShort,
+      "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+      author[]->,
+      category[]->,
+      tag[]->,  
+    }
+  `);
 }
 
 export async function getCategories(): Promise<Category[]> {
@@ -189,8 +192,9 @@ export async function getAuthor(): Promise<Author[]> {
 
 export async function createArticle({
 	params: { slug },
+	commentsOrder = 'desc',
 }: Props): Promise<Post> {
-	const revalidate = 60; //Time interval
+	const revalidate = 20; //Time interval
 	const query = groq`*[_type=="post" && slug.current == $slug][0]
     {
   _id,
@@ -218,6 +222,12 @@ export async function createArticle({
       }
     }
   },
+  "comments": *[_type == "comment" && post._ref == ^._id] | order(_createdAt ${commentsOrder}){
+			name,
+			comment,
+      isPinned,
+			_createdAt,
+		},
   "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
   author[]->,
   category[]->{title, "slug": slug.current,},

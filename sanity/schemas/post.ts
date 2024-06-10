@@ -160,9 +160,6 @@ const post = defineType({
 							type: 'string',
 							title: 'Caption',
 							description: `Text that's displayed with the image`,
-							options: {
-								isHighlighted: true,
-							},
 						},
 					],
 				},

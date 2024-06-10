@@ -10,32 +10,29 @@ async function CategoriesAndTags({ params: { slug } }: Props) {
 	const post = await createArticle({ params: { slug } });
 
 	return (
-		<div className="w-full ml-4 flex flex-col gap-1 items-start justify-start font-bold">
+		<div className="w-full ml-4 flex flex-col gap-1 items-start justify-start">
 			{/* Categories */}
-			<div className="flex flex-col pt-1">
-				<div>
-					<div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
-						{post.category.map((category) => (
-							<div
-								key={category._id}
-								className="mx-3 px-3 pt-1 font-cardHeading text-red-700 text-md"
-							>
-								<Link href={`/categories/${category.slug}`}>
-									{category.title}
-								</Link>
-							</div>
-						))}
+
+			<div className="w-full flex flex-row justify-start items-center align-middle h-8 border-t-2 border-b-2 pt-1 xl:pt-0 border-white">
+				{post.category.map((category) => (
+					<div
+						key={category._id}
+						className="w-full mx-2 px-2 font-cardHeading text-red-500 text-sm md:text-md xl:text-lg tracking-widest"
+					>
+						<Link href={`/categories/${category.slug}`}>
+							{category.title}
+						</Link>
 					</div>
-				</div>
+				))}
 			</div>
 
 			{/* Tags */}
-			<div className="flex flex-col justify-start my-1">
-				<div className="flex flex-row justify-start align-middle w-fit h-8 border-t-2 border-b-2 border-white">
+			<div className="w-full flex flex-col justify-start my-1">
+				<div className="w-full flex flex-row justify-start align-middle h-8 border-t-2 border-b-2 border-white">
 					{post.tag.map((tag) => (
 						<div
 							key={tag._id}
-							className="mx-3 px-3 pt-1 font-catTags text-info text-md"
+							className="w-full mx-2 pt-1 xl:pt-0 font-catTags text-blue-400 text-sm md:text-md xl:text-lg tracking-widest"
 						>
 							<Link href={`/tags/${tag.slug}`}>{tag.title}</Link>
 						</div>

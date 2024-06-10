@@ -1,5 +1,5 @@
 export const TableOfContents = ({ outline }) => (
-	<div className="w-fit py-6 pr-3 mb-8 mx-2 bg-gray-200 rounded-xl border border-gray-400 drop-shadow-xl shadow-xl shadow-slate-300">
+	<div className="w-fit py-6 pr-3 mb-8 mx-2 bg-gray-200 rounded-xl border border-gray-300 drop-shadow-xl shadow-xl shadow-slate-300">
 		<p className="font-bold text-xl text-info underline underline-offset-4 pb-2 pl-12">
 			Table of contents:
 		</p>

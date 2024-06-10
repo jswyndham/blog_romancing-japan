@@ -74,7 +74,7 @@ export default async function Contact() {
 					{JSON.stringify(contactPageJsonLd)}
 				</script>
 			</Head>
-			<div className="absolute top-24 w-screen bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
+			<div className="absolute top-24 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
 				<h1>Contact Us | Romancing Japan</h1>
 			</div>
 			<div className="max-w-screen-md mx-auto p-5">

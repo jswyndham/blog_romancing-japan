@@ -20,7 +20,7 @@ const Navbar = () => {
 	const { isOpen, ref, handleClick } = NavbarHooks();
 	return (
 		<>
-			<header className="relative h-28 bg-black overflow-hidden">
+			<header className="relative h-28 w-full bg-black overflow-hidden">
 				{/* Nav for medium size up */}
 				<nav className="z-50 mt-1 ml-2 smd:mt-1 flex flex-row justify-between align-middle relative">
 					{/* Logo */}

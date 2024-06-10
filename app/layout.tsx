@@ -14,6 +14,7 @@ import {
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
+// Dynamic import for Navbar
 const Navbar = dynamic(() => import('./components/Navbar'), { ssr: false });
 
 // Font settings
@@ -66,7 +67,6 @@ const caveat = Caveat({
 	variable: '--font-caveat',
 });
 
-// METADATA
 export const metadata = {
 	metadataBase: new URL('https://www.romancing-japan.com/'),
 	title: {
@@ -90,6 +90,8 @@ export const metadata = {
 		'Social Japan',
 		'Life in Japan',
 		'Moving to Japan',
+		'Move to Japan',
+		'Cost of Living in Japan',
 	],
 	robots: {
 		index: true,
@@ -110,9 +112,8 @@ export const metadata = {
 	},
 };
 
-export const revalidate = 60; // revalidate every minute
+export const revalidate = 20; // revalidate every minute
 
-// Layout
 export default function RootLayout({
 	children,
 }: {
@@ -132,8 +133,10 @@ export default function RootLayout({
 				/>
 			</Head>
 
-			<body className="bg-base-100">
-				<GoogleAnalytics />
+			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
+				<GoogleAnalytics
+					trackingId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
+				/>
 				<Navbar />
 				<Analytics />
 				{children}
