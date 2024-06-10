@@ -1,62 +1,66 @@
 import { getCategories, getPostsArchive, getTags } from '@/sanity/sanity-utils';
 
-export const revalidate = 50; // revalidate every minute
+// Revalidation interval for the sitemap
+export const revalidate = 50; // Revalidate every minute
+
+// Utility function to add trailing slashes to URLs
+export const addTrailingSlash = (url: string): string => {
+	return url.endsWith('/') ? url : `${url}/`;
+};
 
 export default async function sitemap() {
-
 	const baseUrl = 'https://www.romancing-japan.com/';
 
-
-	// ********** Get all posts from sanity-utils
+	// Get all posts from sanity-utils
 	const posts = await getPostsArchive();
 	const postsUrls =
 		posts?.map((post) => {
 			return {
-				url: `${baseUrl}posts/${post.slug}/`,
+				url: addTrailingSlash(`${baseUrl}posts/${post.slug}`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
 
-	// ******** Get all categories from sanity-utils
+	// Get all categories from sanity-utils
 	const categories = await getCategories();
 	const categoryUrls =
-		categories?.map((categories) => {
+		categories?.map((category) => {
 			return {
-				url: `${baseUrl}categories/${categories.slug}/`,
+				url: addTrailingSlash(`${baseUrl}categories/${category.slug}`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
 
-	// ************ Get tags
+	// Get all tags from sanity-utils
 	const tags = await getTags();
 	const tagUrls =
-		tags?.map((tags) => {
+		tags?.map((tag) => {
 			return {
-				url: `${baseUrl}tags/${tags.slug}/`,
+				url: addTrailingSlash(`${baseUrl}tags/${tag.slug}`),
 				lastModified: new Date().toISOString(),
 			};
 		}) ?? [];
 
-	// ********** Static Pages
+	// Static pages
 	const staticPages = [
 		{
-			url: baseUrl, // Home page
+			url: addTrailingSlash(baseUrl), // Home page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: `${baseUrl}contact/`, // Contact page
+			url: addTrailingSlash(`${baseUrl}contact`), // Contact page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: `${baseUrl}about/`, // About Us page
+			url: addTrailingSlash(`${baseUrl}about`), // About Us page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: `${baseUrl}privacyPolicy/`, // Privacy Policy page
+			url: addTrailingSlash(`${baseUrl}privacyPolicy`), // Privacy Policy page
 			lastModified: new Date().toISOString(),
 		},
 		{
-			url: `${baseUrl}favicon.ico`, // Favicon
+			url: addTrailingSlash(`${baseUrl}favicon.ico`), // Favicon (trailing slash not necessary here)
 			lastModified: new Date().toISOString(),
 		},
 	];
