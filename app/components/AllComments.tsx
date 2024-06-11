@@ -82,6 +82,7 @@ const AllComments = ({
 						</div>
 					</div>
 				)}
+				{/* 
 				{(sortedComments.length > 0 || pinnedComments.length > 0) && (
 					<div className="flex flex-row m-4">
 						<div>
@@ -112,6 +113,7 @@ const AllComments = ({
 						</div>
 					</div>
 				)}
+					*/}
 
 				{sortedComments.map((comment) => (
 					<div

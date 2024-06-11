@@ -79,7 +79,6 @@ export default async function sitemap() {
 			...categoryUrls,
 			...tagUrls,
 		];
-		console.log('Generated sitemap:', sitemap); // Debug output
 
 		return sitemap;
 	} catch (error) {
