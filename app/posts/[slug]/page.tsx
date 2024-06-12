@@ -192,7 +192,7 @@ export default async function postArticle({
 					</div>
 				</article>
 
-				<article className="article-container mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+				<article className="mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
 						<div className="flex justify-center mt-44 smx:mt-24 md:mt-16 xl:-mt-32">
 							<TableOfContents outline={outline} />
