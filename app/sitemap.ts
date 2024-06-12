@@ -14,7 +14,7 @@ export default async function sitemap() {
 	try {
 		// Get all posts from sanity-utils
 		const posts = await getPostsArchive();
-		console.log('Fetched posts:', posts); // Debug output
+
 		const postsUrls =
 			posts
 				?.map((post) => {

@@ -73,7 +73,6 @@ export default function AddComment({ postId }: Props) {
 					</label>
 					<input
 						{...register('email', {
-							required: true,
 							pattern:
 								/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
 						})}

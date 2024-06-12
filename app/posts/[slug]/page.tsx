@@ -163,7 +163,7 @@ export default async function postArticle({
 					</figcaption>
 
 					{/* The title div */}
-					<div className="absolute w-full md:w-5/6 max-w-6xl h-64 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
+					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
 						<div>
 							{/* TITLE */}
 							<h1 className="absolute mt-2 ml-5 p-2 text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
@@ -192,16 +192,16 @@ export default async function postArticle({
 					</div>
 				</article>
 
-				<article className="mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+				<article className="article-container mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
-						<div className="flex justify-center mt-32 smx:mt-24 md:mt-16 xl:-mt-32">
+						<div className="flex justify-center mt-44 smx:mt-24 md:mt-16 xl:-mt-32">
 							<TableOfContents outline={outline} />
 						</div>
 
 						{/* ARTICLE BODY */}
 						<div className="container mx-auto">
 							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
-								<div className="lg:w-11/12 px-4 py-4 mt-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
+								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}
