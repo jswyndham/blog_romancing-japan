@@ -220,7 +220,7 @@ export default async function postArticle({
 						</div>
 
 						{/* SUBSCRIBE CARD @ SM - LG */}
-						<div className="w-screen flex mx-auto items-center justify-center xl:hidden">
+						<div className="w-screen flex items-center justify-center xl:hidden">
 							<SignupCardLong />
 						</div>
 

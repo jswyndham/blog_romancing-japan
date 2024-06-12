@@ -56,8 +56,8 @@ export default async function SideBioSubscriptionLatestArt({
 			>
 				<div className="flex flex-col justify-center px-4">
 					{post.author.map(async (author) => (
-						<div key={author._id} className="relative  mb-3">
-							<figure className="absolute w-80 xl:w-64 m-auto top-10 xl:top-4 left-11 xl:left-3 rounded-xl">
+						<div key={author._id} className="relative mb-3 w-full">
+							<figure className="absolute w-80 xl:w-64 mx-auto top-10 xl:top-4 left-12 right-0 xl:left-0 rounded-xl">
 								<Image
 									src={(await urlFor(author.image)).url()}
 									alt={post.name}

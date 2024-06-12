@@ -7,7 +7,7 @@ const client = createClient(writeClient);
 export async function POST(req: Request) {
 	const data = await req.json();
 	const { name, email, comment, postId } = data;
-	if (!name || !email || !comment || !postId) {
+	if (!name || !comment || !postId) {
 		return NextResponse.json(
 			{ message: 'All fields are required.' },
 			{ status: 400 }
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 		const newComment = await client.create({
 			_type: 'comment',
 			name,
-			email,
+			email: email || '', // Email is optional
 			comment,
 			post: {
 				_type: 'reference',
