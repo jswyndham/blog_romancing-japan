@@ -125,7 +125,7 @@ const AllComments = ({
 								<div className="flex flex-row">
 									{/* User Initial Box */}
 									<div className="absolute flex justify-center w-20 h-20 -left-4 -top-3 border-2 border-slate-500 bg-gradient-radial from-red-700   via-red-500 to-red-300 p-4 rounded-xl">
-										<p className="text-white text-5xl font-semibold -mt-2">
+										<p className="text-white text-5xl font-semibold -mt-1">
 											{comment?.name &&
 												getInitials(comment.name)}
 										</p>
@@ -159,7 +159,7 @@ const AllComments = ({
 								<div className="flex flex-row">
 									{/* User Initial Box */}
 									<div className="absolute flex justify-center w-20 h-20 -left-4 -top-3 border-2 border-red-700 bg-gradient-radial from-white   via-slate-50 to-slate-300 p-4 rounded-xl">
-										<p className="text-red-700 text-5xl font-semibold -mt-2">
+										<p className="text-red-700 text-5xl font-semibold -mt-1">
 											{comment?.name &&
 												getInitials(comment.name)}
 										</p>
