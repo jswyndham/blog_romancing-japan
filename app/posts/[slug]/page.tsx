@@ -163,7 +163,7 @@ export default async function postArticle({
 					</figcaption>
 
 					{/* The title div */}
-					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
+					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-80 4xl:left-96 5xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
 						<div>
 							{/* TITLE */}
 							<h1 className="absolute mt-2 ml-5 p-2 text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
