@@ -52,7 +52,7 @@ export default async function SideBioSubscriptionLatestArt({
 			{/* AUTHOR BIO */}
 			<div
 				key={post._id}
-				className="mt-20 xl:mt-10 xl:border-l-4 xl:border-r-4 border-white"
+				className="mt-20 xl:mt-52 xl:border-l-4 xl:border-r-4 border-white"
 			>
 				<div className="flex flex-col justify-center px-4">
 					{post.author.map(async (author) => (

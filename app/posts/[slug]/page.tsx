@@ -162,8 +162,8 @@ export default async function postArticle({
 						{post.caption}
 					</figcaption>
 
-					{/* The title div */}
-					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 xl:h-80 left-0 md:left-10 2xl:left-44 3xl:left-80 4xl:left-96 5xl:left-1/4 smx:-bottom-56 md:-bottom-3656 xl:bottom-2 bg-black bg-opacity-80 xl:bg-opacity-50 md:rounded-md">
+					{/* The title section */}
+					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 left-0 md:left-10 2xl:left-44 3xl:left-80 4xl:left-96 5xl:left-1/4 smx:-bottom-48 xl:-bottom-44 bg-black bg-opacity-80 xl:bg-opacity-70 md:rounded-md">
 						<div>
 							{/* TITLE */}
 							<h1 className="absolute mt-2 ml-5 p-2 text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
@@ -194,7 +194,7 @@ export default async function postArticle({
 
 				<article className="mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
-						<div className="flex justify-center mt-44 smx:mt-24 md:mt-16 xl:-mt-32">
+						<div className="flex justify-center mt-44 smx:mt-24 md:mt-16 xl:mt-14">
 							<TableOfContents outline={outline} />
 						</div>
 
