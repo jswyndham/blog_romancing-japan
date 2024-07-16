@@ -70,3 +70,22 @@ type PageProps = {
 };
 
 type Props = PageProps;
+
+// Define types for the table data structure
+interface TableCell {
+	_key: string;
+	_type: string;
+	text: string;
+}
+
+interface TableRow {
+	_key: string;
+	_type: string;
+	cells: TableCell[];
+}
+
+interface TableData {
+	_key: string;
+	_type: string;
+	rows: TableRow[];
+}

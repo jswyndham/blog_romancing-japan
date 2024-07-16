@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleCollectionCard from '../components/ArticleCollectionCard';
 
 export const metadata = {

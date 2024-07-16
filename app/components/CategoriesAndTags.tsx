@@ -1,6 +1,5 @@
 import { createArticle } from '@/sanity/sanity-utils';
 import Link from 'next/link';
-import React from 'react';
 
 type Props = {
 	params: { slug: string };

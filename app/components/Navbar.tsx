@@ -10,7 +10,6 @@ import { BsCollection, BsInfoCircle } from 'react-icons/bs';
 import { BiCategory } from 'react-icons/bi';
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
 import dynamic from 'next/dynamic';
 import NavbarMenuLarge from './NavbarMenuLarge';
 import SocialMediaLinks from './SocialMediaLinks';

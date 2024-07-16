@@ -1,4 +1,3 @@
-import React from 'react';
 import { PortableText } from '@portabletext/react';
 import ReactPlayer from 'react-player';
 import { PortableTextTypeComponentProps } from '@portabletext/react';

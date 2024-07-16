@@ -1,11 +1,10 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
 
 function NavbarMenuLarge() {
-  return (
-    <div className="hidden xl:flex smd: flex-col gap-2">
-      {/* NAVBAR MENU */}
-      <ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
+	return (
+		<div className="hidden xl:flex smd: flex-col gap-2">
+			{/* NAVBAR MENU */}
+			<ul className="flex flex-row py-3 lg:space-x-8 xl:space-x-14 2xl:space-x-20 mr-3 mt-6 lg:mr-6 xl:mr-9 2xl:mr-16 font-roboto_condensed text-white text-xl">
 				<li className="nav-menu">
 					<Link href={'/'}>
 						<p>Home</p>
@@ -42,8 +41,8 @@ function NavbarMenuLarge() {
 					</Link>
 				</li>
 			</ul>
-    </div>
-  );
+		</div>
+	);
 }
 
 export default NavbarMenuLarge;

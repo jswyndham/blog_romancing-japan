@@ -1,8 +1,9 @@
 import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import dynamic from 'next/dynamic';
+import { CustomTable, CustomTableRow, CustomTableCell } from './CustomTable';
+import { TableCell, TableData, TableRow } from '@/typings';
 
 const YouTubePreviewDynamic = dynamic(
 	() =>
@@ -40,6 +41,25 @@ function PortableTextComp() {
 				}
 
 				return <YouTubePreviewDynamic url={value.url} />;
+			},
+			table: ({ value }: { value: TableData }) => {
+				return (
+					<CustomTable>
+						<tbody>
+							{value.rows.map((row: TableRow, i: number) => (
+								<CustomTableRow key={i}>
+									{row.cells.map(
+										(cell: TableCell, j: number) => (
+											<CustomTableCell key={j}>
+												{cell.text}
+											</CustomTableCell>
+										)
+									)}
+								</CustomTableRow>
+							))}
+						</tbody>
+					</CustomTable>
+				);
 			},
 		},
 

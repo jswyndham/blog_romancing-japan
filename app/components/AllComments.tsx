@@ -1,7 +1,7 @@
 'use client';
 
 import { Comments as CommentsType } from '@/typings';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { GoPin } from 'react-icons/go';

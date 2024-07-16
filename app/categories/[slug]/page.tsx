@@ -1,6 +1,5 @@
 'use server';
 
-import React from 'react';
 import { createClient, groq } from 'next-sanity';
 import { readClient } from '@/sanity/config/client-config';
 import Image from 'next/image';

@@ -11,6 +11,9 @@ const blockContent = defineType({
 		defineArrayMember({
 			type: 'youtube',
 		}),
+		defineArrayMember({
+			type: 'table',
+		}),
 	],
 });
 
