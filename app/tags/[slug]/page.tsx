@@ -110,9 +110,7 @@ export default async function tagPage({ params: { slug } }: Props) {
 										{/* Card Image */}
 										<figure className="h-40 3xl:h-56 border-b-2 border-red-500">
 											<Image
-												src={(
-													await urlFor(post.image)
-												).url()}
+												src={urlFor(post.image)}
 												width={700}
 												height={650}
 												alt={post.image}

@@ -9,7 +9,7 @@ async function fetchImageUrls(posts: Post[]): Promise<Post[]> {
 	return await Promise.all(
 		posts.map(async (post) => ({
 			...post,
-			imageUrl: (await urlFor(post.image)).url() || '', // Await the urlFor function properly
+			imageUrl: urlFor(post.image) || '', // Await the urlFor function properly
 		}))
 	);
 }

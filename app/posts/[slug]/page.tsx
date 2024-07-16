@@ -77,7 +77,7 @@ export async function generateMetadata({
 			title: post.pageName,
 			description: post.description,
 			type: 'article',
-			images: { url: post.image, width: 600, height: 400 },
+			images: { url: urlFor(post.image), width: 600, height: 400 },
 			siteName: 'Romancing Japan',
 			url: `https://www.romancing-japan.com/posts/${post.slug}/`,
 		},
@@ -87,7 +87,7 @@ export async function generateMetadata({
 			title: post.pageName,
 			description: post.description,
 			creator: '@RomancingJapan',
-			images: { url: post.image, width: 600, height: 400 },
+			images: { url: urlFor(post.image), width: 600, height: 400 },
 		},
 	};
 }
@@ -119,7 +119,7 @@ export default async function postArticle({
 		'@context': 'https://schema.org',
 		'@type': 'Article',
 		headline: post.pageName,
-		image: (await urlFor(post.image)).url(),
+		image: urlFor(post.image),
 		author: post.author.map((author: any) => ({
 			'@type': 'Person',
 			name: author.name,
@@ -149,7 +149,7 @@ export default async function postArticle({
 					{/* IMAGE */}
 					<figure className="relative flex justify-center h-full overflow-hidden">
 						<Image
-							src={(await urlFor(post.image)).url()}
+							src={urlFor(post.image)}
 							alt={post.name || 'Romancing Japan'}
 							title={post.caption || 'Romancing Japan'}
 							width={1440}

@@ -23,7 +23,7 @@ export default async function ArticleCardOne() {
 				{/* Display image */}
 				<figure>
 					<Image
-						src={(await urlFor(post.image)).url()}
+						src={urlFor(post.image)}
 						width={900}
 						height={700}
 						alt={post.name || 'Romancing Japan'}

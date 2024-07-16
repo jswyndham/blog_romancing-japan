@@ -59,7 +59,7 @@ export default async function SideBioSubscriptionLatestArt({
 						<div key={author._id} className="relative mb-3 w-full">
 							<figure className="absolute w-80 xl:w-64 mx-auto top-10 xl:top-4 left-12 right-0 xl:left-0 rounded-xl">
 								<Image
-									src={(await urlFor(author.image)).url()}
+									src={urlFor(author.image)}
 									alt={post.name}
 									width={256}
 									height={180}

@@ -15,13 +15,11 @@ function PortableTextComp() {
 	return {
 		types: {
 			image: async ({ value }: any) => {
+				const imageUrl = urlFor(value);
 				return (
 					<figure className="flex flex-col my-6">
 						<Image
-							src={(await urlFor(value))
-								.fit('max')
-								.auto('format')
-								.url()}
+							src={imageUrl}
 							alt={value.caption || 'Romancing Japan'}
 							title={value.caption || 'Romancing Japan'}
 							width={900}

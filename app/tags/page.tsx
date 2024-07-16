@@ -71,9 +71,7 @@ export default async function TagList() {
 								<div className="w-80 group relative items-center justify-center overflow-hidden rounded-lg shadow-xl shadow-slate-600 mb-4 border-2 border-red-800 md:mb-8 hover:border-0">
 									<figure className="h-56 w-80">
 										<Image
-											src={(
-												await urlFor(tag.image)
-											).url()}
+											src={urlFor(tag.image)}
 											width={220}
 											height={220}
 											alt={tag.image}
