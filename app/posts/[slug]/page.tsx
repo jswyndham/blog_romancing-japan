@@ -129,7 +129,7 @@ export default async function postArticle({
 			'@type': 'WebPage',
 			'@id': postUrl,
 		},
-		url: `https://www.romancing-japan.com${postUrl}/`,
+		url: `https://www.romancing-japan.com${postUrl}`,
 	};
 
 	return (
