@@ -115,6 +115,7 @@ export default async function postArticle({
 	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
 
+	// Rich Results Test
 	const jsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'Article',
