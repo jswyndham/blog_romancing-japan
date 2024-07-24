@@ -118,7 +118,7 @@ export default async function postArticle({
 	const jsonLd = {
 		'@context': 'https://schema.org',
 		'@type': 'Article',
-		headline: post.pageName,
+		headline: post.name,
 		image: urlFor(post.image),
 		author: post.author.map((author: any) => ({
 			'@type': 'Person',
