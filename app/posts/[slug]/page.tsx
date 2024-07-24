@@ -129,6 +129,7 @@ export default async function postArticle({
 			'@type': 'WebPage',
 			'@id': postUrl,
 		},
+		url: postUrl,
 	};
 
 	return (
