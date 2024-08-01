@@ -163,14 +163,13 @@ export default async function about() {
 										years and created Romancing Japan to
 										share my experiences. Originally from
 										Australia, I&apos;ve taught in Japanese
-										schools for more than ten years. During
-										that time I became interest in
-										technology use in Japanese education,
-										which inspired me to write an academic
-										paper on the topic. During this time,
-										I've seen firsthand how modern tools can
-										enhance education and make learning more
-										engaging for students.
+										schools, from junior high to university,
+										for more than 15 years. My experiences
+										in Japanese culture and education in
+										Japanese language go back to the 1990s.
+										I've traveled all across Japan and have
+										deep knowledge and love for Japanese
+										culture and lifestyle.
 									</p>
 									<p className="text-2xl px-2 font-heading text-justify my-6">
 										I&apos;m a full-stack web developer,
