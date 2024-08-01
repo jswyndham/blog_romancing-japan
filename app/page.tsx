@@ -23,14 +23,14 @@ const SignupCardLong = dynamic(
 export const metadata: Metadata = {
 	title: 'Romancing Japan - Travel, Lifestyle, Culture',
 	description:
-		'Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
+		'Informative articles about Japanese travel, lifestyle, and culture. For people to learn more about travel in Japan or tips on living in Japan.',
 	alternates: {
 		canonical: `https://www.romancing-japan.com/`,
 	},
 	openGraph: {
 		title: 'Romancing Japan - Travel, Lifestyle, Culture',
 		description:
-			'Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and what goes on there.',
+			'Informative articles about Japanese travel, lifestyle, and culture. For people to learn more about travel in Japan or tips on living in Japan.',
 		type: 'website',
 		siteName: 'Romancing Japan',
 		url: 'https://www.romancing-japan.com/',

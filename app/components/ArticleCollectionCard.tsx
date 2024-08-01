@@ -35,10 +35,6 @@ const ArticleCollectionCard = () => {
 	// RICH TEXT EDITOR
 	const components = PortableTextComp();
 
-	if (loading) {
-		return <div>Loading...</div>;
-	}
-
 	return (
 		<>
 			{posts.map((post) => (
