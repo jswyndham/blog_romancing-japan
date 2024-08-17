@@ -29,8 +29,6 @@ const PortableTextComp = () => {
 				);
 			},
 			youTube: ({ value }: { value: YouTubeValue }) => {
-				console.log('Rendering YouTube block');
-				console.log('YouTube value:', value);
 				return <YouTubeEmbed url={value.url} />;
 			},
 		},

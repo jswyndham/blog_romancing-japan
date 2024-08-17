@@ -13,9 +13,6 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({ url }) => {
 
 	const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
-	console.log('youTube embed: ', embedUrl);
-	console.log('videoId: ', videoId);
-
 	return (
 		<div className="flex justify-center video-container">
 			<iframe
