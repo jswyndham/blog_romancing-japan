@@ -1,20 +1,16 @@
 import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { CustomTable, CustomTableRow, CustomTableCell } from './CustomTable';
-import { TableCell, TableData, TableRow } from '@/typings';
+import { YouTubeEmbed } from '../components/YouTubeEmbed';
 
-const YouTubePreviewDynamic = dynamic(
-	() =>
-		import('../../sanity/youtubePreview').then((mod) => mod.YouTubePreview),
-	{ ssr: false }
-);
+interface YouTubeValue {
+	url: string;
+}
 
-function PortableTextComp() {
+const PortableTextComp = () => {
 	return {
 		types: {
-			image: async ({ value }: any) => {
+			image: ({ value }: any) => {
 				const imageUrl = urlFor(value);
 				return (
 					<figure className="flex flex-col my-6">
@@ -32,32 +28,10 @@ function PortableTextComp() {
 					</figure>
 				);
 			},
-			youtube: ({ value }: any) => {
-				if (!value || !value.url) {
-					console.error('Missing URL for YouTube video');
-					return null;
-				}
-
-				return <YouTubePreviewDynamic url={value.url} />;
-			},
-			table: ({ value }: { value: TableData }) => {
-				return (
-					<CustomTable>
-						<tbody>
-							{value.rows.map((row: TableRow, i: number) => (
-								<CustomTableRow key={i}>
-									{row.cells.map(
-										(cell: TableCell, j: number) => (
-											<CustomTableCell key={j}>
-												{cell.text}
-											</CustomTableCell>
-										)
-									)}
-								</CustomTableRow>
-							))}
-						</tbody>
-					</CustomTable>
-				);
+			youTube: ({ value }: { value: YouTubeValue }) => {
+				console.log('Rendering YouTube block');
+				console.log('YouTube value:', value);
+				return <YouTubeEmbed url={value.url} />;
 			},
 		},
 
@@ -133,6 +107,6 @@ function PortableTextComp() {
 			},
 		},
 	};
-}
+};
 
 export default PortableTextComp;

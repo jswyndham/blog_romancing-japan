@@ -166,14 +166,10 @@ const post = defineType({
 						},
 					],
 				},
+				{ type: 'table' },
 				{
-					title: 'youtube',
-					type: 'youtube',
-				},
-				{
-					title: 'Table Chart',
-					type: 'reference',
-					to: [{ type: 'product' }],
+					title: 'YouTube Embed',
+					type: 'youTube',
 				},
 			],
 			validation: (Rule) => Rule.required(),

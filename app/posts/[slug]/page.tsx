@@ -112,8 +112,9 @@ export default async function postArticle({
 
 	const postUrl = addTrailingSlash(`/posts/${post.slug}`);
 
-	const components = PortableTextComp();
 	const outline = parseOutline(post.content);
+
+	const component = PortableTextComp();
 
 	// Rich Results Test
 	const jsonLd = {
@@ -207,7 +208,7 @@ export default async function postArticle({
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}
-										components={components}
+										components={component}
 									/>
 								</div>
 							</div>

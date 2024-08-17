@@ -19,7 +19,7 @@ const config = defineConfig({
 		visionTool(),
 		table(),
 	],
-	schema: { types: schemas },
+	schema: { types: [...schemas] },
 });
 
 export default config;

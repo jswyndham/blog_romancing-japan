@@ -1,13 +1,13 @@
-export const CustomTable = ({ children }: any) => (
-	<table className="min-w-full divide-y divide-gray-200">{children}</table>
-);
+import React from 'react';
 
-export const CustomTableRow = ({ children }: any) => (
-	<tr className="bg-white">{children}</tr>
-);
+export const CustomTableRow: React.FC<{ children: React.ReactNode }> = ({
+	children,
+}) => <tr>{children}</tr>;
 
-export const CustomTableCell = ({ children }: any) => (
-	<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-		{children}
-	</td>
-);
+export const CustomTableCell: React.FC<{ children: React.ReactNode }> = ({
+	children,
+}) => <td>{children}</td>;
+
+export const CustomTable: React.FC<{ children: React.ReactNode }> = ({
+	children,
+}) => <table>{children}</table>;

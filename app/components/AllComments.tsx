@@ -42,6 +42,13 @@ const AllComments = ({
 		setLoading(false);
 	}, [searchParams, comments, initialCommentsOrder]);
 
+	useEffect(() => {
+		const idSet = new Set(comments.map((comment) => comment?._id));
+		if (idSet.size !== comments.length) {
+			console.warn('Duplicate _id values found in comments array');
+		}
+	}, [comments]);
+
 	const ensureTrailingSlash = (url: string) =>
 		url.endsWith('/') ? url : `${url}/`;
 

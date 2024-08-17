@@ -9,10 +9,7 @@ const blockContent = defineType({
 			type: 'block',
 		}),
 		defineArrayMember({
-			type: 'youtube',
-		}),
-		defineArrayMember({
-			type: 'table',
+			type: 'youTube',
 		}),
 	],
 });
