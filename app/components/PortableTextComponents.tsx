@@ -2,6 +2,7 @@ import { urlFor } from '@/lib/urlFor';
 import Image from 'next/image';
 import Link from 'next/link';
 import { YouTubeEmbed } from '../components/YouTubeEmbed';
+import TableComponent from '../components/TableComponent'; // Ensure correct path
 
 interface YouTubeValue {
 	url: string;
@@ -30,6 +31,9 @@ const PortableTextComp = () => {
 			},
 			youTube: ({ value }: { value: YouTubeValue }) => {
 				return <YouTubeEmbed url={value.url} />;
+			},
+			table: ({ value }: any) => {
+				return <TableComponent value={value} />;
 			},
 		},
 

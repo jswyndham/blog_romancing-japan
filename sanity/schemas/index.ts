@@ -9,6 +9,7 @@ import userSignup from './userEmail';
 import blockContent from './blockContent';
 import { comment } from './comment';
 import { youTubeType } from './youtube';
+import tableSchema from './tableSchema';
 
 const schemas = [
 	post,
@@ -17,6 +18,7 @@ const schemas = [
 	author,
 	siteSettings,
 	userSignup,
+	tableSchema,
 	youTubeType,
 	blockContent,
 	comment,
