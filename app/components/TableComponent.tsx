@@ -5,7 +5,7 @@ const TableComponent = ({ value }: any) => {
 	}
 
 	return (
-		<table className="table-auto border-collapse w-full my-4 border-2 border-slate-400">
+		<table className="table-auto border-collapse w-full textarea-md my-4 border-2 border-slate-400">
 			<thead>
 				<tr>
 					{value.columns ? (
