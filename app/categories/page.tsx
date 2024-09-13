@@ -26,6 +26,10 @@ export default async function CategoryList() {
 	return (
 		<>
 			<Head>
+				<meta
+					name="google-adsense-account"
+					content="ca-pub-1847015508086202"
+				/>
 				{/* Google Ads Sense */}
 				<script
 					async

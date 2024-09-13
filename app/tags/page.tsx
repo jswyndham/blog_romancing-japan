@@ -49,6 +49,11 @@ export default async function TagList() {
 					{JSON.stringify(tagsListJsonLd)}
 				</script>
 
+				<meta
+					name="google-adsense-account"
+					content="ca-pub-1847015508086202"
+				/>
+
 				{/* Google Ads Sense */}
 				<script
 					async

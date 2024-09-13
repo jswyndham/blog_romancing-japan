@@ -139,6 +139,10 @@ export default async function postArticle({
 			<Head>
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href={postUrl} key="canonical" />
+				<meta
+					name="google-adsense-account"
+					content="ca-pub-1847015508086202"
+				/>
 
 				{/* Google Ads Sense */}
 				<script
