@@ -134,6 +134,22 @@ export default function RootLayout({
 			</Head>
 
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossOrigin="anonymous"
+				></script>
+				{/* <!-- Ad Horizontal --> */}
+				<ins
+					className="adsbygoogle ad-container"
+					data-ad-client="ca-pub-1847015508086202"
+					data-ad-slot="7454156713"
+					data-ad-format="auto"
+					data-full-width-responsive="true"
+				></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
 				<GoogleAnalytics
 					trackingId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
 				/>

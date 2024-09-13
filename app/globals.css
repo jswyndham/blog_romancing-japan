@@ -176,3 +176,8 @@ img {
 	opacity: 0;
 	pointer-events: none;
 }
+
+/* Google Ad Sense in Body */
+.ad-container {
+	display: block;
+}
