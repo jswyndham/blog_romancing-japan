@@ -81,6 +81,13 @@ export default async function Home() {
 					name="description"
 					content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
 				/>
+
+				{/* Google Ad Sense */}
+				<meta
+					name="google-adsense-account"
+					content="ca-pub-1847015508086202"
+				/>
+
 				<link rel="canonical" href="https://www.romancing-japan.com/" />
 
 				{/* AdSense script */}

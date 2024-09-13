@@ -2,6 +2,7 @@ import { getCategories } from '@/sanity/sanity-utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/lib/urlFor';
+import Head from 'next/head';
 
 export const metadata = {
 	title: 'Romancing Japan Article Categories',
@@ -24,6 +25,14 @@ export default async function CategoryList() {
 
 	return (
 		<>
+			<Head>
+				{/* Google Ads Sense */}
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossOrigin="anonymous"
+				></script>
+			</Head>
 			<section className="z-0 flex flex-col items-center justify-center overflow-hidden">
 				{/* TOP IMAGE */}
 				<figure className="mt-16 lg:mt-8 xl:mt-0">

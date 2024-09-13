@@ -139,6 +139,13 @@ export default async function postArticle({
 			<Head>
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href={postUrl} key="canonical" />
+
+				{/* Google Ads Sense */}
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossOrigin="anonymous"
+				></script>
 			</Head>
 			<section
 				key={post._id}
