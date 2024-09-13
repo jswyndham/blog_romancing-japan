@@ -82,6 +82,11 @@ export default async function Home() {
 					content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
 				/>
 				<link rel="canonical" href="https://www.romancing-japan.com/" />
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossOrigin="anonymous"
+				></script>
 			</Head>
 			<script
 				type="application/ld+json"
