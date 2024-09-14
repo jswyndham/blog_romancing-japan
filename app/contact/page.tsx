@@ -77,7 +77,7 @@ export default async function Contact() {
 				<script
 					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossorigin="anonymous"
+					crossOrigin="anonymous"
 				></script>
 			</Head>
 			<div className="absolute top-24 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">

@@ -72,7 +72,7 @@ export default async function categoryPage({ params: { slug } }: Props) {
 				<script
 					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossorigin="anonymous"
+					crossOrigin="anonymous"
 				></script>
 			</Head>
 			<section className="flex justify-center h-fit px-8 py-4">
