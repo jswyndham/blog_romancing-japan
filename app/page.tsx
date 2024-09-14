@@ -94,7 +94,7 @@ export default async function Home() {
 				<script
 					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossOrigin="anonymous"
+					crossorigin="anonymous"
 				></script>
 
 				{/* Ad blocking recovery script */}

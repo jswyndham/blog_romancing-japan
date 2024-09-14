@@ -1,4 +1,5 @@
 import ArticleCollectionCard from '../components/ArticleCollectionCard';
+import Head from 'next/head';
 
 export const metadata = {
 	title: 'Article Collection',
@@ -19,6 +20,21 @@ export const metadata = {
 export default function page() {
 	return (
 		<>
+			<Head>
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href={postUrl} key="canonical" />
+				<meta
+					name="google-adsense-account"
+					content="ca-pub-1847015508086202"
+				/>
+
+				{/* Google Ads Sense */}
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossorigin="anonymous"
+				></script>
+			</Head>
 			<section className="flex justify-center px-8 py-4">
 				{/* Banner */}
 				<div className="absolute top-32 w-full font-roboto-condensed text-white bg-slate-700 p-4 -ml-5 flex justify-center text-3xl font-bold">

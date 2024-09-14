@@ -73,6 +73,12 @@ export default async function Contact() {
 				<script type="application/ld+json">
 					{JSON.stringify(contactPageJsonLd)}
 				</script>
+				{/* Google Ads Sense */}
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+					crossorigin="anonymous"
+				></script>
 			</Head>
 			<div className="absolute top-24 w-full bg-slate-700 p-4 flex justify-center text-white text-3xl font-bold">
 				<h1>Contact Us | Romancing Japan</h1>
