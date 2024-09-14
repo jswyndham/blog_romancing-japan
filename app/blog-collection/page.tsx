@@ -21,8 +21,6 @@ export default function page() {
 	return (
 		<>
 			<Head>
-				<meta name="robots" content="index, follow" />
-				<link rel="canonical" href={postUrl} key="canonical" />
 				<meta
 					name="google-adsense-account"
 					content="ca-pub-1847015508086202"
