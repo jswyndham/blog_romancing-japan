@@ -64,15 +64,18 @@ export default async function Contact() {
 				<title>Contact Page | Romancing Japan</title>
 				<meta
 					name="description"
-					content="If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website."
+					content="If you want to know more about Romancing Japan, please contact us with any questions about services or articles from our website. If you are unable to get in touch with us using the contact form, please email us at contact@romancing-japan.com"
 				/>
 				<link
 					rel="canonical"
 					href="https://www.romancing-japan.com/contact/"
 				/>
-				<script type="application/ld+json">
-					{JSON.stringify(contactPageJsonLd)}
-				</script>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(contactPageJsonLd),
+					}}
+				/>
 				{/* Google Ads Sense */}
 				<script
 					async
@@ -85,11 +88,21 @@ export default async function Contact() {
 			</div>
 			<div className="max-w-screen-md mx-auto p-5">
 				{/* Heading Text */}
-				<div className="flex text-center items-center justify-center mt-20 mb-16">
+				<div className="flex flex-col text-center items-center justify-center mt-20 mb-16">
 					<h2 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
 						Get In Touch with <br />
 						<span className="text-red-700">Romancing Japan</span>
 					</h2>
+					<p className="py-8 px-3 md:p-8 font-semibold text-md lg:text-lg">
+						If you want to know more about Romancing Japan, please
+						contact us with any questions about services or articles
+						from our website. If you are unable to get in touch with
+						us using the contact form, please email us at
+						<span className="text-blue-700">
+							{' '}
+							contact@romancing-japan.com
+						</span>
+					</p>
 				</div>
 
 				{/* CONTACT FORM */}

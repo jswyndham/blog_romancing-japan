@@ -56,7 +56,7 @@ const ContactForm = () => {
 				setTimeout(() => {
 					setMessageSuccess((messageSuccess) => !messageSuccess);
 				}, 7000);
-
+				console.log('Server response status:', res.status);
 				// If error, trigger alert, clear after 5 secs, and retain text in input fields
 			} else {
 				setMessageError(!messageError);
