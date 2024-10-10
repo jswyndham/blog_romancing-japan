@@ -131,7 +131,7 @@ export default function RootLayout({
 					href="favicon.ico"
 					type="image/x-icon"
 				/>
-				{/* FaceBook verification */}
+				{/* FaceBook verification 2*/}
 				<meta
 					name="facebook-domain-verification"
 					content="j3hoqq9m2dclmb7l7yvtcu08ptvlsn"
