@@ -75,37 +75,42 @@ export default async function Home() {
 
 	return (
 		<article className="flex flex-col items-center justify-center overflow-hidden">
-			<Head>
-				<title>Romancing Japan - Travel, Lifestyle, Culture</title>
-				<meta
-					name="description"
-					content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
-				/>
+			<>
+				<Head>
+					<title>Romancing Japan - Travel, Lifestyle, Culture</title>
+					<meta
+						name="description"
+						content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
+					/>
 
-				{/* FaceBook verification */}
-				<meta
-					name="facebook-domain-verification"
-					content="j3hoqq9m2dclmb7l7yvtcu08ptvlsn"
-				/>
+					{/* FaceBook verification */}
+					<meta
+						name="facebook-domain-verification"
+						content="j3hoqq9m2dclmb7l7yvtcu08ptvlsn"
+					/>
 
-				{/* Google Ad Sense */}
-				<meta
-					name="google-adsense-account"
-					content="ca-pub-1847015508086202"
-				/>
+					{/* Google Ad Sense */}
+					<meta
+						name="google-adsense-account"
+						content="ca-pub-1847015508086202"
+					/>
 
-				<link rel="canonical" href="https://www.romancing-japan.com/" />
+					<link
+						rel="canonical"
+						href="https://www.romancing-japan.com/"
+					/>
 
-				{/* AdSense script */}
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossOrigin="anonymous"
-				></script>
+					{/* AdSense script */}
+					<script
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+						crossOrigin="anonymous"
+					></script>
 
-				{/* Ad blocking recovery script */}
-				{/* <script async src="https://fundingchoicesmessages.google.com/i/pub-1847015508086202?ers=1" nonce="5IbBrxSgQg_4lIm8beuMHw"></script><script nonce="5IbBrxSgQg_4lIm8beuMHw">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> */}
-			</Head>
+					{/* Ad blocking recovery script */}
+					{/* <script async src="https://fundingchoicesmessages.google.com/i/pub-1847015508086202?ers=1" nonce="5IbBrxSgQg_4lIm8beuMHw"></script><script nonce="5IbBrxSgQg_4lIm8beuMHw">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> */}
+				</Head>
+			</>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: jsonLdString }}
