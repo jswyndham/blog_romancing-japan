@@ -72,6 +72,8 @@ const post = defineType({
 						{ title: 'H5', value: 'h5' },
 						{ title: 'H6', value: 'h6' },
 						{ title: 'Quote', value: 'blockquote' },
+						{ title: 'Tip', value: 'tip' }, // Custom tip style
+						{ title: 'Highlight', value: 'highlight' }, // Custom highlight style
 					],
 					// Only allow numbered lists
 					lists: [

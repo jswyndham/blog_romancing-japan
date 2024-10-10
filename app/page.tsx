@@ -82,6 +82,12 @@ export default async function Home() {
 					content="Informative Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture."
 				/>
 
+				{/* FaceBook verification */}
+				<meta
+					name="facebook-domain-verification"
+					content="j3hoqq9m2dclmb7l7yvtcu08ptvlsn"
+				/>
+
 				{/* Google Ad Sense */}
 				<meta
 					name="google-adsense-account"

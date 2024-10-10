@@ -85,6 +85,20 @@ const PortableTextComp = () => {
 					{children}
 				</blockquote>
 			),
+
+			// Custom "Tip" Block
+			tip: ({ children }: any) => (
+				<div className="p-4 my-4 bg-yellow-100 border-l-4 border-yellow-500">
+					<strong>Tip:</strong> {children}
+				</div>
+			),
+
+			// Custom "Highlighted Quote" Block
+			highlight: ({ children }: any) => (
+				<blockquote className="p-4 my-4 bg-green-100 border-l-4 border-green-500 italic">
+					{children}
+				</blockquote>
+			),
 		},
 
 		marks: {
