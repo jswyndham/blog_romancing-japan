@@ -1,5 +1,6 @@
 'use client';
 
+import { motion, AnimatePresence } from 'framer-motion';
 import {
 	AiOutlineHome,
 	AiOutlineTags,
@@ -14,6 +15,25 @@ import dynamic from 'next/dynamic';
 import NavbarMenuLarge from './NavbarMenuLarge';
 import SocialMediaLinks from './SocialMediaLinks';
 import NavbarHooks from '../hooks/NavbarHooks';
+
+const slideVariants = {
+	open: {
+		x: 0,
+		transition: {
+			type: 'spring',
+			stiffness: 120,
+			damping: 15,
+		},
+	},
+	closed: {
+		x: '100%',
+		transition: {
+			type: 'spring',
+			stiffness: 120,
+			damping: 20,
+		},
+	},
+};
 
 const Navbar = () => {
 	const { isOpen, ref, handleClick } = NavbarHooks();
@@ -41,7 +61,19 @@ const Navbar = () => {
 
 					{/* SIDEBAR MENU */}
 					{/* Hamburger button */}
-					<div className="absolute right-0 top-0 mt-5 mx-2 xl:hidden">
+					<motion.div
+						className="absolute right-0 top-0 mt-5 mr-6 bg-red-600 w-14 h-14 flex items-center justify-center 2xl:hidden"
+						initial={{ borderRadius: '4px' }}
+						whileHover={{
+							borderRadius: '50%',
+							scale: 1.1,
+						}}
+						transition={{
+							type: 'spring',
+							stiffness: 200,
+							damping: 15,
+						}}
+					>
 						<button onClick={handleClick} aria-label="Menu button">
 							<Image
 								src="/images/hamburger-menu-50.png"
@@ -52,118 +84,147 @@ const Navbar = () => {
 								loading="lazy"
 							/>
 						</button>
-					</div>
+					</motion.div>
 				</nav>
 
 				{/* SLIDE MENU */}
-				<nav
-					ref={ref}
-					className={`${
-						!isOpen
-							? 'translate-x-full z-50 fixed right-0 top-0 transition ease-in-out duration-300'
-							: 'translate-x-0 z-50 w-72 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl transition ease-in-out duration-300'
-					}`}
-				>
-					<div className="h-screen pt-14 px-3 bg-gray-800">
-						<button
-							onClick={handleClick}
-							aria-label="Menu button"
-							className="nav-close"
+				<AnimatePresence>
+					{isOpen && (
+						<motion.nav
+							ref={ref}
+							className="z-50 w-72 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl h-screen pt-14 px-3 bg-gray-800"
+							initial="closed"
+							animate="open"
+							exit="closed"
+							variants={slideVariants}
 						>
-							<AiOutlineCloseSquare />
-						</button>
-						<ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
-							<li className="nav-list before:-ml-12 hover:before:w-5/12">
-								<Link onClick={handleClick} href={'/'}>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<AiOutlineHome />
-										</div>
-										<div>
-											<p>Home</p>
-										</div>
-									</div>
-								</Link>
-							</li>
-
-							<li className="nav-list hover:before:w-8/12 before:-ml-4">
-								<Link
+							<div className="h-screen pt-14 px-3 bg-gray-800">
+								<button
 									onClick={handleClick}
-									href={'/blog-collection'}
+									aria-label="Menu button"
+									className="nav-close"
 								>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<BsCollection />
-										</div>
-										<div>
-											<p>Blog Collection</p>
-										</div>
-									</div>
-								</Link>
-							</li>
+									<AiOutlineCloseSquare />
+								</button>
+								<ul className="flex flex-col py-3 font-roboto_condensed text-white text-xl text-left">
+									<li className="nav-list before:-ml-12 hover:before:w-5/12">
+										<Link onClick={handleClick} href={'/'}>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<AiOutlineHome />
+												</div>
+												<div>
+													<p>Home</p>
+												</div>
+											</div>
+										</Link>
+									</li>
 
-							<li className="nav-list hover:before:w-9/12 before:-ml-1">
-								<Link
-									onClick={handleClick}
-									href={'/categories'}
-								>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<BiCategory />
-										</div>
-										<div>
-											<p>Article Categories</p>
-										</div>
-									</div>
-								</Link>
-							</li>
+									<li className="nav-list before:-ml-4 hover:before:w-8/12">
+										<Link
+											onClick={handleClick}
+											href={'/tour-booking'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<AiOutlineHome />
+												</div>
+												<div>
+													<p>Kyoto Tour Bookings</p>
+												</div>
+											</div>
+										</Link>
+									</li>
 
-							<li className="nav-list hover:before:w-7/12 before:-ml-6">
-								<Link onClick={handleClick} href={'/tags'}>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<AiOutlineTags />
-										</div>
-										<div>
-											<p>Article Tags</p>
-										</div>
-									</div>
-								</Link>
-							</li>
+									<li className="nav-list hover:before:w-9/12 before:-ml-2">
+										<Link
+											onClick={handleClick}
+											href={'/blog-collection'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<BsCollection />
+												</div>
+												<div>
+													<p>Blog Collection</p>
+												</div>
+											</div>
+										</Link>
+									</li>
 
-							<li className="nav-list hover:before:w-6/12 before:-ml-9">
-								<Link onClick={handleClick} href={'/contact'}>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<AiOutlineMail />
-										</div>
-										<div>
-											<p>Contact</p>
-										</div>
-									</div>
-								</Link>
-							</li>
+									<li className="nav-list hover:before:w-10/12 before:ml-1">
+										<Link
+											onClick={handleClick}
+											href={'/categories'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<BiCategory />
+												</div>
+												<div>
+													<p>Article Categories</p>
+												</div>
+											</div>
+										</Link>
+									</li>
 
-							<li className="nav-list hover:before:w-6/12 before:-ml-9">
-								<Link onClick={handleClick} href={'/about'}>
-									<div className="flex flex-row">
-										<div className="mt-1 pl-2 pr-8">
-											<BsInfoCircle />
-										</div>
-										<div>
-											<p>About us</p>
-										</div>
-									</div>
-								</Link>
-							</li>
+									<li className="nav-list hover:before:w-7/12 before:-ml-6">
+										<Link
+											onClick={handleClick}
+											href={'/tags'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<AiOutlineTags />
+												</div>
+												<div>
+													<p>Article Tags</p>
+												</div>
+											</div>
+										</Link>
+									</li>
 
-							{/* FOLLOW US (SM LINKS)*/}
-							<li className="flex flex-col items-left justify-center pl-8 pb-1 my-3 2xl:pb-4">
-								<SocialMediaLinks />
-							</li>
-						</ul>
-					</div>
-				</nav>
+									<li className="nav-list hover:before:w-6/12 before:-ml-9">
+										<Link
+											onClick={handleClick}
+											href={'/contact'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<AiOutlineMail />
+												</div>
+												<div>
+													<p>Contact</p>
+												</div>
+											</div>
+										</Link>
+									</li>
+
+									<li className="nav-list hover:before:w-6/12 before:-ml-9">
+										<Link
+											onClick={handleClick}
+											href={'/about'}
+										>
+											<div className="flex flex-row">
+												<div className="mt-1 pl-2 pr-8">
+													<BsInfoCircle />
+												</div>
+												<div>
+													<p>About us</p>
+												</div>
+											</div>
+										</Link>
+									</li>
+
+									{/* FOLLOW US (SM LINKS)*/}
+									<li className="flex flex-col items-left justify-center pl-8 pb-1 my-3 2xl:pb-4">
+										<SocialMediaLinks />
+									</li>
+								</ul>
+							</div>
+						</motion.nav>
+					)}
+				</AnimatePresence>
 			</header>
 		</>
 	);
