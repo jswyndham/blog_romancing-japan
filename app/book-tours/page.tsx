@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
+import Image from 'next/image';
 
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
@@ -50,18 +51,99 @@ export default function BookTourPage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Script src="/iframe-resize.js" strategy="lazyOnload" />
-			<section className="flex flex-col items-center justify-center w-full bg-gray-100 py-10">
-				<div className="w-full max-w-5xl px-4 md:px-8">
-					<h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
-						Book a Walking Tour
-					</h1>
-					<p className="text-lg md:text-xl text-center mb-12">
-						Join James Saunders-Wyndham, the founder of Romancing
-						Japan, for an unforgettable guided tour around the
-						historic and scenic locations of Kyoto. Book your slot
-						now!
-					</p>
-					<div className="relative bg-white shadow-lg rounded-md p-6">
+			<section className="relative z-0 flex flex-col items-center justify-center w-full bg-kiyomizudearPath bg-cover bg-center py-10">
+				<div className="absolute inset-0 z-0 bg-gray-100 opacity-80"></div>
+				<div className="z-20 w-full max-w-5xl px-4 md:px-8">
+					<div className="mt-5 border-y-2 border-red-600 p-2">
+						<h1 className="flex text-center md:p-2 text-4xl md:text-5xl font-ubuntu font-bold text-black">
+							Book a Kyoto Walking Tour with Romancing Japan
+						</h1>
+					</div>
+
+					<div className="flex flex-col md:flex-row items-center bg-white bg-opacity-80 p-4 my-10 md:my-15 shadow-xl shadow-slate-500">
+						<div className="border-2 border-secondary drop-shadow-lg shadow-md shadow-slate-500">
+							<Image
+								src="/images/james-profile.jpg"
+								width={250}
+								height={500}
+								alt="James Saunders-Wyndham"
+								className="w-48 h-60 md:w-96 md:h-60 object-cover"
+								loading="lazy"
+							/>
+						</div>
+						<div className="flex flex-col">
+							<div className="my-5 md:m-10">
+								<h2 className="mb-2 text-3xl md:text-4xl font-bold text-primary">
+									Take a Tour with a Trusted Kyoto Local
+								</h2>
+								<h3 className="my-3 text-xl md:text-2xl font-bold text-slate-700">
+									Join James, a long-time resident of Kyoto
+								</h3>
+								<div className="border-l-2 border-secondary pl-6">
+									<p className="text-lg md:text-xl lg:text-2xl text-left text-black font-roboto_condensed">
+										I'm the founder and content creator of
+										Romancing Japan. I love living in Kyoto.
+										And I want to share that people who come
+										to visit this wonderful city. Come and
+										join me for an unforgettable guided tour
+										around the historic and scenic locations
+										of Kyoto.
+									</p>
+								</div>
+							</div>
+							<div className="mx-14">
+								<p>Book your slot now!</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="bg-red-600 bg-opacity-40 px-8 py-5 shadow-xl shadow-slate-500">
+						<div className="grid grid-rows-1 smx:grid-cols-2 md:grid-cols-3 gap-6">
+							<Image
+								src="/images/kenninji.jpg"
+								width={2480}
+								height={1654}
+								alt="Kenninji Temple in Kyoto"
+								className="border-2 border-black"
+								loading="lazy"
+							/>
+							<Image
+								src="/images/kiyomizudera.jpg"
+								width={2000}
+								height={1333}
+								alt="Kiyomizu Temple in Kyoto"
+								className="border-2 border-black"
+								loading="lazy"
+							/>
+							<Image
+								src="/images/sanjyusangendo.jpg"
+								width={880}
+								height={470}
+								alt="Sanjyusangendo Temple in Kyoto"
+								className="border-2 border-black"
+								loading="lazy"
+							/>
+						</div>
+						<div className="flex flex-col md:flex-row items-center my-5">
+							<div className="my-4 p-2">
+								<h2 className="text-4xl font-bold text-white">
+									Tour Description
+								</h2>
+							</div>
+							<div className="border-l-2 border-white pl-6 m-8">
+								<p className="text-lg font-semibold">
+									Lorem ipsum dolor, sit amet consectetur
+									adipisicing elit. Accusantium expedita,
+									labore recusandae nam explicabo tempore
+									dolor ut. Porro excepturi rem qui, maxime
+									distinctio, inventore nisi voluptatibus
+									facere nesciunt dicta quaerat.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="relative bg-white shadow-lg rounded-md p-6 my-20">
 						{/* Embed the Appointy Widget */}
 						<iframe
 							id="appointy-iframe"
