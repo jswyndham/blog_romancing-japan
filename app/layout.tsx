@@ -74,7 +74,7 @@ export const metadata = {
 		template: `%s`,
 	},
 	icons: {
-		icon: 'favicon.ico',
+		icon: '/favicon.ico',
 	},
 	description:
 		'Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
@@ -125,10 +125,10 @@ export default function RootLayout({
 			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable}`}
 		>
 			<Head>
-				<link rel="icon" href="favicon.ico" type="image/x-icon" />
+				<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 				<link
 					rel="shortcut icon"
-					href="favicon.ico"
+					href="/favicon.ico"
 					type="image/x-icon"
 				/>
 				{/* FaceBook verification 2*/}
@@ -139,13 +139,13 @@ export default function RootLayout({
 			</Head>
 
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
-				<script
+				{/* <script
 					async
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
 					crossOrigin="anonymous"
-				></script>
+				></script> */}
 				{/* <!-- Ad Horizontal --> */}
-				<ins
+				{/* <ins
 					className="adsbygoogle ad-container"
 					data-ad-client="ca-pub-1847015508086202"
 					data-ad-slot="7454156713"
@@ -154,7 +154,7 @@ export default function RootLayout({
 				></ins>
 				<script>
 					(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				</script> */}
 				<GoogleAnalytics
 					trackingId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
 				/>

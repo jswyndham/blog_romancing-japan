@@ -181,3 +181,10 @@ img {
 .ad-container {
 	display: block;
 }
+
+/* booking iframe styles.css */
+.iframe-widget {
+	width: 100%;
+	height: 600px;
+	border: none;
+}

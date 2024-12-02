@@ -7,6 +7,7 @@ import {
 	AiOutlineMail,
 	AiOutlineCloseSquare,
 } from 'react-icons/ai';
+import { IoCalendarOutline } from 'react-icons/io5';
 import { BsCollection, BsInfoCircle } from 'react-icons/bs';
 import { BiCategory } from 'react-icons/bi';
 import Link from 'next/link';
@@ -62,7 +63,7 @@ const Navbar = () => {
 					{/* SIDEBAR MENU */}
 					{/* Hamburger button */}
 					<motion.div
-						className="absolute right-0 top-0 mt-5 mr-6 bg-red-600 w-14 h-14 flex items-center justify-center 2xl:hidden"
+						className="absolute right-0 top-0 mt-5 mr-6 bg-red-600 w-14 h-14 flex items-center justify-center 2xl:hidden hover:bg-red-700 active:bg-red-500"
 						initial={{ borderRadius: '4px' }}
 						whileHover={{
 							borderRadius: '50%',
@@ -80,7 +81,7 @@ const Navbar = () => {
 								width={50}
 								height={50}
 								alt="hamburger menu logo"
-								className="z-50 btn-ghost btn-square btn p-2"
+								className="z-50 btn-ghost btn-square btn p-2 hover:bg-red-700 hover:rounded-full active:bg-red-500"
 								loading="lazy"
 							/>
 						</button>
@@ -92,7 +93,7 @@ const Navbar = () => {
 					{isOpen && (
 						<motion.nav
 							ref={ref}
-							className="z-50 w-72 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl h-screen pt-14 px-3 bg-gray-800"
+							className="z-50 w-80 fixed right-0 top-0 shadow-2xl shadow-black drop-shadow-xl h-screen pt-14 px-3 bg-gray-800"
 							initial="closed"
 							animate="open"
 							exit="closed"
@@ -120,14 +121,14 @@ const Navbar = () => {
 										</Link>
 									</li>
 
-									<li className="nav-list before:-ml-4 hover:before:w-8/12">
+									<li className="nav-list before:ml-2 hover:before:w-10/12">
 										<Link
 											onClick={handleClick}
-											href={'/tour-booking'}
+											href={'/book-tours'}
 										>
 											<div className="flex flex-row">
 												<div className="mt-1 pl-2 pr-8">
-													<AiOutlineHome />
+													<IoCalendarOutline />
 												</div>
 												<div>
 													<p>Kyoto Tour Bookings</p>
@@ -136,7 +137,7 @@ const Navbar = () => {
 										</Link>
 									</li>
 
-									<li className="nav-list hover:before:w-9/12 before:-ml-2">
+									<li className="nav-list hover:before:w-8/12 before:-ml-4">
 										<Link
 											onClick={handleClick}
 											href={'/blog-collection'}
@@ -152,7 +153,7 @@ const Navbar = () => {
 										</Link>
 									</li>
 
-									<li className="nav-list hover:before:w-10/12 before:ml-1">
+									<li className="nav-list hover:before:w-9/12 before:-ml-1">
 										<Link
 											onClick={handleClick}
 											href={'/categories'}

@@ -12,8 +12,8 @@ function NavbarMenuLarge() {
 				</li>
 
 				<li className="nav-menu">
-					<Link href={'/tour-booking'}>
-						<p>Kyoto Tour</p>
+					<Link href={'/book-tours'}>
+						<p>Kyoto Tour Booking</p>
 					</Link>
 				</li>
 
