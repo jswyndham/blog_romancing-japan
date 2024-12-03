@@ -27,6 +27,7 @@ module.exports = {
 				carter_one: ['var(--font-carter_one)'],
 				caveat: ['var(--font-caveat)'],
 				ubuntu: ['Ubuntu Sans', 'sans-serif'],
+				montserrat: ['var(--font-montserrat)'],
 			},
 			transitionDuration: {
 				2000: '2000ms',

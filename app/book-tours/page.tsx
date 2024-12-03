@@ -72,32 +72,45 @@ export default function BookTourPage() {
 							/>
 						</div>
 						<div className="flex flex-col">
-							<div className="my-5 md:m-10">
-								<h2 className="mb-2 text-3xl md:text-4xl font-bold text-primary">
-									Take a Tour with a Trusted Kyoto Local
-								</h2>
-								<h3 className="my-3 text-xl md:text-2xl font-bold text-slate-700">
-									Join James, a long-time resident of Kyoto
-								</h3>
+							<div className="my-5 md:my-5 md:mx-10">
+								<div className="mb-8">
+									<h2 className="mb-2 text-3xl md:text-3xl font-extrabold font-montserrat text-primary">
+										Take a Tour with a Trusted Kyoto Local
+									</h2>
+									<div className="bg-slate-700 rounded-md drop-shadow-md shadow-md shadow-slate-400">
+										<h3 className="my-3 py-1 px-3 text-xl md:text-2xl font-bold text-white">
+											Join James, a long-time resident of
+											Kyoto
+										</h3>
+									</div>
+								</div>
+
 								<div className="border-l-2 border-secondary pl-6">
 									<p className="text-lg md:text-xl lg:text-2xl text-left text-black font-roboto_condensed">
 										I'm the founder and content creator of
-										Romancing Japan. I love living in Kyoto.
-										And I want to share that people who come
-										to visit this wonderful city. Come and
-										join me for an unforgettable guided tour
-										around the historic and scenic locations
-										of Kyoto.
+										Romancing Japan. I've lived in Kyoto for
+										over 20 years and I want to share that
+										people who come to visit this wonderful
+										city.
+									</p>
+								</div>
+								<div>
+									<p className="mt-4 text-lg md:text-xl lg:text-2xl text-left text-slate-700 font-ubuntu">
+										Come and join me for an unforgettable
+										guided tour around the historic and
+										scenic locations of Kyoto.
 									</p>
 								</div>
 							</div>
-							<div className="mx-14">
-								<p>Book your slot now!</p>
+							<div className="flex justify-end m-7">
+								<p className="text-xl text-orange-600 font-bold">
+									Book your tour with James, now!
+								</p>
 							</div>
 						</div>
 					</div>
 
-					<div className="bg-red-600 bg-opacity-40 px-8 py-5 shadow-xl shadow-slate-500">
+					<div className="bg-slate-600 bg-opacity-10 p-3 shadow-xl shadow-slate-500">
 						<div className="grid grid-rows-1 smx:grid-cols-2 md:grid-cols-3 gap-6">
 							<Image
 								src="/images/kenninji.jpg"
@@ -108,7 +121,7 @@ export default function BookTourPage() {
 								loading="lazy"
 							/>
 							<Image
-								src="/images/kiyomizudera.jpg"
+								src="/images/kiyomizu-temple.jpg"
 								width={2000}
 								height={1333}
 								alt="Kiyomizu Temple in Kyoto"
@@ -116,15 +129,15 @@ export default function BookTourPage() {
 								loading="lazy"
 							/>
 							<Image
-								src="/images/sanjyusangendo.jpg"
-								width={880}
-								height={470}
-								alt="Sanjyusangendo Temple in Kyoto"
+								src="/images/fushimi-innari-taisha-gates-1.jpg"
+								width={2000}
+								height={1333}
+								alt="Fushimi Inari Taisha Shrine in Kyoto"
 								className="border-2 border-black"
 								loading="lazy"
 							/>
 						</div>
-						<div className="flex flex-col md:flex-row items-center my-5">
+						<div className="flex flex-col md:flex-row items-center px-2 mt-5 bg-blue-700 bg-opacity-50">
 							<div className="my-4 p-2">
 								<h2 className="text-4xl font-bold text-white">
 									Tour Description
