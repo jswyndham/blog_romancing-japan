@@ -72,7 +72,7 @@ const PortableTextComp = () => {
 				</div>
 			),
 			h4: ({ children }: any) => (
-				<h4 className="text-xl pt-3 pb-2 ml-3 font-bold border-b-red-500">
+				<h4 className="text-xl text-red-600 pt-3 pb-2 ml-3 font-bold border-b-red-500">
 					{children}
 				</h4>
 			),
