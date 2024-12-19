@@ -15,7 +15,7 @@ export default async function ArticleCardOne() {
 			<div className="flex flex-col card rounded-none h-fit w-fit mx-2 my-1 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700 hover:drop-shadow hover:bg-gray-50 hover:transition-all duration-300 md:h-[100%] md:w-[100%] md:rounded-md md:bg-gray-200 md:flex-row md:my-4 md:mx-0 lg:card-side 2xl:h-full group">
 				{/* Title only visible in mobile/small window */}
 				<div className="h-9/12 ml-2 my-4 border-l-4 border-red-700 md:hidden">
-					<h2 className="font-heading text-3xl p-3 text-black font-bold md:hidden">
+					<h2 className="font-heading text-2xl p-3 text-black font-bold md:hidden">
 						{post.name}
 					</h2>
 				</div>
