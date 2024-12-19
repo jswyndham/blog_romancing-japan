@@ -12,7 +12,7 @@ export default async function ArticleCardTwo() {
 		<Link key={post._id} href={`/posts/${post.slug}/`}>
 			<div className="h-full w-full flex flex-col card rounded-none my-4 hover:shadow-lg md:hover:shadow-xl md:hover:shadow-slate-700  hover:drop-shadow  hover:bg-gray-50 hover:transition-all duration-300 group md:bg-gray-200 md:h-full md:w-full md:my-2 md:ml-0 md:mr-3 md:mb-3 md:card-side md:rounded-md">
 				<div className="h-9/12 ml-4 my-4 border-l-4 border-red-700 md:hidden">
-					<h2 className="font-heading text-3xl lg:text-4xl p-3 text-black font-bold">
+					<h2 className="font-heading text-2xl lg:text-4xl p-3 text-black font-bold">
 						{post.name}
 					</h2>
 				</div>
