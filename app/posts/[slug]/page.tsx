@@ -180,7 +180,7 @@ export default async function postArticle({
 					<div className="absolute w-full md:w-5/6 max-w-6xl h-80 md:h-96 left-0 md:left-10 2xl:left-44 3xl:left-80 4xl:left-96 5xl:left-1/4 smx:-bottom-48 xl:-bottom-44 bg-black bg-opacity-80 xl:bg-opacity-70 md:rounded-md">
 						<div>
 							{/* TITLE */}
-							<h1 className="absolute mt-2 ml-5 p-2 text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
+							<h1 className="absolute mt-2 ml-5 p-2 text-3xl smx:text-4xl md:text-6xl 2xl:text-7xl font-heading font-bold text-white">
 								{post.name}
 							</h1>
 						</div>
@@ -188,7 +188,7 @@ export default async function postArticle({
 						<div>
 							{/* AUTHOR */}
 							{post.author.map((author, index) => (
-								<div key={`${post._id}-author-${index}`} className="pt-44 smx-pt-0">
+								<div key={`${post._id}-author-${index}`}>
 									<p className="absolute flex items-end align-bottom ml-6 2xl:ml-8 mb-1 text-yellow-400 text-lg md:text-2xl bottom-24 smx:bottom-20 smx:pb-2 md:pb-4">
 										{author.name}
 									</p>
