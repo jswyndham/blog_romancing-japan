@@ -52,15 +52,17 @@ const PortableTextComp = () => {
 				<h1 className="text-4xl py-7 font-bold">{children}</h1>
 			),
 			h2: ({ children, node }: any) => (
-				<h2
-					id={node._key}
-					className="text-2xl xl:text-3xl pt-3 pb-2 text-red-800 font-bold"
-				>
-					{children}
-				</h2>
+				<div className="w-full border-red-300 border-b-2 mb-4">
+					<h2
+						id={node._key}
+						className="text-2xl lg:text-3xl pt-3 pb-2 text-red-800 font-bold"
+					>
+						{children}
+					</h2>
+				</div>
 			),
 			h3: ({ children, node }: any) => (
-				<div className="w-full mb-2 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg">
+				<div className="w-full mb-4 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-400">
 					<div className="bg-white p-1">
 						<h3
 							id={node._key}

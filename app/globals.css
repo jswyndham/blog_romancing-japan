@@ -188,3 +188,12 @@ img {
 	height: 900px;
 	border: none;
 }
+
+/* Google Ads */
+.adsbygoogle {
+	display: block;
+}
+.ad-container {
+	width: 100%;
+	max-width: 100%;
+}

@@ -15,17 +15,13 @@ const ContactForm = () => {
 	// State boolean to trigger send alerts - success or error
 	const [messageSuccess, setMessageSuccess] = useState<boolean>(false);
 	const [messageError, setMessageError] = useState<boolean>(false);
-
-	const [inputValue, setInputValue] = useState({
-		firstName: '',
-		lastName: '',
-		email: '',
-		subject: '',
-		message: '',
-	});
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setLoading(true);
+		setMessageSuccess(false);
+		setMessageError(false);
 
 		const data = {
 			firstName: firstNameRef.current?.value,
@@ -35,36 +31,41 @@ const ContactForm = () => {
 			message: messageRef.current?.value,
 		};
 
-		await fetch('api/contact', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json, text/plain',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		}).then((res) => {
-			// If success, trigger alert, clear input fields, and clear alert after 5 secs.
+		console.log('Form Data:', data);
+
+		try {
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			const result = await res.json();
+			console.log('Response:', result);
+
 			if (res.status === 200) {
-				setMessageSuccess(!messageSuccess);
-				setInputValue({
-					firstName: '',
-					lastName: '',
-					email: '',
-					subject: '',
-					message: '',
-				});
-				setTimeout(() => {
-					setMessageSuccess((messageSuccess) => !messageSuccess);
-				}, 7000);
-				console.log('Server response status:', res.status);
-				// If error, trigger alert, clear after 5 secs, and retain text in input fields
+				setMessageSuccess(true);
+				clearInputs();
 			} else {
-				setMessageError(!messageError);
-				setTimeout(() => {
-					setMessageError((messageError) => !messageError);
-				}, 5000);
+				setMessageError(true);
+				console.error('Error:', result.message);
 			}
-		});
+		} catch (error) {
+			console.error('Fetch Error:', error);
+			setMessageError(true);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	const clearInputs = () => {
+		if (firstNameRef.current) firstNameRef.current.value = '';
+		if (lastNameRef.current) lastNameRef.current.value = '';
+		if (emailRef.current) emailRef.current.value = '';
+		if (subjectRef.current) subjectRef.current.value = '';
+		if (messageRef.current) messageRef.current.value = '';
 	};
 
 	return (
@@ -90,13 +91,6 @@ const ContactForm = () => {
 							minLength={2}
 							maxLength={20}
 							ref={firstNameRef}
-							value={inputValue.firstName}
-							onChange={(e: any) =>
-								setInputValue({
-									...inputValue,
-									firstName: e.target.value,
-								})
-							}
 						/>
 					</div>
 
@@ -118,13 +112,6 @@ const ContactForm = () => {
 							minLength={2}
 							maxLength={20}
 							ref={lastNameRef}
-							value={inputValue.lastName}
-							onChange={(e: any) =>
-								setInputValue({
-									...inputValue,
-									lastName: e.target.value,
-								})
-							}
 						/>
 					</div>
 				</div>
@@ -146,13 +133,6 @@ const ContactForm = () => {
 							placeholder="********@*****.**"
 							required
 							ref={emailRef}
-							value={inputValue.email}
-							onChange={(e: any) =>
-								setInputValue({
-									...inputValue,
-									email: e.target.value,
-								})
-							}
 						/>
 					</div>
 				</div>
@@ -175,13 +155,6 @@ const ContactForm = () => {
 						minLength={2}
 						maxLength={50}
 						ref={subjectRef}
-						value={inputValue.subject}
-						onChange={(e: any) =>
-							setInputValue({
-								...inputValue,
-								subject: e.target.value,
-							})
-						}
 					/>
 				</div>
 
@@ -202,13 +175,6 @@ const ContactForm = () => {
 							required
 							name="message"
 							ref={messageRef}
-							value={inputValue.message}
-							onChange={(e: any) =>
-								setInputValue({
-									...inputValue,
-									message: e.target.value,
-								})
-							}
 						></textarea>
 					</div>
 

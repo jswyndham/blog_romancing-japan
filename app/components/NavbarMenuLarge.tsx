@@ -11,11 +11,11 @@ function NavbarMenuLarge() {
 					</Link>
 				</li>
 
-				<li className="nav-menu">
+				{/* <li className="nav-menu">
 					<Link href={'/book-tours'}>
 						<p>Kyoto Tour Booking</p>
 					</Link>
-				</li>
+				</li> */}
 
 				<li className="nav-menu">
 					<Link href={'/blog-collection'}>

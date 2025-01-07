@@ -1,4 +1,4 @@
-import { Post, Category, Author } from '../typings';
+import { Post, Category, Author, AboutUs } from '../typings';
 import { createClient, groq } from 'next-sanity';
 import { readClient } from './config/client-config';
 
@@ -206,22 +206,67 @@ export async function createArticle({
   "caption": image.caption,
   url,
   content[]{
+  ...,
+  _type == 'image' => {
     ...,
-    _type == 'image' => {
-      ...,
-      caption, 
-      asset->,
-    },
-    
-    markDefs[]{
-      ...,
-      _type == "internalLink" => {
-        "reference": @.reference->{
-          "slug": slug.current
-        }
+    caption, 
+    asset->,
+  },
+  markDefs[]{
+    ...,
+    _type == "internalLink" => {
+      "reference": @.reference->{
+        "slug": slug.current
       }
     }
+  }
+},
+content2[]{
+  ...,
+  _type == 'image' => {
+    ...,
+    caption, 
+    asset->,
   },
+  markDefs[]{
+    ...,
+    _type == "internalLink" => {
+      "reference": @.reference->{
+        "slug": slug.current
+      }
+    }
+  }
+},
+      affiliateBanners[]->{
+        _id,
+        title,
+        description,
+        "imageUrl": image.asset->url,
+        altText,
+        link
+      },
+      affiliateMiddleBanners[]->{
+    _id,
+    title,
+		description,
+    "imageUrl": image.asset->url,
+    altText,
+    link
+  },
+   affiliateMobileBanners[]->{
+  _id,
+  title,
+  description,
+  "imageUrl": image.asset->url,
+  altText,
+  link
+},
+      faqs[]->{
+        _id,
+        question,
+        answer
+      },
+
   "comments": *[_type == "comment" && post._ref == ^._id] | order(_createdAt ${commentsOrder}){
 			name,
 			comment,
@@ -235,4 +280,37 @@ export async function createArticle({
   }`;
 
 	return await createClient(readClient).fetch(query, { slug, revalidate });
+}
+
+// Fetch the About Us Page
+export async function getAboutPage(): Promise<AboutUs> {
+	return createClient(readClient).fetch(
+		groq`
+      *[_type == "aboutUs"][0] {
+        _id,
+        _createdAt,
+        title,
+        "slug": slug.current,
+        content[]{
+          ...,
+          _type == 'image' => {
+            "url": asset->url,
+            caption,
+            altText
+          },
+          markDefs[]{
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug.current
+            }
+          }
+        },
+        images[]{
+          "url": asset->url,
+          altText,
+          caption
+        }
+      }
+    `
+	);
 }

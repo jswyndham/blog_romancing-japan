@@ -33,13 +33,6 @@ export default function Head() {
 				content="ca-pub-1847015508086202"
 			/>
 
-			{/* Google AdSense script */}
-			{/* <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-        crossOrigin="anonymous"
-      ></script> */}
-
 			{/* JSON-LD structured data */}
 			<script
 				type="application/ld+json"

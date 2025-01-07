@@ -121,7 +121,7 @@ const Navbar = () => {
 										</Link>
 									</li>
 
-									<li className="nav-list before:ml-2 hover:before:w-10/12">
+									{/* <li className="nav-list before:ml-2 hover:before:w-10/12">
 										<Link
 											onClick={handleClick}
 											href={'/book-tours'}
@@ -135,7 +135,7 @@ const Navbar = () => {
 												</div>
 											</div>
 										</Link>
-									</li>
+									</li> */}
 
 									<li className="nav-list hover:before:w-8/12 before:-ml-4">
 										<Link

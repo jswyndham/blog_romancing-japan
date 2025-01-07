@@ -1,60 +1,63 @@
+import { google } from 'googleapis';
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
 	try {
-		// Parse the incoming request body
-		const body = await req.json();
+		const { firstName, lastName, email, subject, message } =
+			await req.json();
 
-		// Log the request body for debugging
-		console.log('Received data:', body);
+		// OAuth2 Credentials
+		const oAuth2Client = new google.auth.OAuth2( // Use google.auth.OAuth2 here
+			process.env.GOOGLE_CLIENT_ID,
+			process.env.GOOGLE_CLIENT_SECRET,
+			process.env.GOOGLE_REDIRECT_URI
+		);
 
-		// Configure nodemailer transporter
+		// Set refresh token
+		oAuth2Client.setCredentials({
+			refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
+		});
+
+		// Get Access Token
+		const accessToken = await oAuth2Client.getAccessToken();
+
+		// Setup Nodemailer
 		const transporter = nodemailer.createTransport({
-			host: 'smtp.gmail.com',
-			port: 465,
-			secure: true, // Use SSL
+			service: 'gmail',
 			auth: {
-				user: process.env.USER,
-				pass: process.env.PASS,
+				type: 'OAuth2',
+				user: process.env.GMAIL_USER,
+				clientId: process.env.GOOGLE_CLIENT_ID,
+				clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+				refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+				accessToken: accessToken.token,
+			},
+			tls: {
+				rejectUnauthorized: false, // Disable SSL verification
 			},
 		});
 
-		// Create the email options
-		const mail = {
-			from: body.email,
-			to: process.env.USER, // Replace with your receiving email address
-			replyTo: body.email,
-			subject: `Message from Romancing Japan - ${body.subject}`,
-			text: `${body.message} sent from ${body.firstName} ${body.lastName}`,
-			html: `
-        <div>
-          <p><strong>Name:</strong> ${body.firstName} ${body.lastName}</p>
-          <p><strong>Email:</strong> ${body.email}</p>
-          <p><strong>Subject:</strong> ${body.subject}</p>
-          <p><strong>Message:</strong> ${body.message}</p>
-        </div>
-      `,
+		// Email content
+		const mailOptions = {
+			from: email,
+			to: process.env.GMAIL_USER,
+			subject: `${email} , SUBJECT: ${subject}`,
+			text: `Message from ${firstName} ${lastName}: ${message}`,
 		};
 
-		// Send the email
-		const info = await transporter.sendMail(mail);
+		// Send email
+		const result = await transporter.sendMail(mailOptions);
+		console.log('Email sent:', result);
 
-		// Log email sending details for debugging
-		console.log('Email sent: ', info.messageId);
-
-		// Return success response with status 200
-		return NextResponse.json(
-			{ message: 'Email sent successfully!' },
-			{ status: 200 }
-		);
+		return NextResponse.json({
+			success: true,
+			message: 'Email sent successfully!',
+		});
 	} catch (error) {
-		// Log the error for debugging
 		console.error('Error sending email:', error);
-
-		// Return error response with status 500
 		return NextResponse.json(
-			{ message: 'Could not send email.', error: error.message },
+			{ success: false, error: error.message },
 			{ status: 500 }
 		);
 	}
