@@ -129,13 +129,33 @@ interface AffiliateBannerMobile {
 	link: string;
 }
 
-interface AboutUs extends Base {
-	title: string;
-	slug: Slug;
-	content: PortableTextBlock[];
-	images: {
-		url: string; // <-- Add this for the image URL
+export interface AboutUs extends Base {
+	_id: string;
+	_createdAt: string;
+
+	content: PortableTextBlock[]; // Primary content section
+	content2: PortableTextBlock[]; // Secondary content section
+	content3: PortableTextBlock[]; // Third content section
+	content4: PortableTextBlock[]; // Fourth content section
+
+	// Primary Image
+	image: {
+		url: string;
 		altText: string;
 		caption: string;
-	}[];
+	};
+
+	// Secondary Image
+	image2: {
+		url: string;
+		altText: string;
+		caption: string;
+	};
+
+	// Third Image
+	image3: {
+		url: string;
+		altText: string;
+		caption: string;
+	};
 }

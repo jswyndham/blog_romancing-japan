@@ -289,8 +289,8 @@ export async function getAboutPage(): Promise<AboutUs> {
       *[_type == "aboutUs"][0] {
         _id,
         _createdAt,
-        title,
-        "slug": slug.current,
+
+        // Primary Content Section
         content[]{
           ...,
           _type == 'image' => {
@@ -305,10 +305,74 @@ export async function getAboutPage(): Promise<AboutUs> {
             }
           }
         },
-        images[]{
-          "url": asset->url,
-          altText,
-          caption
+
+        // Second Content Section
+        content2[]{
+          ...,
+          _type == 'image' => {
+            "url": asset->url,
+            caption,
+            altText
+          },
+          markDefs[]{
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug.current
+            }
+          }
+        },
+
+        // Third Content Section
+        content3[]{
+          ...,
+          _type == 'image' => {
+            "url": asset->url,
+            caption,
+            altText
+          },
+          markDefs[]{
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug.current
+            }
+          }
+        },
+
+        // Fourth Content Section
+        content4[]{
+          ...,
+          _type == 'image' => {
+            "url": asset->url,
+            caption,
+            altText
+          },
+          markDefs[]{
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug.current
+            }
+          }
+        },
+
+        // Primary Image
+        "image": {
+          "url": image.asset->url,
+          "altText": image.alt,
+          "caption": image.caption
+        },
+
+        // Secondary Image
+        "image2": {
+          "url": image2.asset->url,
+          "altText": image2.alt,
+          "caption": image2.caption
+        },
+
+        // Third Image
+        "image3": {
+          "url": image3.asset->url,
+          "altText": image3.alt,
+          "caption": image3.caption
         }
       }
     `
