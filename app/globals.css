@@ -181,3 +181,19 @@ img {
 .ad-container {
 	display: block;
 }
+
+/* booking iframe styles.css */
+.iframe-widget {
+	width: 100%;
+	height: 900px;
+	border: none;
+}
+
+/* Google Ads */
+.adsbygoogle {
+	display: block;
+}
+.ad-container {
+	width: 100%;
+	max-width: 100%;
+}

@@ -17,12 +17,17 @@ interface Post extends Base {
 	image: string;
 	url: string;
 	content: PortableTextBlock[];
+	content2: PortableTextBlock[];
 	summary: PortableTextBlock[];
 	summaryShort: PortableTextBlock[];
 	excerpt: string;
 	description: string;
 	comments?: Array<Comments>;
-	imageUrl?: string; // Add this line
+	imageUrl?: string;
+	faqs: FAQs[];
+	affiliateBanners: AffiliateLink[];
+	affiliateMiddleBanners: AffiliateLinkMiddle[];
+	affiliateMobileBanners: AffiliateBannerMobile[];
 }
 
 interface Author {
@@ -88,4 +93,69 @@ interface TableData {
 	_key: string;
 	_type: string;
 	rows: TableRow[];
+}
+
+interface FAQs {
+	_id: string;
+	question: string;
+	answer: string;
+}
+
+// Define the data structure for affiliate links
+interface AffiliateBanners {
+	_id: string;
+	title: string;
+	description: string;
+	imageUrl: string;
+	altText: string;
+	link: string;
+}
+
+interface AffiliateMiddleBanners {
+	_id: string;
+	title: string;
+	description: string;
+	imageUrl: string;
+	altText: string;
+	link: string;
+}
+
+interface AffiliateBannerMobile {
+	_id: string;
+	title: string;
+	description: string;
+	imageUrl: string;
+	altText: string;
+	link: string;
+}
+
+export interface AboutUs extends Base {
+	_id: string;
+	_createdAt: string;
+
+	content: PortableTextBlock[]; // Primary content section
+	content2: PortableTextBlock[]; // Secondary content section
+	content3: PortableTextBlock[]; // Third content section
+	content4: PortableTextBlock[]; // Fourth content section
+
+	// Primary Image
+	image: {
+		url: string;
+		altText: string;
+		caption: string;
+	};
+
+	// Secondary Image
+	image2: {
+		url: string;
+		altText: string;
+		caption: string;
+	};
+
+	// Third Image
+	image3: {
+		url: string;
+		altText: string;
+		caption: string;
+	};
 }

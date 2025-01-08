@@ -11,6 +11,7 @@ module.exports = {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				kiyomizudearPath: "url('/images/kiyomizudera-path.jpg')",
 			},
 			fontFamily: {
 				sans: ['ui-sans-serif', 'system-ui'],
@@ -26,6 +27,7 @@ module.exports = {
 				carter_one: ['var(--font-carter_one)'],
 				caveat: ['var(--font-caveat)'],
 				ubuntu: ['Ubuntu Sans', 'sans-serif'],
+				montserrat: ['var(--font-montserrat)'],
 			},
 			transitionDuration: {
 				2000: '2000ms',

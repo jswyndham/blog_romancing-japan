@@ -3,7 +3,6 @@ import React from 'react';
 import { Post } from '@/typings';
 import { readClient } from '@/sanity/config/client-config';
 import PortableTextComp from './PortableTextComponents';
-import LatestArticlesMini from '@/app/components/LatestArticlesMini';
 import SignupCardShort from '@/app/components/SignupCardShort';
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
@@ -50,11 +49,8 @@ export default async function SideBioSubscriptionLatestArt({
 	return (
 		<>
 			{/* AUTHOR BIO */}
-			<div
-				key={post._id}
-				className="mt-20 xl:mt-52 xl:border-l-4 xl:border-r-4 border-white"
-			>
-				<div className="flex flex-col justify-center px-4">
+			<article key={post._id} className="mt-20 xl:mt-52">
+				<div className="flex flex-col justify-center">
 					{post.author.map(async (author) => (
 						<div key={author._id} className="relative mb-3 w-full">
 							<figure className="absolute w-80 xl:w-64 mx-auto top-10 xl:top-4 left-12 right-0 xl:left-0 rounded-xl">
@@ -84,24 +80,12 @@ export default async function SideBioSubscriptionLatestArt({
 						</div>
 					))}
 				</div>
-			</div>
+			</article>
 
 			{/* SUBSCRIBE CARD @ XL */}
-			<div className="hidden w-full xl:flex items-center justify-start">
+			{/* <div className="hidden w-full xl:flex items-center justify-start">
 				<SignupCardShort />
-			</div>
-
-			{/* SIDE MENU LATEST ARTICLES */}
-			<div className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
-				<div className="ml-6 xl:mt-4">
-					<h3 className="text-4xl font-playfair_display font-bold">
-						Latest Posts
-					</h3>
-				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
-					<LatestArticlesMini />
-				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }

@@ -1,6 +1,5 @@
 import { createClient, groq } from 'next-sanity';
 import Image from 'next/image';
-import Head from 'next/head';
 import { Post } from '../../../typings';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '@/lib/urlFor';
@@ -11,8 +10,10 @@ import { TableOfContents } from '@/app/components/TableOfContents';
 import SideBioSubscriptionLatestArt from '@/app/components/SideBioSubscriptionLatestArt';
 import { createArticle } from '@/sanity/sanity-utils';
 import dynamic from 'next/dynamic';
+import LatestArticlesMini from '@/app/components/LatestArticlesMini';
 import CategoriesAndTags from '@/app/components/CategoriesAndTags';
 import RedBarDecoration from '@/app/components/RedBarDecoration';
+import AdSenseUnit from '@/app/components/AdSenseUnit';
 import {
 	filter,
 	findHeadings,
@@ -23,6 +24,10 @@ import {
 import AddComment from '@/app/components/AddComment';
 import AllComments from '@/app/components/AllComments';
 import { addTrailingSlash } from '@/app/utils/urlUtils';
+import FaqSchema from '@/app/components/FaqSchema';
+import AffiliateBannerSidebar from '@/app/components/AffiliateBannerSidebar';
+import AffiliateMiddleBanner from '@/app/components/AffiliateBannerMiddle';
+import AffiliateBannersMobile from '@/app/components/AffiliateBannerMobile';
 
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
@@ -41,28 +46,64 @@ export async function generateMetadata({
 	params: { slug },
 }: PageProps): Promise<Metadata> {
 	const query = groq`*[_type=="post" && slug.current == $slug][0] {
+		...,
+		_id,
+		_createdAt,
+		name,
+		pageName,
+		"slug": slug.current,
+		"image": image.asset->url,
+		url,
+		content[]{
 			...,
+			_type == "image" => {
+				...,
+				asset->
+			}
+		},
+		content2[]{
+			...,
+			_type == "image" => {
+				...,
+				asset->
+			}
+		},
+		faqs[]->{
 			_id,
-			_createdAt,
-			name,
-			pageName,
-			"slug": slug.current,
-			"image": image.asset->url,
-			url,
-			content[]{
-					...,
-					_type == "image" => {
-							...,
-							asset->
-					}
-			},
-			author[]->,
-			category[]->{title, "slug": slug.current,},
-			tag[]->{title, "slug": slug.current,},
-			summary,
-			summaryShort,
+			question,
+			answer
+		},
+		affiliateBanners[]->{
+			_id,
+			title,
 			description,
-			"comments": *[_type == "comment" && post._ref == ^._id]
+			"imageUrl": image.asset->url,
+			altText,
+			link
+		},
+		affiliateMiddleBanners[]->{
+			_id,
+			title,
+			description,
+			"imageUrl": image.asset->url,
+			altText,
+			link
+		},
+		 affiliateMobileBanners[]->{
+  _id,
+  title,
+  description,
+  "imageUrl": image.asset->url,
+  altText,
+  link
+},
+		author[]->,
+		category[]->{title, "slug": slug.current,},
+		tag[]->{title, "slug": slug.current,},
+		summary,
+		summaryShort,
+		description,
+		"comments": *[_type == "comment" && post._ref == ^._id]
 	}`;
 
 	const post: Post = await createClient(readClient).fetch(query, { slug });
@@ -89,10 +130,17 @@ export async function generateMetadata({
 			creator: '@RomancingJapan',
 			images: { url: urlFor(post.image), width: 600, height: 400 },
 		},
+		robots: {
+			index: true,
+			follow: true,
+		},
+		other: {
+			'google-adsense-account': 'ca-pub-1847015508086202',
+		},
 	};
 }
 
-export const revalidate = 10; // Time interval
+export const revalidate = 0; // Time interval
 
 export default async function postArticle({
 	params: { slug },
@@ -136,21 +184,6 @@ export default async function postArticle({
 
 	return (
 		<>
-			<Head>
-				<meta name="robots" content="index, follow" />
-				<link rel="canonical" href={postUrl} key="canonical" />
-				<meta
-					name="google-adsense-account"
-					content="ca-pub-1847015508086202"
-				/>
-
-				{/* Google Ads Sense */}
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossOrigin="anonymous"
-				></script>
-			</Head>
 			<section
 				key={post._id}
 				className="flex flex-col justify-center items-center w-full"
@@ -206,16 +239,23 @@ export default async function postArticle({
 					</div>
 				</article>
 
-				<article className="mt-40 w-full md:w-[80%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+				<article className="mt-40 w-full md:w-[90%] 2xl:w-[75%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
-						<div className="flex justify-center mt-44 smx:mt-24 md:mt-16 xl:mt-14">
+						{/* Affiliate Banner for Mobile view */}
+						<AffiliateBannersMobile
+							affiliateMobileBanners={
+								post.affiliateMobileBanners || []
+							}
+						/>
+
+						<div className="flex justify-center xl:mt-14">
 							<TableOfContents outline={outline} />
 						</div>
 
-						{/* ARTICLE BODY */}
+						{/* ARTICLE BODY 1 */}
 						<div className="container mx-auto">
 							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
-								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-xl md:text-2xl whitespace-pre-line leading-9 md:leading-10">
+								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}
@@ -224,6 +264,67 @@ export default async function postArticle({
 								</div>
 							</div>
 						</div>
+
+						<AffiliateMiddleBanner
+							affiliateMiddleBanners={
+								post.affiliateMiddleBanners || []
+							}
+						/>
+
+						{/* ARTICLE BODY 2 */}
+						<div className="container mx-auto">
+							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
+								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
+									<PortableText
+										value={post.content2}
+										components={component}
+									/>
+								</div>
+							</div>
+						</div>
+
+						{/* Affiliate Banner  */}
+						<AffiliateMiddleBanner
+							affiliateMiddleBanners={
+								post.affiliateMiddleBanners || []
+							}
+						/>
+
+						{/* AdSense Ad - Mid Article */}
+						<AdSenseUnit
+							adClient="ca-pub-1234567890"
+							adSlot="1234567890"
+						/>
+
+						{/* FAQ SECTION */}
+						<div>
+							{/* Inject JSON-LD for FAQ Schema */}
+							<FaqSchema faqs={post?.faqs || []} />
+
+							<div className="mx-12 mt-6 mb-16">
+								<h2 className="text-3xl xl:text-3xl pt-3 pb-2 text-red-800 font-bold">
+									FAQs
+								</h2>
+								{post?.faqs && post.faqs.length > 0 ? (
+									post.faqs.map((faq, index) => (
+										<div
+											key={faq._id}
+											className="faq-item my-4"
+										>
+											<h3 className="text-lg md:text-xl font-bold italic py-1">
+												{faq.question}
+											</h3>
+											<p className="font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
+												{faq.answer}
+											</p>
+										</div>
+									))
+								) : (
+									<p>No FAQs available for this post.</p>
+								)}
+							</div>
+						</div>
+
 						<div className="w-full">
 							<AddComment postId={post?._id} />
 							<AllComments
@@ -243,13 +344,38 @@ export default async function postArticle({
 					</div>
 
 					{/* SIDE / BOTTOM SECTION */}
-					<div className="flex flex-col xl:max-w-xs md:w-[80%] mx-3 -mt-40 items-start justify-start xl:sticky xl:top-0">
-						<SideBioSubscriptionLatestArt
-							params={{
-								slug: slug,
-							}}
+					<article className="flex flex-col w-full xl:w-96">
+						<article className="flex flex-col xl:max-w-xs mx-3 -mt-40 items-start justify-start xl:sticky xl:top-0">
+							<SideBioSubscriptionLatestArt
+								params={{
+									slug: slug,
+								}}
+							/>
+						</article>
+						<AffiliateBannerSidebar
+							affiliateBanners={post.affiliateBanners || []}
 						/>
-					</div>
+						{/* Affiliate Banner for Mobile view */}
+						<AffiliateBannersMobile
+							affiliateMobileBanners={
+								post.affiliateMobileBanners || []
+							}
+						/>
+						{/* SIDE MENU LATEST ARTICLES */}
+						<article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
+							<div className="ml-6 xl:mt-4">
+								<h3 className="text-4xl font-playfair_display font-bold">
+									Latest Posts
+								</h3>
+							</div>
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
+								<LatestArticlesMini />
+							</div>
+							<AffiliateBannerSidebar
+								affiliateBanners={post.affiliateBanners || []}
+							/>
+						</article>
+					</article>
 				</article>
 			</section>
 		</>

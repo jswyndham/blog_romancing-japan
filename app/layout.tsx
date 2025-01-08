@@ -10,9 +10,9 @@ import {
 	Patrick_Hand,
 	Carter_One,
 	Caveat,
+	Montserrat,
 } from 'next/font/google';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 
 // Dynamic import for Navbar
 const Navbar = dynamic(() => import('./components/Navbar'), { ssr: false });
@@ -67,6 +67,14 @@ const caveat = Caveat({
 	variable: '--font-caveat',
 });
 
+const montserrat = Montserrat({
+	weight: ['400'],
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-montserrat',
+});
+
+// ******** Metadata API ********
 export const metadata = {
 	metadataBase: new URL('https://www.romancing-japan.com/'),
 	title: {
@@ -74,7 +82,9 @@ export const metadata = {
 		template: `%s`,
 	},
 	icons: {
-		icon: 'favicon.ico',
+		icon: '/favicon.ico',
+		shortcut: '/favicon.ico',
+		apple: '/favicon.ico',
 	},
 	description:
 		'Articles about Japanese travel, lifestyle, and culture. For those who wish to learn more about Japan and its culture.',
@@ -110,6 +120,10 @@ export const metadata = {
 		siteName: 'Romancing Japan',
 		url: 'https://www.romancing-japan.com/',
 	},
+	other: {
+		'facebook-domain-verification': 'j3hoqq9m2dclmb7l7yvtcu08ptvlsn',
+		'agoda-affiliate-verification': 'agd-partner-manual-verification',
+	},
 };
 
 export const revalidate = 20; // revalidate every minute
@@ -122,39 +136,17 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable}`}
+			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable} ${montserrat.variable}`}
 		>
-			<Head>
-				<link rel="icon" href="favicon.ico" type="image/x-icon" />
-				<link
-					rel="shortcut icon"
-					href="favicon.ico"
-					type="image/x-icon"
-				/>
-				{/* FaceBook verification 2*/}
-				<meta
-					name="facebook-domain-verification"
-					content="j3hoqq9m2dclmb7l7yvtcu08ptvlsn"
-				/>
-			</Head>
-
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossOrigin="anonymous"
-				></script>
-				{/* <!-- Ad Horizontal --> */}
-				<ins
-					className="adsbygoogle ad-container"
-					data-ad-client="ca-pub-1847015508086202"
-					data-ad-slot="7454156713"
-					data-ad-format="auto"
-					data-full-width-responsive="true"
-				></ins>
-				<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				<head>
+					{/* Google AdSense Script */}
+					<script
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
+						crossOrigin="anonymous"
+					></script>
+				</head>
 				<GoogleAnalytics
 					trackingId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
 				/>
