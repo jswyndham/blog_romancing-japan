@@ -43,6 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
 				},
 			],
 		},
+		alternates: {
+			canonical: 'https://www.romancing-japan.com/about/',
+		},
 	};
 }
 
