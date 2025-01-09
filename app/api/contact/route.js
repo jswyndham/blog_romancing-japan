@@ -33,9 +33,6 @@ export async function POST(req) {
 				refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
 				accessToken: accessToken.token,
 			},
-			tls: {
-				rejectUnauthorized: false, // Disable SSL verification
-			},
 		});
 
 		// Email content
