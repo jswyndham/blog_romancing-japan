@@ -239,7 +239,7 @@ export default async function postArticle({
 
             <div>
               {/* AUTHOR */}
-              {post.author.map((author, index) => (
+              {post.author.map((author: any, index: any) => (
                 <div key={`${post._id}-author-${index}`}>
                   <p className="absolute flex items-end align-bottom ml-6 2xl:ml-8 mb-1 text-yellow-400 text-lg md:text-2xl bottom-24 smx:bottom-20 smx:pb-2 md:pb-4">
                     {author.name}
@@ -313,7 +313,7 @@ export default async function postArticle({
                   FAQs
                 </h2>
                 {post?.faqs && post.faqs.length > 0 ? (
-                  post.faqs.map((faq, index) => (
+                  post.faqs.map((faq: any, index: any) => (
                     <div key={faq._id} className="faq-item my-4">
                       <h3 className="text-lg md:text-xl font-bold italic py-1">
                         {faq.question}
