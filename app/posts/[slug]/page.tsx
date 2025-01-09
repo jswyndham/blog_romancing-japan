@@ -145,14 +145,17 @@ export const revalidate = 0; // Time interval
 export default async function postArticle({
   params: { slug },
   searchParams,
-}: PageProps) {
+}: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   const commentsOrder = Array.isArray(searchParams?.commentsOrder)
     ? searchParams.commentsOrder[0]
     : searchParams?.commentsOrder || "desc";
-  const post = await createArticle({
-    params: { slug },
-    commentsOrder,
-  });
+  const post = await createClient(readClient).fetch(
+    groq`*[_type=="post" && slug.current == $slug][0]`,
+    { slug }
+  );
 
   if (!post) {
     return <div>Post not found</div>;
@@ -160,16 +163,20 @@ export default async function postArticle({
 
   const postUrl = addTrailingSlash(`/posts/${post.slug}`);
 
-  // Parse headings for both content sections
-  const outline1 = parseOutline(post.content).map((item) => ({
-    ...item,
-    _key: `content1-${item._key}`, // Prefix keys from first content
-  }));
+  // Parse headings for both content sections with safeguards
+  const outline1 = Array.isArray(post.content)
+    ? parseOutline(post.content).map((item) => ({
+        ...item,
+        _key: `content1-${item._key}`,
+      }))
+    : [];
 
-  const outline2 = parseOutline(post.content2).map((item) => ({
-    ...item,
-    _key: `content2-${item._key}`, // Prefix keys from second content
-  }));
+  const outline2 = Array.isArray(post.content2)
+    ? parseOutline(post.content2).map((item) => ({
+        ...item,
+        _key: `content2-${item._key}`,
+      }))
+    : [];
 
   // Merge the outlines
   const combinedOutline = [...outline1, ...outline2];
