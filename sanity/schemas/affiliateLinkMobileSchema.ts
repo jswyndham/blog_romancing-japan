@@ -17,7 +17,7 @@ export const affiliateLinkMobileSchema = defineType({
 		}),
 		defineField({
 			name: 'image',
-			title: 'Image (GIF)',
+			title: 'Image',
 			type: 'image',
 			options: {
 				hotspot: true,

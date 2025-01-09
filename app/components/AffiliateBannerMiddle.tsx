@@ -15,9 +15,9 @@ export default function AffiliateMiddleBanner({
 	}
 
 	return (
-		<aside className="w-full flex flex-col items-center justify-center mt-6 mb-4">
+		<aside className="w-full flex flex-col items-center justify-center bg-yellow-50 mt-6 mb-4 border-t-4 border-accent drop-shadow-lg">
 			<h3 className="text-lg font-bold mb-4 text-center">Sponsored</h3>
-			<div className="w-full flex flex-col items-center justify-center">
+			<div className="w-full flex flex-col items-center justify-center border-b-4 border-accent">
 				{affiliateMiddleBanners.map((banner: any) => (
 					<div
 						key={banner._id}

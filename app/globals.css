@@ -177,11 +177,6 @@ img {
 	pointer-events: none;
 }
 
-/* Google Ad Sense in Body */
-.ad-container {
-	display: block;
-}
-
 /* booking iframe styles.css */
 .iframe-widget {
 	width: 100%;

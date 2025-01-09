@@ -279,7 +279,12 @@ content2[]{
   tag[]->{title, "slug": slug.current,},
   }`;
 
-	return await createClient(readClient).fetch(query, { slug, revalidate });
+	const data = await createClient(readClient).fetch(query, {
+		slug,
+		revalidate,
+	});
+
+	return data;
 }
 
 // Fetch the About Us Page
