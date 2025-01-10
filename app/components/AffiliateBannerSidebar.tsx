@@ -17,7 +17,10 @@ export default function AffiliateBannerSidebar({ affiliateBanners }: Props) {
 			<h3 className="text-lg font-bold mb-4 text-center">Sponsored</h3>
 			<div className="flex flex-col items-center">
 				{affiliateBanners.map((banner) => (
-					<div key={banner._id} className="mb-6">
+					<div
+						key={banner._id}
+						className="flex flex-col items-center mb-6"
+					>
 						<Link
 							href={banner.link || '#'}
 							target="_blank"
@@ -26,9 +29,9 @@ export default function AffiliateBannerSidebar({ affiliateBanners }: Props) {
 							<Image
 								src={banner.imageUrl}
 								alt={banner.altText || banner.title}
-								width={300}
-								height={600}
-								className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200"
+								width={250}
+								height={660}
+								className="w-40 rounded-lg hover:scale-105 transition-transform duration-200"
 							/>
 						</Link>
 						<p className="mt-2 text-center text-md text-blue-700 font-semibold">

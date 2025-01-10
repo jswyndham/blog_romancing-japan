@@ -168,14 +168,14 @@ export default async function postArticle({
 	const outline1 = Array.isArray(post.content)
 		? parseOutline(post.content).map((item) => ({
 				...item,
-				_key: `content1-${item._key}`,
+				_key: `${item._key}`,
 			}))
 		: [];
 
 	const outline2 = Array.isArray(post.content2)
 		? parseOutline(post.content2).map((item) => ({
 				...item,
-				_key: `content2-${item._key}`,
+				_key: `${item._key}`,
 			}))
 		: [];
 
@@ -275,7 +275,7 @@ export default async function postArticle({
 						{/* ARTICLE BODY 1 */}
 						<div className="container mx-auto">
 							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
-								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
+								<div className="w-11/12 px-1 py-4 mt-2 font-sans text-left text-md md:text-lg whitespace-pre-line leading-9 md:leading-10">
 									<PortableText
 										value={post.content}
 										onMissingComponent={false}
@@ -294,7 +294,7 @@ export default async function postArticle({
 						{/* ARTICLE BODY 2 */}
 						<div className="container mx-auto">
 							<div className="flex flex-col justify-center items-center whitespace-pre-line md:flex-row">
-								<div className="w-11/12 px-1 py-4 mt-2 font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
+								<div className="w-11/12 px-1 py-4 mt-2 font-sans text-left text-md md:text-lg whitespace-pre-line leading-9 md:leading-10">
 									<PortableText
 										value={post.content2}
 										components={component}

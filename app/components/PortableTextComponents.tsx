@@ -49,23 +49,25 @@ const PortableTextComp = () => {
 		},
 		block: {
 			h1: ({ children }: any) => (
-				<h1 className="text-4xl py-7 font-bold">{children}</h1>
+				<h1 className="text-4xl py-7 font-bold font-heading">
+					{children}
+				</h1>
 			),
-			h2: ({ children, node }: any) => (
+			h2: ({ children, node, prefix }: any) => (
 				<div className="w-full border-red-300 border-b-2 mb-4">
 					<h2
-						id={node._key}
+						id={`${prefix}-${node._key}`}
 						className="text-2xl lg:text-3xl pt-3 pb-2 text-red-800 font-bold"
 					>
 						{children}
 					</h2>
 				</div>
 			),
-			h3: ({ children, node }: any) => (
+			h3: ({ children, node, prefix }: any) => (
 				<div className="w-full mb-4 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-400">
 					<div className="bg-white p-1">
 						<h3
-							id={node._key}
+							id={`${prefix}-${node._key}`}
 							className="text-xl text-slate-600 font-bold ml-4 font-sans"
 						>
 							{children}
