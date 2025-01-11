@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { AffiliateBanners } from '@/typings';
 import Link from 'next/link';
 
@@ -26,7 +25,7 @@ export default function AffiliateBannerSidebar({ affiliateBanners }: Props) {
 							target="_blank"
 							rel="noopener noreferrer nofollow sponsored"
 						>
-							<Image
+							<img
 								src={banner.imageUrl}
 								alt={banner.altText || banner.title}
 								width={250}
@@ -34,6 +33,14 @@ export default function AffiliateBannerSidebar({ affiliateBanners }: Props) {
 								className="w-40 rounded-lg hover:scale-105 transition-transform duration-200"
 							/>
 						</Link>
+						{/* Render tracking pixel if present */}
+						{banner.trackingPixel && (
+							<img
+								src={banner.trackingPixel}
+								className="absolute hidden"
+								alt=""
+							/>
+						)}
 						<p className="mt-2 text-center text-md text-blue-700 font-semibold">
 							{banner.description}
 						</p>

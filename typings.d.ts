@@ -109,6 +109,7 @@ interface AffiliateBanners {
 	imageUrl: string;
 	altText: string;
 	link: string;
+	trackingPixel?: string;
 }
 
 interface AffiliateMiddleBanners {
@@ -118,6 +119,7 @@ interface AffiliateMiddleBanners {
 	imageUrl: string;
 	altText: string;
 	link: string;
+	trackingPixel?: string;
 }
 
 interface AffiliateBannerMobile {
@@ -127,6 +129,7 @@ interface AffiliateBannerMobile {
 	imageUrl: string;
 	altText: string;
 	link: string;
+	trackingPixel?: string;
 }
 
 export interface AboutUs extends Base {

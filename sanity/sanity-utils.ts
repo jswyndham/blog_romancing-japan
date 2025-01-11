@@ -241,7 +241,7 @@ content2[]{
         _id,
         title,
         description,
-        "imageUrl": image.asset->url,
+        "imageUrl": imageUrl,
         altText,
         link
       },
@@ -249,7 +249,7 @@ content2[]{
     _id,
     title,
 		description,
-    "imageUrl": image.asset->url,
+    "imageUrl": imageUrl,
     altText,
     link
   },
@@ -257,9 +257,10 @@ content2[]{
   _id,
   title,
   description,
-  "imageUrl": image.asset->url,
+  "imageUrl": imageUrl,
   altText,
-  link
+  link,
+  trackingPixel
 },
       faqs[]->{
         _id,

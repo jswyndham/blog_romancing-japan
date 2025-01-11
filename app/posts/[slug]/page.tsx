@@ -77,25 +77,28 @@ export async function generateMetadata({
 			_id,
 			title,
 			description,
-			"imageUrl": image.asset->url,
+			"imageUrl": imageUrl,
 			altText,
-			link
+			link,
+			trackingPixel
 		},
 		affiliateMiddleBanners[]->{
 			_id,
 			title,
 			description,
-			"imageUrl": image.asset->url,
+			"imageUrl": imageUrl,
 			altText,
-			link
+			link,
+			trackingPixel
 		},
 		 affiliateMobileBanners[]->{
   _id,
   title,
   description,
-  "imageUrl": image.asset->url,
+  "imageUrl": imageUrl,
   altText,
-  link
+  link,
+	trackingPixel
 },
 		"author": author[0]->,
 		category[]->{title, "slug": slug.current,},

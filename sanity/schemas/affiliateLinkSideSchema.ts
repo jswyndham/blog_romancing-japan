@@ -16,12 +16,9 @@ export const affiliateLinkSideSchema = defineType({
 			type: 'string',
 		}),
 		defineField({
-			name: 'image',
-			title: 'Image (GIF)',
-			type: 'image',
-			options: {
-				hotspot: true,
-			},
+			name: 'imageUrl',
+			title: 'Image URL',
+			type: 'url',
 		}),
 		defineField({
 			name: 'altText',
@@ -32,6 +29,16 @@ export const affiliateLinkSideSchema = defineType({
 			name: 'link',
 			title: 'Affiliate Link',
 			type: 'url',
+		}),
+		defineField({
+			name: 'trackingPixel',
+			title: 'Tracking Pixel URL',
+			type: 'url',
+			description:
+				'Optional: URL for the hidden tracking pixel if provided by the affiliate',
+			options: {
+				isOptional: true,
+			},
 		}),
 	],
 });
