@@ -57,7 +57,7 @@ const PortableTextComp = () => {
 				<div className="w-full border-red-300 border-b-2 mb-4">
 					<h2
 						id={`${prefix}-${node._key}`}
-						className="text-2xl lg:text-3xl pt-3 pb-2 text-red-800 font-bold"
+						className="text-xl lg:text-3xl pt-3 pb-2 text-red-800 font-bold"
 					>
 						{children}
 					</h2>
@@ -68,7 +68,7 @@ const PortableTextComp = () => {
 					<div className="bg-white p-1">
 						<h3
 							id={`${prefix}-${node._key}`}
-							className="text-xl text-slate-600 font-bold ml-4 font-sans"
+							className="text-lg text-slate-600 font-bold ml-4 font-sans"
 						>
 							{children}
 						</h3>
