@@ -68,7 +68,7 @@ const PortableTextComp = () => {
 					<div className="bg-white p-1">
 						<h3
 							id={`${prefix}-${node._key}`}
-							className="text-lg text-slate-600 font-bold ml-4 font-sans"
+							className="text-md md:text-lg text-slate-600 font-bold ml-4 font-sans"
 						>
 							{children}
 						</h3>

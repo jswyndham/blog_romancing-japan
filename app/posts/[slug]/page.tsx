@@ -262,7 +262,7 @@ export default async function postArticle({
 					</div>
 				</article>
 
-				<article className="mt-40 w-full md:w-[95%] 2xl:w-[75%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+				<article className="mt-40 w-full md:w-[95%] 2xl:w-[82%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
 						{/* Affiliate Banner for Mobile view */}
 						<AffiliateBannersMobile
@@ -386,10 +386,18 @@ export default async function postArticle({
 						/>
 						{/* SIDE MENU LATEST ARTICLES */}
 						<article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
-							<div className="ml-6 xl:mt-4">
-								<h3 className="text-4xl font-playfair_display font-bold">
-									Latest Posts
+							<div className="flex flex-col text-center ml-6 xl:mt-4">
+								<h3 className="pb-1 text-3xl font-playfair_display font-bold">
+									Latest Articles
 								</h3>
+								<Image
+									src={'/images/logo-only-small.png'}
+									alt={'Romancing Japan logo'}
+									title={'Romancing Japan logo'}
+									width={1600}
+									height={321}
+									priority={true}
+								/>
 							</div>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
 								<LatestArticlesMini />

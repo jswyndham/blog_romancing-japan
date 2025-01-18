@@ -434,6 +434,13 @@ const post = defineType({
 			of: [{ type: 'reference', to: { type: 'author' } }],
 			validation: (Rule) => Rule.required(),
 		}),
+		defineField({
+			name: 'views',
+			title: 'Views',
+			type: 'number',
+			description: 'The number of times this post has been viewed.',
+			validation: (Rule) => Rule.min(0),
+		}),
 	],
 });
 

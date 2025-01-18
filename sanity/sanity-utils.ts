@@ -384,3 +384,27 @@ export async function getAboutPage(): Promise<AboutUs> {
     `
 	);
 }
+
+// Fetch most popular posts
+export async function getMostPopularPostMini(): Promise<Post[]> {
+	return createClient(readClient).fetch(groq`
+    *[_type == "post"] | order(views desc)[0..4] {
+      _id,
+      _createdAt,
+      name,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content,
+      summary[]{
+        ...,
+      },
+      summaryShort,
+      "excerpt": array::join(string::split((pt::text(content)), "")[0..200], "") + "...",
+      views,
+      author[]->,
+      category[]->,
+      tag[]->,
+    }
+  `);
+}
