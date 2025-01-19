@@ -1,5 +1,8 @@
 import Image from 'next/image';
-import { getLatestPostMini } from '@/sanity/sanity-utils';
+import {
+	getLatestPostMini,
+	getMostPopularPostMini,
+} from '@/sanity/sanity-utils';
 import { urlFor } from '@/lib/urlFor';
 import Link from 'next/link';
 import { Post } from '@/typings';
@@ -16,7 +19,7 @@ async function fetchImageUrls(posts: Post[]): Promise<Post[]> {
 
 export default async function BlogSmallCard() {
 	// Await the result of getLatestPostMini to ensure we have the posts array
-	const posts = await getLatestPostMini();
+	const posts = await getMostPopularPostMini();
 	const postsWithImageUrls = await fetchImageUrls(posts);
 
 	return (
@@ -39,7 +42,7 @@ export default async function BlogSmallCard() {
 						</figure>
 						<div className="card-body px-4 my-3 h-36">
 							<div className="flex items-center max-h-28 min-h-16 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
-								<h2 className="font-roboto_condensed text-red-900 text-xl font-bold">
+								<h2 className="font-roboto_condensed text-red-900 text-xl 2xl:text-2xl font-bold">
 									{post.name}
 								</h2>
 							</div>

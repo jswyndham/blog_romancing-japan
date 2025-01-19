@@ -262,7 +262,7 @@ export default async function postArticle({
 					</div>
 				</article>
 
-				<article className="mt-40 w-full md:w-[95%] 2xl:w-[82%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
+				<article className="mt-40 w-full md:w-[95%] 2xl:w-[85%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
 						{/* Affiliate Banner for Mobile view */}
 						<AffiliateBannersMobile
@@ -388,7 +388,7 @@ export default async function postArticle({
 						<article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
 							<div className="flex flex-col text-center ml-6 xl:mt-4">
 								<h3 className="pb-1 text-3xl font-playfair_display font-bold">
-									Latest Articles
+									Popular Articles
 								</h3>
 								<Image
 									src={'/images/logo-only-small.png'}

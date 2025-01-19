@@ -17,6 +17,8 @@ export default async function handler(
 	if (req.method === 'POST') {
 		const { slug } = req.body;
 
+		console.log('Request body:', req.body);
+
 		if (!slug) {
 			return res.status(400).json({ error: 'Slug is required.' });
 		}

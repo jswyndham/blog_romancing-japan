@@ -46,7 +46,7 @@ const BlogSmallCard = () => {
 								height={650}
 								alt={post.name || 'Romancing Japan'}
 								title={post.caption || 'Romancing Japan'}
-								loading="lazy"
+								priority
 								className="top-0 group-hover:scale-105 transition-transform duration-700"
 							/>
 						</figure>

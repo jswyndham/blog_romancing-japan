@@ -5,14 +5,14 @@ function SocialMediaLinks() {
 	return (
 		<div className="flex flex-row gap-6 my-3">
 			<Link
-				href="https://twitter.com/RomancingJapan"
+				href="https://jp.pinterest.com/RomancingJapan/"
 				target="_blank"
 				className="w-7 h-7 relative"
 			>
 				<Image
-					src="/images/twitter-x-logo.png"
-					width={28}
-					height={28}
+					src="/images/pinterest.png"
+					width={50}
+					height={50}
 					alt="romancing japan twitter"
 				/>
 			</Link>

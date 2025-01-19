@@ -388,7 +388,7 @@ export async function getAboutPage(): Promise<AboutUs> {
 // Fetch most popular posts
 export async function getMostPopularPostMini(): Promise<Post[]> {
 	return createClient(readClient).fetch(groq`
-    *[_type == "post"] | order(views desc)[0..4] {
+    *[_type == "post" && defined(views)] | order(views desc)[0..5] {
       _id,
       _createdAt,
       name,

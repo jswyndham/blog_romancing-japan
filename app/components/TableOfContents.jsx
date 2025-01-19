@@ -40,7 +40,7 @@ export const TableOfContents = ({ outline }) => {
 											className="list-disc py-1"
 										>
 											<a
-												href={'#' + subheading._key}
+												href={`#${subheading.prefix}-${subheading._key}`}
 												className="text-md lg:text-lg text-slate-600 font-bold hover:text-slate-500"
 											>
 												{subheading.children[0].text}
