@@ -334,10 +334,10 @@ export default async function postArticle({
 											key={faq._id}
 											className="faq-item my-4"
 										>
-											<h3 className="text-lg md:text-xl font-bold italic py-1">
+											<h3 className="text-lg xl:text-xl font-bold italic py-1">
 												{faq.question}
 											</h3>
-											<p className="font-heading text-left text-lg md:text-xl whitespace-pre-line leading-9 md:leading-10">
+											<p className="font-heading text-left text-md xl:text-lg whitespace-pre-line leading-9 md:leading-10">
 												{faq.answer}
 											</p>
 										</div>
