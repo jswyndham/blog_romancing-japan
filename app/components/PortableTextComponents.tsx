@@ -64,8 +64,8 @@ const PortableTextComp = () => {
 				</div>
 			),
 			h3: ({ children, node, prefix }: any) => (
-				<div className="w-full mb-4 mt-3 py-2 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-300">
-					<div className="bg-white">
+				<div className="w-full mb-4 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-300">
+					<div className="bg-white p-1">
 						<h3
 							id={`${prefix}-${node._key}`}
 							className="text-md md:text-lg text-slate-600 font-bold ml-4 font-sans"
