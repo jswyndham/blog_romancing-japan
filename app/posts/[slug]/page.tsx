@@ -295,7 +295,7 @@ export default async function postArticle({
 							}
 						/>
 
-						<div className="flex flex-row text-center xl:hidden">
+						<div className="flex flex-col md:flex-row text-center xl:hidden">
 							<h3 className="pb-1 mr-4 text-xl md:text-3xl font-playfair_display font-bold">
 								Popular Articles
 							</h3>
@@ -306,7 +306,7 @@ export default async function postArticle({
 								width={1600}
 								height={321}
 								priority={true}
-								className="h-8 w-48 md:h-10 md:w-56"
+								className="h-7 w-40 md:h-10 md:w-56 -ml-2 md:ml-0"
 							/>
 						</div>
 						<div className="grid grid-cols-3 xl:hidden my-4">
