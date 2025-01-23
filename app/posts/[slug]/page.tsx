@@ -309,7 +309,7 @@ export default async function postArticle({
 								className="h-8 w-48 md:h-10 md:w-56"
 							/>
 						</div>
-						<div className="grid grid-cols-3 gap-2 xl:hidden my-4">
+						<div className="grid grid-cols-3 xl:hidden my-4">
 							<PopularArticlesMobile />
 						</div>
 

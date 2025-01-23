@@ -24,7 +24,7 @@ export default async function PopularArticlesMobile() {
 			{postsWithImageUrls.map((post) => (
 				<Link key={post._id} href={`/posts/${post.slug}/`}>
 					<div className="card rounded-none w-fit h-fit mx-2">
-						<figure className="h-16 md:h-28">
+						<figure className="h-16 md:h-28 -mx-1">
 							{post.imageUrl && ( // Conditional rendering to ensure imageUrl is not undefined
 								<Image
 									src={post.imageUrl}
@@ -36,8 +36,8 @@ export default async function PopularArticlesMobile() {
 								/>
 							)}
 						</figure>
-						<div className="card-body px-1 mb-2 h-20">
-							<div className="flex items-center h-16 pl-2 border-l-2 border-red-600">
+						<div className="card-body px-1 mb-2 h-20 -mt-2 -mx-2">
+							<div className="flex items-center h-16 pl-2 pb-1 border-l-2 border-red-600">
 								<h2 className="font-roboto_condensed text-red-900 text-sm md:text-lg font-light">
 									{post.name}
 								</h2>
