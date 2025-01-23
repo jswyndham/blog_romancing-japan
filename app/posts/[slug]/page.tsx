@@ -28,6 +28,7 @@ import FaqSchema from '@/app/components/FaqSchema';
 import AffiliateBannerSidebar from '@/app/components/AffiliateBannerSidebar';
 import AffiliateMiddleBanner from '@/app/components/AffiliateBannerMiddle';
 import AffiliateBannersMobile from '@/app/components/AffiliateBannerMobile';
+import PopularArticlesMobile from '@/app/components/PopularArticlesMobile';
 
 const SignupCardLong = dynamic(
 	() => import('@/app/components/SignupCardLong'),
@@ -293,6 +294,24 @@ export default async function postArticle({
 								post.affiliateMiddleBanners || []
 							}
 						/>
+
+						<div className="flex flex-row text-center xl:hidden">
+							<h3 className="pb-1 mr-4 text-xl md:text-3xl font-playfair_display font-bold">
+								Popular Articles
+							</h3>
+							<Image
+								src={'/images/logo-only-small.png'}
+								alt={'Romancing Japan logo'}
+								title={'Romancing Japan logo'}
+								width={1600}
+								height={321}
+								priority={true}
+								className="h-8 w-48 md:h-10 md:w-56"
+							/>
+						</div>
+						<div className="grid grid-cols-3 gap-2 xl:hidden my-4">
+							<PopularArticlesMobile />
+						</div>
 
 						{/* ARTICLE BODY 2 */}
 						<div className="container mx-auto">

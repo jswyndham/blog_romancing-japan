@@ -23,7 +23,7 @@ const PortableTextComp = () => {
 							height={700}
 							loading="lazy"
 						/>
-						<figcaption className="italic text-base text-left mt-2">
+						<figcaption className="italic text-sm xl:text-base text-left mt-2">
 							{value.caption}
 						</figcaption>
 					</figure>
@@ -64,11 +64,11 @@ const PortableTextComp = () => {
 				</div>
 			),
 			h3: ({ children, node, prefix }: any) => (
-				<div className="w-full mb-4 mt-3 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-300">
-					<div className="bg-white p-1">
+				<div className="w-full mb-4 py-1 bg-gradient-to-r from-red-200 via-red-800 to-red-200 rounded-lg shadow-lg shadow-slate-300">
+					<div className="bg-white py-1">
 						<h3
 							id={`${prefix}-${node._key}`}
-							className="text-md md:text-lg text-slate-600 font-bold ml-4 font-sans"
+							className="text-md leading-6 md:text-lg text-slate-600 font-semibold xl:font-bold ml-4 font-sans"
 						>
 							{children}
 						</h3>
