@@ -35,6 +35,16 @@ const PortableTextComp = () => {
 			table: ({ value }: any) => {
 				return <TableComponent value={value} />;
 			},
+			code: ({ value }: { value: { code: string; language: string } }) =>
+				value.language === 'html' ? (
+					<div dangerouslySetInnerHTML={{ __html: value.code }} />
+				) : (
+					<pre>
+						<code className={`language-${value.language}`}>
+							{value.code}
+						</code>
+					</pre>
+				),
 		},
 
 		list: {

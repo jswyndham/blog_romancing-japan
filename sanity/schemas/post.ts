@@ -185,6 +185,14 @@ const post = defineType({
 					title: 'YouTube Embed',
 					type: 'youTube',
 				},
+				{
+					type: 'code',
+					title: 'Code',
+					options: {
+						language: 'javascript', // Specify the language for syntax highlighting
+						theme: 'monokai', // Optional: Specify a theme
+					},
+				},
 			],
 
 			validation: (Rule) => Rule.required(),
@@ -320,6 +328,14 @@ const post = defineType({
 				{
 					title: 'YouTube Embed',
 					type: 'youTube',
+				},
+				{
+					type: 'code',
+					title: 'Code',
+					options: {
+						language: 'javascript', // Specify the language for syntax highlighting
+						theme: 'monokai', // Optional: Specify a theme
+					},
 				},
 			],
 			validation: (Rule) => Rule.required(),

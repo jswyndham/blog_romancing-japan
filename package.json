@@ -17,6 +17,7 @@
 		"@react-email/img": "^0.0.5",
 		"@react-email/render": "^0.0.12",
 		"@sanity/client": "^6.4.12",
+		"@sanity/code-input": "^5.1.2",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/table": "^1.1.2",
 		"@sanity/ui": "^2.8.8",
