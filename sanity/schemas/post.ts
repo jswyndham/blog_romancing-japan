@@ -349,14 +349,8 @@ const post = defineType({
 						],
 						withFilename: true,
 					},
-					validation: (Rule) =>
-						Rule.custom((value: any) => {
-							if (!value.language) {
-								return 'Language is required.';
-							}
-							return true;
-						}),
 				},
+				{ type: 'affiliateWidget' },
 			],
 			validation: (Rule) => Rule.required(),
 		}),
