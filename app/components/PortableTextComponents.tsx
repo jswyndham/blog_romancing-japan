@@ -36,8 +36,11 @@ const PortableTextComp = () => {
 				return <TableComponent value={value} />;
 			},
 			code: ({ value }: { value: { code: string; language: string } }) =>
-				value.language === 'html' ? (
-					<div dangerouslySetInnerHTML={{ __html: value.code }} />
+				value.language === 'javascript' ? (
+					<div>
+						{/* Render the script dynamically */}
+						<div dangerouslySetInnerHTML={{ __html: value.code }} />
+					</div>
 				) : (
 					<pre>
 						<code className={`language-${value.language}`}>
