@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { YouTubeEmbed } from '../components/YouTubeEmbed';
 import TableComponent from '../components/TableComponent'; // Ensure correct path
+import CodeBlock from './CodeBlock';
+import AffiliateWidget from './AffiliateWidget';
 
 interface YouTubeValue {
 	url: string;
@@ -35,19 +37,23 @@ const PortableTextComp = () => {
 			table: ({ value }: any) => {
 				return <TableComponent value={value} />;
 			},
-			code: ({ value }: { value: { code: string; language: string } }) =>
-				value.language === 'javascript' ? (
-					<div>
-						{/* Render the script dynamically */}
-						<div dangerouslySetInnerHTML={{ __html: value.code }} />
-					</div>
-				) : (
-					<pre>
-						<code className={`language-${value.language}`}>
-							{value.code}
-						</code>
-					</pre>
-				),
+			myCodeField: ({
+				value,
+			}: {
+				value: { code: string; language: string };
+			}) => {
+				const language = value.language || 'javascript'; // Default to JavaScript
+				return <CodeBlock code={value.code} language={language} />;
+			},
+			affiliateWidget: ({ value }: any) => {
+				return (
+					<AffiliateWidget
+						scriptSrc={value.scriptSrc}
+						defaultDirection={value.defaultDirection}
+						locale={value.locale}
+					/>
+				);
+			},
 		},
 
 		list: {

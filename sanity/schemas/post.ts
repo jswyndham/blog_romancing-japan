@@ -187,12 +187,19 @@ const post = defineType({
 				},
 				{
 					type: 'code',
-					title: 'Code',
+					name: 'myCodeField',
+					title: 'Code with all options',
 					options: {
-						language: 'javascript', // Specify the language for syntax highlighting
-						theme: 'monokai', // Optional: Specify a theme
+						language: 'javascript',
+						languageAlternatives: [
+							{ title: 'Javascript', value: 'javascript' },
+							{ title: 'HTML', value: 'html' },
+							{ title: 'CSS', value: 'css' },
+						],
+						withFilename: true,
 					},
 				},
+				{ type: 'affiliateWidget' },
 			],
 
 			validation: (Rule) => Rule.required(),
@@ -331,11 +338,24 @@ const post = defineType({
 				},
 				{
 					type: 'code',
-					title: 'Code',
+					name: 'myCodeField',
+					title: 'Code with all options',
 					options: {
-						language: 'javascript', // Specify the language for syntax highlighting
-						theme: 'monokai', // Optional: Specify a theme
+						language: 'javascript',
+						languageAlternatives: [
+							{ title: 'Javascript', value: 'javascript' },
+							{ title: 'HTML', value: 'html' },
+							{ title: 'CSS', value: 'css' },
+						],
+						withFilename: true,
 					},
+					validation: (Rule) =>
+						Rule.custom((value: any) => {
+							if (!value.language) {
+								return 'Language is required.';
+							}
+							return true;
+						}),
 				},
 			],
 			validation: (Rule) => Rule.required(),

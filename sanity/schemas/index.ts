@@ -15,6 +15,7 @@ import { affiliateLinkSideSchema } from './affiliateLinkSideSchema';
 import { affiliateLinkMiddleSchema } from './affiliateLinkMiddleSchema';
 import { affiliateLinkMobileSchema } from './affiliateLinkMobileSchema';
 import { aboutUsSchema } from './aboutPageSchema';
+import { affiliateWidget } from './affiliateWidget';
 
 const schemas = [
 	post,
@@ -27,6 +28,7 @@ const schemas = [
 	youTubeType,
 	blockContent,
 	comment,
+	affiliateWidget,
 	faqs,
 	affiliateLinkSideSchema,
 	affiliateLinkMiddleSchema,

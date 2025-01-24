@@ -405,7 +405,7 @@ export default async function postArticle({
 						/>
 						{/* SIDE MENU LATEST ARTICLES */}
 						<article className="flex flex-col px-4 xl:border-l-4 xl:border-r-4 border-white">
-							<div className="flex flex-col text-center ml-6 xl:mt-4">
+							<div className="flex flex-col text-center items-center ml-6 xl:mt-4">
 								<h3 className="pb-1 text-3xl font-playfair_display font-bold">
 									Popular Articles
 								</h3>
@@ -413,12 +413,12 @@ export default async function postArticle({
 									src={'/images/logo-only-small.png'}
 									alt={'Romancing Japan logo'}
 									title={'Romancing Japan logo'}
-									width={1600}
-									height={321}
+									width={270}
+									height={30}
 									priority={true}
 								/>
 							</div>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:flex xl:flex-col my-4">
+							<div className="grid grid-cols-3 grid-row-1  gap-2 xl:flex xl:flex-col my-4">
 								<LatestArticlesMini />
 							</div>
 							<AffiliateBannerSidebar
