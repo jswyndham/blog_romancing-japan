@@ -265,7 +265,7 @@ export default async function postArticle({
 
 				<article className="mt-40 w-full md:w-[95%] 2xl:w-[85%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
-						<div className="flex justify-center mt-52 smx:mt-12">
+						<div className="flex justify-center mt-48 smx:mt-12">
 							<TableOfContents outline={combinedOutline} />
 						</div>
 
