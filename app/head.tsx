@@ -32,7 +32,10 @@ export default function Head() {
 				name="google-adsense-account"
 				content="ca-pub-1847015508086202"
 			/>
-
+			<meta
+				name="p:domain_verify"
+				content="d485f2d6f7eae98e421fe5adedc1225c"
+			/>
 			{/* JSON-LD structured data */}
 			<script
 				type="application/ld+json"
