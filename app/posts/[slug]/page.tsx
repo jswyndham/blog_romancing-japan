@@ -265,16 +265,16 @@ export default async function postArticle({
 
 				<article className="mt-40 w-full md:w-[95%] 2xl:w-[85%] 3xl:w-[60%] flex flex-col xl:flex-row justify-center">
 					<div className="flex flex-col items-center w-full">
+						<div className="flex justify-center xl:mt-14">
+							<TableOfContents outline={combinedOutline} />
+						</div>
+
 						{/* Affiliate Banner for Mobile view */}
 						<AffiliateBannersMobile
 							affiliateMobileBanners={
 								post.affiliateMobileBanners || []
 							}
 						/>
-
-						<div className="flex justify-center xl:mt-14">
-							<TableOfContents outline={combinedOutline} />
-						</div>
 
 						{/* ARTICLE BODY 1 */}
 						<div className="container mx-auto">
