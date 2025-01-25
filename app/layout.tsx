@@ -140,6 +140,17 @@ export default function RootLayout({
 			lang="en"
 			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable} ${montserrat.variable}`}
 		>
+			<head>
+				{/* Google Tag Manager */}
+				<script>
+					{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id=GTM-T4C8LM3W';
+                    f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-T4C8LM3W');`}
+				</script>
+			</head>
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
 				{/* Google Tag Manager (noscript) */}
 				<noscript>
