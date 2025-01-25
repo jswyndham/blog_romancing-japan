@@ -140,15 +140,14 @@ export default function RootLayout({
 			lang="en"
 			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable} ${montserrat.variable}`}
 		>
-			<head>
-				{/* Google AdSense Script */}
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1847015508086202"
-					crossOrigin="anonymous"
-				></script>
-			</head>
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
+				{/* Google Tag Manager (noscript) */}
+				<noscript>
+					<iframe
+						src="https://www.googletagmanager.com/ns.html?id=GTM-T4C8LM3W"
+						className="gtm-iframe"
+					></iframe>
+				</noscript>
 				<GoogleAnalytics
 					trackingId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
 				/>

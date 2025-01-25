@@ -192,3 +192,10 @@ img {
 	width: 100%;
 	max-width: 100%;
 }
+
+.gtm-iframe {
+	display: none;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
