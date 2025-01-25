@@ -27,7 +27,7 @@ export default async function BlogSmallCard() {
 			{postsWithImageUrls.map((post) => (
 				<Link key={post._id} href={`/posts/${post.slug}/`}>
 					<div className="card rounded-none w-fit h-fit mx-2 my-1 hover:shadow-lg hover:shadow-slate-200 hover:drop-shadow hover:bg-base-100 hover:transition-all duration-300 group">
-						<figure className="">
+						<figure className="h-16 md:h-28 -mx-1">
 							{post.imageUrl && ( // Conditional rendering to ensure imageUrl is not undefined
 								<Image
 									src={post.imageUrl}
@@ -41,8 +41,8 @@ export default async function BlogSmallCard() {
 							)}
 						</figure>
 						<div className="card-body px-4 my-3 h-36">
-							<div className="flex items-center max-h-28 min-h-16 pl-2 py-2 border-l-2 border-red-600 xl:h-28">
-								<h2 className="font-roboto_condensed text-red-900 text-xl 2xl:text-2xl font-bold">
+							<div className="flex items-center h-16 pl-2 pb-1 2xl:h-24 py-2 border-l-2 border-red-600 xl:h-28">
+								<h2 className="font-roboto_condensed text-red-900 text-sm md:text-lg font-light 2xl:text-xl">
 									{post.name}
 								</h2>
 							</div>

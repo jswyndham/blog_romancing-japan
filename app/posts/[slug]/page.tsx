@@ -418,7 +418,7 @@ export default async function postArticle({
 									priority={true}
 								/>
 							</div>
-							<div className="grid grid-cols-3 grid-row-1  gap-2 xl:flex xl:flex-col my-4">
+							<div className="grid grid-cols-3 grid-row-2 gap-1 xl:flex xl:flex-col my-4">
 								<LatestArticlesMini />
 							</div>
 							<AffiliateBannerSidebar
