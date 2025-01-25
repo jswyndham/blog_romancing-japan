@@ -9,7 +9,7 @@ export default function AffiliateBannersMobile({
 	affiliateMobileBanners = [],
 }: Props) {
 	return (
-		<aside className="flex flex-col xl:hidden mt-40 smx:mt-12 xl:mt-6 w-full">
+		<aside className="flex flex-col xl:hidden mt-12 xl:mt-6 w-full">
 			<h3 className="text-lg font-bold mb-4 text-center">Sponsored</h3>
 			<div className="flex flex-col items-center">
 				{affiliateMobileBanners.map((banner) => {
