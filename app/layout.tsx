@@ -155,7 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<noscript>
 					<iframe
 						src="https://www.googletagmanager.com/ns.html?id=GTM-KCFF5T82"
-						className="gtm-iframe"
+						height="0"
+						width="0"
+						style="display:none;visibility:hidden"
 					></iframe>
 				</noscript>
 				<GoogleAnalytics
