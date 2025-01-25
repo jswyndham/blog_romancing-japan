@@ -123,6 +123,8 @@ export const metadata = {
 	other: {
 		'facebook-domain-verification': 'j3hoqq9m2dclmb7l7yvtcu08ptvlsn',
 		'agoda-affiliate-verification': 'agd-partner-manual-verification',
+		'google-adsense-account': 'ca-pub-1847015508086202',
+		'p:domain_verify': 'd485f2d6f7eae98e421fe5adedc1225c',
 	},
 };
 
