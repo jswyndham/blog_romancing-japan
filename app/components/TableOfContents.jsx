@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export const TableOfContents = ({ outline }) => {
 	const [expanded, setExpanded] = useState(false); // State to track if TOC is expanded
-	const maxVisibleItems = 5; // Number of headings to show before collapsing
+	const maxVisibleItems = 3; // Number of headings to show before collapsing
 
 	// Function to toggle visibility
 	const toggleExpand = () => setExpanded(!expanded);
