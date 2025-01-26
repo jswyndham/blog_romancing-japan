@@ -1,6 +1,7 @@
 import './globals.css';
 import Footer from './components/Footer';
 import { GoogleAnalytics } from './components/GoogleAnalytics';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import {
 	Roboto_Condensed,
@@ -140,16 +141,7 @@ export default function RootLayout({
 			lang="en"
 			className={`${roboto_condensed.variable} ${playfair_display.variable} ${krona_one.variable} ${shadows_into_light.variable} ${patrick_hand.variable} ${carter_one.variable} ${caveat.variable} ${montserrat.variable}`}
 		>
-			<head>
-				{/* Google Tag Manager */}
-				<script>
-					{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KCFF5T82');`}
-				</script>
-			</head>
+			<GoogleTagManager gtmId="GTM-KCFF5T82" />
 			<body className="bg-base-100 w-screen overflow-x-hidden mx-auto">
 				{/* Google Tag Manager (noscript) */}
 				<noscript>
@@ -157,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						src="https://www.googletagmanager.com/ns.html?id=GTM-KCFF5T82"
 						height="0"
 						width="0"
-						className="gtm-iframe"
+						style={{ display: 'none', visibility: 'hidden' }}
 					></iframe>
 				</noscript>
 				<GoogleAnalytics
