@@ -111,8 +111,9 @@ const PortableTextComp = () => {
 
 			// Custom "Tip" Block
 			tip: ({ children }: any) => (
-				<div className="p-4 my-4 bg-yellow-100 border-l-4 border-yellow-500">
-					<strong>Tip:</strong> {children}
+				<div className="p-6 mx-4 md:mx-10 my-12 bg-green-200 border-l-8 border-green-700 shadow-md shadow-slate-400">
+					<p className="font-bold text-xl -mb-6">Local Tip:</p>{' '}
+					{children}
 				</div>
 			),
 

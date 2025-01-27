@@ -147,20 +147,6 @@ const post = defineType({
 				},
 
 				{
-					name: 'excerpt',
-					title: 'Excerpt',
-					type: 'object',
-					fields: [
-						{
-							name: 'content',
-							title: 'Article Body',
-							type: 'array',
-							of: [{ type: 'block' }],
-						},
-					],
-				},
-
-				{
 					title: 'Image',
 					type: 'image',
 					fields: [
@@ -295,20 +281,6 @@ const post = defineType({
 							},
 						],
 					},
-				},
-
-				{
-					name: 'excerpt',
-					title: 'Excerpt',
-					type: 'object',
-					fields: [
-						{
-							name: 'content',
-							title: 'Article Body',
-							type: 'array',
-							of: [{ type: 'block' }],
-						},
-					],
 				},
 
 				{
